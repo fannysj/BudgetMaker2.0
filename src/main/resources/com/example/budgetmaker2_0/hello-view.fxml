@@ -21,12 +21,12 @@
       </Text>
       <ImageView fitHeight="63.0" fitWidth="69.0" layoutX="362.0" layoutY="109.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../moneybudget.png" />
+            <Image url="@images/moneybudget.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="284.0" fitWidth="328.0" layoutY="173.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../output-onlinepngtools.png" />
+            <Image url="@images/output-onlinepngtools.png" />
          </image>
          <effect>
             <ColorAdjust brightness="-0.83" />
