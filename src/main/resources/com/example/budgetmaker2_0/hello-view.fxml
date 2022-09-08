@@ -20,7 +20,7 @@
    <children>
       <Text layoutX="204.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Din budget">
          <font>
-            <Font name="PT Sans" size="62.0" />
+            <Font name="Shree Devanagari 714" size="59.0" />
          </font>
          <effect>
             <DropShadow height="64.86" radius="57.7225" spread="0.06" width="168.03">
@@ -45,7 +45,7 @@
       </ImageView>
       <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="215.0" layoutY="386.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="325.0" style="-fx-background-color: b0de9b; -fx-background-radius: 30px; -fx-border-color: fff;" text="Skapa budgetmål" textAlignment="CENTER" textOverrun="CLIP">
          <font>
-            <Font name="PT Sans" size="32.0" />
+            <Font name="SukhumvitSet-Thin" size="33.0" />
          </font>
          <opaqueInsets>
             <Insets />
@@ -65,7 +65,7 @@
       </TextField>
       <Text layoutX="513.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" wrappingWidth="24.3946533203125">
          <font>
-            <Font size="28.0" />
+            <Font name="Shree Devanagari 714" size="27.0" />
          </font>
       </Text>
    </children>
