@@ -5,4 +5,6 @@ module com.example.budgetmaker2_0 {
 
     opens com.example.budgetmaker2_0 to javafx.fxml;
     exports com.example.budgetmaker2_0;
+    exports Controllers;
+    opens Controllers to javafx.fxml;
 }

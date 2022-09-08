@@ -1,4 +1,4 @@
-package com.example.budgetmaker2_0;
+package Controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
