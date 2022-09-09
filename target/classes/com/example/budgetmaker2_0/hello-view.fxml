@@ -52,7 +52,8 @@
                         <Image url="@images/bakgrundbudget.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="235.0" layoutY="403.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="325.0" style="-fx-background-color: b0de9b; -fx-background-radius: 30px; -fx-border-color: fff;" text="Skapa budgetmål" textAlignment="CENTER" textOverrun="CLIP">
+                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="235.0" layoutY="380.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="325.0" style="-fx-background-color: b0de9b; -fx-background-radius: 12px; -fx-border-color: ffff;
+    -fx-border-radius: 20;" text="Skapa budgetmål" textAlignment="CENTER" textOverrun="CLIP">
                      <font>
                         <Font name="SukhumvitSet-Thin" size="33.0" />
                      </font>
