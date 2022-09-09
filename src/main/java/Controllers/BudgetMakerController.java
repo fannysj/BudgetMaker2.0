@@ -14,6 +14,27 @@ public class BudgetMakerController {
     @FXML
     private Button Budgetknapp;
 
+    @FXML
+    private AnchorPane startSida;
+
+    @FXML
+    private AnchorPane testSida;
+
+    @FXML
+    private Label budgetAmount;
+
+    @FXML
+    public void bytSida(){
+        testSida.toFront();
+        startSida.setVisible(false);
+        testSida.setVisible(true);
+
+    }
+
+
+
+
+
 
 
 }
