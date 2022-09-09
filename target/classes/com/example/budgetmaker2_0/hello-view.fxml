@@ -23,7 +23,7 @@
    <children>
       <StackPane>
          <children>
-            <AnchorPane prefHeight="609.0" prefWidth="724.0" visible="false">
+            <AnchorPane prefHeight="609.0" prefWidth="724.0">
                <children>
                   <Text layoutX="230.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Din budget">
                      <font>
@@ -81,7 +81,7 @@
                   </Text>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="604.0" prefWidth="802.0" visible="false">
+            <AnchorPane prefHeight="604.0" prefWidth="802.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bdbdbd23" height="547.0" layoutX="33.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="740.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff88" height="487.0" layoutX="63.0" layoutY="66.0" stroke="#dadada" strokeType="INSIDE" width="459.0" />
@@ -124,7 +124,7 @@
                         <Font name="SukhumvitSet-Thin" size="35.0" />
                      </font>
                   </Label>
-                  <Text layoutX="112.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budgetera ut dina pengar!" wrappingWidth="345.3670740870271">
+                  <Text layoutX="112.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budgetera ut dina pengar!!" wrappingWidth="345.3670740870271">
                      <font>
                         <Font name="SukhumvitSet-Thin" size="26.0" />
                      </font>
