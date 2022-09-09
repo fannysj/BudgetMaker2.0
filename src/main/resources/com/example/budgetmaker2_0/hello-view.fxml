@@ -83,41 +83,52 @@
             </AnchorPane>
             <AnchorPane prefHeight="604.0" prefWidth="802.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="59.0" layoutX="100.0" layoutY="163.0" stroke="#ffffffd4" strokeType="INSIDE" strokeWidth="5.0" width="386.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="59.0" layoutX="100.0" layoutY="250.0" stroke="#ffffffd4" strokeType="INSIDE" strokeWidth="5.0" width="386.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="59.0" layoutX="100.0" layoutY="343.0" stroke="#ffffffd4" strokeType="INSIDE" strokeWidth="5.0" width="386.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="59.0" layoutX="100.0" layoutY="435.0" stroke="#ffffffd4" strokeType="INSIDE" strokeWidth="5.0" width="386.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#bdbdbd23" height="547.0" layoutX="33.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="740.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff88" height="487.0" layoutX="63.0" layoutY="66.0" stroke="#dadada" strokeType="INSIDE" width="459.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffbf" height="59.0" layoutX="100.0" layoutY="163.0" stroke="#000000b5" strokeType="INSIDE" strokeWidth="2.0" width="386.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffab" height="59.0" layoutX="100.0" layoutY="250.0" stroke="#0208049d" strokeType="INSIDE" strokeWidth="2.0" width="386.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffffbab" height="59.0" layoutX="100.0" layoutY="343.0" stroke="#000000b5" strokeType="INSIDE" strokeWidth="2.0" width="386.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffffbab" height="59.0" layoutX="100.0" layoutY="435.0" stroke="#2f2f2fb5" strokeType="INSIDE" strokeWidth="2.0" width="386.0" />
                   <TextField layoutX="230.0" layoutY="180.0" />
                   <TextField layoutX="230.0" layoutY="267.0" />
                   <TextField layoutX="230.0" layoutY="360.0" />
                   <TextField layoutX="230.0" layoutY="452.0" />
                   <Text layoutX="120.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mat:" wrappingWidth="44.48170471191406">
                      <font>
-                        <Font size="22.0" />
+                        <Font name="Shree Devanagari 714" size="21.0" />
                      </font>
                   </Text>
                   <Text layoutX="120.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shopping:" wrappingWidth="100.06531773617121">
                      <font>
-                        <Font size="22.0" />
+                        <Font name="Shree Devanagari 714" size="21.0" />
                      </font>
                   </Text>
                   <Text layoutX="120.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nöje:" wrappingWidth="54.469525607257424">
                      <font>
-                        <Font size="22.0" />
+                        <Font name="Shree Devanagari 714" size="21.0" />
                      </font>
                   </Text>
                   <Text layoutX="120.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Övrigt:" wrappingWidth="72.39112854003906">
                      <font>
-                        <Font size="22.0" />
+                        <Font name="Shree Devanagari 714" size="21.0" />
                      </font>
                   </Text>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="200.0" layoutX="541.0" layoutY="63.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
-                  <Text layoutX="584.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kvar av din budget:" />
-                  <Label layoutX="606.0" layoutY="146.0" prefHeight="44.0" prefWidth="75.0" text="1000 kr">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffcf" height="200.0" layoutX="542.0" layoutY="66.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" strokeWidth="0.0" width="200.0" />
+                  <Text layoutX="561.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kvar av din budget:">
                      <font>
-                        <Font size="20.0" />
+                        <Font name="SukhumvitSet-Thin" size="21.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="584.0" layoutY="144.0" prefHeight="78.0" prefWidth="150.0" text="1000 kr">
+                     <font>
+                        <Font name="SukhumvitSet-Thin" size="35.0" />
                      </font>
                   </Label>
+                  <Text layoutX="112.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Budgettera ut dina pengar!" wrappingWidth="345.3670740870271">
+                     <font>
+                        <Font name="SukhumvitSet-Thin" size="26.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
          </children>
