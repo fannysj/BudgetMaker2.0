@@ -23,7 +23,7 @@
    <children>
       <StackPane>
          <children>
-            <AnchorPane prefHeight="609.0" prefWidth="724.0" visible="false">
+            <AnchorPane prefHeight="609.0" prefWidth="724.0">
                <children>
                   <Text layoutX="230.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Din budget">
                      <font>
