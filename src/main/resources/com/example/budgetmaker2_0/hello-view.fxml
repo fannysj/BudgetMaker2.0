@@ -25,6 +25,70 @@
          <children>
             <AnchorPane prefHeight="609.0" prefWidth="724.0" visible="false">
                <children>
+                  <ImageView fitHeight="654.0" fitWidth="701.0" layoutX="146.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                     <image>
+                        <Image url="@images/effekt.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="0.78" contrast="-0.07" hue="0.59" saturation="-0.17" />
+                     </effect>
+                  </ImageView>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff12" height="547.0" layoutX="33.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="740.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffbf" height="59.0" layoutX="64.0" layoutY="183.0" stroke="#08110bab" strokeType="INSIDE" style=" -fx-background-radius: 15px; -fx-border-color: fff;" width="458.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffab" height="59.0" layoutX="64.0" layoutY="289.0" stroke="#08110bab" strokeType="INSIDE" width="459.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffffbab" height="59.0" layoutX="64.0" layoutY="390.0" stroke="#08110bab" strokeType="INSIDE" width="459.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fffffbab" height="59.0" layoutX="64.0" layoutY="485.0" stroke="#08110bab" strokeType="INSIDE" width="459.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b0de9be8" height="76.0" layoutY="61.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" width="543.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b0de9be8" height="183.0" layoutX="555.0" layoutY="60.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="222.0" />
+                  <ImageView fitHeight="125.0" fitWidth="267.0" layoutX="549.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/kvaravbudget.png" />
+                     </image>
+                  </ImageView>
+                  <TextField layoutX="75.0" layoutY="193.0" prefHeight="40.0" prefWidth="315.0" />
+                  <TextField layoutX="75.0" layoutY="299.0" prefHeight="40.0" prefWidth="315.0" />
+                  <TextField layoutX="74.0" layoutY="401.0" prefHeight="40.0" prefWidth="315.0" />
+                  <TextField layoutX="73.0" layoutY="495.0" prefHeight="40.0" prefWidth="315.0" />
+                  <Text layoutX="66.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mat:" wrappingWidth="61.49571484877839">
+                     <font>
+                        <Font name="Futura Medium" size="23.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="62.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shopping:" wrappingWidth="117.72291050960871">
+                     <font>
+                        <Font name="Futura Medium" size="23.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="66.0" layoutY="382.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nöje:" wrappingWidth="80.36733749690586">
+                     <font>
+                        <Font name="Futura Medium" size="23.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="65.0" layoutY="475.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Övrigt:" wrappingWidth="81.80851745605469">
+                     <font>
+                        <Font name="Futura Medium" size="23.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#000000dd" layoutX="567.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kvar av din budget:">
+                     <font>
+                        <Font name="Futura Medium" size="22.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="595.0" layoutY="145.0" prefHeight="82.0" prefWidth="156.0" text="1000 kr">
+                     <font>
+                        <Font name="Futura Medium" size="40.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="58.0" layoutY="114.0" stroke="#000000e5" strokeType="OUTSIDE" strokeWidth="0.0" text="Budgetera ut dina pengar!" wrappingWidth="470.36707408702705">
+                     <font>
+                        <Font name="Shree Devanagari 714" size="37.0" />
+                     </font>
+                  </Text>
+                  <Line endX="-12.642578125" endY="43.749481201171875" layoutX="555.0" layoutY="99.0" startX="-12.642578125" startY="-46.6920051574707" stroke="WHITE" strokeWidth="5.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="609.0" prefWidth="724.0" visible="false">
+               <children>
                   <Text layoutX="230.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Din budget">
                      <font>
                         <Font name="Shree Devanagari 714" size="59.0" />
