@@ -1,0 +1,81 @@
+/* Fonts */
+
+
+
+.font-inter {
+    -fx-font-family: Inter;
+}
+
+/* General classes */
+.curved-corners {
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}
+
+.background-white {
+    -fx-background-color: #ffffff;
+}
+
+.background-blue {
+    -fx-background-color: #71BCF2;
+}
+.background-grey {
+    -fx-background-color: #efefef;
+}
+
+.shopping-cart-view {
+    -fx-background-color: #71BCF2;
+    -fx-background-radius: 50 50 0 0;
+}
+
+/* Header */
+.title {
+    -fx-font-family: Gruppo;
+}
+
+/* Items */
+.item-curved-all-around {
+    -fx-background-radius: 25 25 25 25;
+}
+.item-curved-bottom {
+    -fx-background-radius: 0 0 25 25;
+}
+.item-curved-top {
+    -fx-background-radius: 10 10 0 0;
+}
+.item-image-curve {
+    -fx-arc-width: 10;
+}
+
+.btn {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-effect: dropshadow(gaussian, #000000 , 5, 0, 0, 5);
+    -fx-cursor: hand;
+    -fx-background-color: a8a2f8;
+    -fx-background-radius: 10px;
+}
+
+.navbtn {
+    -fx-background-color: #ffffff;
+    -fx-cursor: hand;
+}
+
+
+
+/* Checkout */
+.checkout-btn {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 100;
+    -fx-border-radius: 100;
+    -fx-text-fill: #71BCF2;
+    -fx-font-family: "Inria sans";
+    -fx-font-size: 20;
+
+}
+
+/* Sidebar Navigation */
+.nav-card {
+    -fx-background-radius: 0 25 25 0;
+}
