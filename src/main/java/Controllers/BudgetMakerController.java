@@ -24,13 +24,22 @@ public class BudgetMakerController {
     private Label budgetAmount;
 
     @FXML
-    public void bytSida(){
+    public void bytSida() {
         testSida.toFront();
         startSida.setVisible(false);
         testSida.setVisible(true);
 
         budgetAmount.setText(EnterBudget.getText());
+        int x = getIntFromTextField(EnterBudget);
+        budgetAmount.setText(Integer.toString(x));
+
 
     }
 
+
+    public static int getIntFromTextField(TextField EnterBudget) {
+        String text = EnterBudget.getText();
+        return Integer.parseInt(text);
+
+    }
 }
