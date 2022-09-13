@@ -33,6 +33,8 @@ public class BudgetMakerController {
 
         new newBudget(EnterBudget, budgetAmount);
 
+        String s = "HEJ";
+
 
     }
 
