@@ -24,7 +24,7 @@
    <children>
       <StackPane layoutX="-5.0" prefHeight="610.0" prefWidth="802.0">
          <children>
-            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="791.0" style="-fx-background-color: ffff;" visible="false">
+            <AnchorPane fx:id="testSida" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="791.0" style="-fx-background-color: ffff;" visible="false">
                <children>
                   <ImageView fitHeight="654.0" fitWidth="701.0" layoutX="146.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                      <image>
@@ -88,7 +88,7 @@
                   <Line endX="-12.642578125" endY="43.749481201171875" layoutX="555.0" layoutY="99.0" startX="-12.642578125" startY="-46.6920051574707" stroke="WHITE" strokeWidth="5.0" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="609.0" prefWidth="724.0" visible="false">
+            <AnchorPane fx:id="testSida" prefHeight="609.0" prefWidth="724.0" visible="false">
                <children>
                   <ImageView fitHeight="654.0" fitWidth="701.0" layoutX="146.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
                      <image>
@@ -139,7 +139,7 @@
                         <Font name="Futura Medium" size="22.0" />
                      </font>
                   </Text>
-                  <Label layoutX="595.0" layoutY="145.0" prefHeight="82.0" prefWidth="156.0" text="1000 kr">
+                  <Label fx:id="budgetAmount" layoutX="610.0" layoutY="145.0" prefHeight="68.0" prefWidth="111.0" text="1000" textAlignment="CENTER">
                      <font>
                         <Font name="Futura Medium" size="40.0" />
                      </font>
@@ -151,7 +151,7 @@
                   </Text>
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="609.0" prefWidth="724.0">
+            <AnchorPane fx:id="startSida" prefHeight="609.0" prefWidth="724.0">
                <children>
                   <Text layoutX="230.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Din budget">
                      <font>
@@ -182,7 +182,7 @@
                         <Image url="@images/bakgrundbudget.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="233.0" layoutY="399.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="325.0" style="-fx-background-color: a8a2f8; -fx-background-radius: 15px; -fx-border-color: fff;" text="Skapa budgetmål" AnchorPane.bottomAnchor="166.0" AnchorPane.rightAnchor="258.0">
+                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="233.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#bytSida" prefHeight="76.0" prefWidth="325.0" style="-fx-background-color: a8a2f8; -fx-background-radius: 15px; -fx-border-color: fff;" text="Skapa budgetmål" AnchorPane.bottomAnchor="166.0" AnchorPane.rightAnchor="258.0">
                      <font>
                         <Font name="SukhumvitSet-Thin" size="33.0" />
                      </font>
