@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetMakerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetMakerController">
    <effect>
       <ColorAdjust brightness="0.19" />
    </effect>
@@ -54,7 +54,7 @@
                         <Image url="@images/bakgrundbudget.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="229.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#bytSida" prefHeight="76.0" prefWidth="315.0" style="-fx-background-color: a8a2f8; -fx-background-radius: 20px; -fx-border-color: fff; -fx-border-radius: 20px;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Skapa budgetmål" AnchorPane.bottomAnchor="133.0" AnchorPane.rightAnchor="258.0">
+                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="229.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#bytSida" onMouseEntered="#hoverOverBudgetButton" onMouseExited="#stopHoverOverBudgetButton" onMousePressed="#budgetButtonPressed" prefHeight="76.0" prefWidth="315.0" style="-fx-background-color: a8a2f8; -fx-background-radius: 20px; -fx-border-color: fff; -fx-border-radius: 20px;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Skapa budgetmål" AnchorPane.bottomAnchor="133.0" AnchorPane.rightAnchor="258.0">
                      <font>
                         <Font name="SukhumvitSet-Thin" size="33.0" />
                      </font>
@@ -147,7 +147,8 @@
                         <Font name="Avenir Book" size="23.0" />
                      </font>
                   </Text>
-                  <Label fx:id="budgetAmount" alignment="CENTER" layoutX="581.0" layoutY="137.0" prefHeight="76.0" prefWidth="166.0" text="1000" textAlignment="RIGHT" textFill="#504d7c">
+                  <Label fx:id="budgetAmount" alignment="CENTER" layoutX="581.0" layoutY="137.0" prefHeight="76.0" prefWidth="166.0" text="1000" textAlignment="CENTER" textFill="#504d7c">
+
                      <font>
                         <Font name="Avenir Book" size="52.0" />
                      </font>
@@ -162,6 +163,7 @@
                         <Font name="Avenir Book" size="26.0" />
                      </font>
                   </Button>
+                  <Button fx:id="goBack" layoutX="29.0" layoutY="23.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" text="Tillbaka" />
                </children>
             </AnchorPane>
          </children>
