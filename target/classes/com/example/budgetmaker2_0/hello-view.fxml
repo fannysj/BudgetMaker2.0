@@ -144,7 +144,7 @@
                         <Font name="Futura Medium" size="22.0" />
                      </font>
                   </Text>
-                  <Label fx:id="budgetAmount" alignment="CENTER" contentDisplay="CENTER" layoutX="581.0" layoutY="139.0" prefHeight="76.0" prefWidth="166.0" text="1000" textAlignment="CENTER">
+                  <Label fx:id="budgetAmount" alignment="CENTER" layoutX="581.0" layoutY="139.0" prefHeight="76.0" prefWidth="166.0" text="1000" textAlignment="RIGHT">
                      <font>
                         <Font name="Futura Medium" size="37.0" />
                      </font>
