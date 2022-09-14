@@ -31,6 +31,8 @@ public class BudgetMakerController {
 
         budgetAmount.setText(EnterBudget.getText());
 
+
+
     }
 
 }
