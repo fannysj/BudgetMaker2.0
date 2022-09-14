@@ -32,8 +32,6 @@ public class BudgetMakerController {
         budgetAmount.setText(EnterBudget.getText());
         int x = getIntFromTextField(EnterBudget);
         budgetAmount.setText(Integer.toString(x));
-
-
     }
 
 
