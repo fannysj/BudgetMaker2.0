@@ -33,24 +33,8 @@ public class BudgetMakerController {
         startSida.setVisible(false);
         testSida.setVisible(true);
 
-
-        budgetAmount.setText(EnterBudget.getText());
-        int x = getIntFromTextField(EnterBudget);
-        budgetAmount.setText(Integer.toString(x));
-    }
-
-
-    public static int getIntFromTextField(TextField EnterBudget) {
-        String text = EnterBudget.getText();
-        return Integer.parseInt(text);
-
         new newBudget(EnterBudget, budgetAmount);
 
-        String s = "HEJ";
-        String e = "då";
-
-
     }
 
-    //Oscar är kung
 }
