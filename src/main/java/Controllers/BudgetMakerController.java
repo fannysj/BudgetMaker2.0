@@ -26,18 +26,14 @@ public class BudgetMakerController {
     private Label budgetAmount;
 
     @FXML
-    public void bytSida(){
+
+    public void bytSida() {
+
         testSida.toFront();
         startSida.setVisible(false);
         testSida.setVisible(true);
 
         new newBudget(EnterBudget, budgetAmount);
-
-        String s = "HEJ";
-        String e = "då";
-
-
-
 
     }
 
