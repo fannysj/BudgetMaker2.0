@@ -1,3 +1,4 @@
+
 module com.example.budgetmaker2_0 {
     requires javafx.graphics;
     requires javafx.fxml;
