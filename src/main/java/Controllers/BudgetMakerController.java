@@ -37,4 +37,21 @@ public class BudgetMakerController {
 
     }
 
+    @FXML
+    public void hoverOverBudgetButton(){
+        Budgetknapp.setStyle("-fx-background-color: #cbc8f6; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
+
+    }
+
+    @FXML
+    public void stopHoverOverBudgetButton(){
+        Budgetknapp.setStyle("-fx-background-color: #a8a2f8; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
+    }
+
+    @FXML
+    public void budgetButtonPressed(){
+        Budgetknapp.setStyle("-fx-background-color: #6a66a8; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
+    }
+
+
 }
