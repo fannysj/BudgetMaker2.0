@@ -30,6 +30,8 @@ public class BudgetMakerController {
         testSida.setVisible(true);
 
         budgetAmount.setText(EnterBudget.getText());
+       String s = "HEHE";
+
 
     }
 

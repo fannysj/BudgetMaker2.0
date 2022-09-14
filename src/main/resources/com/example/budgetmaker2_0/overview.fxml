@@ -93,7 +93,7 @@
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/+.png" />
+                  <Image url="@images/+.png" />
                </image>
             </ImageView>
          </graphic>
@@ -131,7 +131,7 @@
       <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="31.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="23.0" fitWidth="31.0" layoutX="35.0" layoutY="235.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../../Desktop/kläder.png" />
+            <Image url="@images/shopping.png" />
          </image>
       </ImageView>
       <Text layoutX="72.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shopping">
