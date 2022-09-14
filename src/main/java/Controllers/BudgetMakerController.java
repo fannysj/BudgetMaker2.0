@@ -26,7 +26,10 @@ public class BudgetMakerController {
     private Label budgetAmount;
 
     @FXML
+    private Button goBack;
 
+
+    @FXML
     public void bytSida() {
 
         testSida.toFront();
@@ -36,6 +39,14 @@ public class BudgetMakerController {
         new newBudget(EnterBudget, budgetAmount);
 
     }
+
+    @FXML
+    public void goBackonePage(){
+        startSida.toFront();
+        startSida.setVisible(true);
+        testSida.setVisible(false);
+    }
+
 
     @FXML
     public void hoverOverBudgetButton(){

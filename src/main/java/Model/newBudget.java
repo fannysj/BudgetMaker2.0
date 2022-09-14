@@ -7,9 +7,9 @@ public class newBudget {
     TextField enter;
     Label amount;
 
-    public newBudget(TextField enterbudget, Label budgetamount) {
+    public newBudget(TextField enterbudget, Label amountbudget) {
         this.enter = enterbudget;
-        this.amount = budgetamount;
+        this.amount = amountbudget;
 
 //
         int x = getIntfromTextField(enter);
