@@ -54,7 +54,7 @@
                         <Image url="@images/bakgrundbudget.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="229.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#bytSida" prefHeight="76.0" prefWidth="315.0" style="-fx-background-color: a8a2f8; -fx-background-radius: 20px; -fx-border-color: fff; -fx-border-radius: 20px;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Skapa budgetmål" AnchorPane.bottomAnchor="133.0" AnchorPane.rightAnchor="258.0">
+                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="229.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#bytSida" onMouseEntered="#hoverOverBudgetButton" onMouseExited="#stopHoverOverBudgetButton" onMousePressed="#budgetButtonPressed" prefHeight="76.0" prefWidth="315.0" style="-fx-background-color: a8a2f8; -fx-background-radius: 20px; -fx-border-color: fff; -fx-border-radius: 20px;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Skapa budgetmål" AnchorPane.bottomAnchor="133.0" AnchorPane.rightAnchor="258.0">
                      <font>
                         <Font name="SukhumvitSet-Thin" size="33.0" />
                      </font>
