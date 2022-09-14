@@ -1,18 +1,19 @@
 package Model;
 
-import Controllers.BudgetMakerController;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 
 public class newBudget {
     TextField enter;
     Label amount;
+
     public newBudget(TextField enterbudget, Label budgetamount) {
         this.enter = enterbudget;
         this.amount = budgetamount;
 
-        placeBudgetonLabel(this.enter, this.amount);
+//
+        int x = getIntfromTextField(enter);
+        amount.setText(Integer.toString(x));
     }
 
     public void placeBudgetonLabel(TextField amount, Label enter){
@@ -20,8 +21,12 @@ public class newBudget {
 
     }
 
-    public void textfieldtointeger(){
-       String s = String.valueOf(enter);
-       int foo = Integer.parseInt(s);
+    public static int getIntfromTextField(TextField enter){
+        String text = enter.getText();
+        return Integer.parseInt(text);
     }
+
+
+
+
 }
