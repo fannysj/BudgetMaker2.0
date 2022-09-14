@@ -40,4 +40,6 @@ public class BudgetMakerController {
         return Integer.parseInt(text);
 
     }
+
+    //Oscar är kung
 }
