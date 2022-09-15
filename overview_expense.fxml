@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="406.0" prefWidth="609.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;">
+               <children>
+                  <Button layoutX="32.0" layoutY="36.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="162.0">
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN">
+                           <color>
+                              <Color opacity="0.43283581733703613" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Label layoutX="85.0" layoutY="48.0" text="Spenderat" />
+                  <Label layoutX="70.0" layoutY="74.0" prefHeight="38.0" prefWidth="99.0" text="3468 kr">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="224.0" layoutY="36.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="162.0">
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN">
+                           <color>
+                              <Color opacity="0.43283581733703613" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Label layoutX="264.0" layoutY="48.0" text="Kvar av budget" />
+                  <Label layoutX="264.0" layoutY="74.0" prefHeight="38.0" prefWidth="99.0" text="5378 kr">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="32.0" layoutY="180.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="348.0">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.13859274983406067" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f4891" height="10.0" layoutX="73.0" layoutY="202.0" stroke="TRANSPARENT" strokeType="INSIDE" width="267.0" />
+                  <Text layoutX="74.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mat">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="35.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="32.0" layoutY="233.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="348.0">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.13859274983406067" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff7d" height="10.0" layoutX="72.0" layoutY="254.0" stroke="TRANSPARENT" strokeType="INSIDE" width="267.0" />
+                  <Label layoutX="346.0" layoutY="239.0" text="100">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="346.0" layoutY="251.0" text="500">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="23.0" fitWidth="31.0" layoutX="39.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@src/main/resources/com/example/budgetmaker2_0/images/shopping.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="72.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shopping">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="33.0" layoutY="287.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="348.0">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.13859274983406067" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fff787e" height="10.0" layoutX="74.0" layoutY="308.0" stroke="TRANSPARENT" strokeType="INSIDE" width="267.0" />
+                  <Text layoutX="73.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nöje">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Text>
+                  <Button layoutX="33.0" layoutY="343.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="348.0">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.13859274983406067" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1ff1f8a" height="10.0" layoutX="73.0" layoutY="363.0" stroke="#03030300" strokeType="INSIDE" width="267.0" />
+                  <Text layoutX="74.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Övrigt">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Text>
+                  <Button alignment="BASELINE_RIGHT" layoutX="443.0" layoutY="341.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="142.0" text="Lägg till utgift" wrapText="true">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.4456290006637573" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@src/main/resources/com/example/budgetmaker2_0/images/+.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <SplitPane dividerPositions="0.5527182866556837" prefHeight="160.0" prefWidth="200.0" style="-fx-background-color: black;">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: black;">
+                     <children>
+                        <FlowPane prefHeight="406.0" prefWidth="332.0" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #dccee8#dccee8;">
+                     <children>
+                        <ChoiceBox layoutX="30.0" layoutY="99.0" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: #d5bbeb#d5bbeb;">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </ChoiceBox>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d5bbeb" height="49.0" layoutX="30.0" layoutY="153.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Rectangle>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d5bbebc4" height="95.0" layoutX="31.0" layoutY="215.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Rectangle>
+                        <Text layoutX="40.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välj kategori" />
+                        <Text layoutX="40.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belopp" />
+                        <Text layoutX="40.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anteckning" />
+                        <TextField layoutX="115.0" layoutY="165.0" prefHeight="26.0" prefWidth="99.0" />
+                        <TextField layoutX="40.0" layoutY="242.0" prefHeight="60.0" prefWidth="183.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
