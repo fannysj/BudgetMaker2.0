@@ -4,6 +4,7 @@ import Model.newBudget;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -28,6 +29,34 @@ public class BudgetMakerController {
     @FXML
     private Button goBack;
 
+    @FXML
+    private Button backToOverview;
+
+    @FXML
+    private Button addExpense;
+
+    @FXML
+    private SplitPane addExpenseSplit;
+
+    @FXML
+    private AnchorPane overviewAnchorPane;
+
+    @FXML
+    private AnchorPane addExpenseAnchorPane;
+
+    @FXML
+    public void setAddExpense(){
+        addExpenseSplit.toFront();
+        overviewAnchorPane.setVisible(false);
+        addExpenseSplit.setVisible(true);
+    }
+
+    @FXML
+    public void setBackToOverview() {
+        overviewAnchorPane.toFront();
+        addExpenseSplit.setVisible(false);
+        overviewAnchorPane.setVisible(true);
+    }
 
     @FXML
     public void bytSida() {
