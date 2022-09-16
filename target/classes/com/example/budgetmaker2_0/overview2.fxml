@@ -164,7 +164,7 @@
             </AnchorPane>
             <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="401.0" prefWidth="606.0">
                <children>
-                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" layoutX="29.0" layoutY="29.0" prefHeight="357.0" prefWidth="556.0" style="-fx-background-color: black;">
+                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" layoutX="27.0" layoutY="25.0" prefHeight="357.0" prefWidth="556.0" style="-fx-background-color: black;">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
                            <children>

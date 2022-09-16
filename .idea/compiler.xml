@@ -6,7 +6,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="BudgetMaker2.0" />
         <module name="BudgetMaker2_0" />
       </profile>
     </annotationProcessing>
