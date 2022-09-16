@@ -16,6 +16,7 @@
       <TextField layoutX="7.0" layoutY="26.0" prefHeight="20.0" prefWidth="315.0">
          <font>
             <Font size="15.0" />
+
          </font>
       </TextField>
    </children>
