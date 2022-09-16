@@ -1,7 +1,9 @@
 package Controllers;
 
 import Model.newBudget;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.AccessibleAction;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -16,6 +18,17 @@ public class BudgetMakerController {
     @FXML
     private Button Budgetknapp;
 
+    int budgetamount;
+    public void submit(ActionEvent event){
+        try {
+            budgetamount = Integer.parseInt(EnterBudget.getText());
+           // if (budgetamount = str)
+        }
+        catch (Exception e){
+            felmeddelande.setText("error");
+        }
+    }
+
     @FXML
     private AnchorPane startSida;
 
@@ -28,6 +41,8 @@ public class BudgetMakerController {
     @FXML
     private Button goBack;
 
+    @FXML
+    private Label felmeddelande;
 
     @FXML
     public void bytSida() {
