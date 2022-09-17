@@ -89,14 +89,6 @@
                         <Image url="@images/bakgrundbudget.png" />
                      </image>
                   </ImageView>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffce" height="425.0" layoutX="25.0" layoutY="135.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="528.0">
-                     <effect>
-                        <DropShadow>
-                           <color>
-                              <Color opacity="0.08528784662485123" />
-                           </color>
-                        </DropShadow>
-                     </effect></Rectangle>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffe5" height="76.0" layoutX="25.0" layoutY="46.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="btn" width="528.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2e8" height="183.0" layoutX="565.0" layoutY="60.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="222.0" />
                   <ImageView fitHeight="125.0" fitWidth="267.0" layoutX="559.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
@@ -125,8 +117,12 @@
                         <Font name="Avenir Book" size="26.0" />
                      </font>
                   </Button>
+                  <AnchorPane layoutX="25.0" layoutY="135.0" prefHeight="425.0" prefWidth="528.0">
+                     <children>
+                        <FlowPane fx:id="Categorylist" prefHeight="425.0" prefWidth="528.0" />
+                     </children>
+                  </AnchorPane>
                   <Button fx:id="goBack" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" text="Tillbaka" />
-                  <FlowPane fx:id="categorylist" layoutX="25.0" layoutY="135.0" prefHeight="425.0" prefWidth="528.0" />
                </children>
             </AnchorPane>
          </children>
