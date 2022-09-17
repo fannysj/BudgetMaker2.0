@@ -10,6 +10,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Rectangle?>
@@ -103,42 +104,6 @@
                         <Image url="@images/kvaravbudget.png" />
                      </image>
                   </ImageView>
-                  <TextField layoutX="56.0" layoutY="193.0" prefHeight="20.0" prefWidth="315.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <TextField layoutX="56.0" layoutY="274.0" prefHeight="20.0" prefWidth="315.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <TextField layoutX="55.0" layoutY="350.0" prefHeight="20.0" prefWidth="315.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <TextField layoutX="54.0" layoutY="428.0" prefHeight="20.0" prefWidth="315.0">
-                     <font>
-                        <Font size="15.0" />
-                     </font></TextField>
-                  <Text fill="#6461a1" layoutX="56.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mat:" wrappingWidth="61.49571484877839">
-                     <font>
-                        <Font name="Avenir Book" size="19.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#6461a1" layoutX="56.0" layoutY="265.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Shopping:" wrappingWidth="117.72291050960871">
-                     <font>
-                        <Font name="Avenir Book" size="19.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#6461a1" layoutX="56.0" layoutY="342.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nöje:" wrappingWidth="80.36733749690586">
-                     <font>
-                        <Font name="Avenir Book" size="19.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#6461a1" layoutX="56.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Övrigt:" wrappingWidth="81.80851745605469">
-                     <font>
-                        <Font name="Avenir Book" size="19.0" />
-                     </font>
-                  </Text>
                   <Text fill="#504d7cde" layoutX="576.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kvar av din budget:">
                      <font>
                         <Font name="Avenir Book" size="23.0" />
@@ -161,6 +126,7 @@
                      </font>
                   </Button>
                   <Button fx:id="goBack" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" text="Tillbaka" />
+                  <FlowPane fx:id="categorylist" layoutX="25.0" layoutY="135.0" prefHeight="425.0" prefWidth="528.0" />
                </children>
             </AnchorPane>
          </children>
