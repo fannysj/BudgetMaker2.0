@@ -1,6 +1,7 @@
 package Controllers;
 
 
+import Model.CategoryListItem;
 import Model.newBudget;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -13,7 +14,8 @@ import java.net.URL;
 
 
 public class BudgetMakerController implements Initializable {
-    private List<String> catelist = new ArrayList<>(Arrays.asList("mat","shopping"));
+
+    private ArrayList<String> catelist = new ArrayList(Arrays.asList("Mat","Shopping","Nöje","Övrigt"));
 
 
     @FXML
@@ -35,7 +37,7 @@ public class BudgetMakerController implements Initializable {
     private Button goBack;
 
     @FXML
-    private FlowPane categorylist;
+    private FlowPane Categorylist;
 
     @FXML
     private Button backToOverview;
@@ -55,6 +57,7 @@ public class BudgetMakerController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        updateCategoryList();
 
     }
 
@@ -80,6 +83,7 @@ public class BudgetMakerController implements Initializable {
         testSida.toFront();
         startSida.setVisible(false);
         testSida.setVisible(true);
+        updateCategoryList();
 
         new newBudget(EnterBudget, budgetAmount);
 
@@ -109,6 +113,18 @@ public class BudgetMakerController implements Initializable {
         Budgetknapp.setStyle("-fx-background-color: #6a66a8; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
     }
 
+    private void updateCategoryList() {
+        Categorylist.getChildren().clear();
+        for (String category : catelist){
+            Categorylist.getChildren().add(new CategoryListItem(category, this));
+
+        }
+//        ArrayList<String> catelist = new ArrayList<>(Arrays.asList("mat","shopping","nöje", "övrigt"));
+//
+//        for (String category : catelist){
+//            categorylist.getChildren().add(new CategoryListItem(category, this));
+//        }
+    }
 
 
 
