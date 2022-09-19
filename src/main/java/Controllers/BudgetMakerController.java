@@ -1,15 +1,22 @@
 package Controllers;
 
+
+import Model.CategoryListItem;
 import Model.newBudget;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.TextField;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.FlowPane;
 
-public class BudgetMakerController {
-    newBudget budget;
+import java.util.*;
+import java.net.URL;
+
+
+public class BudgetMakerController implements Initializable {
+
+    private ArrayList<String> catelist = new ArrayList(Arrays.asList("Mat","Shopping","Nöje","Övrigt"));
+
 
     @FXML
     private TextField EnterBudget;
@@ -30,6 +37,9 @@ public class BudgetMakerController {
     private Button goBack;
 
     @FXML
+    private FlowPane Categorylist;
+
+    @FXML
     private Button backToOverview;
 
     @FXML
@@ -43,6 +53,13 @@ public class BudgetMakerController {
 
     @FXML
     private AnchorPane addExpenseAnchorPane;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        updateCategoryList();
+
+    }
 
     @FXML
     private AnchorPane addExpenseLeft;
@@ -61,6 +78,8 @@ public class BudgetMakerController {
         addExpenseSplit.setVisible(false);
         overviewAnchorPane.setVisible(true);
     }
+    @FXML
+    private Label felmeddelande;
 
     @FXML
     public void bytSida() {
@@ -68,6 +87,7 @@ public class BudgetMakerController {
         testSida.toFront();
         startSida.setVisible(false);
         testSida.setVisible(true);
+        updateCategoryList();
 
         new newBudget(EnterBudget, budgetAmount);
 
@@ -96,6 +116,24 @@ public class BudgetMakerController {
     public void budgetButtonPressed(){
         Budgetknapp.setStyle("-fx-background-color: #6a66a8; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
     }
+
+    private void updateCategoryList() {
+        Categorylist.getChildren().clear();
+        for (String category : catelist){
+            Categorylist.getChildren().add(new CategoryListItem(category, this));
+
+        }
+//        ArrayList<String> catelist = new ArrayList<>(Arrays.asList("mat","shopping","nöje", "övrigt"));
+//
+//        for (String category : catelist){
+//            categorylist.getChildren().add(new CategoryListItem(category, this));
+//        }
+    }
+
+
+
+
+
 
 
 }
