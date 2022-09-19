@@ -6,11 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
 
 import java.io.IOException;
 
 public class CategoryListItem extends AnchorPane {
+
     @FXML
     private Label categoryName;
 
@@ -20,19 +20,29 @@ public class CategoryListItem extends AnchorPane {
     private BudgetMakerController controller;
 
     public CategoryListItem(String category, BudgetMakerController controller){
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Categoryinput.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
+
+        FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/Categoryinput.fxml"));
+        myLoader.setRoot(this);
+        myLoader.setController(this);
 
         try {
-            fxmlLoader.load();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+            myLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
         }
-
         this.controller = controller;
         categoryName.setText(category);
+        categoryName.setAccessibleText(category.toLowerCase().replace("visa ", ""));
+
+
     }
 
+    public Label getName(){
+        return this.categoryName; }
+
+    public void setCategoryAmount(int amount){
+
+    }
 
 }
+
