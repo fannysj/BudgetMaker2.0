@@ -33,7 +33,7 @@ public class BudgetMakerController {
     private Button backToOverview;
 
     @FXML
-    private Button addExpense;
+    private Button addNewExpense;
 
     @FXML
     private SplitPane addExpenseSplit;
@@ -45,10 +45,14 @@ public class BudgetMakerController {
     private AnchorPane addExpenseAnchorPane;
 
     @FXML
+    private AnchorPane addExpenseLeft;
+
+    @FXML
+    private Button addCurrentExpense;
+
+    @FXML
     public void setAddExpense(){
         addExpenseSplit.toFront();
-        overviewAnchorPane.setVisible(false);
-        addExpenseSplit.setVisible(true);
     }
 
     @FXML
