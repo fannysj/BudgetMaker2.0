@@ -21,13 +21,14 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetMakerController">
+
    <effect>
       <ColorAdjust brightness="0.19" />
    </effect>
    <children>
       <StackPane layoutX="-5.0" prefHeight="610.0" prefWidth="802.0">
          <children>
-            <AnchorPane fx:id="startSida" visible="false">
+            <AnchorPane fx:id="startSida" prefHeight="609.0" prefWidth="724.0" visible="false">
                <children>
                   <Text layoutX="230.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Din budget">
                      <font>
@@ -58,7 +59,8 @@
                         <Image url="@images/bakgrundbudget.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="229.0" layoutY="399.0" mnemonicParsing="false" onAction="#submit" onMouseClicked="#bytSida" onMouseEntered="#hoverOverBudgetButton" onMouseExited="#stopHoverOverBudgetButton" onMousePressed="#budgetButtonPressed" prefHeight="76.0" prefWidth="315.0" style="-fx-background-color: a8a2f8; -fx-background-radius: 20px; -fx-border-color: fff; -fx-border-radius: 20px;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Skapa budgetmål" AnchorPane.bottomAnchor="133.0" AnchorPane.rightAnchor="258.0">
+
+                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="229.0" layoutY="399.0" mnemonicParsing="false" onMouseClicked="#bytSida" onMouseEntered="#hoverOverBudgetButton" onMouseExited="#stopHoverOverBudgetButton" onMousePressed="#budgetButtonPressed" prefHeight="76.0" prefWidth="315.0" style="-fx-background-color: a8a2f8; -fx-background-radius: 20px; -fx-border-color: fff; -fx-border-radius: 20px;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Skapa budgetmål" AnchorPane.bottomAnchor="133.0" AnchorPane.rightAnchor="258.0">
                      <font>
                         <Font name="SukhumvitSet-Thin" size="33.0" />
                      </font>
@@ -80,6 +82,7 @@
                      <opaqueInsets>
                         <Insets />
                      </opaqueInsets>
+
                   </TextField>
                   <Text layoutX="525.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" wrappingWidth="24.3946533203125">
                      <font>
@@ -208,6 +211,7 @@
                   <Text fill="#504d7c" layoutX="43.0" layoutY="97.0" stroke="#000000e5" strokeType="OUTSIDE" strokeWidth="0.0" text="Budgetera ut dina pengar" wrappingWidth="495.36707408702705">
                      <font>
                         <Font name="Avenir Book" size="34.0" />
+
                      </font>
                   </Text>
                   <Button layoutX="567.0" layoutY="500.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="188.0" style="-fx-border-radius: fff; -fx-border-radius: 15px;" text="Klar" textFill="#504d7c">
@@ -215,6 +219,12 @@
                         <Font name="Avenir Book" size="26.0" />
                      </font>
                   </Button>
+                  <AnchorPane layoutX="25.0" layoutY="135.0" prefHeight="425.0" prefWidth="528.0">
+                     <children>
+                        <FlowPane fx:id="Categorylist" prefHeight="425.0" prefWidth="528.0" />
+                     </children>
+                  </AnchorPane>
+
                   <Button fx:id="goBack" layoutX="26.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" text="Tillbaka" />
                </children>
             </AnchorPane>
