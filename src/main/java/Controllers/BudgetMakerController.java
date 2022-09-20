@@ -54,6 +54,17 @@ public class BudgetMakerController implements Initializable {
     @FXML
     private AnchorPane addExpenseAnchorPane;
 
+    @FXML
+    private AnchorPane oversiktKategori;
+
+    @FXML
+    private Button closeCatOversikt;
+
+    public void setCloseCatOversikt() {
+        startSida.toFront();
+        startSida.setVisible(true);
+        oversiktKategori.setVisible(false);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
