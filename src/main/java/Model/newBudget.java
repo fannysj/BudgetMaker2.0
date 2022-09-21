@@ -33,7 +33,7 @@ public class newBudget {
     }
 
     public void addCategoryExpense(int amount){
-        System.out.println(amount);
+       // System.out.println(amount);
         //System.out.println("total: " + totalBudget);
         int newAmount = getIntFromAmountLabel() - amount;
         this.amount.setText(String.valueOf(newAmount));
