@@ -57,6 +57,14 @@
     -fx-background-radius: 10px;
 }
 
+.rectangle {
+
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-cursor: hand;
+    -fx-background-radius: 10px;
+}
+
 .navbtn {
     -fx-background-color: #ffffff;
     -fx-cursor: hand;
