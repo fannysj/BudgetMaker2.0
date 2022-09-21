@@ -10,20 +10,23 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
 public class CategoryListItem extends AnchorPane {
-
     @FXML
     private Label categoryName;
-
     @FXML
     private TextField categoryAmount;
 
+    private int amountChanged = 0;
+
+    private Category category;
     private BudgetMakerController controller;
 
-    public CategoryListItem(String category, BudgetMakerController controller){
+    public CategoryListItem(Category category, BudgetMakerController controller){
 
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/Categoryinput.fxml"));
         myLoader.setRoot(this);
         myLoader.setController(this);
+
+        this.category = category;
 
         try {
             myLoader.load();
@@ -31,17 +34,25 @@ public class CategoryListItem extends AnchorPane {
             throw new RuntimeException(exception);
         }
         this.controller = controller;
-        categoryName.setText(category);
-        categoryName.setAccessibleText(category.toLowerCase().replace("visa ", ""));
-
+        categoryName.setText(category.getName());
 
     }
 
-    public Label getName(){
-        return this.categoryName; }
+    @FXML
+    private void onUpdateAmount(){
+        int newValue = - amountChanged;
+        if(this.categoryAmount.getText().isEmpty()){
+            amountChanged = 0;
+        } else {
+            newValue = Integer.parseInt(this.categoryAmount.getText());
+            newValue = newValue - amountChanged;
+            amountChanged = Integer.parseInt(this.categoryAmount.getText());
+        }
+        controller.onUpdateBudget(newValue);
+    }
 
-    public void setCategoryAmount(int amount){
-
+    public int getCategoryAmount() {
+        return amountChanged;
     }
 
 }

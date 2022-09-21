@@ -5,22 +5,25 @@ import java.util.Arrays;
 import java.util.jar.Attributes;
 
 public class Category {
-    ArrayList<Category> categories = new ArrayList<Category>();
-
     private String name;
 
-    private int amount;
+    private double amount;
 
 
-    public Category(String name, int amount){
+    public Category(String name){
         this.name = name;
+    }
+
+    public void setAmount(double amount) {
         this.amount = amount;
+    }
 
-        categories.add(this);
+    public double getAmount() {
+        return amount;
+    }
 
-        System.out.println(categories);
-
-
+    public String getName() {
+        return name;
     }
 
 

@@ -1,6 +1,7 @@
 package Controllers;
 
 
+import Model.Category;
 import Model.CategoryListItem;
 import Model.newBudget;
 import javafx.fxml.FXML;
@@ -15,8 +16,11 @@ import java.net.URL;
 
 public class BudgetMakerController implements Initializable {
 
-    private ArrayList<String> catelist = new ArrayList(Arrays.asList("Mat","Shopping","Nöje","Övrigt"));
+    private ArrayList<Category> catelist = new ArrayList<>();
 
+    private ArrayList<CategoryListItem> categoryListArray = new ArrayList<>();
+
+    newBudget currentBudget;
 
     @FXML
     private TextField EnterBudget;
@@ -91,12 +95,18 @@ public class BudgetMakerController implements Initializable {
     @FXML
     public void bytSida() {
 
+        catelist.add(new Category("Mat"));
+        catelist.add(new Category("Shopping"));
+        catelist.add(new Category("Nöje"));
+        catelist.add(new Category("Övrigt"));
+        catelist.add(new Category("Bajs"));
+
         testSida.toFront();
         startSida.setVisible(false);
         testSida.setVisible(true);
-        updateCategoryList();
+        currentBudget = new newBudget(EnterBudget, budgetAmount);
 
-        new newBudget(EnterBudget, budgetAmount);
+        updateCategoryList();
 
     }
 
@@ -105,6 +115,17 @@ public class BudgetMakerController implements Initializable {
         startSida.toFront();
         startSida.setVisible(true);
         testSida.setVisible(false);
+    }
+
+    @FXML
+    public void doneButton(){
+        for(int i = 0; i < catelist.size(); i++){
+            catelist.get(i).setAmount(categoryListArray.get(i).getCategoryAmount());
+        }
+    }
+
+    public void onUpdateBudget(int amount){
+        currentBudget.addCategoryExpense(amount);
     }
 
 
@@ -126,21 +147,11 @@ public class BudgetMakerController implements Initializable {
 
     private void updateCategoryList() {
         Categorylist.getChildren().clear();
-        for (String category : catelist){
-            Categorylist.getChildren().add(new CategoryListItem(category, this));
+        for (Category category : catelist){
+            CategoryListItem newCategoryList = new CategoryListItem(category, this);
+            categoryListArray.add(newCategoryList);
+            Categorylist.getChildren().add(newCategoryList);
 
         }
-//        ArrayList<String> catelist = new ArrayList<>(Arrays.asList("mat","shopping","nöje", "övrigt"));
-//
-//        for (String category : catelist){
-//            categorylist.getChildren().add(new CategoryListItem(category, this));
-//        }
     }
-
-
-
-
-
-
-
 }
