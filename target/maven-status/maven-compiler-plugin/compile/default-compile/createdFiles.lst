@@ -1,4 +1,7 @@
+Controllers/HelloController.class
+Model/CategoryListItem.class
+com/example/budgetmaker2_0/HelloApplication.class
+Model/newBudget.class
+Model/Category.class
 module-info.class
-com\example\budgetmaker2_0\HelloApplication.class
-Controllers\HelloController.class
-Controllers\BudgetMakerController.class
+Controllers/BudgetMakerController.class
