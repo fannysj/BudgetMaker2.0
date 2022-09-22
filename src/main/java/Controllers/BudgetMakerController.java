@@ -1,17 +1,17 @@
 package Controllers;
 
+
 import Model.Category;
-import View.CategoryListItem;
+import Model.CategoryListItem;
 import Model.newBudget;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 
+import java.io.IOException;
+import java.util.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -79,18 +79,20 @@ public class BudgetMakerController implements Initializable {
 
     }
 
+    @FXML
     public void setAddExpense(){
         addExpenseSplit.toFront();
         overviewAnchorPane.setVisible(false);
         addExpenseSplit.setVisible(true);
     }
 
-
+    @FXML
     public void setBackToOverview() {
         overviewAnchorPane.toFront();
         addExpenseSplit.setVisible(false);
         overviewAnchorPane.setVisible(true);
     }
+    @FXML
     private Label felmeddelande;
 
     @FXML
@@ -112,45 +114,59 @@ public class BudgetMakerController implements Initializable {
     }
 
     @FXML
-    public void goBackonePage(){
+    public void goBackonePage() {
         startSida.toFront();
         startSida.setVisible(true);
         testSida.setVisible(false);
     }
 
     @FXML
-    public void doneButton(){
-        for(int i = 0; i < catelist.size(); i++){
+    public void doneButton() {
+        for (int i = 0; i < catelist.size(); i++) {
             catelist.get(i).setAmount(categoryListArray.get(i).getCategoryAmount());
         }
     }
 
-    public void onUpdateBudget(int amount){
+    public void onUpdateBudget(int amount) {
         currentBudget.addCategoryExpense(amount);
     }
 
 
-    public void hoverOverBudgetButton(){
+    @FXML
+    public void hoverOverBudgetButton() {
         Budgetknapp.setStyle("-fx-background-color: #cbc8f6; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
-
 
     }
 
+    @FXML
     public void stopHoverOverBudgetButton(){
         Budgetknapp.setStyle("-fx-background-color: #a8a2f8; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
     }
 
+    @FXML
     public void budgetButtonPressed(){
         Budgetknapp.setStyle("-fx-background-color: #6a66a8; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
     }
 
     private void updateCategoryList() {
         Categorylist.getChildren().clear();
-        for (Category category : catelist){
+        for (Category category : catelist) {
             CategoryListItem newCategoryList = new CategoryListItem(category, this);
             categoryListArray.add(newCategoryList);
             Categorylist.getChildren().add(newCategoryList);
 
         }
     }
+
+    @FXML
+    public void switchToScene2() throws IOException {
+        HelloApplication.setRoot("overview2");
+    }
+
+    @FXML
+    public void switchToScene1() throws IOException {
+        HelloApplication.setRoot("hello-view");
+    }
+
+
 }
