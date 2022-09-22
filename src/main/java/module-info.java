@@ -10,4 +10,5 @@ module com.example.budgetmaker2_0 {
     opens Controllers to javafx.fxml;
 
     opens Model to javafx.fxml;
+    opens View to javafx.fxml;
 }

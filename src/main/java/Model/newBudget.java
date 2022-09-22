@@ -12,15 +12,14 @@ public class newBudget {
         this.enter = enterbudget;
         this.amount = amountbudget;
 
-
-//
-        int x = getIntfromTextField(enter);
-        amount.setText(Integer.toString(x));
+        placeBudgetonLabel(enter, amount);
         this.totalBudget = getIntFromAmountLabel();
     }
 
-    public void placeBudgetonLabel(TextField amount, Label enter){
-        enter.setText(amount.getText());
+    public void placeBudgetonLabel(TextField enter, Label amount){
+        int x = getIntfromTextField(enter);
+        amount.setText(Integer.toString(x));
+
     }
 
     public static int getIntfromTextField(TextField enter){

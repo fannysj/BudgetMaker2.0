@@ -1,17 +1,20 @@
 package Controllers;
 
-
 import Model.Category;
-import Model.CategoryListItem;
+import View.CategoryListItem;
 import Model.newBudget;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.SplitPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 
-import java.util.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 
 public class BudgetMakerController implements Initializable {
@@ -64,6 +67,7 @@ public class BudgetMakerController implements Initializable {
     @FXML
     private Button closeCatOversikt;
 
+    @FXML
     public void setCloseCatOversikt() {
         startSida.toFront();
         startSida.setVisible(true);
@@ -72,24 +76,21 @@ public class BudgetMakerController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        updateCategoryList();
 
     }
 
-    @FXML
     public void setAddExpense(){
         addExpenseSplit.toFront();
         overviewAnchorPane.setVisible(false);
         addExpenseSplit.setVisible(true);
     }
 
-    @FXML
+
     public void setBackToOverview() {
         overviewAnchorPane.toFront();
         addExpenseSplit.setVisible(false);
         overviewAnchorPane.setVisible(true);
     }
-    @FXML
     private Label felmeddelande;
 
     @FXML
@@ -129,18 +130,16 @@ public class BudgetMakerController implements Initializable {
     }
 
 
-    @FXML
     public void hoverOverBudgetButton(){
         Budgetknapp.setStyle("-fx-background-color: #cbc8f6; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
 
+
     }
 
-    @FXML
     public void stopHoverOverBudgetButton(){
         Budgetknapp.setStyle("-fx-background-color: #a8a2f8; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
     }
 
-    @FXML
     public void budgetButtonPressed(){
         Budgetknapp.setStyle("-fx-background-color: #6a66a8; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
     }
