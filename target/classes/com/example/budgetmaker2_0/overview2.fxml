@@ -20,6 +20,49 @@
    <children>
       <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="406.0" prefWidth="609.0">
          <children>
+            <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="401.0" prefWidth="606.0">
+               <children>
+                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" layoutX="27.0" layoutY="25.0" prefHeight="357.0" prefWidth="556.0" style="-fx-background-color: black;">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d5bbeb" height="49.0" layoutX="51.0" layoutY="150.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Rectangle>
+                              <Text layoutX="62.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belopp" />
+                              <TextField layoutX="141.0" layoutY="161.0" prefHeight="26.0" prefWidth="99.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d5bbebc4" height="95.0" layoutX="51.0" layoutY="218.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </Rectangle>
+                              <Text layoutX="64.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anteckning" />
+                              <TextField layoutX="60.0" layoutY="245.0" prefHeight="60.0" prefWidth="183.0" />
+                              <ChoiceBox layoutX="51.0" layoutY="95.0" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: #d5bbeb#d5bbeb;">
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </ChoiceBox>
+                              <Text layoutX="60.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välj kategori" />
+                              <Text layoutX="50.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lägg till en ny utgift" wrappingWidth="183.0">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="backToOverview" layoutX="11.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Tillbaka" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="491.0" style="-fx-background-color: #dccee8#dccee8;">
+                           <children>
+                              <FlowPane layoutX="-3.0" layoutY="-1.0" prefHeight="355.0" prefWidth="250.0" />
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="overviewAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
                <children>
                   <Button layoutX="32.0" layoutY="36.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="162.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
@@ -160,49 +203,7 @@
                         <Image url="@images/smiley.png" />
                      </image>
                   </ImageView>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="401.0" prefWidth="606.0">
-               <children>
-                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" layoutX="27.0" layoutY="25.0" prefHeight="357.0" prefWidth="556.0" style="-fx-background-color: black;">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
-                           <children>
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d5bbeb" height="49.0" layoutX="51.0" layoutY="150.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0">
-                                 <effect>
-                                    <DropShadow />
-                                 </effect>
-                              </Rectangle>
-                              <Text layoutX="62.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belopp" />
-                              <TextField layoutX="141.0" layoutY="161.0" prefHeight="26.0" prefWidth="99.0" />
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d5bbebc4" height="95.0" layoutX="51.0" layoutY="218.0" stroke="TRANSPARENT" strokeType="INSIDE" width="200.0">
-                                 <effect>
-                                    <DropShadow />
-                                 </effect>
-                              </Rectangle>
-                              <Text layoutX="64.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anteckning" />
-                              <TextField layoutX="60.0" layoutY="245.0" prefHeight="60.0" prefWidth="183.0" />
-                              <ChoiceBox layoutX="51.0" layoutY="95.0" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: #d5bbeb#d5bbeb;">
-                                 <effect>
-                                    <DropShadow />
-                                 </effect>
-                              </ChoiceBox>
-                              <Text layoutX="60.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välj kategori" />
-                              <Text layoutX="50.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lägg till en ny utgift" wrappingWidth="183.0">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </Text>
-                              <Button fx:id="backToOverview" layoutX="11.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Tillbaka" />
-                           </children>
-                        </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="491.0" style="-fx-background-color: #dccee8#dccee8;">
-                           <children>
-                              <FlowPane layoutX="-3.0" layoutY="-1.0" prefHeight="355.0" prefWidth="250.0" />
-                           </children>
-                        </AnchorPane>
-                    </items>
-                  </SplitPane>
+                  <Button layoutX="25.0" layoutY="23.0" mnemonicParsing="false" onAction="#switchToScene1" text="Button" />
                </children>
             </AnchorPane>
          </children>
