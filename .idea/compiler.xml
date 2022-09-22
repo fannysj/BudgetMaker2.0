@@ -11,7 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="BudgetMaker2.0" target="17" />
-      <module name="BudgetMaker2_0" target="17" />
+      <module name="BudgetMaker2_0" target="18" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
