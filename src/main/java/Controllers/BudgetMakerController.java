@@ -66,6 +66,9 @@ public class BudgetMakerController implements Initializable {
     @FXML
     private Button closeCatOversikt;
 
+    @FXML
+    private Button klarKnapp;
+
     public void setCloseCatOversikt() {
         startSida.toFront();
         startSida.setVisible(true);
@@ -131,21 +134,6 @@ public class BudgetMakerController implements Initializable {
     }
 
 
-    @FXML
-    public void hoverOverBudgetButton() {
-        Budgetknapp.setStyle("-fx-background-color: #cbc8f6; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
-
-    }
-
-    @FXML
-    public void stopHoverOverBudgetButton() {
-        Budgetknapp.setStyle("-fx-background-color: #a8a2f8; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
-    }
-
-    @FXML
-    public void budgetButtonPressed() {
-        Budgetknapp.setStyle("-fx-background-color: #6a66a8; -fx-background-radius: 20px; -fx-border-color: #fff; -fx-border-radius: 20px;");
-    }
 
     private void updateCategoryList() {
         Categorylist.getChildren().clear();
