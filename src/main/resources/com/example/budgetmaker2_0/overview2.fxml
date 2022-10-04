@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="headAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
+<AnchorPane fx:id="headAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetMakerController">
    <children>
       <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="406.0" prefWidth="609.0">
          <children>
@@ -74,10 +75,14 @@
                         </DropShadow>
                      </effect>
                   </Button>
-                  <Label layoutX="85.0" layoutY="48.0" text="Spenderat" />
+                  <Label layoutX="81.0" layoutY="48.0" text="Spenderat">
+                     <font>
+                        <Font name="Avenir Next Bold" size="13.0" />
+                     </font>
+                  </Label>
                   <Label layoutX="70.0" layoutY="74.0" prefHeight="38.0" prefWidth="99.0" text="3468 kr">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Avenir Next Bold" size="25.0" />
                      </font>
                   </Label>
                   <Button layoutX="224.0" layoutY="36.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="162.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
@@ -89,10 +94,14 @@
                         </DropShadow>
                      </effect>
                   </Button>
-                  <Label layoutX="264.0" layoutY="48.0" text="Kvar av budget" />
+                  <Label layoutX="264.0" layoutY="48.0" text="Kvar av budget">
+                     <font>
+                        <Font name="Avenir Next Bold" size="13.0" />
+                     </font>
+                  </Label>
                   <Label layoutX="264.0" layoutY="74.0" prefHeight="38.0" prefWidth="99.0" text="5378 kr">
                      <font>
-                        <Font size="25.0" />
+                        <Font name="Avenir Next Bold" size="25.0" />
                      </font>
                   </Label>
                   <Button layoutX="32.0" layoutY="180.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="348.0">
@@ -104,7 +113,6 @@
                         </DropShadow>
                      </effect>
                   </Button>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f4891" height="10.0" layoutX="73.0" layoutY="202.0" stroke="TRANSPARENT" strokeType="INSIDE" width="267.0" />
                   <Text layoutX="74.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mat">
                      <font>
                         <Font size="12.0" />
@@ -113,7 +121,8 @@
                   <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="40.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/food.png" />
-                     </image></ImageView>
+                     </image>
+                  </ImageView>
                   <Button layoutX="32.0" layoutY="233.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="348.0">
                      <effect>
                         <DropShadow>
@@ -123,15 +132,14 @@
                         </DropShadow>
                      </effect>
                   </Button>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1f93ff7d" height="10.0" layoutX="72.0" layoutY="254.0" stroke="TRANSPARENT" strokeType="INSIDE" width="267.0" />
-                  <Label layoutX="346.0" layoutY="239.0" text="100">
+                  <Label layoutX="350.0" layoutY="239.0" text="100">
                      <font>
-                        <Font size="10.0" />
+                        <Font name="Avenir Next Bold" size="10.0" />
                      </font>
                   </Label>
-                  <Label layoutX="346.0" layoutY="251.0" text="500">
+                  <Label layoutX="350.0" layoutY="251.0" text="500">
                      <font>
-                        <Font size="10.0" />
+                        <Font name="Avenir Next Bold" size="10.0" />
                      </font>
                   </Label>
                   <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="39.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true">
@@ -153,7 +161,6 @@
                         </DropShadow>
                      </effect>
                   </Button>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1fff787e" height="10.0" layoutX="74.0" layoutY="308.0" stroke="TRANSPARENT" strokeType="INSIDE" width="267.0" />
                   <Text layoutX="73.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nöje">
                      <font>
                         <Font size="12.0" />
@@ -168,7 +175,6 @@
                         </DropShadow>
                      </effect>
                   </Button>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e1ff1f8a" height="10.0" layoutX="73.0" layoutY="363.0" stroke="#03030300" strokeType="INSIDE" width="267.0" />
                   <Text layoutX="74.0" layoutY="358.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Övrigt">
                      <font>
                         <Font size="12.0" />
@@ -183,7 +189,7 @@
                         </DropShadow>
                      </effect>
                      <font>
-                        <Font size="16.0" />
+                        <Font name="Avenir Next Bold" size="13.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -203,7 +209,40 @@
                         <Image url="@images/smiley.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="25.0" layoutY="23.0" mnemonicParsing="false" onAction="#switchToScene1" text="Button" />
+                  <Label layoutX="350.0" layoutY="293.0" text="100">
+                     <font>
+                        <Font name="Avenir Next Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="350.0" layoutY="305.0" text="500">
+                     <font>
+                        <Font name="Avenir Next Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="352.0" layoutY="350.0" text="100">
+                     <font>
+                        <Font name="Avenir Next Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="352.0" layoutY="363.0" text="500">
+                     <font>
+                        <Font name="Avenir Next Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="351.0" layoutY="198.0" text="100">
+                     <font>
+                        <Font name="Avenir Next Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="351.0" layoutY="185.0" text="500">
+                     <font>
+                        <Font name="Avenir Next Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <ProgressBar layoutX="73.0" layoutY="200.0" prefHeight="14.0" prefWidth="267.0" progress="0.0" />
+                  <ProgressBar layoutX="71.0" layoutY="253.0" prefHeight="14.0" prefWidth="267.0" progress="0.0" />
+                  <ProgressBar layoutX="72.0" layoutY="307.0" prefHeight="14.0" prefWidth="267.0" progress="0.0" />
+                  <ProgressBar layoutX="73.0" layoutY="362.0" prefHeight="14.0" prefWidth="267.0" progress="0.0" />
                </children>
             </AnchorPane>
          </children>

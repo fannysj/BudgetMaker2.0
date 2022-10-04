@@ -58,14 +58,16 @@ public class Category {
         addTransactionToList(transaction);
     }
 
-    public void addmultipleTransactions(Transaction t){
+    public void addMultipleTransactions(Transaction t){
         List<Transaction> Temp = new ArrayList<>();
         Temp.add(t);
-        System.out.println(Temp);
         for (Transaction o: Temp){
-
+            placeIntoTransactionList(o);
         }
+    }
 
+    public void placeIntoTransactionList(Transaction t){
+        transactionsList.add(t);
     }
 
     public void addTransactionToList(Transaction expense){
