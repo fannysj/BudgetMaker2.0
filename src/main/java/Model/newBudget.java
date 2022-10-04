@@ -11,8 +11,6 @@ public class newBudget {
     public newBudget(TextField enterbudget, Label amountbudget) {
         this.enter = enterbudget;
         this.amount = amountbudget;
-
-
 //
         int x = getIntfromTextField(enter);
         amount.setText(Integer.toString(x));
@@ -33,7 +31,7 @@ public class newBudget {
     }
 
     public void addCategoryExpense(int amount){
-       // System.out.println(amount);
+        // System.out.println(amount);
         //System.out.println("total: " + totalBudget);
         int newAmount = getIntFromAmountLabel() - amount;
         this.amount.setText(String.valueOf(newAmount));

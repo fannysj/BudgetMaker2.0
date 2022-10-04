@@ -10,6 +10,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import com.google.gson.GsonBuilder;
+
 
 import java.io.IOException;
 import java.util.*;
@@ -134,7 +136,6 @@ public class BudgetMakerController implements Initializable {
     }
 
 
-
     private void updateCategoryList() {
         Categorylist.getChildren().clear();
         for (Category category : catelist) {
@@ -146,14 +147,14 @@ public class BudgetMakerController implements Initializable {
     }
 
     @FXML
-    public void switchToScene2() throws IOException {
+       public void switchToScene2() throws IOException {
         HelloApplication.setRoot("overview2");
-    }
+      }
 
     @FXML
-    public void switchToScene1() throws IOException {
+      public void switchToScene1() throws IOException {
         HelloApplication.setRoot("hello-view");
     }
-
-
 }
+
+
