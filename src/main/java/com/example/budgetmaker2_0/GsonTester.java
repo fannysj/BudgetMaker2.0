@@ -1,6 +1,6 @@
 package com.example.budgetmaker2_0;
 
-import Model.newBudget;
+import Model.Category;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import javafx.application.Application;
