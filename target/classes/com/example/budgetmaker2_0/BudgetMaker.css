@@ -1,0 +1,96 @@
+/* Fonts */
+.font-inter {
+    -fx-font-family: Inter;
+}
+
+/* General classes */
+.curved-corners {
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+}
+
+.background-white {
+    -fx-background-color: #ffffff;
+}
+
+.background-blue {
+    -fx-background-color: #71BCF2;
+}
+.background-grey {
+    -fx-background-color: #efefef;
+}
+
+.shopping-cart-view {
+    -fx-background-color: #71BCF2;
+    -fx-background-radius: 50 50 0 0;
+}
+
+/* Header */
+.title {
+    -fx-font-family: Gruppo;
+}
+
+/* Items */
+.item-curved-all-around {
+    -fx-background-radius: 25 25 25 25;
+}
+.item-curved-bottom {
+    -fx-background-radius: 0 0 25 25;
+}
+.item-curved-top {
+    -fx-background-radius: 10 10 0 0;
+}
+.item-image-curve {
+    -fx-arc-width: 10;
+}
+
+.btn {
+-fx-background-color:
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "avril next";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 20px;
+    -fx-padding: 10 20 10 20;
+}
+
+
+.rectangle {
+
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-cursor: hand;
+    -fx-background-radius: 10px;
+}
+
+.text {
+    -fx-background-color:
+            linear-gradient(#f2f2f2, #d6d6d6),
+            linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
+            linear-gradient(#dddddd 0%, #f6f6f6 50%);
+        -fx-background-radius: 8,7,6;
+        -fx-background-insets: 0,1,2;
+        -fx-text-fill: black;
+}
+
+/* Checkout */
+.checkout-btn {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 100;
+    -fx-border-radius: 100;
+    -fx-text-fill: #71BCF2;
+    -fx-font-family: "Inria sans";
+    -fx-font-size: 20;
+
+}
+
+/* Sidebar Navigation */
+.nav-card {
+    -fx-background-radius: 0 25 25 0;
+}
