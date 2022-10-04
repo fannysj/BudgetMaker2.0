@@ -58,14 +58,16 @@ public class Category {
         addTransactionToList(transaction);
     }
 
-    public void addmultipleTransactions(Transaction t){
+    public void addMultipleTransactions(Transaction t){
         List<Transaction> Temp = new ArrayList<>();
         Temp.add(t);
-        System.out.println(Temp);
         for (Transaction o: Temp){
-
+            placeIntoTransactionList(o);
         }
+    }
 
+    public void placeIntoTransactionList(Transaction t){
+        transactionsList.add(t);
     }
 
     public void addTransactionToList(Transaction expense){
@@ -120,6 +122,28 @@ public class Category {
         transactionsList.remove(transactionsList.size()-1);
         System.out.println(transactionsList.get(0).getName());
     }
+
+
+    //Change Transaction
+
+    //kopierar:
+//    public void changeTransaction(Transaction T){
+//        copyTransaction(T);
+//        transactionsList.set(transactionsList.indexOf(T), T);
+//    }
+//    public Transaction copyTransaction(Transaction t){
+//        return new Transaction(t.getTransactionAmount() , t.getName(), t.getNotes(), t.getCategory(), t.getDate());
+//    }
+//
+//    //ta bort och ersätt gammal:
+//    public List<Transaction> replaceTransaction(Transaction t){
+//        transactionsList.remove(t);
+//        int index = transactionsList.indexOf(t);
+//        Transaction newTrans = new Transaction();
+//        transactionsList.set(index, newTrans);
+//        return transactionsList;
+//    }
+//
 
 
     // Observer
