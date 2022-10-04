@@ -124,6 +124,28 @@ public class Category {
     }
 
 
+    //Change Transaction
+
+    //kopierar:
+//    public void changeTransaction(Transaction T){
+//        copyTransaction(T);
+//        transactionsList.set(transactionsList.indexOf(T), T);
+//    }
+//    public Transaction copyTransaction(Transaction t){
+//        return new Transaction(t.getTransactionAmount() , t.getName(), t.getNotes(), t.getCategory(), t.getDate());
+//    }
+//
+//    //ta bort och ersätt gammal:
+//    public List<Transaction> replaceTransaction(Transaction t){
+//        transactionsList.remove(t);
+//        int index = transactionsList.indexOf(t);
+//        Transaction newTrans = new Transaction();
+//        transactionsList.set(index, newTrans);
+//        return transactionsList;
+//    }
+//
+
+
     // Observer
     /**
      * Add/Remove observer
