@@ -6,6 +6,7 @@ import Model.Category;
 import View.CategoryListItem;
 import View.CategoryOverviewItem;
 import com.example.budgetmaker2_0.HelloApplication;
+import com.example.budgetmaker2_0.User;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -25,6 +26,7 @@ public class BudgetModelController implements Initializable {
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
+    User currentUser;
     BudgetModel currentBudget;
 
     @FXML
@@ -75,10 +77,17 @@ public class BudgetModelController implements Initializable {
     @FXML
     private FlowPane OverviewCategory;
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
     @FXML
     public void setNewBudgetModel(){
         int budgetValue = Integer.parseInt(EnterBudget.getText());
-        new BudgetModel(budgetValue);
+        currentUser = new User();
+        currentUser.createNewBudget(budgetValue);
+        currentBudget = currentUser.getBudgetModel();
         String str = EnterBudget.getText();
         budgetAmount.setText(str);
 
@@ -100,10 +109,6 @@ public class BudgetModelController implements Initializable {
         oversiktKategori.setVisible(false);
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 
     @FXML
     public void setAddExpense() {
