@@ -53,10 +53,6 @@ public class CategoryListItem extends AnchorPane {
 
     }
 
-    private void fillFlowPane(){
-
-    }
-
 
 }
 

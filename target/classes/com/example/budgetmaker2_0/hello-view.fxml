@@ -60,20 +60,20 @@
                   </Button>
                   <AnchorPane layoutX="25.0" layoutY="135.0" prefHeight="425.0" prefWidth="528.0">
                      <children>
-                        <FlowPane fx:id="Categorylist" layoutY="8.0" prefHeight="422.0" prefWidth="528.0" style="-fx-background-color: #f2f2f2;" styleClass="rectangle" stylesheets="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/BudgetMaker.css" />
+                        <FlowPane fx:id="CategoryDivideFlowpane" layoutY="8.0" prefHeight="422.0" prefWidth="528.0" style="-fx-background-color: #f2f2f2;" styleClass="rectangle" stylesheets="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/BudgetMaker.css" />
                      </children>
                   </AnchorPane>
                   <Button fx:id="goBack" layoutX="27.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" prefHeight="31.0" prefWidth="51.0" style="-fx-background-color: ffff;" styleClass="btn" stylesheets="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/BudgetMaker.css" textFill="#0000000a">
                      <graphic>
                         <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/back.png" />
+                              <Image url="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/images/back.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="oversiktKategori" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" visible="false">
+            <AnchorPane fx:id="oversiktKategori" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="578.0" layoutX="13.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="778.0" />
                   <BorderPane layoutX="19.0" layoutY="12.0" prefHeight="566.0" prefWidth="766.0">
@@ -94,7 +94,7 @@
                   </BorderPane>
                   <ImageView fitHeight="59.0" fitWidth="61.0" layoutX="28.0" layoutY="25.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@images/bag.png" />
+                        <Image url="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/images/bag.png" />
                      </image>
                   </ImageView>
                   <Rectangle arcHeight="60.0" arcWidth="60.0" fill="WHITE" height="144.0" layoutX="363.0" layoutY="27.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="158.0" />
@@ -121,7 +121,7 @@
                   <Button fx:id="closeCatOversikt" layoutX="734.0" layoutY="15.0" mnemonicParsing="false" text="stäng" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="startSida" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="724.0">
+            <AnchorPane fx:id="startSida" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="724.0" visible="false">
                <children>
                   <ImageView fitHeight="802.0" fitWidth="952.0" layoutX="-125.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.33331298828125" AnchorPane.rightAnchor="-22.0">
                      <image>

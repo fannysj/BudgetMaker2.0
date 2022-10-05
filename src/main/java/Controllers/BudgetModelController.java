@@ -19,8 +19,6 @@ import java.util.ResourceBundle;
 
 public class BudgetModelController implements Initializable {
 
-    private ArrayList<Category> catelist = new ArrayList<>();
-
     private ArrayList<CategoryListItem> categoryListArray = new ArrayList<>();
 
     BudgetModel currentBudget;
@@ -44,7 +42,7 @@ public class BudgetModelController implements Initializable {
     private Button goBack;
 
     @FXML
-    private FlowPane Categorylist;
+    private FlowPane CategoryDivideFlowpane;
 
     @FXML
     private Button backToOverview;
@@ -120,14 +118,15 @@ public class BudgetModelController implements Initializable {
     }
 
     private void updateCategoryList() {
-        Categorylist.getChildren().clear();
-        for (Category category : catelist) {
+        CategoryDivideFlowpane.getChildren().clear();
+        for (Category category : currentBudget.categoryList) {
             CategoryListItem newCategoryList = new CategoryListItem(category, this);
             categoryListArray.add(newCategoryList);
-            Categorylist.getChildren().add(newCategoryList);
+            CategoryDivideFlowpane.getChildren().add(newCategoryList);
 
         }
     }
+
 
     @FXML
     public void switchToScene2() throws IOException {
