@@ -30,7 +30,7 @@ public class BudgetModel implements Serializable {
         mat.newTransaction(1000, "ticketmaster", "markoolio", LocalDate.now());
 
         mat.printTransactioninList();
-        TotalAmountofCategories();
+        currentAmount();
         mat.AmountLeftToSpend();
         mat.getTransactionsList().get(2).setDate(1999,6,4);
         mat.sortByAmount();
@@ -50,7 +50,7 @@ public class BudgetModel implements Serializable {
     }
 
     //Total mängd av spenderade pengar i varje kategori
-    public void TotalAmountofCategories(){
+    public void currentAmount(){
         amountSpent = 0;
         for (Category c : categoryList){
             amountSpent += c.getSpentAmount();

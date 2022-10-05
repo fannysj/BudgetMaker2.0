@@ -13,4 +13,7 @@ module com.example.budgetmaker2_0 {
 
     opens Model to javafx.fxml;
     exports Model;
+
+    opens View to javafx.fxml;
+    exports View;
 }

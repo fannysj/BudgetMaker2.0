@@ -40,5 +40,23 @@ public class CategoryListItem extends AnchorPane {
 
     }
 
+    @FXML
+    private void onUpdateAmount(){
+        int newValue = - amountChanged;
+        if(this.categoryAmount.getText().isEmpty()){
+            amountChanged = 0;
+        } else {
+            newValue = Integer.parseInt(this.categoryAmount.getText());
+            newValue = newValue - amountChanged;
+            amountChanged = Integer.parseInt(this.categoryAmount.getText());
+        }
+
+    }
+
+    private void fillFlowPane(){
+
+    }
+
+
 }
 

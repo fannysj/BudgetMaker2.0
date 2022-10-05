@@ -70,6 +70,9 @@ public class BudgetModelController implements Initializable {
     @FXML
     private Button klarKnapp;
 
+    @FXML
+    private FlowPane OverviewCategory;
+
     public void setCloseCatOversikt() {
         startSida.toFront();
         startSida.setVisible(true);
@@ -100,13 +103,6 @@ public class BudgetModelController implements Initializable {
 
     @FXML
     public void bytSida() {
-
-        catelist.add(new Category("Mat", 500));
-        catelist.add(new Category("Shopping", 200));
-        catelist.add(new Category("Nöje", 100));
-        catelist.add(new Category("Övrigt", 50));
-        catelist.add(new Category("Bajs", 800));
-
         testSida.toFront();
         startSida.setVisible(false);
         testSida.setVisible(true);
@@ -143,6 +139,12 @@ public class BudgetModelController implements Initializable {
         HelloApplication.setRoot("hello-view");
     }
 
-
+    @FXML
+    public void goToCategoryOverview() throws IOException {
+        HelloApplication.setRoot("hello-view");
+        testSida.setVisible(false);
+        startSida.setVisible(false);
+        oversiktKategori.setVisible(true);
+    }
 }
 

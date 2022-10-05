@@ -20,14 +20,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
    <effect>
       <ColorAdjust brightness="0.19" />
    </effect>
    <children>
       <StackPane layoutX="-5.0" prefHeight="610.0" prefWidth="802.0">
          <children>
-            <AnchorPane fx:id="testSida" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="805.0">
+            <AnchorPane fx:id="testSida" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="805.0" visible="false">
                <children>
 
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffe5" height="76.0" layoutX="25.0" layoutY="55.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="528.0" />
@@ -53,7 +53,7 @@
                         <Font name="Avenir Book" size="42.0" />
                      </font>
                   </Text>
-                  <Button fx:id="klarKnapp" alignment="TOP_LEFT" layoutX="568.0" layoutY="504.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="175.0" style="-fx-border-radius: fff; -fx-border-radius: 15px; -fx-background-color: ffffff;" styleClass="btn" stylesheets="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/BudgetMaker.css" text="Klar">
+                  <Button fx:id="klarKnapp" alignment="TOP_LEFT" layoutX="568.0" layoutY="504.0" mnemonicParsing="false" onMouseClicked="#switchToScene2" prefHeight="52.0" prefWidth="175.0" style="-fx-border-radius: fff; -fx-border-radius: 15px; -fx-background-color: ffffff;" styleClass="btn" stylesheets="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/BudgetMaker.css" text="Klar">
                      <font>
                         <Font name="Avenir Book" size="26.0" />
                      </font>

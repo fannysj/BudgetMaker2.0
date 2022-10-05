@@ -1,6 +1,6 @@
 package Model;
 
-import com.example.budgetmaker2_0.transactionObserver;
+import Model.TransactionObserver;
 
 import java.time.LocalDate;
 import java.util.*;
@@ -10,7 +10,7 @@ public class Category {
     private double goalAmount;
     public double spentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
-    private List<transactionObserver> observers = new ArrayList<>();
+    private List<TransactionObserver> observers = new ArrayList<>();
 
     public Category(String name, double goalAmount) {
         this.name = String.valueOf(name);
@@ -146,30 +146,30 @@ public class Category {
 //
 
 
-    // Observer
-    /**
-     * Add/Remove observer
-     *
-     * @param observer
-     */
-    public void addObserver(transactionObserver observer){
-        this.observers.add(observer);
-    }
-
-    public void removeObserver(transactionObserver observer){
-        this.observers.remove(observer);
-    }
-
-    public void notifyAllObserver(){
-        ArrayList<Transaction> transactionsCopy = new ArrayList<>(); //Ska vara Iterator?
-        // Collection.copy(transactionsCopy, transactionsList);
-        // Defensiv kodning
-
-        for(transactionObserver observer: observers){
-            observer.update(transactionsCopy);
-        }
-
-    }
+//    // Observer
+//    /**
+//     * Add/Remove observer
+//     *
+//     * @param observer
+//     */
+//    public void addObserver(TransactionObserver observer){
+//        this.observers.add(observer);
+//    }
+//
+//    public void removeObserver(TransactionObserver observer){
+//        this.observers.remove(observer);
+//    }
+//
+//    public void notifyAllObserver(){
+//        ArrayList<Transaction> transactionsCopy = new ArrayList<>(); //Ska vara Iterator?
+//        // Collection.copy(transactionsCopy, transactionsList);
+//        // Defensiv kodning
+//
+//        for(TransactionObserver observer: observers){
+//            observer.update();
+//        }
+//
+//    }
 
 }
 
