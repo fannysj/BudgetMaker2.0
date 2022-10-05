@@ -77,6 +77,12 @@ public class BudgetModelController implements Initializable {
     @FXML
     private FlowPane OverviewCategory;
 
+    @FXML
+    private Label leftOfBudgetDisplay;
+
+    @FXML
+    private Label spentOfBudgetDisplay;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -92,6 +98,7 @@ public class BudgetModelController implements Initializable {
         budgetAmount.setText(str);
 
     }
+
 
     @FXML
     public void changeToBudgetingSide() {
@@ -109,20 +116,6 @@ public class BudgetModelController implements Initializable {
         oversiktKategori.setVisible(false);
     }
 
-
-    @FXML
-    public void setAddExpense() {
-        addExpenseSplit.toFront();
-        overviewAnchorPane.setVisible(false);
-        addExpenseSplit.setVisible(true);
-    }
-
-    @FXML
-    public void setBackToOverview() {
-        overviewAnchorPane.toFront();
-        addExpenseSplit.setVisible(false);
-        overviewAnchorPane.setVisible(true);
-    }
 
     @FXML
     private Label felmeddelande;

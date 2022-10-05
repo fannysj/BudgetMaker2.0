@@ -51,7 +51,7 @@ public class Category {
 
 
     // Transaction Methods
-    public void newTransaction(double amount, String name, String note, LocalDate date) {
+    public void newTransaction(int amount, String name, String note, LocalDate date) {
         Transaction transaction = new Transaction(amount, name, note,this, date);
         addTransactionToList(transaction);
     }

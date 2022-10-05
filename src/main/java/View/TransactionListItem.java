@@ -1,10 +1,11 @@
 package View;
 
 import Controllers.BudgetModelController;
+import Controllers.TransactionsController;
 import Model.Transaction;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -12,22 +13,28 @@ import java.io.IOException;
 public class TransactionListItem extends AnchorPane {
 
     @FXML
-    private Label transactionName;
+    private Button addTransactionButton;
 
     @FXML
-    private Label transactionDate;
+    private DatePicker transactionDatePicker;
 
     @FXML
-    private Label transactionNote;
+    private Label transactionAmountLabel;
 
     @FXML
-    private Label transactionAmount;
+    private ChoiceBox transactionCategoryChoiceBox;
 
-    private BudgetModelController parentController;
+    @FXML
+    private TextField transactionNoteTextField;
+
+    @FXML
+    private Label transactionNameLabel;
+
+    private TransactionsController parentController;
     private Transaction transaction;
 
 
-    public TransactionListItem(Transaction transaction, BudgetModelController budgetcontroller){
+    public TransactionListItem(Transaction transaction, TransactionsController transactionscontroller){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("transactionlistitem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -39,6 +46,6 @@ public class TransactionListItem extends AnchorPane {
         }
 
         this.transaction = transaction;
-        this.parentController = budgetcontroller;
+        this.parentController = transactionscontroller;
     }
 }
