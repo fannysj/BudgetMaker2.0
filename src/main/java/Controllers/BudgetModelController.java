@@ -4,6 +4,7 @@ package Controllers;
 import Model.BudgetModel;
 import Model.Category;
 import View.CategoryListItem;
+import View.CategoryOverviewItem;
 import com.example.budgetmaker2_0.HelloApplication;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,12 +15,15 @@ import javafx.scene.layout.FlowPane;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
 public class BudgetModelController implements Initializable {
 
     private ArrayList<CategoryListItem> categoryListArray = new ArrayList<>();
+
+    private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
     BudgetModel currentBudget;
 
@@ -70,6 +74,7 @@ public class BudgetModelController implements Initializable {
 
     @FXML
     private FlowPane OverviewCategory;
+
 
     public void setCloseCatOversikt() {
         startSida.toFront();
@@ -144,6 +149,17 @@ public class BudgetModelController implements Initializable {
         testSida.setVisible(false);
         startSida.setVisible(false);
         oversiktKategori.setVisible(true);
+    }
+
+    private void updateOverviewCategoryList(){
+        OverviewCategory.getChildren().clear();
+        for(Category c : currentBudget.categoryList){
+            CategoryOverviewItem newCategoryOverviewItem = new CategoryOverviewItem(c, this);
+            CategoryOverviewItemArray.add(newCategoryOverviewItem);
+            OverviewCategory.getChildren().add(newCategoryOverviewItem);
+
+        }
+
     }
 }
 

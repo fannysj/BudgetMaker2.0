@@ -1,7 +1,5 @@
 package Model;
 
-import Model.TransactionObserver;
-
 import java.time.LocalDate;
 import java.util.*;
 

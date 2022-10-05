@@ -73,7 +73,7 @@
                      </graphic></Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="oversiktKategori" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+            <AnchorPane fx:id="oversiktKategori" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" visible="false">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="578.0" layoutX="13.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="778.0" />
                   <BorderPane layoutX="19.0" layoutY="12.0" prefHeight="566.0" prefWidth="766.0">
@@ -121,7 +121,7 @@
                   <Button fx:id="closeCatOversikt" layoutX="734.0" layoutY="15.0" mnemonicParsing="false" text="stäng" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="startSida" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="724.0" visible="false">
+            <AnchorPane fx:id="startSida" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="724.0">
                <children>
                   <ImageView fitHeight="802.0" fitWidth="952.0" layoutX="-125.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="3.33331298828125" AnchorPane.rightAnchor="-22.0">
                      <image>
