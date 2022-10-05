@@ -33,7 +33,7 @@ public class BudgetModelController implements Initializable {
     private AnchorPane startSida;
 
     @FXML
-    private AnchorPane testSida;
+    private AnchorPane budgetingPage;
 
     @FXML
     private Label budgetAmount;
@@ -71,6 +71,25 @@ public class BudgetModelController implements Initializable {
     @FXML
     private FlowPane OverviewCategory;
 
+    @FXML
+    public void setNewBudgetModel(){
+        int budgetValue = Integer.parseInt(EnterBudget.getText());
+        new BudgetModel(budgetValue);
+        String str = EnterBudget.getText();
+        budgetAmount.setText(str);
+
+    }
+
+    @FXML
+    public void changeToBudgetingSide() {
+        budgetingPage.toFront();
+        startSida.setVisible(false);
+        budgetingPage.setVisible(true);
+
+        updateCategoryList();
+
+    }
+
     public void setCloseCatOversikt() {
         startSida.toFront();
         startSida.setVisible(true);
@@ -99,22 +118,12 @@ public class BudgetModelController implements Initializable {
     @FXML
     private Label felmeddelande;
 
-    @FXML
-    public void bytSida() {
-        testSida.toFront();
-        startSida.setVisible(false);
-        testSida.setVisible(true);
-        currentBudget = new BudgetModel(5000);
-
-        updateCategoryList();
-
-    }
 
     @FXML
     public void goBackonePage() {
         startSida.toFront();
         startSida.setVisible(true);
-        testSida.setVisible(false);
+        budgetingPage.setVisible(false);
     }
 
     private void updateCategoryList() {
@@ -141,7 +150,7 @@ public class BudgetModelController implements Initializable {
     @FXML
     public void goToCategoryOverview() throws IOException {
         HelloApplication.setRoot("hello-view");
-        testSida.setVisible(false);
+        budgetingPage.setVisible(false);
         startSida.setVisible(false);
         oversiktKategori.setVisible(true);
     }
