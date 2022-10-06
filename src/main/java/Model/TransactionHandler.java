@@ -113,8 +113,9 @@
 
     //Change Transaction
 
+
     //kopierar:
-//    public void changeTransaction(Transaction T){
+//    public void changeOldTransaction(Transaction T){
 //        copyTransaction(T);
 //        transactionsList.set(transactionsList.indexOf(T), T);
 //    }

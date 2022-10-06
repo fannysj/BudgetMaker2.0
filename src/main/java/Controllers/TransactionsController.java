@@ -5,24 +5,27 @@ import Model.Category;
 import Model.Transaction;
 import View.CategoryListItem;
 import View.TransactionListItem;
+import java.net.URL;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.util.converter.LocalDateStringConverter;
+
+import java.net.URL;
 import java.time.LocalDate.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class TransactionsController {
+public class TransactionsController implements Initializable {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
-
-    ObservableList<Category> categories = FXCollections.observableArrayList();
 
     @FXML
     private AnchorPane overviewAnchorPane;
@@ -70,6 +73,11 @@ public class TransactionsController {
 
     }
 
+    public void initialize(URL url, ResourceBundle rb) {
+        transactionCategoryChoiceBox.getItems().addAll(currentBudget.categoryList);
+
+    }
+
     public void getCategoryFromChoiceBox(){
         transactionCategoryChoiceBox.getSelectionModel().select(1);
     }
@@ -113,6 +121,9 @@ public class TransactionsController {
         transactionNoteTextField.setText(transaction.getNotes());
     }
 
-
+    public void changeTransaction(Transaction T){
+        openDetailTransaction(T);
+        //changeOldTransaction(T);
+    }
 
 }
