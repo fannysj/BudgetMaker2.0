@@ -18,7 +18,6 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-import javafx.util.converter.IntegerStringConverter;
 
 import java.io.IOException;
 import java.net.URL;
@@ -29,12 +28,14 @@ import java.util.ResourceBundle;
 
 public class BudgetModelController implements Initializable {
 
-    private ArrayList<CategoryListItem> categoryListItemArray = new ArrayList<>();
+    private ArrayList<CategoryListItem> categoryListArray = new ArrayList<>();
 
+    private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
+
+    User currentUser;
     BudgetModel currentBudget;
 
-
-    public User u;
+    TransactionsController controller;
 
     @FXML
     private TextField EnterBudget;
@@ -58,10 +59,38 @@ public class BudgetModelController implements Initializable {
     private FlowPane CategoryDivideFlowpane;
 
     @FXML
+    private Button backToOverview;
+
+    @FXML
+    private Button addExpense;
+
+    @FXML
+    private SplitPane addExpenseSplit;
+
+    @FXML
+    private AnchorPane overviewAnchorPane;
+
+    @FXML
+    private AnchorPane addExpenseAnchorPane;
+
+    @FXML
+    private AnchorPane oversiktKategori;
+
+    @FXML
+    private Button closeCategorydetailOverview;
+
+    @FXML
     private Button klarKnapp;
 
+    @FXML
+    private FlowPane OverviewCategory;
 
+    @FXML
+    private Label leftOfBudgetDisplay;
 
+    @FXML
+    private Label spentOfBudgetDisplay;
+    private Object Node;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -88,6 +117,18 @@ public class BudgetModelController implements Initializable {
 
     }
 
+    public void CategoryToFront() {
+
+        budgetingPage.toFront();
+        oversiktKategori.setVisible(false);
+        budgetingPage.setVisible(true);
+    }
+
+
+    @FXML
+    private Label felmeddelande;
+
+
     @FXML
     public void goBackonePage() {
         startSida.toFront();
@@ -99,16 +140,9 @@ public class BudgetModelController implements Initializable {
         CategoryDivideFlowpane.getChildren().clear();
         for (Category category : u.getBudgetModel().categoryList) {
             CategoryListItem newCategoryList = new CategoryListItem(category, this);
-            categoryListItemArray.add(newCategoryList);
+            categoryListArray.add(newCategoryList);
             CategoryDivideFlowpane.getChildren().add(newCategoryList);
 
-        }
-    }
-
-    @FXML
-    public void setCategoryAmount(){
-        for (CategoryListItem c : categoryListItemArray){
-            System.out.println(c.getCategory().getGoalAmount());
         }
     }
 
@@ -120,7 +154,6 @@ public class BudgetModelController implements Initializable {
         stage.setScene(scene);
         stage.show();
 
-
     }
 
     @FXML
@@ -128,8 +161,17 @@ public class BudgetModelController implements Initializable {
         HelloApplication.setRoot("hello-view");
         budgetingPage.setVisible(false);
         startSida.setVisible(false);
+        oversiktKategori.setVisible(true);
     }
 
+    private void updateOverviewCategoryList(){
+        OverviewCategory.getChildren().clear();
+        for(Category c : currentBudget.categoryList){
+            CategoryOverviewItem newCategoryOverviewItem = new CategoryOverviewItem(c, controller);
+            CategoryOverviewItemArray.add(newCategoryOverviewItem);
+            OverviewCategory.getChildren().add(newCategoryOverviewItem);
+
+        }
 
 }
 
