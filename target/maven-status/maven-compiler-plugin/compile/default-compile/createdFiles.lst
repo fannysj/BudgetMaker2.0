@@ -18,6 +18,5 @@ Model/Category$1.class
 Model/Transaction.class
 View/TransactionListItem.class
 Model/SortCategory.class
-Controllers/OverviewController.class
 Model/ObserverHandler.class
 View/OverviewView.class

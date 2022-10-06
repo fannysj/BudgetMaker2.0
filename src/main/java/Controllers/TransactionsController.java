@@ -81,11 +81,22 @@ public class TransactionsController {
     @FXML
     private AnchorPane detailPane;
 
+    @FXML
+    private Label leftOfBudgetDisplay;
+
+    @FXML
+    private Label spentOfBudgetDisplay;
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
     LocalDate date = LocalDate.now();
     BudgetModel currentBudget = new BudgetModel(100);
 
+
+    public void updateBudgetDisplay(){
+        leftOfBudgetDisplay.setText(String.valueOf(currentBudget.getAmountLeft()));
+        spentOfBudgetDisplay.setText(String.valueOf(currentBudget.currentAmount()));
+        System.out.println(leftOfBudgetDisplay + "HÄR OSCAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    }
 
     //Metoder som ska visa transaktioner men fungerar ej :(
     @FXML
@@ -125,6 +136,8 @@ public class TransactionsController {
         overviewAnchorPane.toFront();
         addExpenseSplit.setVisible(false);
         overviewAnchorPane.setVisible(true);
+        updateBudgetDisplay();
+
     }
 
     @FXML
