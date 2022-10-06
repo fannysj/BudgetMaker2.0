@@ -31,7 +31,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-public class TransactionsController implements Initializable {
+public class TransactionsController {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
 
@@ -82,10 +82,21 @@ public class TransactionsController implements Initializable {
     @FXML
     private AnchorPane detailPane;
 
+    @FXML
+    private Label leftOfBudgetDisplay;
+
+    @FXML
+    private Label spentOfBudgetDisplay;
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
     BudgetModel currentBudget = new BudgetModel(100);
 
+
+    public void updateBudgetDisplay(){
+        leftOfBudgetDisplay.setText(String.valueOf(currentBudget.getAmountLeft()));
+        spentOfBudgetDisplay.setText(String.valueOf(currentBudget.currentAmount()));
+        System.out.println(leftOfBudgetDisplay + "HÄR OSCAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    }
 
     //Metoder som ska visa transaktioner men fungerar ej :(
     @Override
@@ -132,7 +143,6 @@ public class TransactionsController implements Initializable {
         overviewAnchorPane.toFront();
         addExpenseSplit.setVisible(false);
         overviewAnchorPane.setVisible(true);
-
     }
 
     @FXML
@@ -140,7 +150,6 @@ public class TransactionsController implements Initializable {
         addExpenseSplit.toFront();
         overviewAnchorPane.setVisible(false);
         addExpenseSplit.setVisible(true);
-
     }
 
     //Öppna en specifik transaktion
@@ -176,7 +185,7 @@ public class TransactionsController implements Initializable {
        // updateTransactionList(matches);
     }
 
-
+    @FXML
     public void updateCategoryListItem(){
             OverviewCategory.getChildren().clear();
             for (Category category : currentBudget.categoryList) {
@@ -192,8 +201,5 @@ public class TransactionsController implements Initializable {
     public void switchToTransactionOverview(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         overviewView.switchToTransactionOverview(mouseEvent);
 
-
     }
-
-
 }
