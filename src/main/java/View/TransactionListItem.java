@@ -55,7 +55,7 @@ public class TransactionListItem extends AnchorPane {
 
 
     public TransactionListItem(Transaction transaction, TransactionsController transactionscontroller){
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("transactionlistitem.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/transactionlistitem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 

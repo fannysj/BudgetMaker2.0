@@ -6,14 +6,14 @@ import java.util.*;
 public class Category {
     private String name;
     private double goalAmount;
-    public double currentAmount;
+    public double spentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
     private List<TransactionObserver> observers = new ArrayList<>();
 
     public Category(String name, double goalAmount) {
         this.name = String.valueOf(name);
         this.goalAmount = goalAmount;
-        this.currentAmount = 0;
+        this.spentAmount = 0;
     }
 
     //Setters
@@ -25,8 +25,9 @@ public class Category {
         this.goalAmount = goalAmount;
     }
 
-    public void setSpentAmount(double spentAmount){
-        this.currentAmount = spentAmount;
+
+    public void setSpentAmount(double spentAmount) {
+        this.spentAmount = spentAmount;
     }
 
 
@@ -35,7 +36,7 @@ public class Category {
         return name;
     }
 
-    public List<Transaction> getTransactionsList(){
+    public List<Transaction> getTransactionsList() {
         return transactionsList;
     }
 
@@ -46,20 +47,20 @@ public class Category {
 
     public double getSpentAmount() {
         updateSpentAmount();
-        return currentAmount;
+        return spentAmount;
     }
 
 
     // Transaction Methods
     public void newTransaction(int amount, String name, String note, LocalDate date) {
-        Transaction transaction = new Transaction(amount, name, note,this, date);
+        Transaction transaction = new Transaction(amount, name, note, this, date);
         addTransactionToList(transaction);
     }
 
-    public void addMultipleTransactions(Transaction t){
+    public void addMultipleTransactions(Transaction t) {
         List<Transaction> Temp = new ArrayList<>();
         Temp.add(t);
-        for (Transaction o: Temp){
+        for (Transaction o : Temp) {
             placeIntoTransactionList(o);
         }
     }
@@ -70,13 +71,14 @@ public class Category {
 
     public void addTransactionToList(Transaction expense){
         transactionsList.add(expense);
+        ObserverHandler.notifyAllObserver();
     }
 
 
     public void updateSpentAmount(){
-        currentAmount = 0;
+        spentAmount = 0;
         for (Transaction t : transactionsList){
-            currentAmount += t.getTransactionAmount();
+            spentAmount += t.getTransactionAmount();
         }
     }
 
@@ -88,7 +90,7 @@ public class Category {
 
     public double AmountLeftToSpend(){
         updateSpentAmount();
-        double amountLeft = goalAmount-currentAmount;
+        double amountLeft = goalAmount-spentAmount;
         if (amountLeft<0){
             System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
         }
