@@ -31,7 +31,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-public class TransactionsController {
+public class TransactionsController implements Initializable {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
 
