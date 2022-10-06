@@ -21,6 +21,7 @@ import java.time.LocalDate.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class TransactionsController implements Initializable {
@@ -73,14 +74,14 @@ public class TransactionsController implements Initializable {
 
     }
 
+
+
+
     public void initialize(URL url, ResourceBundle rb) {
-        transactionCategoryChoiceBox.getItems().addAll(currentBudget.categoryList);
+        transactionCategoryChoiceBox.getItems().addAll;
+        }
 
-    }
 
-    public void getCategoryFromChoiceBox(){
-        transactionCategoryChoiceBox.getSelectionModel().select(1);
-    }
 
     public void addTransactionToFlowPane() {
         transactionFlowPane.getChildren().clear();
