@@ -7,12 +7,11 @@ import java.util.List;
 
 public class BudgetModel implements Serializable {
     public List<Category> categoryList = new ArrayList<>();
-    private final double amount;
+    private double amount;
     public double amountSpent = 0;
     private double amountLeft = 0;
 
-    public BudgetModel(int amount){
-        this.amount = amount;
+    public BudgetModel(){
         newCategory("mat",2000);
         newCategory("shopping", 2000);
         newCategory("nöje", 1000);
@@ -40,6 +39,10 @@ public class BudgetModel implements Serializable {
         getAmountLeft();
     }
 
+
+    public void setAmount(int amount){
+        this.amount = amount;
+    }
 
     public double getAmount(){
         return amount;

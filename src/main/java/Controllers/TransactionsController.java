@@ -89,20 +89,21 @@ public class TransactionsController implements Initializable {
     private Label spentOfBudgetDisplay;
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
-    BudgetModel currentBudget = new BudgetModel(100);
+    BudgetModel currentBudget = new BudgetModel();
 
+
+    //Metoder som ska visa transaktioner men fungerar ej :(
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        updateBudgetDisplay();
+        updateCategoryListItem();
+
+    }
 
     public void updateBudgetDisplay(){
         leftOfBudgetDisplay.setText(String.valueOf(currentBudget.getAmountLeft()));
         spentOfBudgetDisplay.setText(String.valueOf(currentBudget.currentAmount()));
         System.out.println(leftOfBudgetDisplay + "HÄR OSCAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-    }
-
-    //Metoder som ska visa transaktioner men fungerar ej :(
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        updateCategoryListItem();
-
     }
 
     @FXML
