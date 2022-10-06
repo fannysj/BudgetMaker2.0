@@ -60,7 +60,7 @@ public class TransactionsController implements Initializable {
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
     LocalDate date = LocalDate.now();
-    BudgetModel currentBudget;
+    BudgetModel currentBudget = new BudgetModel(100);
 
 
     //Metoder som ska visa transaktioner men fungerar ej :(
@@ -82,13 +82,12 @@ public class TransactionsController implements Initializable {
         transactionCategoryChoiceBox.getSelectionModel().select(1);
     }
 
-    public void updateTransactionList() {
+    public void addTransactionToFlowPane() {
         transactionFlowPane.getChildren().clear();
         for (Transaction transaction: currentBudget.categoryList.get(0).transactionsList) {
             TransactionListItem newTransactionList = new TransactionListItem(transaction, this);
             transactionListArray.add(newTransactionList);
             transactionFlowPane.getChildren().add(newTransactionList);
-
         }
     }
 
