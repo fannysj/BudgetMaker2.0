@@ -1,6 +1,5 @@
 package View;
 
-import Controllers.OverviewController;
 import Controllers.TransactionsController;
 import Model.Category;
 import javafx.fxml.FXML;

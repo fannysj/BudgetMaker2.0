@@ -76,5 +76,9 @@ public class BudgetModel implements Serializable {
 
 
     }
+
+    public void setCategoryAmount() {
+    }
+
 }
 

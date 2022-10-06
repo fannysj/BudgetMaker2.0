@@ -125,6 +125,8 @@ public class TransactionsController {
         overviewAnchorPane.toFront();
         addExpenseSplit.setVisible(false);
         overviewAnchorPane.setVisible(true);
+        updateCategoryListItem();
+
     }
 
     @FXML
@@ -132,6 +134,7 @@ public class TransactionsController {
         addExpenseSplit.toFront();
         overviewAnchorPane.setVisible(false);
         addExpenseSplit.setVisible(true);
+
     }
 
     //Öppna en specifik transaktion
@@ -167,7 +170,7 @@ public class TransactionsController {
        // updateTransactionList(matches);
     }
 
-    @FXML
+
     public void updateCategoryListItem(){
             OverviewCategory.getChildren().clear();
             for (Category category : currentBudget.categoryList) {
@@ -182,6 +185,7 @@ public class TransactionsController {
     @FXML
     public void switchToTransactionOverview(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         overviewView.switchToTransactionOverview(mouseEvent);
+
 
     }
 }

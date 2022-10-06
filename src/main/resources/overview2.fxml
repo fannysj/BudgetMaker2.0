@@ -136,7 +136,7 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="491.0" style="-fx-background-color: #dccee8#dccee8;">
                            <children>
-                              <FlowPane fx:id="transactionFlowPane" layoutX="-3.0" layoutY="-1.0" prefHeight="511.0" prefWidth="309.0" visible="false">
+                              <FlowPane fx:id="transactionFlowPane" layoutX="-3.0" layoutY="-1.0" prefHeight="511.0" prefWidth="309.0">
                                  <children>
                                     <Button fx:id="backToOverview11" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Spara">
                                        <font>

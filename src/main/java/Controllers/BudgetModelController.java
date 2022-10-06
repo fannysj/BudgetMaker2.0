@@ -18,6 +18,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
+import javafx.util.converter.IntegerStringConverter;
 
 import java.io.IOException;
 import java.net.URL;
@@ -28,9 +29,10 @@ import java.util.ResourceBundle;
 
 public class BudgetModelController implements Initializable {
 
-    private ArrayList<CategoryListItem> categoryListArray = new ArrayList<>();
+    private ArrayList<CategoryListItem> categoryListItemArray = new ArrayList<>();
 
     BudgetModel currentBudget;
+
 
     public User u;
 
@@ -86,16 +88,6 @@ public class BudgetModelController implements Initializable {
 
     }
 
-    public void setCloseCatOversikt() {
-        startSida.toFront();
-        startSida.setVisible(true);
-    }
-
-
-    @FXML
-    private Label felmeddelande;
-
-
     @FXML
     public void goBackonePage() {
         startSida.toFront();
@@ -107,9 +99,16 @@ public class BudgetModelController implements Initializable {
         CategoryDivideFlowpane.getChildren().clear();
         for (Category category : u.getBudgetModel().categoryList) {
             CategoryListItem newCategoryList = new CategoryListItem(category, this);
-            categoryListArray.add(newCategoryList);
+            categoryListItemArray.add(newCategoryList);
             CategoryDivideFlowpane.getChildren().add(newCategoryList);
 
+        }
+    }
+
+    @FXML
+    public void setCategoryAmount(){
+        for (CategoryListItem c : categoryListItemArray){
+            System.out.println(c.getCategory().getGoalAmount());
         }
     }
 
@@ -120,6 +119,7 @@ public class BudgetModelController implements Initializable {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
 
     }
 
