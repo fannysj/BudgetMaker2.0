@@ -4,6 +4,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
@@ -17,67 +18,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="headAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OverviewController">
+<AnchorPane fx:id="headAnchorPane" prefHeight="610.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TransactionsController">
    <children>
-      <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="600.0" prefWidth="800.0">
+      <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="616.0" prefWidth="809.0">
          <children>
-            <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="600.0" prefWidth="800.0">
+            <AnchorPane fx:id="overviewAnchorPane" prefHeight="609.0" prefWidth="801.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;" visible="false">
                <children>
-                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
-                           <children>
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf8fc" height="38.0" layoutX="33.0" layoutY="191.0" stroke="TRANSPARENT" strokeType="INSIDE" width="232.0" />
-                              <Text layoutX="43.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belopp">
-                                 <font>
-                                    <Font name="Avenir Next Bold" size="13.0" />
-                                 </font></Text>
-                              <TextField layoutX="153.0" layoutY="197.0" prefHeight="26.0" prefWidth="99.0" />
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf8fc" height="106.0" layoutX="39.0" layoutY="335.0" stroke="TRANSPARENT" strokeType="INSIDE" width="232.0" />
-                              <ChoiceBox layoutX="35.0" layoutY="260.0" prefHeight="26.0" prefWidth="232.0" style="-fx-background-color: #faf8fc#faf8fc;" />
-                              <Text layoutX="37.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välj kategori">
-                                 <font>
-                                    <Font name="Avenir Next Bold" size="13.0" />
-                                 </font></Text>
-                              <Text layoutX="91.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lägg till en ny utgift" wrappingWidth="206.0">
-                                 <font>
-                                    <Font name="Avenir Next Bold" size="17.0" />
-                                 </font>
-                              </Text>
-                              <Button fx:id="backToOverview" layoutX="10.0" layoutY="12.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Tillbaka">
-                                 <font>
-                                    <Font name="Avenir Next Bold" size="13.0" />
-                                 </font></Button>
-                              <TextField layoutX="42.0" layoutY="364.0" prefHeight="69.0" prefWidth="214.0" />
-                              <Text layoutX="41.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anteckning">
-                                 <font>
-                                    <Font name="Avenir Next Bold" size="13.0" />
-                                 </font></Text>
-                              <DatePicker layoutX="33.0" layoutY="57.0" prefHeight="26.0" prefWidth="232.0" />
-                              <Button fx:id="backToOverview1" layoutX="339.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Lägg till">
-                                 <font>
-                                    <Font name="Avenir Next Bold" size="13.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="491.0" style="-fx-background-color: #dccee8#dccee8;">
-                           <children>
-                              <FlowPane layoutX="-3.0" layoutY="-1.0" prefHeight="355.0" prefWidth="250.0" />
-                              <Button fx:id="backToOverview11" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Spara">
-                                 <font>
-                                    <Font name="Avenir Next Bold" size="13.0" />
-                                 </font>
-                              </Button>
-                           </children>
-                        </AnchorPane>
-                    </items>
-                  </SplitPane>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="overviewAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;" visible="false">
-               <children>
-                  <Button layoutX="32.0" layoutY="36.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="162.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
+                  <Button layoutX="61.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
                      <effect>
                         <DropShadow blurType="GAUSSIAN">
                            <color>
@@ -86,22 +33,17 @@
                         </DropShadow>
                      </effect>
                   </Button>
-                  <Label layoutX="81.0" layoutY="48.0" text="Spenderat">
+                  <Label layoutX="135.0" layoutY="57.0" text="Spenderat">
                      <font>
                         <Font name="Avenir Next Bold" size="13.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="14.0" layoutY="192.0" prefHeight="200.0" prefWidth="500.0">
-                     <children>
-                        <FlowPane fx:id="OverviewCategory" prefHeight="390.0" prefWidth="500.0" />
-                     </children>
-                  </AnchorPane>
-                  <Label layoutX="70.0" layoutY="74.0" prefHeight="38.0" prefWidth="99.0" text="3468 kr">
+                  <Label fx:id="spentOfBudgetDisplay" layoutX="101.0" layoutY="91.0" prefHeight="46.0" prefWidth="142.0" text="3468 kr">
                      <font>
-                        <Font name="Avenir Next Bold" size="25.0" />
+                        <Font name="Avenir Next Bold" size="31.0" />
                      </font>
                   </Label>
-                  <Button layoutX="224.0" layoutY="36.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="162.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
+                  <Button layoutX="324.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
                      <effect>
                         <DropShadow blurType="GAUSSIAN">
                            <color>
@@ -110,17 +52,17 @@
                         </DropShadow>
                      </effect>
                   </Button>
-                  <Label layoutX="264.0" layoutY="48.0" text="Kvar av budget">
+                  <Label layoutX="383.0" layoutY="58.0" text="Kvar av budget">
                      <font>
                         <Font name="Avenir Next Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label layoutX="264.0" layoutY="74.0" prefHeight="38.0" prefWidth="99.0" text="5378 kr">
+                  <Label fx:id="leftOfBudgetDisplay" layoutX="376.0" layoutY="93.0" prefHeight="46.0" prefWidth="122.0" text="5378 kr">
                      <font>
-                        <Font name="Avenir Next Bold" size="25.0" />
+                        <Font name="Avenir Next Bold" size="31.0" />
                      </font>
                   </Label>
-                  <Button fx:id="addExpense" alignment="BASELINE_RIGHT" layoutX="634.0" layoutY="535.0" mnemonicParsing="false" onMouseClicked="#setAddExpense" prefHeight="38.0" prefWidth="142.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;" text="Lägg till utgift" wrapText="true">
+                  <Button fx:id="addExpense" alignment="BASELINE_RIGHT" layoutX="606.0" layoutY="532.0" mnemonicParsing="false" onMouseClicked="#setAddExpense" prefHeight="55.0" prefWidth="167.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;" text="Lägg till utgift" wrapText="true">
                      <effect>
                         <DropShadow>
                            <color>
@@ -129,16 +71,84 @@
                         </DropShadow>
                      </effect>
                      <font>
-                        <Font name="Avenir Next Bold" size="13.0" />
+                        <Font name="Avenir Next Bold" size="16.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@com/example/budgetmaker2_0/images/+.png" />
+                              <Image url="@images/+.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
+                  <AnchorPane layoutX="35.0" layoutY="245.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <FlowPane fx:id="OverviewCategory" prefHeight="357.0" prefWidth="480.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="401.0" prefWidth="606.0">
+               <children>
+                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" layoutX="55.0" layoutY="53.0" prefHeight="511.0" prefWidth="700.0">
+                    <items>
+                      <AnchorPane fx:id="detailPane" minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="301.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf8fc" height="371.0" layoutX="34.0" layoutY="68.0" stroke="TRANSPARENT" strokeType="INSIDE" width="320.0" />
+                              <Text layoutX="68.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belopp">
+                                 <font>
+                                    <Font name="Avenir Next Bold" size="13.0" />
+                                 </font></Text>
+                              <TextField fx:id="transactionAmountTextField" layoutX="124.0" layoutY="224.0" prefHeight="26.0" prefWidth="99.0" />
+                              <ChoiceBox fx:id="transactionCategoryChoiceBox" layoutX="154.0" layoutY="270.0" prefHeight="28.0" prefWidth="167.0" style="-fx-background-color: white;" />
+                              <Text layoutX="66.0" layoutY="288.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välj kategori">
+                                 <font>
+                                    <Font name="Avenir Next Bold" size="13.0" />
+                                 </font></Text>
+                              <Text layoutX="71.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lägg till en ny utgift" wrappingWidth="206.0">
+                                 <font>
+                                    <Font name="Avenir Next Bold" size="17.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="backToOverview" layoutX="10.0" layoutY="8.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" prefHeight="38.0" prefWidth="81.0" text="Tillbaka">
+                                 <font>
+                                    <Font name="Avenir Next Bold" size="15.0" />
+                                 </font></Button>
+                              <TextField fx:id="transactionNoteTextField" layoutX="60.0" layoutY="350.0" prefHeight="69.0" prefWidth="268.0" />
+                              <Text layoutX="65.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anteckning">
+                                 <font>
+                                    <Font name="Avenir Next Bold" size="13.0" />
+                                 </font></Text>
+                              <DatePicker fx:id="transactionDatePicker" layoutX="124.0" layoutY="181.0" prefHeight="26.0" prefWidth="159.0" promptText="Välj datum" />
+                              <Button fx:id="addTransactionButton" layoutX="268.0" layoutY="451.0" mnemonicParsing="false" onAction="#createNewTransaction" prefHeight="38.0" prefWidth="89.0" text="Lägg till">
+                                 <font>
+                                    <Font name="Avenir Next Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Text layoutX="72.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Namn">
+                                 <font>
+                                    <Font name="Avenir Next Bold" size="13.0" />
+                                 </font>
+                              </Text>
+                              <TextField fx:id="transactionNameTextField" layoutX="124.0" layoutY="136.0" prefHeight="26.0" prefWidth="159.0" />
+                              <Label fx:id="dateID" layoutX="298.0" layoutY="181.0" />
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="491.0" style="-fx-background-color: #dccee8#dccee8;">
+                           <children>
+                              <FlowPane fx:id="transactionFlowPane" layoutX="-3.0" layoutY="-1.0" prefHeight="511.0" prefWidth="309.0" visible="false">
+                                 <children>
+                                    <Button fx:id="backToOverview11" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Spara">
+                                       <font>
+                                          <Font name="Avenir Next Bold" size="13.0" />
+                                       </font>
+                                    </Button>
+                                    <ScrollBar orientation="VERTICAL" />
+                                 </children></FlowPane>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
                </children>
             </AnchorPane>
          </children>

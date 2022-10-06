@@ -4,6 +4,8 @@ import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
 import View.CategoryListItem;
+import View.CategoryOverviewItem;
+import View.OverviewView;
 import View.TransactionListItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,11 +17,15 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
 import javafx.util.converter.LocalDateStringConverter;
+
+import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
@@ -29,6 +35,10 @@ public class TransactionsController {
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
 
     ObservableList<Category> categories = FXCollections.observableArrayList();
+
+    private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
+
+    OverviewView overviewView = new OverviewView();
 
     @FXML
     private AnchorPane overviewAnchorPane;
@@ -64,7 +74,8 @@ public class TransactionsController {
 
     Category category;
 
-
+    @FXML
+    public FlowPane OverviewCategory;
 
 
     @FXML
@@ -154,5 +165,23 @@ public class TransactionsController {
             updateTransactionList(matches);
         }
        // updateTransactionList(matches);
+    }
+
+    @FXML
+    public void updateCategoryListItem(){
+            OverviewCategory.getChildren().clear();
+            for (Category category : currentBudget.categoryList) {
+                CategoryOverviewItem newCategoryList = new CategoryOverviewItem(category, this);
+                CategoryOverviewItemArray.add(newCategoryList);
+                OverviewCategory.getChildren().add(newCategoryList);
+            }
+
+    }
+
+
+    @FXML
+    public void switchToTransactionOverview(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        overviewView.switchToTransactionOverview(mouseEvent);
+
     }
 }
