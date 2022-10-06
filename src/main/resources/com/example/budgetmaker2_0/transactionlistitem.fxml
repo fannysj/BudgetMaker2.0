@@ -5,13 +5,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="422.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8 #dccee8#dccee8 #dccee8#dccee8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" prefHeight="100.0" prefWidth="422.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8 #dccee8#dccee8 #dccee8#dccee8;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="transactionName" layoutX="36.0" layoutY="42.0" text="Namn" />
-      <Label fx:id="transactionDate" layoutX="119.0" layoutY="42.0" text="Datum" />
-      <Label fx:id="transactionNote" layoutX="208.0" layoutY="42.0" text="Note" />
-      <Label fx:id="transactionAmount" layoutX="287.0" layoutY="42.0" text="Belopp" />
-      <Button layoutX="359.0" layoutY="8.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="56.0" text="Ta bort">
+      <Label fx:id="listItemTransactionName" layoutX="36.0" layoutY="42.0" text="Namn" />
+      <Label fx:id="listItemTransactionDate" layoutX="119.0" layoutY="42.0" text="Datum" />
+      <Label fx:id="listItemTransactionNote" layoutX="208.0" layoutY="42.0" text="Note" />
+      <Label fx:id="listItemTransactionAmount" layoutX="287.0" layoutY="42.0" text="Belopp" />
+      <Button fx:id="deleteTransaction" layoutX="359.0" layoutY="8.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="56.0" text="Ta bort">
+         <font>
+            <Font name="Avenir Next Bold" size="10.0" />
+         </font>
+      </Button>
+      <Button fx:id="changeTransaction" layoutX="359.0" layoutY="68.0" mnemonicParsing="false" onAction="#openDetailTransaction" prefHeight="17.0" prefWidth="56.0" text="Ändra">
          <font>
             <Font name="Avenir Next Bold" size="10.0" />
          </font>
