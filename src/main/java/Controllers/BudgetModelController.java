@@ -5,7 +5,6 @@ import Model.BudgetModel;
 import Model.Category;
 import View.CategoryListItem;
 import View.CategoryOverviewItem;
-import View.OverviewView;
 import com.example.budgetmaker2_0.HelloApplication;
 import com.example.budgetmaker2_0.User;
 import javafx.fxml.FXML;
@@ -30,9 +29,12 @@ public class BudgetModelController implements Initializable {
 
     private ArrayList<CategoryListItem> categoryListArray = new ArrayList<>();
 
+    private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
+
+    User currentUser;
     BudgetModel currentBudget;
 
-    public User u;
+    TransactionsController controller;
 
     @FXML
     private TextField EnterBudget;
@@ -56,25 +58,55 @@ public class BudgetModelController implements Initializable {
     private FlowPane CategoryDivideFlowpane;
 
     @FXML
+    private Button backToOverview;
+
+    @FXML
+    private Button addExpense;
+
+    @FXML
+    private SplitPane addExpenseSplit;
+
+    @FXML
+    private AnchorPane overviewAnchorPane;
+
+    @FXML
+    private AnchorPane addExpenseAnchorPane;
+
+    @FXML
+    private AnchorPane oversiktKategori;
+
+    @FXML
+    private Button closeCategorydetailOverview;
+
+    @FXML
     private Button klarKnapp;
 
+    @FXML
+    private FlowPane OverviewCategory;
 
+    @FXML
+    private Label leftOfBudgetDisplay;
 
+    @FXML
+    private Label spentOfBudgetDisplay;
+    private Object Node;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        u = new User();
 
     }
 
     @FXML
     public void setNewBudgetModel(){
         int budgetValue = Integer.parseInt(EnterBudget.getText());
-        u.createNewBudget(budgetValue);
+        currentUser = new User();
+        currentUser.createNewBudget(budgetValue);
+        currentBudget = currentUser.getBudgetModel();
         String str = EnterBudget.getText();
         budgetAmount.setText(str);
 
     }
+
 
     @FXML
     public void changeToBudgetingSide() {
@@ -86,9 +118,11 @@ public class BudgetModelController implements Initializable {
 
     }
 
-    public void setCloseCatOversikt() {
-        startSida.toFront();
-        startSida.setVisible(true);
+    public void CategoryToFront() {
+
+        budgetingPage.toFront();
+        oversiktKategori.setVisible(false);
+        budgetingPage.setVisible(true);
     }
 
 
@@ -103,9 +137,9 @@ public class BudgetModelController implements Initializable {
         budgetingPage.setVisible(false);
     }
 
-    void updateCategoryList() {
+    private void updateCategoryList() {
         CategoryDivideFlowpane.getChildren().clear();
-        for (Category category : u.getBudgetModel().categoryList) {
+        for (Category category : currentBudget.categoryList) {
             CategoryListItem newCategoryList = new CategoryListItem(category, this);
             categoryListArray.add(newCategoryList);
             CategoryDivideFlowpane.getChildren().add(newCategoryList);
@@ -113,14 +147,19 @@ public class BudgetModelController implements Initializable {
         }
     }
 
+
     @FXML
     public void switchToScene2(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/overview2.fxml"));
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        Parent root  = FXMLLoader.load(getClass().getResource("/overview2.fxml"));
+        Stage stage = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
 
+    @FXML
+    public void switchToScene1() throws IOException {
+        HelloApplication.setRoot("hello-view");
     }
 
     @FXML
@@ -128,8 +167,18 @@ public class BudgetModelController implements Initializable {
         HelloApplication.setRoot("hello-view");
         budgetingPage.setVisible(false);
         startSida.setVisible(false);
+        oversiktKategori.setVisible(true);
     }
 
+    private void updateOverviewCategoryList(){
+        OverviewCategory.getChildren().clear();
+        for(Category c : currentBudget.categoryList){
+            CategoryOverviewItem newCategoryOverviewItem = new CategoryOverviewItem(c, controller);
+            CategoryOverviewItemArray.add(newCategoryOverviewItem);
+            OverviewCategory.getChildren().add(newCategoryOverviewItem);
 
+        }
+
+    }
 }
 

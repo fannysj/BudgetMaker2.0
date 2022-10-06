@@ -88,7 +88,6 @@ public class TransactionsController {
     private Label spentOfBudgetDisplay;
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
-    LocalDate date = LocalDate.now();
     BudgetModel currentBudget = new BudgetModel(100);
 
 
@@ -104,7 +103,8 @@ public class TransactionsController {
         int a = Integer.parseInt(transactionAmountTextField.getText());
         String na = transactionNameTextField.getText();
         String no = transactionNoteTextField.getText();
-        new Transaction(a,na,no, currentBudget.categoryList.get(0), date);
+        Transaction t = new Transaction(a,na,no, currentBudget.categoryList.get(0), LocalDate.now()); //Behövs ändras så category inte är hårdkodat
+        currentBudget.categoryList.get(0).transactionsList.add(t); //Behövs ändras så category inte är hårdkodat
 
     }
 
