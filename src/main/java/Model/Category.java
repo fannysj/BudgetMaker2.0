@@ -17,13 +17,14 @@ public class Category {
     }
 
     //Setters
-    public void setName(String name) {
+    public void setName(String name){
         this.name = name;
     }
 
-    public void setGoalAmount(double goalAmount) {
+    public void setGoalAmount(double goalAmount){
         this.goalAmount = goalAmount;
     }
+
 
     public void setSpentAmount(double spentAmount) {
         this.spentAmount = spentAmount;
@@ -64,40 +65,63 @@ public class Category {
         }
     }
 
-    public void placeIntoTransactionList(Transaction t) {
+    public void placeIntoTransactionList(Transaction t){
         transactionsList.add(t);
     }
 
-    public void addTransactionToList(Transaction expense) {
+    public void addTransactionToList(Transaction expense){
         transactionsList.add(expense);
         ObserverHandler.notifyAllObserver();
     }
 
 
-    public void updateSpentAmount() {
+    public void updateSpentAmount(){
         spentAmount = 0;
-        for (Transaction t : transactionsList) {
+        for (Transaction t : transactionsList){
             spentAmount += t.getTransactionAmount();
         }
     }
 
-    public void printTransactioninList() {
-        for (Transaction t : transactionsList) {
+    public void printTransactioninList(){
+        for (Transaction t : transactionsList){
             t.printTransaction();
         }
     }
 
-    public double AmountLeftToSpend() {
+    public double AmountLeftToSpend(){
         updateSpentAmount();
-        double amountLeft = goalAmount - spentAmount;
-        if (amountLeft < 0) {
+        double amountLeft = goalAmount-spentAmount;
+        if (amountLeft<0){
             System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
         }
 
         return amountLeft;
     }
-}
+
+
     //Sort transaction
+    public void sortByAmount() {
+        Collections.sort(transactionsList, new Comparator<Transaction>() {
+            public int compare(Transaction t1, Transaction t2) {
+                return Double.compare(t1.getTransactionAmount(), t2.getTransactionAmount());
+            }
+        });
+
+    }
+
+    public void sortByDate(){
+        Collections.sort(transactionsList, new Comparator<Transaction>() {
+            @Override
+            public int compare(Transaction o1, Transaction o2) {
+                return o1.getDate().compareTo(o2.getDate());
+            }
+        });
+    }
+
+    public void deleteTransactionFromList(){
+        transactionsList.remove(transactionsList.size()-1);
+        System.out.println(transactionsList.get(0).getName());
+    }
 
 
     //Change Transaction
@@ -147,4 +171,5 @@ public class Category {
 //
 //    }
 
+}
 

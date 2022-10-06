@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
    <effect>
       <ColorAdjust brightness="0.19" />
    </effect>
@@ -122,7 +122,7 @@
                   </Text>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="oversiktKategori" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+            <AnchorPane fx:id="oversiktKategori" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" visible="false">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="578.0" layoutX="13.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="778.0" />
                   <BorderPane layoutX="19.0" layoutY="12.0" prefHeight="566.0" prefWidth="766.0">
@@ -170,7 +170,7 @@
                         <Font name="Avenir Book" size="30.0" />
                      </font>
                   </Label>
-                  <Button fx:id="closeCatOversikt" layoutX="734.0" layoutY="15.0" mnemonicParsing="false" onMouseReleased="#CategoryToFront" text="stäng" />
+                  <Button fx:id="closeCatOversikt" layoutX="734.0" layoutY="15.0" mnemonicParsing="false" text="stäng" />
                   <TextField id="searchbar" layoutX="28.0" layoutY="113.0" promptText="Sök" />
                   <ImageView fitHeight="27.0" fitWidth="24.0" layoutX="201.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
                      <image>

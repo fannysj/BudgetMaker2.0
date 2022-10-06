@@ -1,26 +1,31 @@
 package View;
 
-import Controllers.BudgetModelController;
+import Controllers.OverviewController;
+import Controllers.TransactionsController;
 import Model.Category;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class CategoryOverviewItem extends Node {
+public class CategoryOverviewItem extends AnchorPane {
+
+
     @FXML
     private Label currentAmount;
 
     @FXML
     private Label goalAmount;
 
-    private Category category;
-    private BudgetModelController controller;
+    @FXML
+    private Label CategoryNameOV;
 
-    public CategoryOverviewItem(Category category, BudgetModelController controller){
+    private Category category;
+    private TransactionsController controller;
+
+    public CategoryOverviewItem(Category category, TransactionsController controller){
 
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/cateOVList.fxml"));
         myLoader.setRoot(this);
@@ -35,7 +40,11 @@ public class CategoryOverviewItem extends Node {
             throw new RuntimeException(exception);
         }
         this.controller = controller;
+
+        CategoryNameOV.setText(category.getName());
+        currentAmount.setText(String.valueOf(category.spentAmount));
         goalAmount.setText(String.valueOf(category.getGoalAmount()));
 
     }
+
 }
