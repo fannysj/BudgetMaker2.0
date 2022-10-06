@@ -32,7 +32,7 @@ public class BudgetModelController implements Initializable {
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
-    User currentUser;
+    User currentUser = new User();
     BudgetModel currentBudget;
 
     TransactionsController controller;
@@ -94,14 +94,13 @@ public class BudgetModelController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        u = new User();
 
     }
 
     @FXML
     public void setNewBudgetModel(){
         int budgetValue = Integer.parseInt(EnterBudget.getText());
-        u.createNewBudget(budgetValue);
+        currentUser.createNewBudget(budgetValue);
         String str = EnterBudget.getText();
         budgetAmount.setText(str);
 
@@ -138,7 +137,7 @@ public class BudgetModelController implements Initializable {
 
     void updateCategoryList() {
         CategoryDivideFlowpane.getChildren().clear();
-        for (Category category : u.getBudgetModel().categoryList) {
+        for (Category category : currentUser.getBudgetModel().categoryList) {
             CategoryListItem newCategoryList = new CategoryListItem(category, this);
             categoryListArray.add(newCategoryList);
             CategoryDivideFlowpane.getChildren().add(newCategoryList);
@@ -173,5 +172,8 @@ public class BudgetModelController implements Initializable {
 
         }
 
+
+    }
 }
+
 

@@ -11,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -30,7 +31,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-public class TransactionsController {
+public class TransactionsController implements Initializable {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
 
@@ -87,6 +88,12 @@ public class TransactionsController {
 
 
     //Metoder som ska visa transaktioner men fungerar ej :(
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        updateCategoryListItem();
+
+    }
+
     @FXML
     public void createNewTransaction(){
         int a = Integer.parseInt(transactionAmountTextField.getText());
@@ -125,7 +132,6 @@ public class TransactionsController {
         overviewAnchorPane.toFront();
         addExpenseSplit.setVisible(false);
         overviewAnchorPane.setVisible(true);
-        updateCategoryListItem();
 
     }
 
@@ -188,4 +194,6 @@ public class TransactionsController {
 
 
     }
+
+
 }
