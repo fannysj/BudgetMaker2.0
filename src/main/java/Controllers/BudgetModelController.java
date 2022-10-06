@@ -69,7 +69,7 @@ public class BudgetModelController implements Initializable {
     private AnchorPane oversiktKategori;
 
     @FXML
-    private Button closeCatOversikt;
+    private Button closeCategorydetailOverview;
 
     @FXML
     private Button klarKnapp;
@@ -110,10 +110,11 @@ public class BudgetModelController implements Initializable {
 
     }
 
-    public void setCloseCatOversikt() {
-        startSida.toFront();
-        startSida.setVisible(true);
+    public void CategoryToFront() {
+
+        budgetingPage.toFront();
         oversiktKategori.setVisible(false);
+        budgetingPage.setVisible(true);
     }
 
 

@@ -33,8 +33,6 @@ public class BudgetModel implements Serializable {
         currentAmount();
         mat.AmountLeftToSpend();
         mat.getTransactionsList().get(2).setDate(1999,6,4);
-        mat.sortByAmount();
-        mat.sortByDate();
         mat.printTransactioninList();
         moneyLeftToDivide();
     }
