@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="headAnchorPane" prefHeight="610.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TransactionsController">
+<AnchorPane fx:id="headAnchorPane" prefHeight="610.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TransactionsController">
    <children>
       <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="616.0" prefWidth="809.0">
          <children>
@@ -120,7 +120,7 @@
                                     <Font name="Avenir Next Bold" size="13.0" />
                                  </font></Text>
                               <DatePicker fx:id="transactionDatePicker" layoutX="124.0" layoutY="181.0" prefHeight="26.0" prefWidth="159.0" promptText="Välj datum" />
-                              <Button fx:id="addTransactionButton" layoutX="268.0" layoutY="451.0" mnemonicParsing="false" onAction="#createNewTransaction" prefHeight="38.0" prefWidth="89.0" text="Lägg till">
+                              <Button fx:id="addTransactionButton" layoutX="268.0" layoutY="451.0" mnemonicParsing="false" onMousePressed="#createNewTransaction" onMouseReleased="#addTransactionToFlowPane" prefHeight="38.0" prefWidth="89.0" text="Lägg till">
                                  <font>
                                     <Font name="Avenir Next Bold" size="16.0" />
                                  </font>
@@ -136,7 +136,7 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="491.0" style="-fx-background-color: #dccee8#dccee8;">
                            <children>
-                              <FlowPane fx:id="transactionFlowPane" layoutX="-3.0" layoutY="-1.0" prefHeight="511.0" prefWidth="309.0" visible="false">
+                              <FlowPane fx:id="transactionFlowPane" layoutX="-3.0" layoutY="-1.0" prefHeight="511.0" prefWidth="309.0">
                                  <children>
                                     <Button fx:id="backToOverview11" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Spara">
                                        <font>
