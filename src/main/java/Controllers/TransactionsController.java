@@ -7,13 +7,19 @@ import View.CategoryListItem;
 import View.TransactionListItem;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
 import javafx.util.converter.LocalDateStringConverter;
 import java.time.LocalDate.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.regex.PatternSyntaxException;
 
 public class TransactionsController {
 
@@ -46,9 +52,19 @@ public class TransactionsController {
     @FXML
     private FlowPane transactionFlowPane;
 
+    @FXML
+    private TextField searchbar;
+
+    @FXML FlowPane transactionGrid;
+
+    Category category;
+
+
+
+
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
     LocalDate date = LocalDate.now();
-    BudgetModel currentBudget;
+    BudgetModel currentBudget =  new BudgetModel(1000);
 
     //Metoder som ska visa transaktioner men fungerar ej :(
     @FXML
@@ -60,13 +76,20 @@ public class TransactionsController {
 
     }
 
-    public void updateTransactionList() {
+    public void updateOverviewTransactionList(List<Transaction> transactions) {
         transactionFlowPane.getChildren().clear();
         for (Transaction transaction: currentBudget.categoryList.get(0).transactionsList) {
             TransactionListItem newTransactionList = new TransactionListItem(transaction, this);
             transactionListArray.add(newTransactionList);
             transactionFlowPane.getChildren().add(newTransactionList);
+        }
+    }
 
+    public void updateTransactionList(List<Transaction> transactions) {
+        transactionGrid.getChildren().clear();
+        for (Transaction transaction: transactions) {
+            TransactionListItem newTransactionList = new TransactionListItem(transaction, this);
+            transactionFlowPane.getChildren().add(newTransactionList);
         }
     }
 
@@ -86,6 +109,22 @@ public class TransactionsController {
         addExpenseSplit.setVisible(true);
     }
 
-
-
+    @FXML
+    public void search() {
+        List<Transaction> matches = new ArrayList<>();
+        try {
+            Pattern pattern = Pattern.compile(String.format(".*%s.*", searchbar.getText()), Pattern.CASE_INSENSITIVE);
+            category.getTransactionsList().forEach(transaction -> {
+                Matcher m = pattern.matcher(transaction.getName());
+                if (m.matches()) {
+                    matches.add(transaction);
+                }
+            }) ;
+        } catch (PatternSyntaxException e) {
+            e.getMessage();
+            updateTransactionList(matches);
+        }
+       // updateTransactionList(matches);
+    }
 }
+
