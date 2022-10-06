@@ -6,14 +6,14 @@ import java.util.*;
 public class Category {
     private String name;
     private double goalAmount;
-    public double spentAmount;
+    public double currentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
     private List<TransactionObserver> observers = new ArrayList<>();
 
     public Category(String name, double goalAmount) {
         this.name = String.valueOf(name);
         this.goalAmount = goalAmount;
-        this.spentAmount = 0;
+        this.currentAmount = 0;
     }
 
     //Setters
@@ -26,7 +26,7 @@ public class Category {
     }
 
     public void setSpentAmount(double spentAmount){
-        this.spentAmount = spentAmount;
+        this.currentAmount = spentAmount;
     }
 
 
@@ -46,7 +46,7 @@ public class Category {
 
     public double getSpentAmount() {
         updateSpentAmount();
-        return spentAmount;
+        return currentAmount;
     }
 
 
@@ -74,9 +74,9 @@ public class Category {
 
 
     public void updateSpentAmount(){
-        spentAmount = 0;
+        currentAmount = 0;
         for (Transaction t : transactionsList){
-            spentAmount += t.getTransactionAmount();
+            currentAmount += t.getTransactionAmount();
         }
     }
 
@@ -88,7 +88,7 @@ public class Category {
 
     public double AmountLeftToSpend(){
         updateSpentAmount();
-        double amountLeft = goalAmount-spentAmount;
+        double amountLeft = goalAmount-currentAmount;
         if (amountLeft<0){
             System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
         }

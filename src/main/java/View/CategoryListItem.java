@@ -40,6 +40,10 @@ public class CategoryListItem extends AnchorPane {
 
     }
 
+    public Label getCategoryName(){
+        return categoryName;
+    }
+
     @FXML
     private void onUpdateAmount(){
         int newValue = - amountChanged;

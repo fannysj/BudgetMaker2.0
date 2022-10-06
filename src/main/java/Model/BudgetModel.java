@@ -26,13 +26,13 @@ public class BudgetModel implements Serializable {
 
         mat.newTransaction(100, "ica", "veckohandling", LocalDate.now());
         mat.newTransaction(1000, "willys", "bbq", LocalDate.now());
-        mat.newTransaction(500, "hm", "latexdräkt", LocalDate.now());
-        mat.newTransaction(1000, "ticketmaster", "markoolio", LocalDate.now());
+        shop.newTransaction(500, "hm", "latexdräkt", LocalDate.now());
+        nöje.newTransaction(1000, "ticketmaster", "markoolio", LocalDate.now());
 
         mat.printTransactioninList();
         currentAmount();
         mat.AmountLeftToSpend();
-        mat.getTransactionsList().get(2).setDate(1999,6,4);
+        mat.getTransactionsList().get(0).setDate(1999,6,4);
         mat.sortByAmount();
         mat.sortByDate();
         mat.printTransactioninList();

@@ -17,25 +17,25 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="headAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
+<AnchorPane fx:id="headAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.OverviewController">
    <children>
-      <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="406.0" prefWidth="609.0">
+      <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="600.0" prefWidth="800.0">
          <children>
-            <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="401.0" prefWidth="606.0">
+            <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="600.0" prefWidth="800.0">
                <children>
-                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" layoutX="27.0" layoutY="25.0" prefHeight="357.0" prefWidth="556.0" style="-fx-background-color: black;">
+                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: black;">
                     <items>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
                            <children>
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf8fc" height="38.0" layoutX="35.0" layoutY="103.0" stroke="TRANSPARENT" strokeType="INSIDE" width="232.0" />
-                              <Text layoutX="45.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belopp">
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf8fc" height="38.0" layoutX="33.0" layoutY="191.0" stroke="TRANSPARENT" strokeType="INSIDE" width="232.0" />
+                              <Text layoutX="43.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belopp">
                                  <font>
                                     <Font name="Avenir Next Bold" size="13.0" />
                                  </font></Text>
-                              <TextField layoutX="155.0" layoutY="109.0" prefHeight="26.0" prefWidth="99.0" />
-                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf8fc" height="106.0" layoutX="36.0" layoutY="205.0" stroke="TRANSPARENT" strokeType="INSIDE" width="232.0" />
-                              <ChoiceBox layoutX="35.0" layoutY="159.0" prefHeight="26.0" prefWidth="232.0" style="-fx-background-color: #faf8fc#faf8fc;" />
-                              <Text layoutX="45.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välj kategori">
+                              <TextField layoutX="153.0" layoutY="197.0" prefHeight="26.0" prefWidth="99.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf8fc" height="106.0" layoutX="39.0" layoutY="335.0" stroke="TRANSPARENT" strokeType="INSIDE" width="232.0" />
+                              <ChoiceBox layoutX="35.0" layoutY="260.0" prefHeight="26.0" prefWidth="232.0" style="-fx-background-color: #faf8fc#faf8fc;" />
+                              <Text layoutX="37.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välj kategori">
                                  <font>
                                     <Font name="Avenir Next Bold" size="13.0" />
                                  </font></Text>
@@ -48,13 +48,13 @@
                                  <font>
                                     <Font name="Avenir Next Bold" size="13.0" />
                                  </font></Button>
-                              <TextField layoutX="45.0" layoutY="232.0" prefHeight="69.0" prefWidth="214.0" />
-                              <Text layoutX="47.0" layoutY="225.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anteckning">
+                              <TextField layoutX="42.0" layoutY="364.0" prefHeight="69.0" prefWidth="214.0" />
+                              <Text layoutX="41.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anteckning">
                                  <font>
                                     <Font name="Avenir Next Bold" size="13.0" />
                                  </font></Text>
                               <DatePicker layoutX="33.0" layoutY="57.0" prefHeight="26.0" prefWidth="232.0" />
-                              <Button fx:id="backToOverview1" layoutX="200.0" layoutY="321.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Lägg till">
+                              <Button fx:id="backToOverview1" layoutX="339.0" layoutY="530.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Lägg till">
                                  <font>
                                     <Font name="Avenir Next Bold" size="13.0" />
                                  </font>
@@ -75,7 +75,7 @@
                   </SplitPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="overviewAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
+            <AnchorPane fx:id="overviewAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;" visible="false">
                <children>
                   <Button layoutX="32.0" layoutY="36.0" mnemonicParsing="false" prefHeight="95.0" prefWidth="162.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
                      <effect>
@@ -91,6 +91,11 @@
                         <Font name="Avenir Next Bold" size="13.0" />
                      </font>
                   </Label>
+                  <AnchorPane layoutX="14.0" layoutY="192.0" prefHeight="200.0" prefWidth="500.0">
+                     <children>
+                        <FlowPane fx:id="OverviewCategory" prefHeight="390.0" prefWidth="500.0" />
+                     </children>
+                  </AnchorPane>
                   <Label layoutX="70.0" layoutY="74.0" prefHeight="38.0" prefWidth="99.0" text="3468 kr">
                      <font>
                         <Font name="Avenir Next Bold" size="25.0" />
@@ -115,7 +120,7 @@
                         <Font name="Avenir Next Bold" size="25.0" />
                      </font>
                   </Label>
-                  <Button fx:id="addExpense" alignment="BASELINE_RIGHT" layoutX="443.0" layoutY="341.0" mnemonicParsing="false" onMouseClicked="#setAddExpense" prefHeight="38.0" prefWidth="142.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;" text="Lägg till utgift" wrapText="true">
+                  <Button fx:id="addExpense" alignment="BASELINE_RIGHT" layoutX="634.0" layoutY="535.0" mnemonicParsing="false" onMouseClicked="#setAddExpense" prefHeight="38.0" prefWidth="142.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;" text="Lägg till utgift" wrapText="true">
                      <effect>
                         <DropShadow>
                            <color>
@@ -129,12 +134,11 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/+.png" />
+                              <Image url="@com/example/budgetmaker2_0/images/+.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <FlowPane fx:id="OverviewCategory" layoutX="32.0" layoutY="179.0" prefHeight="200.0" prefWidth="394.0" />
                </children>
             </AnchorPane>
          </children>
