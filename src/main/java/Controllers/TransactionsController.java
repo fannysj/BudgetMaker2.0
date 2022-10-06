@@ -5,6 +5,9 @@ import Model.Category;
 import Model.Transaction;
 import View.CategoryListItem;
 import View.TransactionListItem;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -24,6 +27,8 @@ import java.util.regex.PatternSyntaxException;
 public class TransactionsController {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
+
+    ObservableList<Category> categories = FXCollections.observableArrayList();
 
     @FXML
     private AnchorPane overviewAnchorPane;
@@ -62,9 +67,14 @@ public class TransactionsController {
 
 
 
+    @FXML
+    private AnchorPane detailPane;
+
+
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
     LocalDate date = LocalDate.now();
-    BudgetModel currentBudget =  new BudgetModel(1000);
+    BudgetModel currentBudget = new BudgetModel(100);
+
 
     //Metoder som ska visa transaktioner men fungerar ej :(
     @FXML
@@ -76,7 +86,11 @@ public class TransactionsController {
 
     }
 
-    public void updateOverviewTransactionList(List<Transaction> transactions) {
+    public void getCategoryFromChoiceBox(){
+        transactionCategoryChoiceBox.getSelectionModel().select(1);
+    }
+
+    public void addTransactionToFlowPane() {
         transactionFlowPane.getChildren().clear();
         for (Transaction transaction: currentBudget.categoryList.get(0).transactionsList) {
             TransactionListItem newTransactionList = new TransactionListItem(transaction, this);
@@ -109,6 +123,21 @@ public class TransactionsController {
         addExpenseSplit.setVisible(true);
     }
 
+    //Öppna en specifik transaktion
+    public void openDetailTransaction(Transaction transaction){
+        transactionView(transaction);
+        detailPane.toFront();
+    }
+
+    //Läser vyn för den transaktion som just nu ska visas
+    public void transactionView(Transaction transaction){
+        transactionNameTextField.setText(transaction.getName());
+        transactionAmountTextField.setText(String.valueOf(transaction.getTransactionAmount()));
+        transactionNoteTextField.setText(transaction.getNotes());
+    }
+
+
+
     @FXML
     public void search() {
         List<Transaction> matches = new ArrayList<>();
@@ -127,4 +156,3 @@ public class TransactionsController {
        // updateTransactionList(matches);
     }
 }
-
