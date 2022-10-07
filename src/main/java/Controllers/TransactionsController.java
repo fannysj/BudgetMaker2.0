@@ -3,16 +3,25 @@ package Controllers;
 import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
+import View.CategoryListItem;
 import View.CategoryOverviewItem;
+import View.OverviewView;
 import View.TransactionListItem;
 import com.example.budgetmaker2_0.User;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
+import javafx.util.converter.LocalDateStringConverter;
 
+import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -25,6 +34,8 @@ import java.util.regex.PatternSyntaxException;
 public class TransactionsController implements Initializable {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
+
+    ObservableList<String> categoriesName = FXCollections.observableArrayList();
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
@@ -69,12 +80,11 @@ public class TransactionsController implements Initializable {
     @FXML
     public FlowPane OverviewCategory;
 
+    @FXML
+    public AnchorPane addExpenseAnchorPane;
 
     @FXML
     private AnchorPane detailPane;
-
-    @FXML
-    private AnchorPane addExpenseAnchorPane;
 
     @FXML
     private Label leftOfBudgetDisplay;
@@ -82,9 +92,12 @@ public class TransactionsController implements Initializable {
     @FXML
     private Label spentOfBudgetDisplay;
 
-
+    @FXML
+    private Button cateObjectButton;
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
+
+
 
     //Metoder som ska visa transaktioner men fungerar ej :(
     @Override
@@ -128,7 +141,7 @@ public class TransactionsController implements Initializable {
 
     public void addTransactionToFlowPane() {
         transactionFlowPane.getChildren().clear();
-        for (Transaction transaction: currentUser.getCategoryList().get(0).transactionsList) {
+        for (Transaction transaction: currentBudget.categoryList.get(0).transactionsList) {
             TransactionListItem newTransactionList = new TransactionListItem(transaction, this);
             transactionListArray.add(newTransactionList);
             transactionFlowPane.getChildren().add(newTransactionList);
@@ -156,7 +169,12 @@ public class TransactionsController implements Initializable {
     public void setAddExpense() {
         addExpenseAnchorPane.toFront();
         overviewAnchorPane.setVisible(false);
-        addExpenseSplit.setVisible(true);
+        addExpenseAnchorPane.setVisible(true);
+    }
+
+    @FXML
+    public void toCatDetailView(){
+
     }
 
     //Öppna en specifik transaktion
@@ -192,11 +210,10 @@ public class TransactionsController implements Initializable {
        // updateTransactionList(matches);
     }
 
-
     @FXML
     public void updateCategoryListItem(){
             OverviewCategory.getChildren().clear();
-            for (Category category : currentUser.getCategoryList()) {
+            for (Category category : currentBudget.categoryList) {
                 CategoryOverviewItem newCategoryList = new CategoryOverviewItem(category, this);
                 CategoryOverviewItemArray.add(newCategoryList);
                 OverviewCategory.getChildren().add(newCategoryList);
@@ -204,4 +221,10 @@ public class TransactionsController implements Initializable {
 
     }
 
+
+    @FXML
+    public void switchToTransactionOverview(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        overviewView.switchToTransactionOverview(mouseEvent);
+
+    }
 }
