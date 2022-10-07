@@ -8,12 +8,12 @@ public class Category {
     private double goalAmount;
     public double spentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
-    private List<TransactionObserver> observers = new ArrayList<>();
 
     public Category(String name, double goalAmount) {
         this.name = String.valueOf(name);
         this.goalAmount = goalAmount;
         this.spentAmount = 0;
+
     }
 
     //Setters
@@ -49,6 +49,8 @@ public class Category {
         updateSpentAmount();
         return spentAmount;
     }
+
+
 
 
     // Transaction Methods
@@ -124,52 +126,6 @@ public class Category {
     }
 
 
-    //Change Transaction
-
-    //kopierar:
-//    public void changeTransaction(Transaction T){
-//        copyTransaction(T);
-//        transactionsList.set(transactionsList.indexOf(T), T);
-//    }
-//    public Transaction copyTransaction(Transaction t){
-//        return new Transaction(t.getTransactionAmount() , t.getName(), t.getNotes(), t.getCategory(), t.getDate());
-//    }
-//
-//    //ta bort och ersätt gammal:
-//    public List<Transaction> replaceTransaction(Transaction t){
-//        transactionsList.remove(t);
-//        int index = transactionsList.indexOf(t);
-//        Transaction newTrans = new Transaction();
-//        transactionsList.set(index, newTrans);
-//        return transactionsList;
-//    }
-//
-
-
-//    // Observer
-//    /**
-//     * Add/Remove observer
-//     *
-//     * @param observer
-//     */
-//    public void addObserver(TransactionObserver observer){
-//        this.observers.add(observer);
-//    }
-//
-//    public void removeObserver(TransactionObserver observer){
-//        this.observers.remove(observer);
-//    }
-//
-//    public void notifyAllObserver(){
-//        ArrayList<Transaction> transactionsCopy = new ArrayList<>(); //Ska vara Iterator?
-//        // Collection.copy(transactionsCopy, transactionsList);
-//        // Defensiv kodning
-//
-//        for(TransactionObserver observer: observers){
-//            observer.update();
-//        }
-//
-//    }
 
 }
 

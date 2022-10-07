@@ -7,9 +7,9 @@ import View.CategoryListItem;
 import View.CategoryOverviewItem;
 import View.OverviewView;
 import View.TransactionListItem;
+import com.example.budgetmaker2_0.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -35,11 +35,13 @@ public class TransactionsController implements Initializable {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
 
-    ObservableList<Category> categories = FXCollections.observableArrayList();
+    ObservableList<String> categoriesName = FXCollections.observableArrayList();
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
-    OverviewView overviewView = new OverviewView();
+    User currentUser = User.getInstance();
+
+    BudgetModel currentBudget;
 
     @FXML
     private AnchorPane overviewAnchorPane;
@@ -78,6 +80,8 @@ public class TransactionsController implements Initializable {
     @FXML
     public FlowPane OverviewCategory;
 
+    @FXML
+    public AnchorPane addExpenseAnchorPane;
 
     @FXML
     private AnchorPane detailPane;
@@ -88,9 +92,21 @@ public class TransactionsController implements Initializable {
     @FXML
     private Label spentOfBudgetDisplay;
 
-    //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
-    BudgetModel currentBudget = new BudgetModel(100);
+    @FXML
+    private Button cateObjectButton;
 
+    //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
+
+
+
+    //Metoder som ska visa transaktioner men fungerar ej :(
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        currentBudget = currentUser.getBudgetModel();
+        updateBudgetDisplay();
+        updateCategoryListItem();
+
+    }
 
     public void updateBudgetDisplay(){
         leftOfBudgetDisplay.setText(String.valueOf(currentBudget.getAmountLeft()));
@@ -98,25 +114,29 @@ public class TransactionsController implements Initializable {
         System.out.println(leftOfBudgetDisplay + "HÄR OSCAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 
-    //Metoder som ska visa transaktioner men fungerar ej :(
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        updateCategoryListItem();
-
-    }
-
     @FXML
     public void createNewTransaction(){
         int a = Integer.parseInt(transactionAmountTextField.getText());
         String na = transactionNameTextField.getText();
         String no = transactionNoteTextField.getText();
-        Transaction t = new Transaction(a,na,no, currentBudget.categoryList.get(0), LocalDate.now()); //Behövs ändras så category inte är hårdkodat
-        currentBudget.categoryList.get(0).transactionsList.add(t); //Behövs ändras så category inte är hårdkodat
+        int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
+        LocalDate d = transactionDatePicker.getValue();
 
+        currentBudget.addTransaction(a,na,no, i, d);
     }
 
+    @FXML
     public void getCategoryFromChoiceBox(){
         transactionCategoryChoiceBox.getSelectionModel().select(1);
+    }
+
+    @FXML
+    public void populateCategoryChoiceBox() {
+        transactionCategoryChoiceBox.getItems().clear();
+        for(Category c: currentUser.getCategoryList()){
+            transactionCategoryChoiceBox.getItems().add(c.getName());
+        }
+
     }
 
     public void addTransactionToFlowPane() {
@@ -147,9 +167,14 @@ public class TransactionsController implements Initializable {
 
     @FXML
     public void setAddExpense() {
-        addExpenseSplit.toFront();
+        addExpenseAnchorPane.toFront();
         overviewAnchorPane.setVisible(false);
-        addExpenseSplit.setVisible(true);
+        addExpenseAnchorPane.setVisible(true);
+    }
+
+    @FXML
+    public void toCatDetailView(){
+
     }
 
     //Öppna en specifik transaktion
