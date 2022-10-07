@@ -6,18 +6,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="422.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8 #dccee8#dccee8 #dccee8#dccee8;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<javafx.scene.layout.AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="310.0" style="-fx-background-color: f4f0ec f4f0ec f4f0ec f4f0ec;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TransactionsController">
    <children>
-      <Label fx:id="listItemTransactionName" layoutX="36.0" layoutY="42.0" text="Namn" />
-      <Label fx:id="listItemTransactionDate" layoutX="119.0" layoutY="42.0" text="Datum" />
-      <Label fx:id="listItemTransactionNote" layoutX="208.0" layoutY="42.0" text="Note" />
-      <Label fx:id="listItemTransactionAmount" layoutX="287.0" layoutY="42.0" text="Belopp" />
-      <Button fx:id="deleteTransaction" layoutX="359.0" layoutY="8.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="56.0" text="Ta bort">
+      <Label fx:id="listItemTransactionName" layoutX="27.0" layoutY="42.0" text="Namn" />
+      <Label fx:id="listItemTransactionDate" layoutX="81.0" layoutY="42.0" text="Datum" />
+      <Label fx:id="listItemTransactionNote" layoutX="161.0" layoutY="42.0" text="Note" />
+      <Label fx:id="listItemTransactionAmount" layoutX="210.0" layoutY="42.0" text="Belopp" />
+      <Button fx:id="deleteTransaction" layoutX="240.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#deleteTransactionFromCollectionList" prefHeight="17.0" prefWidth="56.0" text="Ta bort">
          <font>
             <Font name="Avenir Next Bold" size="10.0" />
          </font>
       </Button>
-      <Button fx:id="changeTransaction" layoutX="359.0" layoutY="68.0" mnemonicParsing="false" onMouseClicked="#changeTransaction" prefHeight="17.0" prefWidth="56.0" text="Ändra">
+      <Button fx:id="changeTransaction" layoutX="240.0" layoutY="64.0" mnemonicParsing="false" onAction="#changeTransactionFromCollectionList" prefHeight="17.0" prefWidth="56.0" text="Ändra">
          <font>
             <Font name="Avenir Next Bold" size="10.0" />
          </font>
@@ -26,4 +26,4 @@
    <effect>
       <DropShadow />
    </effect>
-</fx:root>
+</javafx.scene.layout.AnchorPane>
