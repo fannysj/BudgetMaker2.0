@@ -7,17 +7,17 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="500.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="81.0" prefWidth="500.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="500.0" style="-fx-background-color: 00000;" />
-      <Label fx:id="CategoryNameOV" layoutX="50.0" layoutY="5.0" prefHeight="17.0" prefWidth="77.0" text="Hej" />
-      <ProgressBar layoutX="50.0" layoutY="28.0" prefHeight="20.0" prefWidth="324.0" progress="0.0" />
-      <ImageView fitHeight="35.0" fitWidth="33.0" layoutX="7.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+      <Button mnemonicParsing="false" prefHeight="81.0" prefWidth="500.0" style="-fx-background-color: 00000;" />
+      <Label fx:id="CategoryNameOV" layoutX="65.0" layoutY="14.0" prefHeight="17.0" prefWidth="77.0" text="Hej" />
+      <ProgressBar layoutX="50.0" layoutY="48.0" prefHeight="20.0" prefWidth="324.0" progress="0.0" />
+      <ImageView fitHeight="35.0" fitWidth="33.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@com/example/budgetmaker2_0/images/food.png" />
          </image>
       </ImageView>
-      <Label fx:id="currentAmount" layoutX="407.0" layoutY="14.0" text="Label" />
-      <Label fx:id="goalAmount" layoutX="407.0" layoutY="30.0" text="Label" />
+      <Label fx:id="currentAmount" layoutX="407.0" layoutY="23.0" text="Label" />
+      <Label fx:id="goalAmount" layoutX="407.0" layoutY="49.0" text="Label" />
    </children>
 </fx:root>

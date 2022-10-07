@@ -4,58 +4,52 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CancellationException;
 
 public class BudgetModel implements Serializable {
     public List<Category> categoryList = new ArrayList<>();
-    private double amount;
+
+    private double StartAmount;
     public double amountSpent = 0;
     private double amountLeft = 0;
 
     public BudgetModel(){
-        newCategory("mat",2000);
-        newCategory("shopping", 2000);
-        newCategory("nöje", 1000);
-        newCategory("övrigt",100);
+
+        newCategory("Mat",2000);
+        newCategory("Shopping", 2000);
+        newCategory("Nöje", 1000);
+        newCategory("Övrigt",100);
 
         Category mat = categoryList.get(0);
         Category shop = categoryList.get(1);
         Category nöje = categoryList.get(2);
         Category övrigt = categoryList.get(3);
 
-
-        mat.newTransaction(100, "ica", "veckohandling", LocalDate.now());
-        mat.newTransaction(1000, "willys", "bbq", LocalDate.now());
-        shop.newTransaction(500, "hm", "latexdräkt", LocalDate.now());
-        nöje.newTransaction(1000, "ticketmaster", "markoolio", LocalDate.now());
-
-        mat.printTransactioninList();
-        currentAmount();
-        mat.AmountLeftToSpend();
-        mat.getTransactionsList().get(0).setDate(1999,6,4);
-        mat.sortByAmount();
-        mat.sortByDate();
-        mat.printTransactioninList();
-        moneyLeftToDivide();
-        getAmountLeft();
     }
 
 
-    public void setAmount(int amount){
-        this.amount = amount;
+    public void setStartAmount(int startAmount){
+        this.StartAmount = startAmount;
     }
 
-    public double getAmount(){
-        return amount;
+    public double getStartAmount(){
+        return StartAmount;
     }
 
-    public void newCategory(String name, int amount) {
-        Category category = new Category(name, amount);
+    public void newCategory(String name, int goalamount) {
+        Category category = new Category(name, goalamount);
         categoryList.add(category);
+    }
+
+    public Category getCategory(int i){
+        return categoryList.get(i);
     }
 
     public List<Category> getCategoryList() {
         return categoryList;
     }
+
+
 
     //Total mängd av spenderade pengar i varje kategori
     public double currentAmount(){
@@ -79,17 +73,19 @@ public class BudgetModel implements Serializable {
     // Hur mycket pengar finns kvar att portionera ut till kategorierna
     public void moneyLeftToDivide(){
         double tots = TotalGoalAmountOfCategories();
-        double totalAmountLeft = amount - tots;
+        double totalAmountLeft = StartAmount - tots;
 
         System.out.println(totalAmountLeft);
     }
 
     public double getAmountLeft(){
-        double b = amount - amountSpent;
-        return b;
+        return getStartAmount() - currentAmount();
     }
 
-    public void setCategoryAmount() {
+    public void addTransaction(int amount, String name, String note, int i, LocalDate date) {
+        getCategory(i).newTransaction(amount,name,note,date);
+
+
     }
 
 }

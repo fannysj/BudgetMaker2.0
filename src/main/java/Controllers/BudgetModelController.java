@@ -32,7 +32,7 @@ public class BudgetModelController implements Initializable {
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
-    User currentUser = new User();
+    User currentUser = User.getInstance();
     BudgetModel currentBudget;
 
     TransactionsController controller;
@@ -90,17 +90,16 @@ public class BudgetModelController implements Initializable {
 
     @FXML
     private Label spentOfBudgetDisplay;
-    private Object Node;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
 
     }
 
     @FXML
     public void setNewBudgetModel(){
-        int budgetValue = Integer.parseInt(EnterBudget.getText());
-        currentUser.createNewBudget(budgetValue);
+        currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()));
         String str = EnterBudget.getText();
         budgetAmount.setText(str);
 
@@ -124,9 +123,6 @@ public class BudgetModelController implements Initializable {
     }
 
 
-    @FXML
-    private Label felmeddelande;
-
 
     @FXML
     public void goBackonePage() {
@@ -137,7 +133,7 @@ public class BudgetModelController implements Initializable {
 
     void updateCategoryList() {
         CategoryDivideFlowpane.getChildren().clear();
-        for (Category category : currentUser.getBudgetModel().categoryList) {
+        for (Category category : currentUser.getCategoryList()) {
             CategoryListItem newCategoryList = new CategoryListItem(category, this);
             categoryListArray.add(newCategoryList);
             CategoryDivideFlowpane.getChildren().add(newCategoryList);
@@ -155,13 +151,7 @@ public class BudgetModelController implements Initializable {
 
     }
 
-    @FXML
-    public void goToCategoryOverview() throws IOException {
-        HelloApplication.setRoot("hello-view");
-        budgetingPage.setVisible(false);
-        startSida.setVisible(false);
-        oversiktKategori.setVisible(true);
-    }
+
 
     private void updateOverviewCategoryList(){
         OverviewCategory.getChildren().clear();
