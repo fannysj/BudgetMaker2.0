@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="transactionOverviewListItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="53.0" prefWidth="249.0" style="-fx-background-color: f4f0ec f4f0ec;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="34.0" layoutY="18.0" text="Belopp" />
+      <Label layoutX="119.0" layoutY="18.0" text="Datum" />
+   </children>
+</AnchorPane>
