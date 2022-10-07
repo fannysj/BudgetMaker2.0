@@ -5,6 +5,7 @@ import Model.BudgetModel;
 import Model.Category;
 import View.CategoryListItem;
 import View.CategoryOverviewItem;
+import View.OverviewView;
 import com.example.budgetmaker2_0.HelloApplication;
 import com.example.budgetmaker2_0.User;
 import javafx.fxml.FXML;
@@ -31,7 +32,7 @@ public class BudgetModelController implements Initializable {
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
-    User currentUser;
+    User currentUser = new User();
     BudgetModel currentBudget;
 
     TransactionsController controller;
@@ -99,14 +100,11 @@ public class BudgetModelController implements Initializable {
     @FXML
     public void setNewBudgetModel(){
         int budgetValue = Integer.parseInt(EnterBudget.getText());
-        currentUser = new User();
         currentUser.createNewBudget(budgetValue);
-        currentBudget = currentUser.getBudgetModel();
         String str = EnterBudget.getText();
         budgetAmount.setText(str);
 
     }
-
 
     @FXML
     public void changeToBudgetingSide() {
@@ -137,9 +135,9 @@ public class BudgetModelController implements Initializable {
         budgetingPage.setVisible(false);
     }
 
-    private void updateCategoryList() {
+    void updateCategoryList() {
         CategoryDivideFlowpane.getChildren().clear();
-        for (Category category : currentBudget.categoryList) {
+        for (Category category : currentUser.getBudgetModel().categoryList) {
             CategoryListItem newCategoryList = new CategoryListItem(category, this);
             categoryListArray.add(newCategoryList);
             CategoryDivideFlowpane.getChildren().add(newCategoryList);
@@ -147,19 +145,14 @@ public class BudgetModelController implements Initializable {
         }
     }
 
-
     @FXML
     public void switchToScene2(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        Parent root  = FXMLLoader.load(getClass().getResource("/overview2.fxml"));
-        Stage stage = (Stage) ((Node)mouseEvent.getSource()).getScene().getWindow();
+        Parent root = FXMLLoader.load(getClass().getResource("/overview2.fxml"));
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-    }
 
-    @FXML
-    public void switchToScene1() throws IOException {
-        HelloApplication.setRoot("hello-view");
     }
 
     @FXML
@@ -179,6 +172,8 @@ public class BudgetModelController implements Initializable {
 
         }
 
+
     }
 }
+
 
