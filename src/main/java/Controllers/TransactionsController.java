@@ -87,6 +87,9 @@ public class TransactionsController {
     @FXML
     private Label spentOfBudgetDisplay;
 
+    @FXML
+    private Button cateObjectButton;
+
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
     BudgetModel currentBudget = new BudgetModel(100);
 
@@ -145,6 +148,11 @@ public class TransactionsController {
         addExpenseSplit.toFront();
         overviewAnchorPane.setVisible(false);
         addExpenseSplit.setVisible(true);
+    }
+
+    @FXML
+    public void toCatDetailView(){
+
     }
 
     //Öppna en specifik transaktion
