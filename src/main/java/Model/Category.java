@@ -5,11 +5,11 @@ import java.util.*;
 
 public class Category {
     private String name;
-    private double goalAmount;
-    public double spentAmount;
+    private int goalAmount;
+    public int spentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
 
-    public Category(String name, double goalAmount) {
+    public Category(String name, int goalAmount) {
         this.name = String.valueOf(name);
         this.goalAmount = goalAmount;
         this.spentAmount = 0;
@@ -21,12 +21,12 @@ public class Category {
         this.name = name;
     }
 
-    public void setGoalAmount(double goalAmount){
+    public void setGoalAmount(int goalAmount){
         this.goalAmount = goalAmount;
     }
 
 
-    public void setSpentAmount(double spentAmount) {
+    public void setSpentAmount(int spentAmount) {
         this.spentAmount = spentAmount;
     }
 
@@ -41,11 +41,11 @@ public class Category {
     }
 
 
-    public double getGoalAmount() {
+    public int getGoalAmount() {
         return goalAmount;
     }
 
-    public double getSpentAmount() {
+    public int getSpentAmount() {
         updateSpentAmount();
         return spentAmount;
     }
@@ -90,9 +90,9 @@ public class Category {
         }
     }
 
-    public double AmountLeftToSpend(){
+    public int AmountLeftToSpend(){
         updateSpentAmount();
-        double amountLeft = goalAmount-spentAmount;
+        int amountLeft = goalAmount-spentAmount;
         if (amountLeft<0){
             System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
         }
@@ -105,7 +105,7 @@ public class Category {
     public void sortByAmount() {
         Collections.sort(transactionsList, new Comparator<Transaction>() {
             public int compare(Transaction t1, Transaction t2) {
-                return Double.compare(t1.getTransactionAmount(), t2.getTransactionAmount());
+                return Integer.compare(t1.getTransactionAmount(), t2.getTransactionAmount());
             }
         });
 

@@ -8,13 +8,13 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="113.0" prefWidth="458.0" style="-fx-background-color: #f2f2f2;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="113.0" prefWidth="458.0" style="-fx-background-color: transparent;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f2f2f2" height="92.0" layoutX="18.0" layoutY="11.0" stroke="#dddddd" strokeType="INSIDE" width="429.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="91.0" layoutX="14.0" layoutY="13.0" stroke="#eeeeee08" strokeType="INSIDE" width="431.0">
          <effect>
-            <DropShadow height="4.79" radius="2.2625" width="6.26">
+            <DropShadow height="19.52" radius="8.8925" spread="0.04" width="18.05">
                <color>
-                  <Color opacity="0.25159913301467896" />
+                  <Color opacity="0.17484009265899658" />
                </color>
             </DropShadow>
          </effect>

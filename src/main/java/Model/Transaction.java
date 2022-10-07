@@ -24,7 +24,7 @@ public class Transaction {
     }
 
     //Getters
-    public double getTransactionAmount(){
+    public int getTransactionAmount(){
         return transactionAmount;
     }
 

@@ -28,6 +28,55 @@
    <children>
       <StackPane layoutX="-5.0" prefHeight="610.0" prefWidth="802.0">
          <children>
+            <AnchorPane fx:id="startSida" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="724.0">
+               <children>
+                  <ImageView fitHeight="650.0" fitWidth="973.0" layoutX="-125.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-12.0" AnchorPane.rightAnchor="-43.0">
+                     <image>
+                        <Image url="@images/plant-growing-nature.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-0.65" contrast="-0.19" hue="0.14" saturation="-0.4" />
+                     </effect>
+                  </ImageView>
+                  <Text fill="#ffffffc0" layoutX="230.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Din budget">
+                     <font>
+                        <Font name="Avenir Next Bold" size="59.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="64.86" radius="57.7225" spread="0.06" width="168.03">
+                           <color>
+                              <Color opacity="0.4605543613433838" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Text>
+                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="232.0" layoutY="402.0" mnemonicParsing="false" onAction="#setNewBudgetModel" onMouseReleased="#changeToBudgetingSide" prefHeight="52.0" prefWidth="320.0" style="-fx-background-color: transperent; -fx-background-radius: 20px; -fx-border-color: fff; -fx-border-radius: 20px;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Skapa budgetmål" AnchorPane.bottomAnchor="156.0" AnchorPane.rightAnchor="253.0">
+                     <font>
+                        <Font name="Avenir Next Bold" size="27.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <TextField fx:id="EnterBudget" layoutX="260.0" layoutY="283.0" prefHeight="44.0" prefWidth="253.0" promptText="ex. 1000" styleClass="text" stylesheets="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/BudgetMaker.css">
+                     <font>
+                        <Font name="SukhumvitSet-Thin" size="20.0" />
+                     </font>
+                     <effect>
+                        <InnerShadow choke="0.06" height="26.89" radius="12.21" width="23.95">
+                           <color>
+                              <Color opacity="0.4093816578388214" />
+                           </color>
+                        </InnerShadow>
+                     </effect>
+                  </TextField>
+                  <Text fill="WHITE" layoutX="525.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" wrappingWidth="24.3946533203125">
+                     <font>
+                        <Font name="Avenir Next Bold" size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="oversiktKategori" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="578.0" layoutX="13.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="778.0" />
@@ -88,56 +137,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="startSida" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="724.0">
-               <children>
-                  <ImageView fitHeight="650.0" fitWidth="973.0" layoutX="-125.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-12.0" AnchorPane.rightAnchor="-43.0">
-                     <image>
-                        <Image url="@images/plant-growing-nature.png" />
-                     </image>
-                     <effect>
-                        <ColorAdjust brightness="-0.65" contrast="-0.19" hue="0.14" saturation="-0.4" />
-                     </effect>
-                  </ImageView>
-                  <Text fill="#ffffffc0" layoutX="230.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Din budget">
-                     <font>
-                        <Font name="Avenir Next Bold" size="59.0" />
-                     </font>
-                     <effect>
-                        <DropShadow height="64.86" radius="57.7225" spread="0.06" width="168.03">
-                           <color>
-                              <Color opacity="0.4605543613433838" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Text>
-                  <Button fx:id="Budgetknapp" alignment="CENTER" layoutX="232.0" layoutY="402.0" mnemonicParsing="false" onAction="#setNewBudgetModel" onMouseReleased="#changeToBudgetingSide" prefHeight="52.0" prefWidth="320.0" style="-fx-background-color: transperent; -fx-background-radius: 20px; -fx-border-color: fff; -fx-border-radius: 20px;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Skapa budgetmål" AnchorPane.bottomAnchor="156.0" AnchorPane.rightAnchor="253.0">
-                     <font>
-                        <Font name="Avenir Next Bold" size="27.0" />
-                     </font>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Button>
-                  <TextField fx:id="EnterBudget" layoutX="260.0" layoutY="283.0" prefHeight="44.0" prefWidth="253.0" promptText="ex. 1000" styleClass="text" stylesheets="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/BudgetMaker.css">
-                     <font>
-                        <Font name="SukhumvitSet-Thin" size="20.0" />
-                     </font>
-                     <effect>
-                        <InnerShadow choke="0.06" height="26.89" radius="12.21" width="23.95">
-                           <color>
-                              <Color opacity="0.4093816578388214" />
-                           </color>
-                        </InnerShadow>
-                     </effect>
-                  </TextField>
-                  <Text fill="WHITE" layoutX="525.0" layoutY="319.0" strokeType="OUTSIDE" strokeWidth="0.0" text="kr" wrappingWidth="24.3946533203125">
-                     <font>
-                        <Font name="Avenir Next Bold" size="24.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="oversiktKategori" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" visible="false">
+            <AnchorPane fx:id="oversiktKategori" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="578.0" layoutX="13.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="778.0" />
                   <BorderPane layoutX="19.0" layoutY="12.0" prefHeight="566.0" prefWidth="766.0">
@@ -204,13 +204,13 @@
                         <Image url="@images/plant-growing-nature.png" />
                      </image>
                      <effect>
-                        <ColorAdjust brightness="-0.43" />
+                        <ColorAdjust brightness="-0.63" />
                      </effect>
                   </ImageView>
 
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffffe5" height="538.0" layoutX="25.0" layoutY="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="543.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#424a3ba3" height="144.0" layoutX="575.0" layoutY="58.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="212.0" />
-                  <ImageView fitHeight="125.0" fitWidth="267.0" layoutX="561.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1f1787" height="538.0" layoutX="25.0" layoutY="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="543.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1d211987" height="144.0" layoutX="575.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="212.0" />
+                  <ImageView fitHeight="125.0" fitWidth="267.0" layoutX="559.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/images/kvaravbudget.png" />
                      </image>
@@ -226,23 +226,23 @@
                         <Font name="Avenir Book" size="41.0" />
                      </font>
                   </Label>
-                  <Text fill="#2b2b2bd8" layoutX="50.0" layoutY="106.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Budgetera ut dina pengar" wrappingWidth="495.36707408702705">
+                  <Text fill="#ffffffd9" layoutX="50.0" layoutY="106.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Budgetera ut dina pengar" wrappingWidth="495.36707408702705">
                      <font>
                         <Font name="Avenir Book" size="32.0" />
                      </font>
                   </Text>
-                  <Button fx:id="klarKnapp" alignment="TOP_LEFT" layoutX="589.0" layoutY="544.0" mnemonicParsing="false" onMouseClicked="#switchToScene2" prefHeight="31.0" prefWidth="106.0" style="-fx-border-radius: fff; -fx-border-radius: 15px; -fx-background-color: ffffff;" styleClass="btn" stylesheets="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/BudgetMaker.css" text="Klar">
+                  <Button fx:id="klarKnapp" alignment="TOP_LEFT" layoutX="589.0" layoutY="544.0" mnemonicParsing="false" onMouseClicked="#switchToScene2" prefHeight="31.0" prefWidth="106.0" style="-fx-border-radius: fff; -fx-border-radius: 15px; -fx-background-color: ffffff;" styleClass="btn2" stylesheets="@BudgetMaker.css" text="Klar">
                      <font>
                         <Font name="Avenir Book" size="26.0" />
                      </font>
                   </Button>
                   <AnchorPane layoutX="25.0" layoutY="135.0" prefHeight="425.0" prefWidth="528.0">
                      <children>
-                        <FlowPane fx:id="CategoryDivideFlowpane" layoutY="8.0" prefHeight="418.0" prefWidth="528.0" style="-fx-background-color: #f2f2f2;" styleClass="rectangle" stylesheets="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/BudgetMaker.css" />
+                        <FlowPane fx:id="CategoryDivideFlowpane" layoutX="7.0" layoutY="8.0" prefHeight="418.0" prefWidth="528.0" style="-fx-background-color: ;" styleClass="rectangle" stylesheets="@BudgetMaker.css" />
                      </children>
                   </AnchorPane>
-                  <Button fx:id="goBack" layoutX="27.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" prefHeight="46.0" prefWidth="115.0" style="-fx-background-color: ffff;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Tillbaka" textFill="#0000000a" />
-                  <Line endX="100.0" layoutX="275.0" layoutY="126.0" startX="-219.5" stroke="#00000050" />
+                  <Button fx:id="goBack" layoutX="27.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" prefHeight="24.0" prefWidth="89.0" style="-fx-background-color: ffff;" styleClass="btn2" stylesheets="@BudgetMaker.css" text="Tillbaka" textFill="#0000000a" />
+                  <Line endX="100.0" layoutX="275.0" layoutY="126.0" startX="-219.5" stroke="#ffffffb2" />
                </children>
             </AnchorPane>
          </children>

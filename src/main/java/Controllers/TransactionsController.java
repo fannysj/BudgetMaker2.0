@@ -169,13 +169,9 @@ public class TransactionsController implements Initializable {
     public void setAddExpense() {
         addExpenseAnchorPane.toFront();
         overviewAnchorPane.setVisible(false);
-        addExpenseAnchorPane.setVisible(true);
+        addExpenseSplit.setVisible(true);
     }
 
-    @FXML
-    public void toCatDetailView(){
-
-    }
 
     //Öppna en specifik transaktion
     public void openDetailTransaction(Transaction transaction){
@@ -221,10 +217,4 @@ public class TransactionsController implements Initializable {
 
     }
 
-
-    @FXML
-    public void switchToTransactionOverview(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        overviewView.switchToTransactionOverview(mouseEvent);
-
-    }
 }
