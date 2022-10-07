@@ -44,8 +44,16 @@ public class CategoryListItem extends AnchorPane {
         return categoryName;
     }
 
-    @FXML
-    private void onUpdateAmount(){
+    public TextField getCategoryAmount(){
+        return categoryAmount;
+    }
+
+    public Category getCategory(){
+        return category;
+    }
+
+
+    public int onUpdateAmount(){
         int newValue = - amountChanged;
         if(this.categoryAmount.getText().isEmpty()){
             amountChanged = 0;
@@ -54,7 +62,7 @@ public class CategoryListItem extends AnchorPane {
             newValue = newValue - amountChanged;
             amountChanged = Integer.parseInt(this.categoryAmount.getText());
         }
-
+        return newValue;
     }
 
 

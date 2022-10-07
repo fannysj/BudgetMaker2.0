@@ -11,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -30,7 +31,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-public class TransactionsController {
+public class TransactionsController implements Initializable {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
 
@@ -81,12 +82,33 @@ public class TransactionsController {
     @FXML
     private AnchorPane detailPane;
 
+    @FXML
+    private Label leftOfBudgetDisplay;
+
+    @FXML
+    private Label spentOfBudgetDisplay;
+
+    @FXML
+    private Button cateObjectButton;
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
-    BudgetModel currentBudget = new BudgetModel(100);
+    BudgetModel currentBudget = new BudgetModel();
 
 
     //Metoder som ska visa transaktioner men fungerar ej :(
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        updateBudgetDisplay();
+        updateCategoryListItem();
+
+    }
+
+    public void updateBudgetDisplay(){
+        leftOfBudgetDisplay.setText(String.valueOf(currentBudget.getAmountLeft()));
+        spentOfBudgetDisplay.setText(String.valueOf(currentBudget.currentAmount()));
+        System.out.println(leftOfBudgetDisplay + "HÄR OSCAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    }
+
     @FXML
     public void createNewTransaction(){
         int a = Integer.parseInt(transactionAmountTextField.getText());
@@ -132,6 +154,11 @@ public class TransactionsController {
         addExpenseSplit.toFront();
         overviewAnchorPane.setVisible(false);
         addExpenseSplit.setVisible(true);
+    }
+
+    @FXML
+    public void toCatDetailView(){
+
     }
 
     //Öppna en specifik transaktion

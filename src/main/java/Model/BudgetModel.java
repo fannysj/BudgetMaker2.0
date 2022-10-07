@@ -7,12 +7,11 @@ import java.util.List;
 
 public class BudgetModel implements Serializable {
     public List<Category> categoryList = new ArrayList<>();
-    private final double amount;
+    private double amount;
     public double amountSpent = 0;
     private double amountLeft = 0;
 
-    public BudgetModel(int amount){
-        this.amount = amount;
+    public BudgetModel(){
         newCategory("mat",2000);
         newCategory("shopping", 2000);
         newCategory("nöje", 1000);
@@ -37,8 +36,17 @@ public class BudgetModel implements Serializable {
         mat.sortByDate();
         mat.printTransactioninList();
         moneyLeftToDivide();
+        getAmountLeft();
     }
 
+
+    public void setAmount(int amount){
+        this.amount = amount;
+    }
+
+    public double getAmount(){
+        return amount;
+    }
 
     public void newCategory(String name, int amount) {
         Category category = new Category(name, amount);
@@ -50,12 +58,13 @@ public class BudgetModel implements Serializable {
     }
 
     //Total mängd av spenderade pengar i varje kategori
-    public void currentAmount(){
+    public double currentAmount(){
         amountSpent = 0;
         for (Category c : categoryList){
             amountSpent += c.getSpentAmount();
         }
         System.out.println(amountSpent);
+        return amountSpent;
     }
 
     //Total mängd av utgiftsmål för alla kategorier
@@ -73,8 +82,15 @@ public class BudgetModel implements Serializable {
         double totalAmountLeft = amount - tots;
 
         System.out.println(totalAmountLeft);
-
-
     }
+
+    public double getAmountLeft(){
+        double b = amount - amountSpent;
+        return b;
+    }
+
+    public void setCategoryAmount() {
+    }
+
 }
 

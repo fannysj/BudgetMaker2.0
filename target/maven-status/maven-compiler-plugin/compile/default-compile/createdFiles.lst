@@ -5,6 +5,7 @@ com/example/budgetmaker2_0/GsonTester.class
 Model/Category$2.class
 View/CategoryOverviewItem.class
 module-info.class
+View/TransactionOverviewItem.class
 View/CategoryListItem.class
 Controllers/TransactionsController.class
 com/example/budgetmaker2_0/HelloApplication.class
@@ -18,6 +19,5 @@ Model/Category$1.class
 Model/Transaction.class
 View/TransactionListItem.class
 Model/SortCategory.class
-Controllers/OverviewController.class
 Model/ObserverHandler.class
 View/OverviewView.class

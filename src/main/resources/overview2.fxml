@@ -18,11 +18,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="headAnchorPane" prefHeight="610.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TransactionsController">
+<AnchorPane fx:id="headAnchorPane" prefHeight="610.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TransactionsController">
    <children>
       <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="616.0" prefWidth="809.0">
          <children>
-            <AnchorPane fx:id="overviewAnchorPane" prefHeight="609.0" prefWidth="801.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;" visible="false">
+            <AnchorPane fx:id="overviewAnchorPane" prefHeight="609.0" prefWidth="801.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
                <children>
                   <Button layoutX="61.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
                      <effect>
@@ -88,7 +88,7 @@
                   </AnchorPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="401.0" prefWidth="606.0">
+            <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="401.0" prefWidth="606.0" visible="false">
                <children>
                   <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" layoutX="55.0" layoutY="53.0" prefHeight="511.0" prefWidth="700.0">
                     <items>
