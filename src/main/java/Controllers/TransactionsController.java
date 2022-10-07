@@ -3,25 +3,19 @@ package Controllers;
 import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
-import View.CategoryListItem;
 import View.CategoryOverviewItem;
 import View.OverviewView;
 import View.TransactionListItem;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.text.Text;
-import javafx.util.converter.LocalDateStringConverter;
 
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -35,7 +29,7 @@ public class TransactionsController implements Initializable {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
 
-    ObservableList<Category> categories = FXCollections.observableArrayList();
+    ObservableList<String> categoriesName = FXCollections.observableArrayList();
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
@@ -57,7 +51,7 @@ public class TransactionsController implements Initializable {
     private TextField transactionAmountTextField;
 
     @FXML
-    private ChoiceBox transactionCategoryChoiceBox;
+    private ChoiceBox<String> transactionCategoryChoiceBox;
 
     @FXML
     private TextField transactionNoteTextField;
@@ -78,6 +72,8 @@ public class TransactionsController implements Initializable {
     @FXML
     public FlowPane OverviewCategory;
 
+    @FXML
+    public AnchorPane addExpenseAnchorPane;
 
     @FXML
     private AnchorPane detailPane;
@@ -98,9 +94,17 @@ public class TransactionsController implements Initializable {
     //Metoder som ska visa transaktioner men fungerar ej :(
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        categoryFromChoiceBox();
         updateBudgetDisplay();
         updateCategoryListItem();
 
+    }
+
+    public void categoryFromChoiceBox(){
+        for (Category category : currentBudget.categoryList){
+            categoriesName.add(category.getName());
+        }
+        transactionCategoryChoiceBox.setItems(categoriesName);
     }
 
     public void updateBudgetDisplay(){
@@ -117,10 +121,6 @@ public class TransactionsController implements Initializable {
         Transaction t = new Transaction(a,na,no, currentBudget.categoryList.get(0), LocalDate.now()); //Behövs ändras så category inte är hårdkodat
         currentBudget.categoryList.get(0).transactionsList.add(t); //Behövs ändras så category inte är hårdkodat
 
-    }
-
-    public void getCategoryFromChoiceBox(){
-        transactionCategoryChoiceBox.getSelectionModel().select(1);
     }
 
     public void addTransactionToFlowPane() {
@@ -151,9 +151,9 @@ public class TransactionsController implements Initializable {
 
     @FXML
     public void setAddExpense() {
-        addExpenseSplit.toFront();
+        addExpenseAnchorPane.toFront();
         overviewAnchorPane.setVisible(false);
-        addExpenseSplit.setVisible(true);
+        addExpenseAnchorPane.setVisible(true);
     }
 
     @FXML
