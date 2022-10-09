@@ -18,13 +18,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="headAnchorPane" prefHeight="610.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TransactionsController">
+<AnchorPane fx:id="headAnchorPane" prefHeight="613.0" prefWidth="1097.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TransactionsController">
    <children>
-      <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="616.0" prefWidth="809.0">
+      <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="616.0" prefWidth="1103.0">
          <children>
-            <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="401.0" prefWidth="606.0">
+            <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="616.0" prefWidth="1027.0">
                <children>
-                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" layoutX="55.0" layoutY="53.0" prefHeight="511.0" prefWidth="700.0">
+                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" layoutX="5.0" layoutY="53.0" prefHeight="511.0" prefWidth="1100.0">
                     <items>
                       <AnchorPane fx:id="detailPane" minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="301.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
                            <children>
@@ -68,24 +68,22 @@
                               <Label fx:id="dateID" layoutX="298.0" layoutY="181.0" />
                            </children>
                         </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="401.0" prefWidth="491.0" style="-fx-background-color: #dccee8#dccee8;">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="384.0" style="-fx-background-color: #dccee8#dccee8;">
                            <children>
-                              <FlowPane fx:id="transactionFlowPane" layoutX="-3.0" layoutY="-1.0" prefHeight="511.0" prefWidth="422.0">
-                                 <children>
-                                    <Button fx:id="backToOverview11" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Spara">
-                                       <font>
-                                          <Font name="Avenir Next Bold" size="13.0" />
-                                       </font>
-                                    </Button>
-                                    <ScrollBar orientation="VERTICAL" />
-                                 </children></FlowPane>
+                              <FlowPane fx:id="transactionFlowPane" layoutX="2.0" layoutY="-5.0" prefHeight="511.0" prefWidth="404.0" />
+                              <Button fx:id="backToOverview11" alignment="BOTTOM_LEFT" contentDisplay="BOTTOM" layoutX="414.0" layoutY="469.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Spara">
+                                 <font>
+                                    <Font name="Avenir Next Bold" size="13.0" />
+                                 </font>
+                              </Button>
+                              <ScrollBar layoutX="465.0" layoutY="1.0" nodeOrientation="LEFT_TO_RIGHT" orientation="VERTICAL" prefHeight="503.0" prefWidth="16.0" />
                            </children>
                         </AnchorPane>
                     </items>
                   </SplitPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="overviewAnchorPane" prefHeight="609.0" prefWidth="801.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;" visible="false">
+            <AnchorPane fx:id="overviewAnchorPane" prefHeight="616.0" prefWidth="871.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;" visible="false">
                <children>
                   <Button layoutX="61.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
                      <effect>
@@ -120,7 +118,7 @@
                         <Font name="Avenir Next Bold" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="leftOfBudgetDisplay" layoutX="376.0" layoutY="93.0" prefHeight="46.0" prefWidth="122.0" text="5378 kr">
+                  <Label fx:id="leftOfBudgetDisplay" layoutX="376.0" layoutY="93.0" prefHeight="46.0" prefWidth="142.0" text="5378 kr">
                      <font>
                         <Font name="Avenir Next Bold" size="31.0" />
                      </font>

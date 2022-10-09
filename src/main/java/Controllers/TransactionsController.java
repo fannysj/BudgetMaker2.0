@@ -105,13 +105,13 @@ public class TransactionsController implements Initializable {
         currentBudget = currentUser.getBudgetModel();
         updateBudgetDisplay();
         updateCategoryListItem();
+        setBackToOverview();
 
     }
 
     public void updateBudgetDisplay(){
-        leftOfBudgetDisplay.setText(String.valueOf(currentBudget.getAmountLeft()));
-        spentOfBudgetDisplay.setText(String.valueOf(currentBudget.currentAmount()));
-        System.out.println(leftOfBudgetDisplay + "HÄR OSCAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        leftOfBudgetDisplay.setText("" + currentBudget.getAmountLeft() + " kr");
+        spentOfBudgetDisplay.setText("" + currentBudget.currentAmount() + " kr");
     }
 
     @FXML
@@ -169,7 +169,8 @@ public class TransactionsController implements Initializable {
     public void setAddExpense() {
         addExpenseAnchorPane.toFront();
         overviewAnchorPane.setVisible(false);
-        addExpenseAnchorPane.setVisible(true);
+        addExpenseSplit.setVisible(true);
+
     }
 
     @FXML
@@ -218,13 +219,6 @@ public class TransactionsController implements Initializable {
                 CategoryOverviewItemArray.add(newCategoryList);
                 OverviewCategory.getChildren().add(newCategoryList);
             }
-
-    }
-
-
-    @FXML
-    public void switchToTransactionOverview(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        overviewView.switchToTransactionOverview(mouseEvent);
 
     }
 }

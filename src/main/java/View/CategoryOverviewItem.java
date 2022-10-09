@@ -2,6 +2,8 @@ package View;
 
 import Controllers.TransactionsController;
 import Model.Category;
+import Model.ObserverHandler;
+import Model.TransactionObserver;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,6 +14,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Observable;
+import java.util.Observer;
 
 public class CategoryOverviewItem extends AnchorPane {
 

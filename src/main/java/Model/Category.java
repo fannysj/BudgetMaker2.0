@@ -5,11 +5,11 @@ import java.util.*;
 
 public class Category {
     private String name;
-    private double goalAmount;
+    private int goalAmount;
     public double spentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
 
-    public Category(String name, double goalAmount) {
+    public Category(String name, int goalAmount) {
         this.name = String.valueOf(name);
         this.goalAmount = goalAmount;
         this.spentAmount = 0;
@@ -21,7 +21,7 @@ public class Category {
         this.name = name;
     }
 
-    public void setGoalAmount(double goalAmount){
+    public void setGoalAmount(int goalAmount){
         this.goalAmount = goalAmount;
     }
 
@@ -41,7 +41,7 @@ public class Category {
     }
 
 
-    public double getGoalAmount() {
+    public int getGoalAmount() {
         return goalAmount;
     }
 
@@ -50,25 +50,10 @@ public class Category {
         return spentAmount;
     }
 
-
-
-
     // Transaction Methods
     public void newTransaction(int amount, String name, String note, LocalDate date) {
         Transaction transaction = new Transaction(amount, name, note, this, date);
         addTransactionToList(transaction);
-    }
-
-    public void addMultipleTransactions(Transaction t) {
-        List<Transaction> Temp = new ArrayList<>();
-        Temp.add(t);
-        for (Transaction o : Temp) {
-            placeIntoTransactionList(o);
-        }
-    }
-
-    public void placeIntoTransactionList(Transaction t){
-        transactionsList.add(t);
     }
 
     public void addTransactionToList(Transaction expense){

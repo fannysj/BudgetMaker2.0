@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="97.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button mnemonicParsing="false" prefHeight="97.0" prefWidth="600.0" style="-fx-background-color: 00000;" />
+      <Label layoutX="98.0" layoutY="22.0" prefHeight="17.0" prefWidth="77.0" text="Label" />
+      <ProgressBar id="transactionProgress" layoutX="98.0" layoutY="49.0" prefHeight="20.0" prefWidth="417.0" progress="0.0" />
+      <ImageView fitHeight="55.0" fitWidth="63.0" layoutX="21.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/food.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="currentAmount" layoutX="542.0" layoutY="32.0" text="Label" />
+      <Label fx:id="goalAmount" layoutX="543.0" layoutY="61.0" text="Label" />
+   </children>
+</AnchorPane>
