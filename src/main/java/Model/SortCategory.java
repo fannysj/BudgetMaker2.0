@@ -15,10 +15,9 @@ public class SortCategory {
     public void sortByAmount() {
         Collections.sort(transactionsList, new Comparator<Transaction>() {
             public int compare(Transaction t1, Transaction t2) {
-                return Double.compare(t1.getTransactionAmount(), t2.getTransactionAmount());
+                return Integer.compare(t1.getTransactionAmount(), t2.getTransactionAmount());
             }
         });
-
     }
 
     public void sortByDate(){

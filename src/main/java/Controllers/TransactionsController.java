@@ -37,14 +37,19 @@ public class TransactionsController implements Initializable {
 
     ObservableList<String> categoriesName = FXCollections.observableArrayList();
 
-    private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
+
 
     User currentUser = User.getInstance();
 
     BudgetModel currentBudget;
 
+    OverviewView overviewView = new OverviewView();
+
     @FXML
     private AnchorPane overviewAnchorPane;
+
+    @FXML
+    public FlowPane OverviewCategory;
 
     @FXML
     private SplitPane addExpenseSplit;
@@ -77,8 +82,7 @@ public class TransactionsController implements Initializable {
 
     Category category;
 
-    @FXML
-    public FlowPane OverviewCategory;
+
 
     @FXML
     public AnchorPane addExpenseAnchorPane;
@@ -141,7 +145,7 @@ public class TransactionsController implements Initializable {
 
     public void addTransactionToFlowPane() {
         transactionFlowPane.getChildren().clear();
-        for (Transaction transaction: currentBudget.categoryList.get(0).transactionsList) {
+        for (Transaction transaction: currentBudget.getTransactionList()) {
             TransactionListItem newTransactionList = new TransactionListItem(transaction, this);
             transactionListArray.add(newTransactionList);
             transactionFlowPane.getChildren().add(newTransactionList);
@@ -213,12 +217,12 @@ public class TransactionsController implements Initializable {
 
     @FXML
     public void updateCategoryListItem(){
-            OverviewCategory.getChildren().clear();
-            for (Category category : currentBudget.categoryList) {
-                CategoryOverviewItem newCategoryList = new CategoryOverviewItem(category, this);
-                CategoryOverviewItemArray.add(newCategoryList);
-                OverviewCategory.getChildren().add(newCategoryList);
+            overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
             }
 
+
+    @FXML
+    private void deleteTransaction(){
+        category.deleteTransactionFromList();
     }
 }

@@ -46,7 +46,9 @@ public class BudgetModel implements Serializable {
         return categoryList;
     }
 
-
+    public List<Transaction> getTransactionList(){
+        return transactionList;
+    }
 
     //Total mängd av spenderade pengar i varje kategori
     public double currentAmount(){

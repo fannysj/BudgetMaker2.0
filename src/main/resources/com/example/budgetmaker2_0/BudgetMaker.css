@@ -60,12 +60,27 @@
     -fx-padding: 10 20 10 20;
 }
 
+.btn2 {
+-fx-background-color:
+        #090a0c,
+        linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+        linear-gradient(#20262b, #191d22),
+        radial-gradient(center 50% 0%, radius 100%, rgba(114,131,148,0.9), rgba(255,255,255,0));
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+    -fx-font-family: "avril next";
+    -fx-text-fill: linear-gradient(white, #d0d0d0);
+    -fx-font-size: 15px;
+    -fx-padding: 10 20 10 20;
+}
+
 
 .rectangle {
 
     -fx-background-radius: 50;
     -fx-border-radius: 50;
-    -fx-cursor: hand;
     -fx-background-radius: 10px;
 }
 
@@ -81,16 +96,14 @@
 
 /* Checkout */
 .checkout-btn {
-    -fx-background-color: #ffffff;
-    -fx-background-radius: 100;
-    -fx-border-radius: 100;
-    -fx-text-fill: #71BCF2;
-    -fx-font-family: "Inria sans";
-    -fx-font-size: 20;
+
 
 }
 
 /* Sidebar Navigation */
-.nav-card {
-    -fx-background-radius: 0 25 25 0;
+.cat-input {
+ -fx-background-color: #ffffff;
+    -fx-text-fill: #71BCF2;
+    -fx-font-family: "Avril Next";
+    -fx-font-size: 20;
 }
