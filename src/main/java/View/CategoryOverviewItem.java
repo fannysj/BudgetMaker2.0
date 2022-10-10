@@ -76,6 +76,7 @@ public class CategoryOverviewItem extends AnchorPane {
     @FXML
     public void onHover(){
         CategoryNameOV.setUnderline(true);
+
     }
     @FXML
     public void stopHover(){
