@@ -3,10 +3,7 @@ package Controllers;
 import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
-import View.CategoryListItem;
-import View.CategoryOverviewItem;
-import View.OverviewView;
-import View.TransactionListItem;
+import View.*;
 import com.example.budgetmaker2_0.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -56,6 +53,9 @@ public class TransactionsController implements Initializable {
 
     @FXML
     private Button addTransactionButton;
+
+    @FXML
+    private FlowPane historyTransactionFlowOverview;
 
     @FXML
     private DatePicker transactionDatePicker;
@@ -109,7 +109,6 @@ public class TransactionsController implements Initializable {
         currentBudget = currentUser.getBudgetModel();
         updateBudgetDisplay();
         updateCategoryListItem();
-        setBackToOverview();
 
     }
 
@@ -157,6 +156,14 @@ public class TransactionsController implements Initializable {
         for (Transaction transaction: transactions) {
             TransactionListItem newTransactionList = new TransactionListItem(transaction, this);
             transactionFlowPane.getChildren().add(newTransactionList);
+        }
+    }
+
+    public void addTransactionToHistoryFlowPane(){
+        historyTransactionFlowOverview.getChildren().clear();
+                for (Transaction transaction: currentBudget.getTransactionList()){
+           TransactionHistoryItem newHistoryList = new TransactionHistoryItem(transaction, this);
+            historyTransactionFlowOverview.getChildren().add(newHistoryList);
         }
     }
 
@@ -218,7 +225,7 @@ public class TransactionsController implements Initializable {
     @FXML
     public void updateCategoryListItem(){
             overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
-            }
+    }
 
 
     @FXML

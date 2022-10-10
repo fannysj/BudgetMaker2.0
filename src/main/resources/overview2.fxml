@@ -7,6 +7,7 @@
 <?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -18,15 +19,15 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="headAnchorPane" prefHeight="613.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TransactionsController">
+<AnchorPane fx:id="headAnchorPane" prefHeight="613.0" prefWidth="898.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.TransactionsController">
    <children>
       <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="616.0" prefWidth="920.0">
          <children>
             <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="616.0" prefWidth="940.0">
                <children>
-                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" layoutX="5.0" layoutY="53.0" prefHeight="511.0" prefWidth="954.0">
+                  <SplitPane fx:id="addExpenseSplit" dividerPositions="0.4217436974789916" layoutX="5.0" layoutY="53.0" prefHeight="511.0" prefWidth="954.0">
                     <items>
-                      <AnchorPane fx:id="detailPane" minHeight="0.0" minWidth="0.0" prefHeight="350.0" prefWidth="301.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
+                      <AnchorPane fx:id="detailPane" minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="402.0" style="-fx-background-color: white;">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf8fc" height="371.0" layoutX="34.0" layoutY="68.0" stroke="TRANSPARENT" strokeType="INSIDE" width="320.0" />
                               <Text layoutX="68.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belopp">
@@ -70,22 +71,34 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="509.0" prefWidth="347.0" style="-fx-background-color: #dccee8#dccee8;">
                            <children>
-                              <ScrollBar layoutX="350.0" layoutY="3.0" orientation="VERTICAL" prefHeight="463.0" prefWidth="16.0" />
-                              <Button layoutX="348.0" layoutY="470.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" text="Spara" />
-                              <AnchorPane layoutX="-1.0" layoutY="-5.0" prefHeight="513.0" prefWidth="348.0">
+                              <AnchorPane layoutX="-1.0" layoutY="-5.0" prefHeight="513.0" prefWidth="552.0" style="-fx-background-color: white;">
                                  <children>
-                                    <FlowPane fx:id="transactionFlowPane" layoutX="-3.0" layoutY="6.0" prefHeight="507.0" prefWidth="300.0" />
+                                    <FlowPane fx:id="transactionFlowPane" layoutX="-3.0" layoutY="6.0" prefHeight="507.0" prefWidth="553.0" />
                                  </children>
                               </AnchorPane>
+                              <ScrollBar layoutX="534.0" layoutY="3.0" orientation="VERTICAL" prefHeight="506.0" prefWidth="16.0" />
+                              <Button layoutX="448.0" layoutY="455.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" onMouseReleased="#addTransactionToHistoryFlowPane" prefHeight="38.0" prefWidth="69.0" text="Spara">
+                                 <font>
+                                    <Font name="Avenir Next Bold" size="16.0" />
+                                 </font>
+                              </Button>
                            </children>
                         </AnchorPane>
                     </items>
                   </SplitPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="overviewAnchorPane" prefHeight="616.0" prefWidth="871.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;" visible="false">
+            <AnchorPane fx:id="overviewAnchorPane" prefHeight="616.0" prefWidth="871.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
                <children>
-                  <Button layoutX="61.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
+                  <ImageView fitHeight="640.0" fitWidth="1002.0" layoutX="1.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@com/example/budgetmaker2_0/images/plant-growing-nature.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-0.61" />
+                     </effect>
+                  </ImageView>
+                  <Button layoutX="61.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: white;">
                      <effect>
                         <DropShadow blurType="GAUSSIAN">
                            <color>
@@ -104,7 +117,7 @@
                         <Font name="Avenir Next Bold" size="31.0" />
                      </font>
                   </Label>
-                  <Button layoutX="324.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;">
+                  <Button layoutX="324.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: white;">
                      <effect>
                         <DropShadow blurType="GAUSSIAN">
                            <color>
@@ -123,7 +136,7 @@
                         <Font name="Avenir Next Bold" size="31.0" />
                      </font>
                   </Label>
-                  <Button fx:id="addExpense" alignment="BASELINE_RIGHT" layoutX="606.0" layoutY="532.0" mnemonicParsing="false" onMouseClicked="#setAddExpense" prefHeight="55.0" prefWidth="167.0" style="-fx-background-color: #d5bbeb#d5bbeb #d5bbeb#d5bbeb;" text="Lägg till utgift" wrapText="true">
+                  <Button fx:id="addExpense" alignment="BASELINE_RIGHT" layoutX="759.0" layoutY="534.0" mnemonicParsing="false" onMouseClicked="#setAddExpense" prefHeight="55.0" prefWidth="167.0" style="-fx-background-color: white;" text="Lägg till utgift" wrapText="true">
                      <effect>
                         <DropShadow>
                            <color>
@@ -137,16 +150,22 @@
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@images/+.png" />
+                              <Image url="@com/example/budgetmaker2_0/images/+.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
                   <AnchorPane layoutX="35.0" layoutY="245.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <FlowPane fx:id="OverviewCategory" prefHeight="357.0" prefWidth="480.0" />
+                        <FlowPane fx:id="OverviewCategory" layoutX="22.0" prefHeight="357.0" prefWidth="474.0" />
                      </children>
                   </AnchorPane>
+                  <FlowPane fx:id="historyTransactionFlowOverview" layoutX="581.0" layoutY="34.0" prefHeight="398.0" prefWidth="338.0" />
+                  <Text layoutX="684.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dina senaste utgifter">
+                     <font>
+                        <Font name="Avenir Next Bold" size="13.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
          </children>

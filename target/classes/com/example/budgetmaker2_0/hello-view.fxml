@@ -96,7 +96,7 @@
                         <VBox prefHeight="473.0" prefWidth="218.0" style="-fx-background-color: #689e75;" styleClass="d4d3f5d4d3f5" BorderPane.alignment="CENTER" />
                      </left>
                      <center>
-                        <FlowPane fx:id="transactionGrid" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                        <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
                   <ImageView fitHeight="59.0" fitWidth="61.0" layoutX="28.0" layoutY="25.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
@@ -125,7 +125,7 @@
                         <Font name="Avenir Book" size="30.0" />
                      </font>
                   </Label>
-                  <Button fx:id="closeCatOversikt" layoutX="734.0" layoutY="15.0" mnemonicParsing="false" onMouseReleased="#CategoryToFront" text="stäng" />
+                  <Button layoutX="734.0" layoutY="15.0" mnemonicParsing="false" onMouseReleased="#CategoryToFront" text="stäng" />
                   <TextField id="searchbar" layoutX="28.0" layoutY="113.0" promptText="Sök" />
                   <ImageView fitHeight="27.0" fitWidth="24.0" layoutX="201.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -137,7 +137,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="oversiktKategori" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="578.0" layoutX="13.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="778.0" />
                   <BorderPane layoutX="19.0" layoutY="12.0" prefHeight="566.0" prefWidth="766.0">
@@ -238,7 +238,7 @@
                   </Button>
                   <AnchorPane layoutX="25.0" layoutY="135.0" prefHeight="425.0" prefWidth="528.0">
                      <children>
-                        <FlowPane fx:id="CategoryDivideFlowpane" layoutX="7.0" layoutY="8.0" prefHeight="418.0" prefWidth="528.0" style="-fx-background-color: ;" styleClass="rectangle" stylesheets="@BudgetMaker.css" />
+                        <FlowPane fx:id="CategoryDivideFlowpane" layoutX="7.0" layoutY="8.0" prefHeight="418.0" prefWidth="528.0" styleClass="rectangle" stylesheets="@BudgetMaker.css" />
                      </children>
                   </AnchorPane>
                   <Button fx:id="goBack" layoutX="27.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" prefHeight="24.0" prefWidth="89.0" style="-fx-background-color: ffff;" styleClass="btn2" stylesheets="@BudgetMaker.css" text="Tillbaka" textFill="#0000000a" />
