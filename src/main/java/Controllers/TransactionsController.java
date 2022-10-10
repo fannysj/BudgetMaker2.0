@@ -3,20 +3,22 @@ package Controllers;
 import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
-import View.CategoryListItem;
-import View.CategoryOverviewItem;
-import View.OverviewView;
-import View.TransactionListItem;
+import View.*;
 import com.example.budgetmaker2_0.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import javafx.util.converter.LocalDateStringConverter;
 
 import java.io.IOException;
@@ -97,7 +99,10 @@ public class TransactionsController implements Initializable {
     private Label spentOfBudgetDisplay;
 
     @FXML
-    private Button cateObjectButton;
+    private Button closeCategoryDetailView;
+
+    @FXML
+    private AnchorPane categoryOverview;
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
 
@@ -220,9 +225,25 @@ public class TransactionsController implements Initializable {
             overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
             }
 
-
     @FXML
     private void deleteTransaction(){
         category.deleteTransactionFromList();
     }
+
+    @FXML
+    public void openTransactionDetailView(Category category){
+        populateTransactionDetailView(category);
+        categoryOverview.toFront();
+    }
+
+    private void populateTransactionDetailView (Category category) {
+
+
+    }
+
+    @FXML
+    private void closeCategoryDetailView(){
+        categoryOverview.toBack();
+    }
+
 }

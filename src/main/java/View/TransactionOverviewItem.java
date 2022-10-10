@@ -1,6 +1,8 @@
 package View;
 
+import Controllers.TransactionsController;
 import Model.Category;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -19,10 +21,13 @@ public class TransactionOverviewItem {
 
 
     private Category category;
+    private TransactionsController root;
+
 
 
 
     public TransactionOverviewItem(){
+
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/TransactionOverview.fxml"));
         fxmlLoader.setRoot(this);
@@ -44,9 +49,8 @@ public class TransactionOverviewItem {
 
     }
 
-    public void onClick(){
 
-    }
+
 
 
 }
