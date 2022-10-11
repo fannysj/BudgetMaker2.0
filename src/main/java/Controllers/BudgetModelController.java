@@ -32,8 +32,12 @@ public class BudgetModelController implements Initializable {
 
     private ArrayList<CategoryListItem> categoryListArray = new ArrayList<>();
 
+    private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
+
     User currentUser = User.getInstance();
     BudgetModel currentBudget;
+
+    TransactionsController controller;
 
     @FXML
     private TextField EnterBudget;
@@ -72,7 +76,7 @@ public class BudgetModelController implements Initializable {
     private AnchorPane addExpenseAnchorPane;
 
     @FXML
-    private AnchorPane oversiktKategori;
+    private AnchorPane categoryOverview;
 
     @FXML
     private Button closeCategorydetailOverview;
@@ -122,7 +126,7 @@ public class BudgetModelController implements Initializable {
     public void CategoryToFront() {
 
         budgetingPage.toFront();
-        oversiktKategori.setVisible(false);
+        categoryOverview.setVisible(false);
         budgetingPage.setVisible(true);
     }
 
@@ -158,7 +162,17 @@ public class BudgetModelController implements Initializable {
 
 
 
-}
+    private void updateOverviewCategoryList(){
+        OverviewCategory.getChildren().clear();
+        for(Category c : currentBudget.categoryList){
+            CategoryOverviewItem newCategoryOverviewItem = new CategoryOverviewItem(c, controller);
+            CategoryOverviewItemArray.add(newCategoryOverviewItem);
+            OverviewCategory.getChildren().add(newCategoryOverviewItem);
 
+        }
+
+
+    }
+}
 
 
