@@ -9,6 +9,8 @@ import java.util.concurrent.CancellationException;
 public class BudgetModel implements Serializable {
     public List<Category> categoryList = new ArrayList<>();
 
+    public List<Transaction> transactionList = new ArrayList<>();
+
     private int StartAmount;
     public int amountSpent = 0;
     private int amountLeft = 0;
@@ -19,11 +21,6 @@ public class BudgetModel implements Serializable {
         newCategory("Shopping", 2000);
         newCategory("Nöje", 1000);
         newCategory("Övrigt",100);
-
-        Category mat = categoryList.get(0);
-        Category shop = categoryList.get(1);
-        Category nöje = categoryList.get(2);
-        Category övrigt = categoryList.get(3);
 
     }
 
@@ -49,7 +46,9 @@ public class BudgetModel implements Serializable {
         return categoryList;
     }
 
-
+    public List<Transaction> getTransactionList(){
+        return transactionList;
+    }
 
     //Total mängd av spenderade pengar i varje kategori
     public int currentAmount(){
@@ -79,12 +78,21 @@ public class BudgetModel implements Serializable {
     }
 
     public int getAmountLeft(){
-        return getStartAmount() - currentAmount();
+        return (int) (getStartAmount() - currentAmount());
     }
 
     public void addTransaction(int amount, String name, String note, int i, LocalDate date) {
         getCategory(i).newTransaction(amount,name,note,date);
+        updateTransactionList();
         ObserverHandler.notifyAllObserver();
+
+    }
+
+    private void updateTransactionList() {
+        transactionList.clear();
+        for(Category c : categoryList){
+            transactionList.addAll(c.getTransactionsList());
+        }
     }
 
 }

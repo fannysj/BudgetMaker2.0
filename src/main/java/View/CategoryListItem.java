@@ -44,8 +44,8 @@ public class CategoryListItem extends AnchorPane {
         return categoryName;
     }
 
-    public TextField getCategoryAmount(){
-        return categoryAmount;
+    public int getCategoryAmount(){
+       return Integer.parseInt(categoryAmount.getText());
     }
 
     public Category getCategory(){

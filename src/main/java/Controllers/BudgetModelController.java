@@ -18,11 +18,13 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
+import javafx.util.converter.IntegerStringConverter;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 
@@ -74,7 +76,7 @@ public class BudgetModelController implements Initializable {
     private AnchorPane addExpenseAnchorPane;
 
     @FXML
-    private AnchorPane oversiktKategori;
+    private AnchorPane categoryOverview;
 
     @FXML
     private Button closeCategorydetailOverview;
@@ -100,9 +102,16 @@ public class BudgetModelController implements Initializable {
     @FXML
     public void setNewBudgetModel(){
         currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()));
+        currentBudget = currentUser.getBudgetModel();
         String str = EnterBudget.getText();
         budgetAmount.setText(str);
 
+    }
+
+    public void setCategoryAmount(){
+        for(int i = 0; i<categoryListArray.size(); i++){
+            currentBudget.getCategory(i).setGoalAmount(categoryListArray.get(i).getCategoryAmount());
+        }
     }
 
     @FXML
@@ -118,7 +127,7 @@ public class BudgetModelController implements Initializable {
     public void CategoryToFront() {
 
         budgetingPage.toFront();
-        oversiktKategori.setVisible(false);
+        categoryOverview.setVisible(false);
         budgetingPage.setVisible(true);
     }
 
@@ -133,7 +142,7 @@ public class BudgetModelController implements Initializable {
 
     void updateCategoryList() {
         CategoryDivideFlowpane.getChildren().clear();
-        for (Category category : currentUser.getCategoryList()) {
+        for (Category category : currentBudget.getCategoryList()) {
             CategoryListItem newCategoryList = new CategoryListItem(category, this);
             categoryListArray.add(newCategoryList);
             CategoryDivideFlowpane.getChildren().add(newCategoryList);
@@ -143,6 +152,7 @@ public class BudgetModelController implements Initializable {
 
     @FXML
     public void switchToScene2(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        setCategoryAmount();
         Parent root = FXMLLoader.load(getClass().getResource("/overview2.fxml"));
         Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);

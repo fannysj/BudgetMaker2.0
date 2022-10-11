@@ -6,7 +6,7 @@ import java.util.*;
 public class Category {
     private String name;
     private int goalAmount;
-    public int spentAmount;
+    public double spentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
 
     public Category(String name, int goalAmount) {
@@ -25,7 +25,7 @@ public class Category {
     }
 
 
-    public void setSpentAmount(int spentAmount) {
+    public void setSpentAmount(double spentAmount) {
         this.spentAmount = spentAmount;
     }
 
@@ -44,30 +44,15 @@ public class Category {
         return goalAmount;
     }
 
-    public int getSpentAmount() {
+    public double getSpentAmount() {
         updateSpentAmount();
         return spentAmount;
     }
-
-
-
 
     // Transaction Methods
     public void newTransaction(int amount, String name, String note, LocalDate date) {
         Transaction transaction = new Transaction(amount, name, note, this, date);
         addTransactionToList(transaction);
-    }
-
-    public void addMultipleTransactions(Transaction t) {
-        List<Transaction> Temp = new ArrayList<>();
-        Temp.add(t);
-        for (Transaction o : Temp) {
-            placeIntoTransactionList(o);
-        }
-    }
-
-    public void placeIntoTransactionList(Transaction t){
-        transactionsList.add(t);
     }
 
     public void addTransactionToList(Transaction expense){
@@ -87,9 +72,9 @@ public class Category {
         }
     }
 
-    public int AmountLeftToSpend(){
+    public double AmountLeftToSpend(){
         updateSpentAmount();
-        int amountLeft = goalAmount-spentAmount;
+        double amountLeft = goalAmount-spentAmount;
         if (amountLeft<0){
             System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
         }
@@ -102,7 +87,7 @@ public class Category {
     public void sortByAmount() {
         Collections.sort(transactionsList, new Comparator<Transaction>() {
             public int compare(Transaction t1, Transaction t2) {
-                return Integer.compare(t1.getTransactionAmount(), t2.getTransactionAmount());
+                return Double.compare(t1.getTransactionAmount(), t2.getTransactionAmount());
             }
         });
 
