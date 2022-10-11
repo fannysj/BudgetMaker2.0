@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 import java.util.concurrent.CancellationException;
 
 public class BudgetModel implements Serializable {
@@ -84,6 +85,7 @@ public class BudgetModel implements Serializable {
     public void addTransaction(int amount, String name, String note, int i, LocalDate date) {
         getCategory(i).newTransaction(amount,name,note,date);
         updateTransactionList();
+        ObserverHandler.notifyAllObserver(amount);
 
     }
 

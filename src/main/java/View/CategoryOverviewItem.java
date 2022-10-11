@@ -54,4 +54,8 @@ public class CategoryOverviewItem extends AnchorPane {
 
     }
 
+    public Label getCurrentAmount() {
+        return currentAmount;
+    }
+
 }

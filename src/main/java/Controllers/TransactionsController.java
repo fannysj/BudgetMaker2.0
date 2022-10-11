@@ -1,8 +1,6 @@
 package Controllers;
 
-import Model.BudgetModel;
-import Model.Category;
-import Model.Transaction;
+import Model.*;
 import View.CategoryListItem;
 import View.CategoryOverviewItem;
 import View.OverviewView;
@@ -36,6 +34,7 @@ public class TransactionsController implements Initializable {
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
 
     ObservableList<String> categoriesName = FXCollections.observableArrayList();
+
 
 
 
@@ -99,6 +98,9 @@ public class TransactionsController implements Initializable {
     @FXML
     private Button cateObjectButton;
 
+    @FXML
+    private Button deleteButton;
+
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
 
 
@@ -127,6 +129,7 @@ public class TransactionsController implements Initializable {
         LocalDate d = transactionDatePicker.getValue();
 
         currentBudget.addTransaction(a,na,no, i, d);
+        ObserverHandler.notifyAllObserver(a);
     }
 
     @FXML
@@ -167,6 +170,7 @@ public class TransactionsController implements Initializable {
         overviewAnchorPane.toFront();
         addExpenseSplit.setVisible(false);
         overviewAnchorPane.setVisible(true);
+
     }
 
     @FXML
@@ -174,6 +178,7 @@ public class TransactionsController implements Initializable {
         addExpenseAnchorPane.toFront();
         overviewAnchorPane.setVisible(false);
         addExpenseSplit.setVisible(true);
+        transactionFlowPane.getChildren().clear();
 
     }
 
@@ -220,9 +225,11 @@ public class TransactionsController implements Initializable {
             overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
             }
 
-
     @FXML
-    private void deleteTransaction(){
+    public void deleteTransaction(){
         category.deleteTransactionFromList();
+        addTransactionToFlowPane();
+
     }
+
 }

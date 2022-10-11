@@ -3,17 +3,25 @@ package Model;
 import java.time.LocalDate;
 import java.util.*;
 
-public class Category {
+public class Category implements TransactionObserver{
     private String name;
     private int goalAmount;
     public double spentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
 
+    ObserverHandler handler = new ObserverHandler();
+
     public Category(String name, int goalAmount) {
         this.name = String.valueOf(name);
         this.goalAmount = goalAmount;
         this.spentAmount = 0;
+        handler.addObserver(this);
 
+    }
+
+    @Override
+    public void update(int transactionAmount) {
+        this.setSpentAmount(transactionAmount);
     }
 
     //Setters
@@ -58,7 +66,7 @@ public class Category {
 
     public void addTransactionToList(Transaction expense){
         transactionsList.add(expense);
-        ObserverHandler.notifyAllObserver();
+
     }
 
 
