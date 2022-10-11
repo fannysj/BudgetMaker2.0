@@ -143,7 +143,7 @@
                                  </children>
                               </AnchorPane>
                               <ScrollBar layoutX="534.0" layoutY="3.0" orientation="VERTICAL" prefHeight="506.0" prefWidth="16.0" />
-                              <Button layoutX="448.0" layoutY="455.0" mnemonicParsing="false" onMouseClicked="#setBackToOverview" onMouseReleased="#addTransactionToHistoryFlowPane" prefHeight="38.0" prefWidth="69.0" text="Spara">
+                              <Button layoutX="448.0" layoutY="455.0" mnemonicParsing="false" onAction="#updateBudgetDisplay" onMouseClicked="#setBackToOverview" onMouseReleased="#addTransactionToHistoryFlowPane" prefHeight="38.0" prefWidth="69.0" text="Spara">
                                  <font>
                                     <Font name="Avenir Next Bold" size="16.0" />
                                  </font>
@@ -154,7 +154,7 @@
                   </SplitPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="overviewAnchorPane" prefHeight="616.0" prefWidth="871.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
+            <AnchorPane fx:id="overviewAnchorPane" prefHeight="616.0" prefWidth="871.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;" visible="false">
                <children>
                   <ImageView fitHeight="640.0" fitWidth="1002.0" layoutX="1.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
