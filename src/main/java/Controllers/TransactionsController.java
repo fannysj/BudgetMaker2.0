@@ -60,6 +60,9 @@ public class TransactionsController implements Initializable {
     private Button addTransactionButton;
 
     @FXML
+    private FlowPane transactionHistoryFlowPane;
+
+    @FXML
     private DatePicker transactionDatePicker;
 
     @FXML
@@ -124,7 +127,6 @@ public class TransactionsController implements Initializable {
         currentBudget = currentUser.getBudgetModel();
         updateBudgetDisplay();
         updateCategoryListItem();
-        setBackToOverview();
 
     }
 
@@ -172,6 +174,14 @@ public class TransactionsController implements Initializable {
         for (Transaction transaction: transactions) {
             TransactionListItem newTransactionList = new TransactionListItem(transaction, this);
             transactionFlowPane.getChildren().add(newTransactionList);
+        }
+    }
+
+    public void addTransactionToHistoryFlowPane(){
+        transactionHistoryFlowPane.getChildren().clear();
+                for (Transaction transaction: currentBudget.getTransactionList()){
+           TransactionHistoryItem newHistoryList = new TransactionHistoryItem(transaction, this);
+            transactionHistoryFlowPane.getChildren().add(newHistoryList);
         }
     }
 
@@ -233,7 +243,7 @@ public class TransactionsController implements Initializable {
     @FXML
     public void updateCategoryListItem(){
             overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
-            }
+    }
 
 
     @FXML

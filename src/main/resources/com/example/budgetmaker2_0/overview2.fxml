@@ -21,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="headAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="headAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" >
    <children>
       <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="485.0" prefWidth="697.0">
          <children>
@@ -29,7 +29,7 @@
                <children>
                   <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" prefHeight="485.0" prefWidth="697.0" style="-fx-background-color: black;" visible="false">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="385.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="385.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;" >
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf8fc" height="38.0" layoutX="35.0" layoutY="103.0" stroke="TRANSPARENT" strokeType="INSIDE" width="232.0" />
                               <Text layoutX="45.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belopp">
