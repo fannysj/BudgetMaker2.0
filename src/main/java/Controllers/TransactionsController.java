@@ -3,10 +3,7 @@ package Controllers;
 import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
-import View.CategoryListItem;
-import View.CategoryOverviewItem;
-import View.OverviewView;
-import View.TransactionListItem;
+import View.*;
 import com.example.budgetmaker2_0.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -106,6 +103,16 @@ public class TransactionsController implements Initializable {
 
     @FXML
     private AnchorPane categoryOverview;
+
+    @FXML
+    private Label title;
+
+    @FXML
+    private Label spent;
+
+    @FXML
+    private Label left;
+
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
 
@@ -238,12 +245,8 @@ public class TransactionsController implements Initializable {
 
     @FXML
     public void openTransactionDetailView(Category category){
-        populateTransactionDetailView(category);
-        categoryOverview.toFront();
-    }
-
-    private void populateTransactionDetailView (Category category) {
-
+        TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this, category, title, spent, left);
+        transactionOverviewItem.openView(categoryOverview);
 
     }
 

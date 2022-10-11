@@ -6,7 +6,7 @@ import java.util.*;
 public class Category implements TransactionObserver{
     private String name;
     private int goalAmount;
-    public double spentAmount;
+    public int spentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
 
     ObserverHandler handler = new ObserverHandler();
@@ -34,7 +34,7 @@ public class Category implements TransactionObserver{
     }
 
 
-    public void setSpentAmount(double spentAmount) {
+    public void setSpentAmount(int spentAmount) {
         this.spentAmount = spentAmount;
     }
 
@@ -53,10 +53,11 @@ public class Category implements TransactionObserver{
         return goalAmount;
     }
 
-    public double getSpentAmount() {
+    public int getSpentAmount() {
         updateSpentAmount();
         return spentAmount;
     }
+
 
     // Transaction Methods
     public void newTransaction(int amount, String name, String note, LocalDate date) {
@@ -83,9 +84,9 @@ public class Category implements TransactionObserver{
         }
     }
 
-    public double AmountLeftToSpend(){
+    public int AmountLeftToSpend(){
         updateSpentAmount();
-        double amountLeft = goalAmount-spentAmount;
+        int amountLeft = (int) (getGoalAmount()-getSpentAmount());
         if (amountLeft<0){
             System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
         }

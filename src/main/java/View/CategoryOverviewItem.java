@@ -62,14 +62,6 @@ public class CategoryOverviewItem extends AnchorPane {
 
     @FXML
     public void onClick() {
-
-/*
-        Parent root = FXMLLoader.load(getClass().getResource("/hello-view.fxml"));
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-        */
         controller.openTransactionDetailView(category);
     }
 

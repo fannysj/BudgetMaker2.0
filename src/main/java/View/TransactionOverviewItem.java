@@ -2,43 +2,29 @@ package View;
 
 import Controllers.TransactionsController;
 import Model.Category;
-import javafx.event.Event;
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-
-import java.io.IOException;
+import javafx.scene.layout.AnchorPane;
 
 public class TransactionOverviewItem {
 
 
-    @FXML
     private Label title;
-    @FXML
-    private Label spent;
-    @FXML
-    private Label left;
 
+    private Label spent;
+
+    private Label left;
 
     private Category category;
     private TransactionsController root;
 
 
+    public TransactionOverviewItem(TransactionsController controller, Category c, Label title ,Label spent, Label left){
+        this.root = controller;
 
-
-    public TransactionOverviewItem(){
-
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/TransactionOverview.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
-
-        try{
-            fxmlLoader.load();
-        } catch (IOException exception){
-            throw new RuntimeException(exception);
-        }
-
+        this.category = c;
+        this.title = title;
+        this.spent = spent;
+        this.left = left;
 
         init();
     }
@@ -46,9 +32,19 @@ public class TransactionOverviewItem {
     private void init(){
         title.setText(category.getName());
         // Update Spent and Left
+        spent.setText(String.valueOf(category.getSpentAmount()));
+        left.setText(String.valueOf(category.AmountLeftToSpend()));
 
     }
 
+    public Category getCategory(){
+        return category;
+    }
+
+    public void openView(AnchorPane pane){
+        pane.toFront();
+
+    }
 
 
 
