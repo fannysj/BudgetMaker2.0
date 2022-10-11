@@ -10,7 +10,7 @@
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="113.0" prefWidth="458.0" style="-fx-background-color: transparent;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="91.0" layoutX="14.0" layoutY="13.0" stroke="#eeeeee08" strokeType="INSIDE" width="431.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eeeeee" height="91.0" layoutX="14.0" layoutY="13.0" opacity="0.08" stroke="#cdbfbf08" strokeType="INSIDE" width="431.0">
          <effect>
             <DropShadow height="19.52" radius="8.8925" spread="0.04" width="18.05">
                <color>
@@ -19,12 +19,12 @@
             </DropShadow>
          </effect>
       </Rectangle>
-      <TextField fx:id="categoryAmount" layoutX="67.0" layoutY="52.0" prefHeight="20.0" prefWidth="315.0">
+      <TextField fx:id="categoryAmount" layoutX="53.0" layoutY="52.0" opacity="0.92" prefHeight="20.0" prefWidth="315.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <Label fx:id="categoryName" layoutX="67.0" layoutY="24.0" text="Label">
+      <Label fx:id="categoryName" layoutX="53.0" layoutY="24.0" text="Label">
          <font>
             <Font name="Avenir Book" size="19.0" />
          </font></Label>

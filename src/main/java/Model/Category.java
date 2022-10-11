@@ -13,7 +13,6 @@ public class Category {
         this.name = String.valueOf(name);
         this.goalAmount = goalAmount;
         this.spentAmount = 0;
-
     }
 
     //Setters
@@ -75,8 +74,6 @@ public class Category {
         transactionsList.add(expense);
         ObserverHandler.notifyAllObserver();
     }
-
-
     public void updateSpentAmount(){
         spentAmount = 0;
         for (Transaction t : transactionsList){
@@ -124,8 +121,5 @@ public class Category {
         transactionsList.remove(transactionsList.size()-1);
         System.out.println(transactionsList.get(0).getName());
     }
-
-
-
 }
 

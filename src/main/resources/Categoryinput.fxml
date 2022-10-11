@@ -19,12 +19,12 @@
             </DropShadow>
          </effect>
       </Rectangle>
-      <TextField fx:id="categoryAmount" layoutX="67.0" layoutY="52.0" prefHeight="20.0" prefWidth="315.0">
+      <TextField fx:id="categoryAmount" layoutX="53.0" layoutY="52.0" opacity="0.92" prefHeight="20.0" prefWidth="315.0">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <Label fx:id="categoryName" layoutX="67.0" layoutY="24.0" text="Label">
+      <Label fx:id="categoryName" layoutX="53.0" layoutY="24.0" text="Label">
          <font>
             <Font name="Avenir Book" size="19.0" />
          </font></Label>

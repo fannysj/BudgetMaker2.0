@@ -84,6 +84,7 @@ public class BudgetModel implements Serializable {
 
     public void addTransaction(int amount, String name, String note, int i, LocalDate date) {
         getCategory(i).newTransaction(amount,name,note,date);
+        ObserverHandler.notifyAllObserver();
     }
 
 }
