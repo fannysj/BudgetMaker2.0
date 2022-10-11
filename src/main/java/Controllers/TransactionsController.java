@@ -87,13 +87,14 @@ public class TransactionsController implements Initializable {
 
     Category category;
 
-
-
     @FXML
     public AnchorPane addExpenseAnchorPane;
 
     @FXML
     private AnchorPane detailPane;
+
+    @FXML
+    private Button deleteTransaction;
 
     @FXML
     private Label leftOfBudgetDisplay;
@@ -210,8 +211,6 @@ public class TransactionsController implements Initializable {
         transactionNoteTextField.setText(transaction.getNotes());
     }
 
-
-
     @FXML
     public void search() {
         List<Transaction> matches = new ArrayList<>();
@@ -227,7 +226,6 @@ public class TransactionsController implements Initializable {
             e.getMessage();
             updateTransactionList(matches);
         }
-       // updateTransactionList(matches);
     }
 
     @FXML
@@ -235,10 +233,6 @@ public class TransactionsController implements Initializable {
             overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
     }
 
-    @FXML
-    private void deleteTransaction(){
-        category.deleteTransactionFromList();
-    }
 
     @FXML
     public void openTransactionDetailView(Category category){
