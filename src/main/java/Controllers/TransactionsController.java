@@ -60,7 +60,7 @@ public class TransactionsController implements Initializable {
     private Button addTransactionButton;
 
     @FXML
-    private FlowPane historyTransactionFlowOverview;
+    private FlowPane transactionHistoryFlowPane;
 
     @FXML
     private DatePicker transactionDatePicker;
@@ -168,10 +168,10 @@ public class TransactionsController implements Initializable {
     }
 
     public void addTransactionToHistoryFlowPane(){
-        historyTransactionFlowOverview.getChildren().clear();
+        transactionHistoryFlowPane.getChildren().clear();
                 for (Transaction transaction: currentBudget.getTransactionList()){
            TransactionHistoryItem newHistoryList = new TransactionHistoryItem(transaction, this);
-            historyTransactionFlowOverview.getChildren().add(newHistoryList);
+            transactionHistoryFlowPane.getChildren().add(newHistoryList);
         }
     }
 
