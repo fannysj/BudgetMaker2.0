@@ -12,9 +12,9 @@ public class BudgetModel implements Serializable {
 
     public List<Transaction> transactionList = new ArrayList<>();
 
-    private double StartAmount;
-    public double amountSpent = 0;
-    private double amountLeft = 0;
+    private int StartAmount;
+    public int amountSpent = 0;
+    private int amountLeft = 0;
 
     public BudgetModel(){
 
@@ -30,7 +30,7 @@ public class BudgetModel implements Serializable {
         this.StartAmount = startAmount;
     }
 
-    public double getStartAmount(){
+    public int getStartAmount(){
         return StartAmount;
     }
 
@@ -52,7 +52,7 @@ public class BudgetModel implements Serializable {
     }
 
     //Total mängd av spenderade pengar i varje kategori
-    public double currentAmount(){
+    public int currentAmount(){
         amountSpent = 0;
         for (Category c : categoryList){
             amountSpent += c.getSpentAmount();
@@ -62,8 +62,8 @@ public class BudgetModel implements Serializable {
     }
 
     //Total mängd av utgiftsmål för alla kategorier
-    public double TotalGoalAmountOfCategories(){
-        double totalGoalAmount = 0;
+    public int TotalGoalAmountOfCategories(){
+        int totalGoalAmount = 0;
         for (Category c : categoryList){
             totalGoalAmount += c.getGoalAmount();
         }
@@ -72,8 +72,8 @@ public class BudgetModel implements Serializable {
 
     // Hur mycket pengar finns kvar att portionera ut till kategorierna
     public void moneyLeftToDivide(){
-        double tots = TotalGoalAmountOfCategories();
-        double totalAmountLeft = StartAmount - tots;
+        int tots = TotalGoalAmountOfCategories();
+        int totalAmountLeft = StartAmount - tots;
 
         System.out.println(totalAmountLeft);
     }
