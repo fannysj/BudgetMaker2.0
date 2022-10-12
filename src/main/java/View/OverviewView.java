@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
@@ -18,29 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class OverviewView extends AnchorPane implements Initializable {
+public class OverviewView extends AnchorPane{
 
-    private Stage stage;
-
-    private Scene scene;
-
-    private Parent root;
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-    }
-
-    @FXML
-    public void switchToTransactionOverview(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/hello-view.fxml"));
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
     @FXML
     public void updateCategoryListItem(FlowPane OverviewCategory, List<Category> categoryList, TransactionsController controller) {
@@ -53,4 +37,11 @@ public class OverviewView extends AnchorPane implements Initializable {
 
         }
     }
+
+    public void updateBudgetDisplay(Label left, Label spent, int amountleft, int currentamount){
+        left.setText("" + amountleft + " kr");
+        spent.setText("" + currentamount + " kr");
+    }
+
+
 }

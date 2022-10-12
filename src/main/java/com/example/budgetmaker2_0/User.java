@@ -4,11 +4,17 @@ import Model.Budget;
 import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
+import com.google.gson.Gson;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 
 public class User {
+
+    Gson gson = new Gson();
 
     private static User instance = new User();
 

@@ -5,7 +5,6 @@ import java.util.List;
 
 public class ObserverHandler {
 
-    //objekt som uppdateras när transactions ändras
     private final static List<Observer> observers = new ArrayList<>();
 
 

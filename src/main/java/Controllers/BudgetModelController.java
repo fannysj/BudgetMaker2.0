@@ -165,7 +165,7 @@ public class BudgetModelController implements Initializable {
 
     private void updateOverviewCategoryList(){
         OverviewCategory.getChildren().clear();
-        for(Category c : currentBudget.categoryList){
+        for(Category c : currentBudget.getCategoryList()){
             CategoryOverviewItem newCategoryOverviewItem = new CategoryOverviewItem(c, controller);
             CategoryOverviewItemArray.add(newCategoryOverviewItem);
             OverviewCategory.getChildren().add(newCategoryOverviewItem);
