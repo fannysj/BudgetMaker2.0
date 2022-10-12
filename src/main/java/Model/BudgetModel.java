@@ -8,12 +8,12 @@ import java.util.Observable;
 import java.util.concurrent.CancellationException;
 
 public class BudgetModel implements Serializable {
-    public List<Category> categoryList = new ArrayList<>();
+    private List<Category> categoryList = new ArrayList<>();
 
-    public List<Transaction> transactionList = new ArrayList<>();
+    private List<Transaction> transactionList = new ArrayList<>();
 
     private int StartAmount;
-    public int amountSpent = 0;
+    private int amountSpent = 0;
     private int amountLeft = 0;
 
     public BudgetModel(){

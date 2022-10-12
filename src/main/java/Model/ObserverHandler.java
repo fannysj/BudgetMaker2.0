@@ -5,19 +5,19 @@ import java.util.List;
 
 public class ObserverHandler {
 
-    private final static List<TransactionObserver> observers = new ArrayList<>();
+    private final static List<Observer> observers = new ArrayList<>();
 
 
-    public void addObserver(TransactionObserver observer){
+    public void addObserver(Observer observer){
         observers.add(observer);
     }
 
-    public void removeObserver(TransactionObserver observer){
+    public void removeObserver(Observer observer){
         observers.remove(observer);
     }
 
     public static void notifyAllObserver(){
-        for (TransactionObserver observer : observers)
+        for (Observer observer : observers)
         {
             observer.update();
         }

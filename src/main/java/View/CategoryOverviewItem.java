@@ -3,7 +3,6 @@ package View;
 import Controllers.TransactionsController;
 import Model.Category;
 import Model.ObserverHandler;
-import Model.TransactionObserver;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -55,7 +54,7 @@ public class CategoryOverviewItem extends AnchorPane {
         this.controller = controller;
 
         CategoryNameOV.setText(category.getName());
-        currentAmount.setText(String.valueOf(category.spentAmount));
+        currentAmount.setText(String.valueOf(category.getSpentAmount()));
         goalAmount.setText(String.valueOf(category.getGoalAmount()));
 
     }
@@ -74,8 +73,6 @@ public class CategoryOverviewItem extends AnchorPane {
     public void stopHover(){
         CategoryNameOV.setUnderline(false);
     }
-    public Label getCurrentAmount() {
-        return currentAmount;
-    }
+
 
 }

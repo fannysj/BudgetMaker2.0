@@ -11,7 +11,7 @@ module com.example.budgetmaker2_0 {
     exports Controllers;
     opens Controllers to javafx.fxml;
 
-    opens Model to javafx.fxml;
+    opens Model to javafx.fxml, com.google.gson;
     exports Model;
 
     opens View to javafx.fxml;

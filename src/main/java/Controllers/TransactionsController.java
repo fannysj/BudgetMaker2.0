@@ -35,7 +35,7 @@ import java.util.regex.PatternSyntaxException;
 
 public class TransactionsController implements Initializable {
 
-    private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
+
 
     ObservableList<String> categoriesName = FXCollections.observableArrayList();
 
@@ -46,6 +46,8 @@ public class TransactionsController implements Initializable {
     BudgetModel currentBudget;
 
     OverviewView overviewView = new OverviewView();
+
+    TransactionView transactionView = new TransactionView();
 
     @FXML
     private AnchorPane overviewAnchorPane;
@@ -119,6 +121,7 @@ public class TransactionsController implements Initializable {
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
 
+    // Add to category observable list, subscribe, kalla till categories addObserver metod.
 
 
     //Metoder som ska visa transaktioner men fungerar ej :(
@@ -131,8 +134,12 @@ public class TransactionsController implements Initializable {
     }
 
     public void updateBudgetDisplay(){
-        leftOfBudgetDisplay.setText("" + currentBudget.getAmountLeft() + " kr");
-        spentOfBudgetDisplay.setText("" + currentBudget.currentAmount() + " kr");
+        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(),currentBudget.currentAmount());
+    }
+
+    @FXML
+    public void updateCategoryListItem(){
+        overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
     }
 
     @FXML
@@ -147,11 +154,6 @@ public class TransactionsController implements Initializable {
     }
 
     @FXML
-    public void getCategoryFromChoiceBox(){
-        transactionCategoryChoiceBox.getSelectionModel().select(1);
-    }
-
-    @FXML
     public void populateCategoryChoiceBox() {
         transactionCategoryChoiceBox.getItems().clear();
         for(Category c: currentUser.getCategoryList()){
@@ -161,28 +163,17 @@ public class TransactionsController implements Initializable {
     }
 
     public void addTransactionToFlowPane() {
-        transactionFlowPane.getChildren().clear();
-        for (Transaction transaction: currentBudget.getTransactionList()) {
-            TransactionListItem newTransactionList = new TransactionListItem(transaction, this);
-            transactionListArray.add(newTransactionList);
-            transactionFlowPane.getChildren().add(newTransactionList);
+        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.getTransactionList(), this);
+
         }
-    }
 
     public void updateTransactionList(List<Transaction> transactions) {
-        transactionGrid.getChildren().clear();
-        for (Transaction transaction: transactions) {
-            TransactionListItem newTransactionList = new TransactionListItem(transaction, this);
-            transactionFlowPane.getChildren().add(newTransactionList);
-        }
+        transactionView.updateTransactionList(transactionGrid,transactionFlowPane,transactions,this);
     }
 
+    @FXML
     public void addTransactionToHistoryFlowPane(){
-        transactionHistoryFlowPane.getChildren().clear();
-                for (Transaction transaction: currentBudget.getTransactionList()){
-           TransactionHistoryItem newHistoryList = new TransactionHistoryItem(transaction, this);
-            transactionHistoryFlowPane.getChildren().add(newHistoryList);
-        }
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
     }
 
 
@@ -199,11 +190,6 @@ public class TransactionsController implements Initializable {
         addExpenseAnchorPane.toFront();
         overviewAnchorPane.setVisible(false);
         addExpenseSplit.setVisible(true);
-
-    }
-
-    @FXML
-    public void toCatDetailView(){
 
     }
 
@@ -240,10 +226,7 @@ public class TransactionsController implements Initializable {
        // updateTransactionList(matches);
     }
 
-    @FXML
-    public void updateCategoryListItem(){
-            overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
-    }
+
 
     @FXML
     private void deleteTransaction(){
@@ -252,8 +235,8 @@ public class TransactionsController implements Initializable {
 
     @FXML
     public void openTransactionDetailView(Category category){
-        TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this, category, title, spent, left);
-        transactionOverviewItem.openView(categoryOverview);
+        TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this,category, title, spent, left);
+        categoryOverview.toFront();
 
     }
 
@@ -261,5 +244,11 @@ public class TransactionsController implements Initializable {
     private void closeCategoryDetailView(){
         categoryOverview.toBack();
     }
+
+
+    // update()
+    // updateProgressBar()
+    //
+
 
 }
