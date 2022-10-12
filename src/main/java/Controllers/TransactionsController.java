@@ -245,12 +245,9 @@ public class TransactionsController implements Initializable {
             overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
     }
 
-
     @FXML
     private void deleteTransaction(){
         category.deleteTransactionFromList();
-        addTransactionToFlowPane();
-
     }
 
     @FXML

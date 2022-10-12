@@ -1,14 +1,9 @@
 package Model;
 
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class ObserverHandler {
-
-    private String transactionAmount;
 
     private final static List<TransactionObserver> observers = new ArrayList<>();
 
@@ -18,13 +13,13 @@ public class ObserverHandler {
     }
 
     public void removeObserver(TransactionObserver observer){
-        this.observers.remove(observer);
+        observers.remove(observer);
     }
 
-    public static void notifyAllObserver(int transactionAmount){
+    public static void notifyAllObserver(){
         for (TransactionObserver observer : observers)
         {
-            observer.update(transactionAmount);
+            observer.update();
         }
     }
 }

@@ -3,25 +3,17 @@ package Model;
 import java.time.LocalDate;
 import java.util.*;
 
-public class Category implements TransactionObserver{
+public class Category {
     private String name;
     private int goalAmount;
-    public int spentAmount;
+    public double spentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
-
-    ObserverHandler handler = new ObserverHandler();
 
     public Category(String name, int goalAmount) {
         this.name = String.valueOf(name);
         this.goalAmount = goalAmount;
         this.spentAmount = 0;
-        handler.addObserver(this);
 
-    }
-
-    @Override
-    public void update(int transactionAmount) {
-        this.setSpentAmount(transactionAmount);
     }
 
     //Setters
@@ -34,7 +26,7 @@ public class Category implements TransactionObserver{
     }
 
 
-    public void setSpentAmount(int spentAmount) {
+    public void setSpentAmount(double spentAmount) {
         this.spentAmount = spentAmount;
     }
 
@@ -53,11 +45,10 @@ public class Category implements TransactionObserver{
         return goalAmount;
     }
 
-    public int getSpentAmount() {
+    public double getSpentAmount() {
         updateSpentAmount();
         return spentAmount;
     }
-
 
     // Transaction Methods
     public void newTransaction(int amount, String name, String note, LocalDate date) {
@@ -67,7 +58,7 @@ public class Category implements TransactionObserver{
 
     public void addTransactionToList(Transaction expense){
         transactionsList.add(expense);
-
+        ObserverHandler.notifyAllObserver();
     }
 
 
@@ -84,9 +75,9 @@ public class Category implements TransactionObserver{
         }
     }
 
-    public int AmountLeftToSpend(){
+    public double AmountLeftToSpend(){
         updateSpentAmount();
-        int amountLeft = (int) (getGoalAmount()-getSpentAmount());
+        double amountLeft = goalAmount-spentAmount;
         if (amountLeft<0){
             System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
         }
