@@ -6,6 +6,7 @@ module com.example.budgetmaker2_0 {
     requires com.google.gson;
 
 
+
     opens com.example.budgetmaker2_0 to javafx.fxml, com.google.gson;
     exports com.example.budgetmaker2_0;
     exports Controllers;
@@ -13,6 +14,7 @@ module com.example.budgetmaker2_0 {
 
     opens Model to javafx.fxml, com.google.gson;
     exports Model;
+
 
     opens View to javafx.fxml;
     exports View;

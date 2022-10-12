@@ -1,5 +1,6 @@
 package com.example.budgetmaker2_0;
 
+import Model.Budget;
 import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
@@ -13,15 +14,11 @@ import java.util.List;
 
 public class User {
 
-    public static final String CONFIG_FILE = "config.txt";
-
     Gson gson = new Gson();
 
     private static User instance = new User();
 
     private User(){
-
-
     }
 
     public static User getInstance(){
@@ -32,10 +29,11 @@ public class User {
     private List<BudgetModel> ModelList = new ArrayList<>();
 
     public void createNewBudget(int value){
+        Budget budget = new Budget(value);
         BudgetModel budgetModel = new BudgetModel();
-        budgetModel.setStartAmount(value);
+        budgetModel.setStartAmount(budget.getBudget());
         ModelList.add(budgetModel);
-
+        budget.GsonGoals();
     }
 
     public BudgetModel getBudgetModel(){
@@ -45,20 +43,6 @@ public class User {
     public List<Category> getCategoryList(){
         return getBudgetModel().getCategoryList();
     }
-
-    public static void initConfig(){
-        Gson gson;
-        Writer writer;
-        try {
-            gson = new Gson();
-            writer = new FileWriter(CONFIG_FILE);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        gson.toJson(instance.getBudgetModel(), writer);
-
-    }
-
 
 
 }
