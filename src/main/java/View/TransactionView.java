@@ -4,35 +4,56 @@ import Controllers.TransactionsController;
 import Model.Category;
 import Model.Transaction;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.GridPane;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Flow;
 
 public class TransactionView {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
 
-    public void addTransactionToFlowPane(FlowPane pane, List<Transaction> list, TransactionsController controller) {
+    public void addTransactionToFlowPane(FlowPane pane, Transaction t, TransactionsController controller) {
+        TransactionListItem transactionListItem = new TransactionListItem(t, controller);
+        transactionListArray.add(transactionListItem);
+        pane.getChildren().add(transactionListItem);
+
+
+    }
+
+    public void clearInput(TextField name, DatePicker date, TextField amount, ChoiceBox cate, TextField note){
+        name.clear();
+        date.cancelEdit();
+        amount.clear();
+        cate.getSelectionModel().clearAndSelect(0);
+        note.clear();
+
+    }
+
+    public void clearTransactionPane(FlowPane pane){
         pane.getChildren().clear();
-        for (Transaction transaction : list) {
-            TransactionListItem newTransactionList = new TransactionListItem(transaction, controller);
-            transactionListArray.add(newTransactionList);
-            pane.getChildren().add(newTransactionList);
-
-        }
+        transactionListArray.clear();
 
     }
 
-    public void updateTransactionList(FlowPane grid, FlowPane flow, List<Transaction> transactions, TransactionsController controller){
-        grid.getChildren().clear();
-        for (Transaction transaction: transactions) {
-            TransactionListItem newTransactionList = new TransactionListItem(transaction, controller);
-            flow.getChildren().add(newTransactionList);
-        }
+    public void setAddExpense(AnchorPane expenseanchor, AnchorPane viewanchor, SplitPane split){
+        expenseanchor.toFront();
+        viewanchor.setVisible(false);
+        split.setVisible(true);
     }
+
+//    public void updateTransactionList(FlowPane grid, FlowPane flow, List<Transaction> transactions, TransactionsController controller){
+//        grid.getChildren().clear();
+//        for (Transaction transaction: transactions) {
+//            flow.getChildren().add(newTransactionList);
+//        }
+//    }
 
     public void addTransactionToHistoryFlowPane(FlowPane flow, List<Transaction> list, TransactionsController controller){
         flow.getChildren().clear();
@@ -55,4 +76,10 @@ public class TransactionView {
         amount.setText(String.valueOf(transaction.getTransactionAmount()));
         note.setText(transaction.getNotes());
     }
+
+    public List<TransactionListItem> getTransactionListItems(){
+        return transactionListArray;
+    }
+
+
 }

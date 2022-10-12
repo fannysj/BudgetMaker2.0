@@ -50,11 +50,10 @@ public class Category{
         return spentAmount;
     }
 
-
     // Transaction Methods
-    public void newTransaction(int amount, String name, String note, LocalDate date) {
-        Transaction transaction = new Transaction(amount, name, note, this, date);
-        addTransactionToList(transaction);
+    public Transaction newTransaction(int amount, String name, String note, LocalDate date) {
+        return new Transaction(amount, name, note, this, date);
+
     }
 
     public void addTransactionToList(Transaction expense){

@@ -12,7 +12,7 @@
       <Label fx:id="listItemTransactionDate" layoutX="130.0" layoutY="42.0" text="Datum" />
       <Label fx:id="listItemTransactionNote" layoutX="276.0" layoutY="42.0" text="Note" />
       <Label fx:id="listItemTransactionAmount" layoutX="375.0" layoutY="42.0" text="Belopp" />
-      <Button fx:id="deleteTransaction" layoutX="482.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#deleteTransaction" prefHeight="17.0" prefWidth="56.0" text="Ta bort">
+      <Button fx:id="deleteTransaction" layoutX="482.0" layoutY="14.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="56.0" text="Ta bort">
          <font>
             <Font name="Avenir Next Bold" size="10.0" />
          </font>

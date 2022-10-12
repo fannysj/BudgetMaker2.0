@@ -23,6 +23,7 @@ import javafx.stage.Stage;
 import javafx.util.converter.LocalDateStringConverter;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.time.LocalDate.*;
 
@@ -39,7 +40,6 @@ public class TransactionsController implements Initializable {
 
 
     ObservableList<String> categoriesName = FXCollections.observableArrayList();
-
 
 
     User currentUser = User.getInstance();
@@ -144,14 +144,19 @@ public class TransactionsController implements Initializable {
     }
 
     @FXML
-    public void createNewTransaction(){
-        int a = Integer.parseInt(transactionAmountTextField.getText());
-        String na = transactionNameTextField.getText();
-        String no = transactionNoteTextField.getText();
-        int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
-        LocalDate d = transactionDatePicker.getValue();
+    public void goBacktoOverview(){
+        transactionView.clearTransactionPane(transactionFlowPane);
+        setBackToOverview();
 
-        currentBudget.addTransaction(a,na,no, i, d);
+    }
+
+    @FXML
+    public void createNewTransaction(){
+        currentBudget.addTemporaryTransactionsToTransactionList();
+        updateBudgetDisplay();
+        goBacktoOverview();
+        addTransactionToHistoryFlowPane();
+
     }
 
     @FXML
@@ -161,15 +166,24 @@ public class TransactionsController implements Initializable {
     }
 
     public void addTransactionToFlowPane() {
-        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.getTransactionList(), this);
+        int a = Integer.parseInt(transactionAmountTextField.getText());
+        String na = transactionNameTextField.getText();
+        String no = transactionNoteTextField.getText();
+        LocalDate d = transactionDatePicker.getValue();
+        int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
 
-        }
 
-    public void updateTransactionList(List<Transaction> transactions) {
-        transactionView.updateTransactionList(transactionGrid,transactionFlowPane,transactions,this);
+        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.addTransaction(a,na,no,i,d) ,this);
+
     }
 
-    @FXML
+
+
+
+//    public void updateTransactionList(List<Transaction> transactions) {
+//        transactionView.updateTransactionList(transactionGrid,transactionFlowPane,transactions,this);
+//    }
+
     public void addTransactionToHistoryFlowPane(){
         transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
     }
@@ -179,11 +193,14 @@ public class TransactionsController implements Initializable {
     @FXML
     public void setBackToOverview() {
         overviewView.setBackToOverview(overviewAnchorPane, addExpenseSplit);
+
     }
 
     @FXML
     public void setAddExpense() {
-        overviewView.setAddExpense(addExpenseAnchorPane, overviewAnchorPane, addExpenseSplit);
+        transactionView.clearInput(transactionNameTextField,transactionDatePicker,transactionAmountTextField,transactionCategoryChoiceBox,transactionNoteTextField);
+        transactionView.setAddExpense(addExpenseAnchorPane, overviewAnchorPane, addExpenseSplit);
+
     }
 
     //Öppna en specifik transaktion ????
