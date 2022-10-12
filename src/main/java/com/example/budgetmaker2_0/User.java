@@ -1,5 +1,6 @@
 package com.example.budgetmaker2_0;
 
+import Model.Budget;
 import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
@@ -11,7 +12,8 @@ public class User {
 
     private static User instance = new User();
 
-    private User(){}
+    private User(){
+    }
 
     public static User getInstance(){
         return instance;
@@ -21,9 +23,11 @@ public class User {
     private List<BudgetModel> ModelList = new ArrayList<>();
 
     public void createNewBudget(int value){
+        Budget budget = new Budget(value);
         BudgetModel budgetModel = new BudgetModel();
-        budgetModel.setStartAmount(value);
+        budgetModel.setStartAmount(budget.getBudget());
         ModelList.add(budgetModel);
+        budget.GsonGoals();
     }
 
     public BudgetModel getBudgetModel(){
