@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
@@ -41,6 +42,19 @@ public class OverviewView extends AnchorPane{
     public void updateBudgetDisplay(Label left, Label spent, int amountleft, int currentamount){
         left.setText("" + amountleft + " kr");
         spent.setText("" + currentamount + " kr");
+    }
+
+    public void setBackToOverview(AnchorPane anchor, SplitPane split) {
+        anchor.toFront();
+        split.setVisible(false);
+        anchor.setVisible(true);
+    }
+
+    public void setAddExpense(AnchorPane expenseanchor, AnchorPane viewanchor, SplitPane split){
+        expenseanchor.toFront();
+        viewanchor.setVisible(false);
+        split.setVisible(true);
+
     }
 
 

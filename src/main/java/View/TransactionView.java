@@ -1,7 +1,10 @@
 package View;
 
 import Controllers.TransactionsController;
+import Model.Category;
 import Model.Transaction;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 
@@ -37,5 +40,19 @@ public class TransactionView {
             TransactionHistoryItem newHistoryList = new TransactionHistoryItem(transaction, controller);
             flow.getChildren().add(newHistoryList);
         }
+    }
+
+    public void populateCategoryChoiceBox(ChoiceBox choiceBox, List<Category> list) {
+        choiceBox.getItems().clear();
+        for(Category c: list){
+            choiceBox.getItems().add(c.getName());
+        }
+
+    }
+
+    public void readTransactionView(Transaction transaction, TextField name, TextField amount, TextField note){
+        name.setText(transaction.getName());
+        amount.setText(String.valueOf(transaction.getTransactionAmount()));
+        note.setText(transaction.getNotes());
     }
 }

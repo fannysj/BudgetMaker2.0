@@ -61,21 +61,6 @@ public class BudgetModelController implements Initializable {
     private FlowPane CategoryDivideFlowpane;
 
     @FXML
-    private Button backToOverview;
-
-    @FXML
-    private Button addExpense;
-
-    @FXML
-    private SplitPane addExpenseSplit;
-
-    @FXML
-    private AnchorPane overviewAnchorPane;
-
-    @FXML
-    private AnchorPane addExpenseAnchorPane;
-
-    @FXML
     private AnchorPane categoryOverview;
 
     @FXML
@@ -87,11 +72,6 @@ public class BudgetModelController implements Initializable {
     @FXML
     private FlowPane OverviewCategory;
 
-    @FXML
-    private Label leftOfBudgetDisplay;
-
-    @FXML
-    private Label spentOfBudgetDisplay;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
