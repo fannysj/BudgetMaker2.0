@@ -61,6 +61,7 @@ public class Category implements Observable {
 
     public void addTransactionToList(Transaction expense){
         transactionsList.add(expense);
+        notifyObservers();
 
     }
 

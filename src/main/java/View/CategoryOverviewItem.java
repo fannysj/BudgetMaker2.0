@@ -58,6 +58,10 @@ public class CategoryOverviewItem extends AnchorPane {
 
     }
 
+    public Category getCategory(){
+        return category;
+    }
+
     @FXML
     public void onClick() {
         controller.openTransactionDetailView(category);
@@ -72,6 +76,12 @@ public class CategoryOverviewItem extends AnchorPane {
     public void stopHover(){
         CategoryNameOV.setUnderline(false);
     }
+
+
+    public void updateCurrentAmount (){
+        currentAmount.setText(String.valueOf(category.getSpentAmount()));
+    }
+
 
 
 }

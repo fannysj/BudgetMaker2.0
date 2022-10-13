@@ -1,5 +1,7 @@
 package Controllers;
 
+import Interfaces.Observable;
+import Interfaces.Observer;
 import Model.BudgetModel;
 import Model.Category;
 import Model.SortCategory;
@@ -35,7 +37,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
-public class TransactionsController implements Initializable {
+public class TransactionsController implements Initializable, Observer {
 
 
 
@@ -88,6 +90,7 @@ public class TransactionsController implements Initializable {
 
     @FXML FlowPane transactionGrid;
 
+
     Category category;
 
 
@@ -131,6 +134,9 @@ public class TransactionsController implements Initializable {
         currentBudget = currentUser.getBudgetModel();
         updateBudgetDisplay();
         updateCategoryListItem();
+        for(Category c : currentBudget.getCategoryList()){
+            c.subscribe(this);
+        }
 
     }
 
@@ -227,9 +233,15 @@ public class TransactionsController implements Initializable {
 
     }
 
+
     @FXML
     private void closeCategoryDetailView(){
         categoryOverview.toBack();
+    }
+
+    @Override
+    public void update(Observable observable) {
+        overviewView.updateCategoryItems();
     }
 
 

@@ -30,7 +30,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 
-public class BudgetModelController implements Initializable, Observer {
+public class BudgetModelController implements Initializable {
 
     private ArrayList<CategoryListItem> categoryListArray = new ArrayList<>();
 
@@ -58,6 +58,9 @@ public class BudgetModelController implements Initializable, Observer {
     private Label budgetAmount;
 
     @FXML
+    private Label currentAmount;
+
+    @FXML
     private Button goBack;
 
     @FXML
@@ -79,7 +82,7 @@ public class BudgetModelController implements Initializable, Observer {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        cat.subscribe(this);
+
 
     }
 
@@ -159,9 +162,7 @@ public class BudgetModelController implements Initializable, Observer {
 
     }
 
-    public void update(Observable observable){
-        //Vad som ska hända vid update
-    }
+
 }
 
 
