@@ -13,8 +13,6 @@ public class Budget {
     public Budget(int budget) {
         this.budget = budget;
 
-
-
     }
     public int getBudget () {
         return budget;
@@ -47,7 +45,7 @@ public class Budget {
         writer.close();
     }
 
-    private Budget readJSON() throws FileNotFoundException {
+    public Budget readJSON() throws FileNotFoundException {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         BufferedReader bufferedReader = new BufferedReader(

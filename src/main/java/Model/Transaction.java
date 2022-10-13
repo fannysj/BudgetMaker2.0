@@ -2,6 +2,7 @@ package Model;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import javafx.collections.ObservableList;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
@@ -15,6 +16,8 @@ public class Transaction {
     private String notes;
     private Category category;
     private LocalDate date;
+
+
 
 
     public Transaction(int amount, String name, String notes, Category category, LocalDate date){

@@ -119,6 +119,9 @@ public class TransactionsController implements Initializable {
     @FXML
     private Label left;
 
+    @FXML
+    private ListView<Transaction> transactionListView = new ListView<>() ;
+
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
 
@@ -222,6 +225,7 @@ public class TransactionsController implements Initializable {
 
     @FXML
     public void openTransactionDetailView(Category category){
+
         TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this,category, title, spent, left);
         categoryOverview.toFront();
 

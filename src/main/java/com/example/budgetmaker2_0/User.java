@@ -6,6 +6,7 @@ import Model.Category;
 import Model.Transaction;
 import com.google.gson.Gson;
 
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -26,9 +27,11 @@ public class User {
 
     private List<BudgetModel> ModelList = new ArrayList<>();
 
-    public void createNewBudget(int value){
+    public void createNewBudget(int value)  {
         Budget budget = new Budget(value);
+        //Skicka med json-objektet till budgetmodel
         BudgetModel budgetModel = new BudgetModel(budget);
+
         ModelList.add(budgetModel);
         budget.GsonGoals();
     }
@@ -39,6 +42,10 @@ public class User {
 
     public List<Category> getCategoryList(){
         return getBudgetModel().getCategoryList();
+    }
+
+    public BudgetModel getPreviousBudget(){
+        return getBudgetModel();
     }
 
 

@@ -20,6 +20,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -80,7 +81,7 @@ public class BudgetModelController implements Initializable {
     }
 
     @FXML
-    public void setNewBudgetModel(){
+    public void setNewBudgetModel() throws FileNotFoundException {
         currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()));
         currentBudget = currentUser.getBudgetModel();
         String str = EnterBudget.getText();

@@ -1,5 +1,7 @@
 package Model;
 
+import javafx.collections.ObservableList;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -13,6 +15,7 @@ public class BudgetModel implements Serializable {
     private List<Category> categoryList = new ArrayList<>();
 
     private List<Transaction> transactions = new ArrayList<>();
+
 
     private int StartAmount;
     private int amountSpent = 0;
@@ -54,6 +57,7 @@ public class BudgetModel implements Serializable {
     public List<Transaction> getTransactionList(){
         return transactions;
     }
+
 
     //Total mängd av spenderade pengar i varje kategori
     public int currentAmount(){
