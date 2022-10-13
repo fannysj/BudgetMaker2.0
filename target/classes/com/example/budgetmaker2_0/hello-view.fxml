@@ -124,37 +124,37 @@
                   <Circle fill="#40543f" layoutX="526.0" layoutY="562.0" radius="33.0" smooth="false" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </AnchorPane>
-            <AnchorPane prefHeight="400.0" prefWidth="600.0">
+            <AnchorPane minWidth="-Infinity" prefHeight="610.0" prefWidth="846.0">
                <children>
-                  <ImageView fitHeight="600.0" fitWidth="808.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="722.0" fitWidth="903.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/plant-growing-nature.png" />
                      </image>
                      <effect>
-                        <ColorAdjust brightness="-0.64" />
+                        <ColorAdjust brightness="-0.73" saturation="-0.05" />
                      </effect>
                   </ImageView>
-                  <Text layoutX="251.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välkommen! Vad vill du göra?">
+                  <Text fill="WHITE" layoutX="272.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välkommen!">
                      <font>
-                        <Font name="Avenir Next Bold" size="22.0" />
+                        <Font name="Avenir Next Bold" size="44.0" />
                      </font>
                   </Text>
-                  <Circle fill="#fdfdff" layoutX="282.0" layoutY="303.0" opacity="0.82" radius="65.0" stroke="BLACK" strokeType="INSIDE">
+                  <Circle fill="#fdfdff" layoutX="298.0" layoutY="303.0" opacity="0.95" radius="65.0" stroke="WHITE" strokeType="INSIDE">
                      <effect>
                         <DropShadow />
                      </effect>
                   </Circle>
-                  <Circle fill="#cacbcd" layoutX="497.0" layoutY="303.0" opacity="0.8" radius="65.0" stroke="BLACK" strokeType="INSIDE">
+                  <Circle fill="WHITE" layoutX="513.0" layoutY="303.0" opacity="0.95" radius="65.0" stroke="WHITE" strokeType="INSIDE">
                      <effect>
                         <DropShadow />
                      </effect>
                   </Circle>
-                  <Text layoutX="227.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se tidigare budgetar">
+                  <Text layoutX="266.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0">
                      <font>
-                        <Font name="Avenir Next Bold" size="11.0" />
+                        <Font name="Avenir Next Bold" size="17.0" />
                      </font>
                   </Text>
-                  <Text layoutX="448.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skapa ny budget">
+                  <Text layoutX="464.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skapa ny budget">
                      <font>
                         <Font name="Avenir Next Bold" size="12.0" />
                      </font>
