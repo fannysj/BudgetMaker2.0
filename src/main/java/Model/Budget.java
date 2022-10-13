@@ -13,6 +13,8 @@ public class Budget {
     public Budget(int budget) {
         this.budget = budget;
 
+
+
     }
     public int getBudget () {
         return budget;
@@ -25,22 +27,15 @@ public class Budget {
     }
 
      public void GsonGoals(){
-         Budget tester = new Budget(budget);
+         Budget tester;
          try{
-             Budget budget = new Budget(getBudget());
-             budget.setBudget(getBudget());
-             tester.writeJSON(budget);
+             tester = new Budget(getBudget());
+             tester.writeJSON(tester);
              Budget budget1 = tester.readJSON();
              System.out.println(budget1);
-         }
-         catch(
-                 FileNotFoundException e) {
-             e.printStackTrace();
-         }
-         catch(
+         } catch(
                  IOException e) {
              e.printStackTrace();
-
          }
      }
 

@@ -14,8 +14,6 @@ import java.util.List;
 
 public class User {
 
-    Gson gson = new Gson();
-
     private static User instance = new User();
 
     private User(){
@@ -30,8 +28,7 @@ public class User {
 
     public void createNewBudget(int value){
         Budget budget = new Budget(value);
-        BudgetModel budgetModel = new BudgetModel();
-        budgetModel.setStartAmount(budget.getBudget());
+        BudgetModel budgetModel = new BudgetModel(budget);
         ModelList.add(budgetModel);
         budget.GsonGoals();
     }

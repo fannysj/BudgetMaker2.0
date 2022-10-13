@@ -173,7 +173,7 @@ public class TransactionsController implements Initializable {
         int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
 
 
-        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.addTransaction(a,na,no,i,d) ,this);
+        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.addTransaction(a,na,no,i,d),this);
 
     }
 

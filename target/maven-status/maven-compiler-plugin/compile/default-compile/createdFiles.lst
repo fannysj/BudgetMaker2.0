@@ -1,4 +1,3 @@
-com/example/budgetmaker2_0/Student.class
 Model/Observer.class
 Model/SortCategory$2.class
 com/example/budgetmaker2_0/GsonTester.class
@@ -11,6 +10,7 @@ Model/SortCategory$1.class
 Model/Transaction.class
 View/TransactionView.class
 Controllers/BudgetModelController.class
+Model/Student.class
 Model/Category$2.class
 View/CategoryOverviewItem.class
 module-info.class
@@ -19,6 +19,7 @@ Controllers/TransactionsController.class
 View/BudgetListItem.class
 Model/BudgetModel.class
 Model/Category$1.class
+Model/Budget.class
 View/TransactionListItem.class
 Model/SortCategory.class
 Model/ObserverHandler.class
