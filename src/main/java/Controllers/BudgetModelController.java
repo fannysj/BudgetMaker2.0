@@ -1,6 +1,8 @@
 package Controllers;
 
 
+import Interfaces.Observer;
+import Interfaces.Observable;
 import Model.BudgetModel;
 import Model.Category;
 import View.CategoryListItem;
@@ -39,6 +41,7 @@ public class BudgetModelController implements Initializable {
     BudgetModel currentBudget;
 
     TransactionsController controller;
+    Category cat;
 
     @FXML
     private TextField EnterBudget;
@@ -54,6 +57,9 @@ public class BudgetModelController implements Initializable {
 
     @FXML
     private Label budgetAmount;
+
+    @FXML
+    private Label currentAmount;
 
     @FXML
     private Button goBack;
@@ -76,6 +82,7 @@ public class BudgetModelController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
 
 
     }
@@ -155,6 +162,8 @@ public class BudgetModelController implements Initializable {
 
 
     }
+
+
 }
 
 

@@ -2,7 +2,6 @@ package View;
 
 import Controllers.TransactionsController;
 import Model.Category;
-import Model.ObserverHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -59,6 +58,10 @@ public class CategoryOverviewItem extends AnchorPane {
 
     }
 
+    public Category getCategory(){
+        return category;
+    }
+
     @FXML
     public void onClick() {
 
@@ -74,6 +77,12 @@ public class CategoryOverviewItem extends AnchorPane {
     public void stopHover(){
         CategoryNameOV.setUnderline(false);
     }
+
+
+    public void updateCurrentAmount (){
+        currentAmount.setText(String.valueOf(category.getSpentAmount()));
+    }
+
 
 
 }

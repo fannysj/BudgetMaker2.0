@@ -53,6 +53,13 @@ public class OverviewView extends AnchorPane{
     }
 
 
+    public void updateCategoryItems(){
+        for (CategoryOverviewItem c : CategoryOverviewItemArray){
+            c.updateCurrentAmount();
+        }
+    }
+
+
 
 
 }

@@ -2,12 +2,15 @@ package Model;
 
 import java.time.LocalDate;
 import java.util.*;
+import Interfaces.Observer;
+import Interfaces.Observable;
 
-public class Category{
+public class Category implements Observable {
     private String name;
     private int goalAmount;
     public int spentAmount;
     public List<Transaction> transactionsList = new ArrayList<>();
+    public List<Observer> observerList = new ArrayList<>();
 
     public Category(String name, int goalAmount) {
         this.name = String.valueOf(name);
@@ -58,6 +61,7 @@ public class Category{
 
     public void addTransactionToList(Transaction expense){
         transactionsList.add(expense);
+        notifyObservers();
 
     }
 
@@ -105,6 +109,15 @@ public class Category{
     }
 
 
+    public void subscribe(Observer observer){
+        observerList.add(observer);
+    }
+
+    public void notifyObservers(){
+        for (var observer : observerList){
+            observer.update(this);
+        }
+    }
 
 }
 
