@@ -21,7 +21,7 @@ public class Budget {
         this.budget = budget;
     }
     public String toString () {
-        return "Student [ budget: " + budget + " ]";
+        return "Budget [ Din budget: " + budget + "kr ]";
     }
 
      public void GsonGoals(){
