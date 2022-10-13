@@ -2,6 +2,7 @@ package Controllers;
 
 import Model.BudgetModel;
 import Model.Category;
+import Model.SortCategory;
 import Model.Transaction;
 import View.*;
 import com.example.budgetmaker2_0.User;
@@ -22,6 +23,7 @@ import javafx.stage.Stage;
 import javafx.util.converter.LocalDateStringConverter;
 
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
 import java.time.LocalDate.*;
 
@@ -38,7 +40,6 @@ public class TransactionsController implements Initializable {
 
 
     ObservableList<String> categoriesName = FXCollections.observableArrayList();
-
 
 
     User currentUser = User.getInstance();
@@ -143,35 +144,46 @@ public class TransactionsController implements Initializable {
     }
 
     @FXML
-    public void createNewTransaction(){
-        int a = Integer.parseInt(transactionAmountTextField.getText());
-        String na = transactionNameTextField.getText();
-        String no = transactionNoteTextField.getText();
-        int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
-        LocalDate d = transactionDatePicker.getValue();
+    public void goBacktoOverview(){
+        transactionView.clearTransactionPane(transactionFlowPane);
+        setBackToOverview();
 
-        currentBudget.addTransaction(a,na,no, i, d);
+    }
+
+    @FXML
+    public void createNewTransaction(){
+        currentBudget.addTemporaryTransactionsToTransactionList();
+        updateBudgetDisplay();
+        goBacktoOverview();
+        addTransactionToHistoryFlowPane();
+
     }
 
     @FXML
     public void populateCategoryChoiceBox() {
-        transactionCategoryChoiceBox.getItems().clear();
-        for(Category c: currentUser.getCategoryList()){
-            transactionCategoryChoiceBox.getItems().add(c.getName());
-        }
+        transactionView.populateCategoryChoiceBox(transactionCategoryChoiceBox, currentUser.getCategoryList());
 
     }
 
     public void addTransactionToFlowPane() {
-        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.getTransactionList(), this);
+        int a = Integer.parseInt(transactionAmountTextField.getText());
+        String na = transactionNameTextField.getText();
+        String no = transactionNoteTextField.getText();
+        LocalDate d = transactionDatePicker.getValue();
+        int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
 
-        }
 
-    public void updateTransactionList(List<Transaction> transactions) {
-        transactionView.updateTransactionList(transactionGrid,transactionFlowPane,transactions,this);
+        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.addTransaction(a,na,no,i,d) ,this);
+
     }
 
-    @FXML
+
+
+
+//    public void updateTransactionList(List<Transaction> transactions) {
+//        transactionView.updateTransactionList(transactionGrid,transactionFlowPane,transactions,this);
+//    }
+
     public void addTransactionToHistoryFlowPane(){
         transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
     }
@@ -180,53 +192,28 @@ public class TransactionsController implements Initializable {
     //Metoder som tar hand om att byta sida
     @FXML
     public void setBackToOverview() {
-        overviewAnchorPane.toFront();
-        addExpenseSplit.setVisible(false);
-        overviewAnchorPane.setVisible(true);
+        overviewView.setBackToOverview(overviewAnchorPane, addExpenseSplit);
+
     }
 
     @FXML
     public void setAddExpense() {
-        addExpenseAnchorPane.toFront();
-        overviewAnchorPane.setVisible(false);
-        addExpenseSplit.setVisible(true);
+        transactionView.clearInput(transactionNameTextField,transactionDatePicker,transactionAmountTextField,transactionCategoryChoiceBox,transactionNoteTextField);
+        transactionView.setAddExpense(addExpenseAnchorPane, overviewAnchorPane, addExpenseSplit);
 
     }
 
-    //Öppna en specifik transaktion
+    //Öppna en specifik transaktion ????
     public void openDetailTransaction(Transaction transaction){
-        transactionView(transaction);
+        transactionView.readTransactionView(transaction, transactionNameTextField, transactionAmountTextField, transactionNoteTextField);
         detailPane.toFront();
     }
 
-    //Läser vyn för den transaktion som just nu ska visas
-    public void transactionView(Transaction transaction){
-        transactionNameTextField.setText(transaction.getName());
-        transactionAmountTextField.setText(String.valueOf(transaction.getTransactionAmount()));
-        transactionNoteTextField.setText(transaction.getNotes());
-    }
-
-
-
     @FXML
-    public void search() {
-        List<Transaction> matches = new ArrayList<>();
-        try {
-            Pattern pattern = Pattern.compile(String.format(".*%s.*", searchbar.getText()), Pattern.CASE_INSENSITIVE);
-            category.getTransactionsList().forEach(transaction -> {
-                Matcher m = pattern.matcher(transaction.getName());
-                if (m.matches()) {
-                    matches.add(transaction);
-                }
-            }) ;
-        } catch (PatternSyntaxException e) {
-            e.getMessage();
-            updateTransactionList(matches);
-        }
-       // updateTransactionList(matches);
+    public void search(int categoryindex){
+        SortCategory sortCategory = new SortCategory();
+        sortCategory.search(currentBudget.getCategory(categoryindex), searchbar);
     }
-
-
 
     @FXML
     private void deleteTransaction(){

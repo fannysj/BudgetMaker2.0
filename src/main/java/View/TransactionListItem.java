@@ -2,6 +2,7 @@ package View;
 
 import Controllers.BudgetModelController;
 import Controllers.TransactionsController;
+import Model.Category;
 import Model.Transaction;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -10,6 +11,8 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class TransactionListItem extends AnchorPane {
 
@@ -53,6 +56,9 @@ public class TransactionListItem extends AnchorPane {
     private TransactionsController parentController;
     private Transaction transaction;
 
+    private int CategoryIndex;
+
+
 
     public TransactionListItem(Transaction transaction, TransactionsController transactionscontroller){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/transactionlistitem.fxml"));
@@ -64,14 +70,41 @@ public class TransactionListItem extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
-        this.transaction = transaction;
         this.parentController = transactionscontroller;
 
-        listItemTransactionName.setText(String.valueOf(transaction.getName()));
-        listItemTransactionAmount.setText(String.valueOf(transaction.getTransactionAmount()));
-        listItemTransactionDate.setText(String.valueOf(transaction.getDate()));
-        listItemTransactionNote.setText(String.valueOf(transaction.getNotes()));
+        this.transaction = transaction;
+
+        this.listItemTransactionName.setText(transaction.getName());
+        this.listItemTransactionAmount.setText(String.valueOf(transaction.getTransactionAmount()));
+        this.listItemTransactionDate.setText(String.valueOf(transaction.getDate()));
+        this.listItemTransactionNote.setText(String.valueOf(transaction.getNotes()));
+    }
+
+    public Transaction getTransaction(){
+        return transaction;
+    }
+
+    public String getName(){
+        return listItemTransactionName.getText();
+    }
+
+    public int getAmount(){
+        return Integer.parseInt(listItemTransactionAmount.getText());
+    }
+
+    public String getNote(){
+        return listItemTransactionNote.getText();
+    }
+
+    public int getIndex(){
+        return CategoryIndex;
+    }
+
+    public LocalDate getDate(){
+        String dateLabel = listItemTransactionDate.getText();
+        System.out.println(dateLabel);
+        LocalDate date = LocalDate.parse(dateLabel);
+        return date;
     }
 
     @FXML

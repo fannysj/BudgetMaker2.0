@@ -2,15 +2,17 @@ package View;
 
 import Controllers.TransactionsController;
 import Model.Category;
+import Model.Transaction;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -23,6 +25,7 @@ public class OverviewView extends AnchorPane{
 
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
+
 
 
 
@@ -42,6 +45,14 @@ public class OverviewView extends AnchorPane{
         left.setText("" + amountleft + " kr");
         spent.setText("" + currentamount + " kr");
     }
+
+    public void setBackToOverview(AnchorPane anchor, SplitPane split) {
+        anchor.toFront();
+        split.setVisible(false);
+        anchor.setVisible(true);
+    }
+
+
 
 
 }
