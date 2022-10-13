@@ -18,9 +18,9 @@ public class BudgetModelTest {
 
     @Test
     public void categoriesShouldBeAddedToCategoryList(){
-        b.newCategory("Kläder", 500);
-        b.newCategory("Ostbågar", 300);
-        b.newCategory("Kaktusar", 200);
+        b.createNewCategory("Kläder", 500);
+        b.createNewCategory("Ostbågar", 300);
+        b.createNewCategory("Kaktusar", 200);
         assertTrue(b.getCategoryList().size() == 7); //4st som är hårdkodade sen innan
 
     }

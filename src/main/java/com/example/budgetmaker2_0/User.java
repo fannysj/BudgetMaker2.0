@@ -17,6 +17,8 @@ public class User {
 
     private static User instance = new User();
 
+    private Budget budget;
+
     private User(){
     }
 

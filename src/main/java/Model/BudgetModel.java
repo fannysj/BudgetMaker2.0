@@ -4,41 +4,39 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
-import java.util.concurrent.CancellationException;
 
 public class BudgetModel implements Serializable {
+
+    Budget budget;
     private List<Category> categoryList = new ArrayList<>();
 
     private List<Transaction> transactions = new ArrayList<>();
 
-    private int StartAmount;
-    private int amountSpent = 0;
-    private int amountLeft = 0;
+    private int BudgetStartAmount;
+    private int AmountSpent = 0;
+
+    private int AmountLeft = 0;
 
     public BudgetModel(Budget budget){
         this.budget = budget;
-        this.StartAmount = budget.getBudget();
+        this.BudgetStartAmount = budget.getBudget();
 
-        newCategory("Mat",2000);
-        newCategory("Shopping", 2000);
-        newCategory("Nöje", 1000);
-        newCategory("Övrigt",100);
+        createNewCategory("Mat",2000);
+        createNewCategory("Shopping", 2000);
+        createNewCategory("Nöje", 1000);
+        createNewCategory("Övrigt",100);
 
     }
 
+    //Getters
 
-    public void setStartAmount(int startAmount){
-        this.StartAmount = startAmount;
+    public int getBudgetStartAmount(){
+        return BudgetStartAmount;
     }
 
-    public int getStartAmount(){
-        return StartAmount;
-    }
-
-    public void newCategory(String name, int goalamount) {
-        Category category = new Category(name, goalamount);
-        categoryList.add(category);
+    public int getAmountSpent(){
+        currentAmount();
+        return AmountSpent;
     }
 
     public Category getCategory(int i){
@@ -53,34 +51,39 @@ public class BudgetModel implements Serializable {
         return transactions;
     }
 
-    //Total mängd av spenderade pengar i varje kategori
-    public int currentAmount(){
-        amountSpent = 0;
-        for (Category c : categoryList){
-            amountSpent += c.getSpentAmount();
-        }
-        System.out.println(amountSpent);
-        return amountSpent;
+    //setters
+    public void setStartAmount(int startAmount){
+        this.BudgetStartAmount = startAmount;
     }
 
-    //Total mängd av utgiftsmål för alla kategorier
-    public int TotalGoalAmountOfCategories(){
-        int totalGoalAmount = 0;
-        for (Category c : categoryList){
-            totalGoalAmount += c.getGoalAmount();
-        }
-        return totalGoalAmount;
+    // Creational
+
+    public void createNewCategory(String name, int goalamount) {
+        Category category = new Category(name, goalamount);
+        categoryList.add(category);
     }
 
-    public int getAmountLeft(){
-        return (getStartAmount() - currentAmount());
-    }
-
-    public Transaction addTransaction(int amount, String name, String note, int i, LocalDate date) {
+    public Transaction createNewTransaction(int amount, String name, String note, int i, LocalDate date) {
         Transaction t = getCategory(i).newTransaction(amount,name,note,date);
         transactions.add(t);
         return t;
     }
+
+
+    //Total mängd av spenderade pengar i varje kategori
+    public void currentAmount(){
+        AmountSpent = 0;
+        for (Category c : categoryList){
+            AmountSpent += c.getSpentAmount();
+        }
+        System.out.println(AmountSpent);
+    }
+
+    public int getAmountLeft(){
+        return (getBudgetStartAmount() - getAmountSpent());
+    }
+
+
 
     private void updateTransactionList() {
         transactions.clear();
@@ -89,7 +92,7 @@ public class BudgetModel implements Serializable {
         }
     }
 
-    public void addTemporaryTransactionsToTransactionList(){
+    public void addTemporaryTransactionsToCategoryTransactionList(){
         for(Transaction t : transactions){
             t.getCategory().addTransactionToList(t);
         }
