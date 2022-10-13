@@ -1,6 +1,8 @@
 package Controllers;
 
 
+import Interfaces.Observer;
+import Interfaces.Observable;
 import Model.BudgetModel;
 import Model.Category;
 import View.CategoryListItem;
@@ -28,7 +30,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 
-public class BudgetModelController implements Initializable {
+public class BudgetModelController implements Initializable, Observer {
 
     private ArrayList<CategoryListItem> categoryListArray = new ArrayList<>();
 
@@ -38,6 +40,7 @@ public class BudgetModelController implements Initializable {
     BudgetModel currentBudget;
 
     TransactionsController controller;
+    Category cat;
 
     @FXML
     private TextField EnterBudget;
@@ -76,6 +79,7 @@ public class BudgetModelController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        cat.subscribe(this);
 
     }
 
@@ -153,6 +157,10 @@ public class BudgetModelController implements Initializable {
         }
 
 
+    }
+
+    public void update(Observable observable){
+        //Vad som ska hända vid update
     }
 }
 

@@ -3,7 +3,7 @@ package Model;
 import java.time.LocalDate;
 import java.util.*;
 
-public class Category{
+public class Category implements Observable {
     private String name;
     private int goalAmount;
     public int spentAmount;

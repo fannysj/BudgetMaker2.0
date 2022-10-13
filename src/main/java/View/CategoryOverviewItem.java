@@ -2,7 +2,6 @@ package View;
 
 import Controllers.TransactionsController;
 import Model.Category;
-import Model.ObserverHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
