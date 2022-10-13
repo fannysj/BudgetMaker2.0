@@ -1,5 +1,6 @@
 package com.example.budgetmaker2_0;
 
+import Model.Budget;
 import Model.BudgetModel;
 import Model.Category;
 import com.google.gson.Gson;
@@ -42,63 +43,5 @@ public class GsonTester extends Application {
 
     public static void main(String[] args) {
         launch();
-        GsonTester tester = new GsonTester();
-        try {
-            BudgetModel budget = new BudgetModel();
-            budget.setStartAmount(10);
-            tester.writeJSON(budget);
-            BudgetModel budgetM = tester.readJSON();
-            System.out.println(budgetM);
         }
-        catch(FileNotFoundException e) {
-            e.printStackTrace();
-        }
-        catch(IOException e) {
-            e.printStackTrace();
-
-        }
-    }
-
-    private void writeJSON(BudgetModel budget) throws IOException {
-        GsonBuilder builder = new GsonBuilder();
-        Gson gson = builder.create();
-        FileWriter writer = new FileWriter("student.json");
-        writer.write(gson.toJson(budget));
-        writer.close();
-    }
-
-    private BudgetModel readJSON() throws FileNotFoundException {
-        GsonBuilder builder = new GsonBuilder();
-        Gson gson = builder.create();
-        BufferedReader bufferedReader = new BufferedReader(
-                new FileReader("student.json"));
-
-        BudgetModel budget = gson.fromJson(bufferedReader, BudgetModel.class);
-        return budget;
-    }
 }
-
-
-
-class Student {
-    private String name;
-    private int budget;
-    public Student(){}
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public int getBudget() {
-        return budget;
-    }
-    public void setBudget(int age) {
-        this.budget = age;
-    }
-    public String toString() {
-        return "Student [ name: "+name+", age: "+ budget+ " ]";
-    }
-}
-

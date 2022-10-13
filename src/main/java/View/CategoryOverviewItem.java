@@ -3,7 +3,6 @@ package View;
 import Controllers.TransactionsController;
 import Model.Category;
 import Model.ObserverHandler;
-import Model.TransactionObserver;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -55,21 +54,13 @@ public class CategoryOverviewItem extends AnchorPane {
         this.controller = controller;
 
         CategoryNameOV.setText(category.getName());
-        currentAmount.setText(String.valueOf(category.spentAmount));
+        currentAmount.setText(String.valueOf(category.getSpentAmount()));
         goalAmount.setText(String.valueOf(category.getGoalAmount()));
 
     }
 
     @FXML
     public void onClick() {
-
-/*
-        Parent root = FXMLLoader.load(getClass().getResource("/hello-view.fxml"));
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-        */
         controller.openTransactionDetailView(category);
     }
 
@@ -82,6 +73,6 @@ public class CategoryOverviewItem extends AnchorPane {
     public void stopHover(){
         CategoryNameOV.setUnderline(false);
     }
+
+
 }
-
-

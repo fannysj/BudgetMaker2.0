@@ -4,15 +4,16 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 import java.util.concurrent.CancellationException;
 
 public class BudgetModel implements Serializable {
-    public List<Category> categoryList = new ArrayList<>();
+    private List<Category> categoryList = new ArrayList<>();
 
-    public List<Transaction> transactionList = new ArrayList<>();
+    private List<Transaction> transactions = new ArrayList<>();
 
     private int StartAmount;
-    public int amountSpent = 0;
+    private int amountSpent = 0;
     private int amountLeft = 0;
 
     public BudgetModel(){
@@ -47,7 +48,7 @@ public class BudgetModel implements Serializable {
     }
 
     public List<Transaction> getTransactionList(){
-        return transactionList;
+        return transactions;
     }
 
     //Total mängd av spenderade pengar i varje kategori
@@ -69,32 +70,30 @@ public class BudgetModel implements Serializable {
         return totalGoalAmount;
     }
 
-    // Hur mycket pengar finns kvar att portionera ut till kategorierna
-    public void moneyLeftToDivide(){
-        int tots = TotalGoalAmountOfCategories();
-        int totalAmountLeft = StartAmount - tots;
-
-        System.out.println(totalAmountLeft);
-    }
-
     public int getAmountLeft(){
-        return (int) (getStartAmount() - currentAmount());
+        return (getStartAmount() - currentAmount());
     }
 
-    public void addTransaction(int amount, String name, String note, int i, LocalDate date) {
-        getCategory(i).newTransaction(amount,name,note,date);
-        updateTransactionList();
-        ObserverHandler.notifyAllObserver();
-        return;
-
+    public Transaction addTransaction(int amount, String name, String note, int i, LocalDate date) {
+        Transaction t = getCategory(i).newTransaction(amount,name,note,date);
+        transactions.add(t);
+        return t;
     }
 
     private void updateTransactionList() {
-        transactionList.clear();
+        transactions.clear();
         for(Category c : categoryList){
-            transactionList.addAll(c.getTransactionsList());
+            transactions.addAll(c.getTransactionsList());
         }
     }
+
+    public void addTemporaryTransactionsToTransactionList(){
+        for(Transaction t : transactions){
+            t.getCategory().addTransactionToList(t);
+        }
+
+    }
+
 
 }
 
