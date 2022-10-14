@@ -95,7 +95,7 @@ public class BudgetModelController implements Initializable {
     }
 
     @FXML
-    public void SwitchToNewBudget(){
+    public void SwitchToBudgetPage(){
         welcome.setVisible(false);
         startSida.setVisible(true);
 

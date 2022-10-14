@@ -113,10 +113,9 @@ public class TransactionsController implements Initializable, Observer {
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
 
-    // Add to category observable list, subscribe, kalla till categories addObserver metod.
-
 
     //Metoder som ska visa transaktioner men fungerar ej :(
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         currentBudget = currentUser.getBudgetModel();
@@ -217,12 +216,6 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     public void openTransactionDetailView(Category category){
         TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this, category, title, spent, left);
-
-        ObservableList<Transaction> transactionList = FXCollections.observableArrayList();
-        transactionList.addAll(category.getTransactionsList());
-        transactionListView.setItems(transactionList);
-        transactionListView.setCellFactory(ComboBoxListCell.forListView(transactionList));
-
         categoryOverview.toFront();
 
     }
