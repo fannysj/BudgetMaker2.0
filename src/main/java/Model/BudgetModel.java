@@ -9,18 +9,22 @@ public class BudgetModel {
 
     private List<Transaction> transactions = new ArrayList<>();
 
+    Budget budget;
     private int StartAmount;
     private int amountSpent = 0;
     private int amountLeft = 0;
 
-    public BudgetModel(){
+    public BudgetModel(Budget budget){
 
         newCategory("Mat",2000);
         newCategory("Shopping", 2000);
         newCategory("Nöje", 1000);
         newCategory("Övrigt",100);
+        this.budget = budget;
+        this.StartAmount = budget.getBudget();
 
     }
+
 
 
     public void setStartAmount(int startAmount){
