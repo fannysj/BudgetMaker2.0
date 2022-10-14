@@ -41,7 +41,6 @@ public class BudgetModelController implements Initializable {
     BudgetModel currentBudget;
 
     TransactionsController controller;
-    Category cat;
 
     @FXML
     private TextField EnterBudget;
