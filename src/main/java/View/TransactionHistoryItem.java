@@ -5,6 +5,7 @@ import Model.Transaction;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -13,6 +14,9 @@ public class TransactionHistoryItem extends AnchorPane {
 
     @FXML
     private Label amountLabel;
+
+    @FXML
+    private ScrollPane scrollPane;
 
     @FXML
     private Label dateLabel;
