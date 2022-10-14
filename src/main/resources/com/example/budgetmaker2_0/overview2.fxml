@@ -21,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="headAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" >
+<AnchorPane fx:id="headAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="697.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <StackPane layoutX="-4.0" layoutY="-3.0" prefHeight="485.0" prefWidth="697.0">
          <children>
@@ -29,7 +29,7 @@
                <children>
                   <SplitPane fx:id="addExpenseSplit" dividerPositions="0.5527182866556837" prefHeight="485.0" prefWidth="697.0" style="-fx-background-color: black;" visible="false">
                     <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="385.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;" >
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="475.0" prefWidth="385.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
                            <children>
                               <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#faf8fc" height="38.0" layoutX="35.0" layoutY="103.0" stroke="TRANSPARENT" strokeType="INSIDE" width="232.0" />
                               <Text layoutX="45.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Belopp">
@@ -150,9 +150,9 @@
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="578.0" layoutX="13.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="778.0" />
                   <BorderPane layoutX="19.0" layoutY="12.0" prefHeight="566.0" prefWidth="766.0">
                      <top>
-                        <HBox prefHeight="93.0" prefWidth="767.0" style="-fx-border-radius: 3px; -fx-background-color: #386b46;" BorderPane.alignment="CENTER">
+                        <HBox prefHeight="93.0" prefWidth="767.0" style="-fx-border-radius: 3px; -fx-background-color: bac2bc;" BorderPane.alignment="CENTER">
                            <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="93.0" prefWidth="313.0" text="Shopping" textFill="WHITE">
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="90.0" prefWidth="220.0" text="Shopping" textFill="WHITE">
                                  <font>
                                     <Font name="Avenir Next Bold" size="32.0" />
                                  </font>
@@ -161,17 +161,12 @@
                         </HBox>
                      </top>
                      <left>
-                        <VBox prefHeight="473.0" prefWidth="218.0" style="-fx-background-color: #689e75;" styleClass="d4d3f5d4d3f5" BorderPane.alignment="CENTER" />
+                        <VBox prefHeight="473.0" prefWidth="218.0" style="-fx-background-color: #ededed;" BorderPane.alignment="CENTER" />
                      </left>
                      <center>
                         <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
                      </center>
                   </BorderPane>
-                  <ImageView fitHeight="59.0" fitWidth="61.0" layoutX="28.0" layoutY="25.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/images/bag.png" />
-                     </image>
-                  </ImageView>
                   <Rectangle arcHeight="60.0" arcWidth="60.0" fill="WHITE" height="144.0" layoutX="363.0" layoutY="27.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="158.0" />
                   <Rectangle arcHeight="60.0" arcWidth="60.0" fill="WHITE" height="111.0" layoutX="542.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="166.0" />
                   <Label layoutX="414.0" layoutY="57.0" text="100">
@@ -201,7 +196,7 @@
                         <Image url="@../../../../../../../magnifier.png" />
                      </image>
                      <effect>
-                        <ColorAdjust brightness="1.0" />
+                        <ColorAdjust brightness="-1.0" />
                      </effect>
                   </ImageView>
                </children>
