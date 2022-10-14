@@ -1,13 +1,12 @@
 package Model;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Observable;
 import java.util.concurrent.CancellationException;
 
-public class BudgetModel implements Serializable {
+public class BudgetModel {
     private List<Category> categoryList = new ArrayList<>();
 
     private List<Transaction> transactions = new ArrayList<>();
