@@ -192,6 +192,7 @@ public class TransactionsController implements Initializable, Observer {
 
     public void addTransactionToHistoryFlowPane(){
         transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
+
     }
 
 

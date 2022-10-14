@@ -12,6 +12,7 @@ import javafx.scene.layout.FlowPane;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Flow;
 
@@ -56,7 +57,9 @@ public class TransactionView {
 //    }
 
     public void addTransactionToHistoryFlowPane(FlowPane flow, List<Transaction> list, TransactionsController controller){
+
         flow.getChildren().clear();
+        Collections.reverse(list);
         for (Transaction transaction: list){
             TransactionHistoryItem newHistoryList = new TransactionHistoryItem(transaction, controller);
             flow.getChildren().add(newHistoryList);

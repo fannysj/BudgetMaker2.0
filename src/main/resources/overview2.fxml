@@ -5,6 +5,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollBar?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
@@ -26,86 +27,6 @@
    <children>
       <StackPane prefHeight="640.0" prefWidth="950.0">
          <children>
-            <AnchorPane fx:id="overviewAnchorPane" prefHeight="647.0" prefWidth="960.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
-               <children>
-                  <ImageView fitHeight="648.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@com/example/budgetmaker2_0/images/plant-growing-nature.png" />
-                     </image>
-                     <effect>
-                        <ColorAdjust brightness="-0.61" />
-                     </effect>
-                  </ImageView>
-                  <Button layoutX="61.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: f4f0ec f4f0ec;">
-                     <effect>
-                        <DropShadow blurType="GAUSSIAN">
-                           <color>
-                              <Color opacity="0.43283581733703613" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Button>
-                  <Label layoutX="135.0" layoutY="57.0" text="Spenderat">
-                     <font>
-                        <Font name="Avenir Next Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="spentOfBudgetDisplay" layoutX="101.0" layoutY="91.0" prefHeight="46.0" prefWidth="142.0" text="3468 kr">
-                     <font>
-                        <Font name="Avenir Next Bold" size="31.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="324.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: f4f0ec f4f0ec;">
-                     <effect>
-                        <DropShadow blurType="GAUSSIAN">
-                           <color>
-                              <Color opacity="0.43283581733703613" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                  </Button>
-                  <Label layoutX="383.0" layoutY="58.0" text="Kvar av budget">
-                     <font>
-                        <Font name="Avenir Next Bold" size="13.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="leftOfBudgetDisplay" layoutX="376.0" layoutY="93.0" prefHeight="46.0" prefWidth="142.0" text="5378 kr">
-                     <font>
-                        <Font name="Avenir Next Bold" size="31.0" />
-                     </font>
-                  </Label>
-                  <Button fx:id="addExpense" alignment="BASELINE_RIGHT" layoutX="765.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#setAddExpense" prefHeight="55.0" prefWidth="167.0" style="-fx-background-color: f4f0ec f4f0ec;" text="Lägg till utgift" wrapText="true">
-                     <effect>
-                        <DropShadow>
-                           <color>
-                              <Color opacity="0.4456290006637573" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <font>
-                        <Font name="Avenir Next Bold" size="16.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@com/example/budgetmaker2_0/images/+.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <AnchorPane layoutX="35.0" layoutY="245.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <FlowPane fx:id="OverviewCategory" prefHeight="357.0" prefWidth="480.0" />
-                     </children>
-                  </AnchorPane>
-                  <FlowPane fx:id="transactionHistoryFlowPane" layoutX="579.0" layoutY="54.0" prefHeight="321.0" prefWidth="332.0" />
-                  <Text layoutX="697.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dina senaste utgifter">
-                     <font>
-                        <Font name="Avenir Next Bold" size="13.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="categoryOverview" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="959.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="634.0" layoutX="13.0" layoutY="6.0" stroke="BLACK" strokeType="INSIDE" width="948.0" />
@@ -232,6 +153,94 @@
                         </AnchorPane>
                     </items>
                   </SplitPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="overviewAnchorPane" prefHeight="647.0" prefWidth="960.0" style="-fx-background-color: #dccee8#dccee8 #dccee8#dccee8;">
+               <children>
+                  <ImageView fitHeight="648.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@com/example/budgetmaker2_0/images/plant-growing-nature.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-0.61" />
+                     </effect>
+                  </ImageView>
+                  <Button layoutX="61.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: f4f0ec f4f0ec;">
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN">
+                           <color>
+                              <Color opacity="0.43283581733703613" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Label layoutX="135.0" layoutY="57.0" text="Spenderat">
+                     <font>
+                        <Font name="Avenir Next Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="spentOfBudgetDisplay" layoutX="101.0" layoutY="91.0" prefHeight="46.0" prefWidth="142.0" text="3468 kr">
+                     <font>
+                        <Font name="Avenir Next Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="324.0" layoutY="36.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="214.0" style="-fx-background-color: f4f0ec f4f0ec;">
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN">
+                           <color>
+                              <Color opacity="0.43283581733703613" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                  </Button>
+                  <Label layoutX="383.0" layoutY="58.0" text="Kvar av budget">
+                     <font>
+                        <Font name="Avenir Next Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="leftOfBudgetDisplay" layoutX="376.0" layoutY="93.0" prefHeight="46.0" prefWidth="142.0" text="5378 kr">
+                     <font>
+                        <Font name="Avenir Next Bold" size="31.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="addExpense" alignment="BASELINE_RIGHT" layoutX="747.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#setAddExpense" prefHeight="55.0" prefWidth="167.0" style="-fx-background-color: f4f0ec f4f0ec;" text="Lägg till utgift" wrapText="true">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color opacity="0.4456290006637573" />
+                           </color>
+                        </DropShadow>
+                     </effect>
+                     <font>
+                        <Font name="Avenir Next Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@com/example/budgetmaker2_0/images/+.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="606.0" layoutY="39.0" prefHeight="303.0" prefWidth="303.0" vmax="2.0">
+                     <content>
+                        <AnchorPane prefHeight="297.0" prefWidth="285.0">
+                           <children>
+                              <FlowPane fx:id="transactionHistoryFlowPane" layoutY="8.0" prefHeight="310.0" prefWidth="302.0" style="-fx-background-color: f4f0ec f4f0ec f4f0ec f4f0ec;" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+                  <AnchorPane layoutX="35.0" layoutY="245.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <FlowPane fx:id="OverviewCategory" prefHeight="357.0" prefWidth="480.0" />
+                     </children>
+                  </AnchorPane>
+                  <Text layoutX="688.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dina senaste utgifter" textAlignment="CENTER">
+                     <font>
+                        <Font name="Avenir Next Bold" size="13.0" />
+                     </font>
+                  </Text>
                </children>
             </AnchorPane>
          </children>
