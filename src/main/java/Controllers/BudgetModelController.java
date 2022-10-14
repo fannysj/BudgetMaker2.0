@@ -53,6 +53,9 @@ public class BudgetModelController implements Initializable {
     private AnchorPane startSida;
 
     @FXML
+    private AnchorPane homePage;
+
+    @FXML
     private AnchorPane budgetingPage;
 
     @FXML
@@ -80,29 +83,22 @@ public class BudgetModelController implements Initializable {
     private FlowPane OverviewCategory;
 
     @FXML
-    private Circle createNewBudget;
-
-    @FXML
-    private AnchorPane welcome;
+    private Circle createNewbudget;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
-
-
     }
-
     @FXML
-    public void SwitchToBudgetPage(){
-        welcome.setVisible(false);
+    public void createNewbudget() {
+        startSida.toFront();
+        homePage.setVisible(false);
         startSida.setVisible(true);
-
     }
 
     @FXML
-    public void setNewBudgetModel()  {
+    public void setNewBudgetModel(){
         currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()));
         currentBudget = currentUser.getBudgetModel();
         String str = EnterBudget.getText();
