@@ -28,6 +28,13 @@ public class OverviewView extends AnchorPane{
 
 
 
+    public void switchToHomePage(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/budgetmaker2_0/hello-view.fxml"));
+        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     public void updateCategoryListItem(FlowPane OverviewCategory, List<Category> categoryList, TransactionsController controller) {

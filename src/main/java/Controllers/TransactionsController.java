@@ -17,31 +17,23 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.text.Text;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import javafx.util.converter.LocalDateStringConverter;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.time.LocalDate.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 public class TransactionsController implements Initializable, Observer {
 
 
 
-    ObservableList<String> categoriesName = FXCollections.observableArrayList();
+
 
 
     User currentUser = User.getInstance();
@@ -90,6 +82,9 @@ public class TransactionsController implements Initializable, Observer {
 
     @FXML FlowPane transactionGrid;
 
+    @FXML
+    private FlowPane transactionDetailViewHistory;
+
 
     Category category;
 
@@ -122,6 +117,12 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     private Label left;
 
+    @FXML
+    private ListView<Transaction> transactionListView = new ListView<>() ;
+
+    @FXML
+    private Circle homeCircle;
+
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
 
@@ -129,6 +130,7 @@ public class TransactionsController implements Initializable, Observer {
 
 
     //Metoder som ska visa transaktioner men fungerar ej :(
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         currentBudget = currentUser.getBudgetModel();
@@ -141,7 +143,7 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     public void updateBudgetDisplay(){
-        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(),currentBudget.currentAmount());
+        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(),currentBudget.getAmountSpent());
     }
 
     @FXML
@@ -158,10 +160,11 @@ public class TransactionsController implements Initializable, Observer {
 
     @FXML
     public void createNewTransaction(){
-        currentBudget.addTemporaryTransactionsToTransactionList();
+        currentBudget.addTemporaryTransactionsToCategoryTransactionList();
         updateBudgetDisplay();
         goBacktoOverview();
         addTransactionToHistoryFlowPane();
+        addTransactionsToDetailView();
 
     }
 
@@ -179,7 +182,7 @@ public class TransactionsController implements Initializable, Observer {
         int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
 
 
-        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.addTransaction(a,na,no,i,d) ,this);
+        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.createNewTransaction(a,na,no,i,d),this);
 
     }
 
@@ -191,8 +194,13 @@ public class TransactionsController implements Initializable, Observer {
 //    }
 
     public void addTransactionToHistoryFlowPane(){
-        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getRecentTransactions(), this);
     }
+
+    public void addTransactionsToDetailView(){
+        transactionView.addTransactionToHistoryFlowPane(transactionDetailViewHistory, currentBudget.getTransactionList(), this);
+    }
+
 
 
     //Metoder som tar hand om att byta sida
@@ -228,7 +236,7 @@ public class TransactionsController implements Initializable, Observer {
 
     @FXML
     public void openTransactionDetailView(Category category){
-        TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this,category, title, spent, left);
+        TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this, category, title, spent, left);
         categoryOverview.toFront();
 
     }
@@ -243,6 +251,12 @@ public class TransactionsController implements Initializable, Observer {
     public void update(Observable observable) {
         overviewView.updateCategoryItems();
 
+    }
+
+
+    @FXML
+    public void switchToHomePage(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        overviewView.switchToHomePage(mouseEvent);
     }
 
 
