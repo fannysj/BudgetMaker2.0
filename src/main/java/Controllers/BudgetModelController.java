@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 
@@ -79,16 +80,30 @@ public class BudgetModelController implements Initializable {
     @FXML
     private FlowPane OverviewCategory;
 
+    @FXML
+    private Circle createNewBudget;
+
+    @FXML
+    private AnchorPane welcome;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
 
+
     }
 
     @FXML
-    public void setNewBudgetModel() throws FileNotFoundException {
+    public void SwitchToNewBudget(){
+        welcome.setVisible(false);
+        startSida.setVisible(true);
+
+    }
+
+    @FXML
+    public void setNewBudgetModel()  {
         currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()));
         currentBudget = currentUser.getBudgetModel();
         String str = EnterBudget.getText();
@@ -98,7 +113,11 @@ public class BudgetModelController implements Initializable {
 
     public void setCategoryAmount(){
         for(int i = 0; i<categoryListArray.size(); i++){
-            currentBudget.getCategory(i).setGoalAmount(categoryListArray.get(i).getCategoryAmount());
+            try{
+                currentBudget.getCategory(i).setGoalAmount(categoryListArray.get(i).getCategoryAmount());
+            } catch (NumberFormatException e){
+                currentBudget.getCategory(i).setGoalAmount(0);
+            }
         }
     }
 

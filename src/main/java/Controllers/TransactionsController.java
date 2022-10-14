@@ -13,6 +13,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 
@@ -25,7 +26,7 @@ public class TransactionsController implements Initializable, Observer {
 
 
 
-    ObservableList<String> categoriesName = FXCollections.observableArrayList();
+
 
 
     User currentUser = User.getInstance();
@@ -178,7 +179,7 @@ public class TransactionsController implements Initializable, Observer {
 //    }
 
     public void addTransactionToHistoryFlowPane(){
-        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getRecentTransactions(), this);
     }
 
 
@@ -215,8 +216,13 @@ public class TransactionsController implements Initializable, Observer {
 
     @FXML
     public void openTransactionDetailView(Category category){
+        TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this, category, title, spent, left);
 
-        TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this,category, title, spent, left);
+        ObservableList<Transaction> transactionList = FXCollections.observableArrayList();
+        transactionList.addAll(category.getTransactionsList());
+        transactionListView.setItems(transactionList);
+        transactionListView.setCellFactory(ComboBoxListCell.forListView(transactionList));
+
         categoryOverview.toFront();
 
     }

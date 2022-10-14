@@ -66,6 +66,7 @@ public class CategoryOverviewItem extends AnchorPane {
     public void onClick() {
 
         controller.openTransactionDetailView(category);
+
     }
 
     @FXML

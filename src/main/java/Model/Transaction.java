@@ -1,16 +1,12 @@
 package Model;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonObject;
-import javafx.collections.ObservableList;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import Interfaces.Observable;
+import Interfaces.Observer;
 
 import java.time.LocalDate;
 
-public class Transaction {
+
+public class Transaction implements Observable {
     private int transactionAmount;
     private String name;
     private String notes;
@@ -59,5 +55,14 @@ public class Transaction {
     }
 
 
+    @Override
+    public void subscribe(Observer observer) {
+
+    }
+
+    @Override
+    public void notifyObservers() {
+
+    }
 }
 

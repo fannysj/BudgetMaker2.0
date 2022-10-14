@@ -12,10 +12,10 @@ public class BudgetModel implements Serializable {
 
     private List<Transaction> transactions = new ArrayList<>();
 
+    private List<Transaction> recentTransactions = new ArrayList<>();
+
     private int BudgetStartAmount;
     private int AmountSpent = 0;
-
-    private int AmountLeft = 0;
 
     public BudgetModel(Budget budget){
         this.budget = budget;
@@ -51,6 +51,11 @@ public class BudgetModel implements Serializable {
         return transactions;
     }
 
+    public List<Transaction> getRecentTransactions(){
+        updateTransactionList();
+        return recentTransactions;
+    }
+
     //setters
     public void setStartAmount(int startAmount){
         this.BudgetStartAmount = startAmount;
@@ -84,11 +89,10 @@ public class BudgetModel implements Serializable {
     }
 
 
-
     private void updateTransactionList() {
-        transactions.clear();
+        recentTransactions.clear();
         for(Category c : categoryList){
-            transactions.addAll(c.getTransactionsList());
+            recentTransactions.addAll(c.getTransactionsList());
         }
     }
 
@@ -96,6 +100,7 @@ public class BudgetModel implements Serializable {
         for(Transaction t : transactions){
             t.getCategory().addTransactionToList(t);
         }
+        transactions.clear();
 
     }
 
