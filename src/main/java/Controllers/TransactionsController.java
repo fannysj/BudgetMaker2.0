@@ -11,12 +11,19 @@ import com.example.budgetmaker2_0.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.shape.Circle;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 
 import java.time.LocalDate;
@@ -109,6 +116,9 @@ public class TransactionsController implements Initializable, Observer {
 
     @FXML
     private ListView<Transaction> transactionListView = new ListView<>() ;
+
+    @FXML
+    private Circle homeCircle;
 
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
@@ -230,6 +240,12 @@ public class TransactionsController implements Initializable, Observer {
     public void update(Observable observable) {
         overviewView.updateCategoryItems();
 
+    }
+
+
+    @FXML
+    public void switchToHomePage(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        overviewView.switchToHomePage(mouseEvent);
     }
 
 

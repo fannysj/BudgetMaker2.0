@@ -85,6 +85,13 @@ public class BudgetModelController implements Initializable {
     @FXML
     private Circle createNewbudget;
 
+    @FXML
+    private AnchorPane pastBudget;
+
+    @FXML
+    private TextField budgetID;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -99,7 +106,7 @@ public class BudgetModelController implements Initializable {
 
     @FXML
     public void setNewBudgetModel(){
-        currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()));
+        currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()), Integer.parseInt(budgetID.getText()));
         currentBudget = currentUser.getBudgetModel();
         String str = EnterBudget.getText();
         budgetAmount.setText(str);
@@ -175,6 +182,21 @@ public class BudgetModelController implements Initializable {
         }
 
 
+    }
+
+    @FXML
+    public void goToPastBudget(){
+        homePage.setVisible(false);
+        pastBudget.toFront();
+        pastBudget.setVisible(true);
+
+    }
+
+    @FXML
+    public void backToHomePage(){
+        pastBudget.setVisible(false);
+        homePage.toFront();
+        homePage.setVisible(true);
     }
 
 
