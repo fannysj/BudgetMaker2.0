@@ -31,7 +31,7 @@ public class BudgetModel {
         this.StartAmount = startAmount;
     }
 
-    public void newCategory(String name, int goalamount) {
+    public void newCategory (String name, int goalamount) {
         Category category = new Category(name, goalamount);
         categoryList.add(category);
     }
@@ -77,7 +77,7 @@ public class BudgetModel {
         return totalGoalAmount;
     }
 
-    public Transaction addTransaction(int amount, String name, String note, int i, LocalDate date) {
+    public Transaction createNewTransaction (int amount, String name, String note, int i, LocalDate date) {
         Transaction t = getCategory(i).newTransaction(amount,name,note,date);
         transactions.add(t);
         return t;
@@ -90,7 +90,7 @@ public class BudgetModel {
         }
     }
 
-    public void addTemporaryTransactionsToTransactionList(){
+    public void addTemporaryTransactionsToCategoryTransactionList(){
         for(Transaction t : transactions){
             t.getCategory().addTransactionToList(t);
         }
