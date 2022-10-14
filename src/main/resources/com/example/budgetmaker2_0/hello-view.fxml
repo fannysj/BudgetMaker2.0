@@ -26,9 +26,9 @@
    <children>
       <StackPane layoutX="-5.0" prefHeight="610.0" prefWidth="802.0">
          <children>
-            <AnchorPane fx:id="budgetingPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="805.0" visible="false">
+            <AnchorPane fx:id="budgetingPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="609.0" prefWidth="810.0">
                <children>
-                  <ImageView fitHeight="672.0" fitWidth="927.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="701.0" fitWidth="1032.0" layoutX="-18.0" layoutY="-47.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-45.0" AnchorPane.rightAnchor="-204.0">
                      <image>
                         <Image url="@images/plant-growing-nature.png" />
                      </image>
@@ -72,7 +72,6 @@
                   </AnchorPane>
                   <Button fx:id="goBack" layoutX="27.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" prefHeight="48.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-border-color: ffff;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Tillbaka" textFill="#0000000a" />
                   <Line endX="100.0" layoutX="275.0" layoutY="126.0" startX="-219.5" stroke="#ffffffb2" />
-                  <Circle fill="#40543f" layoutX="526.0" layoutY="562.0" radius="33.0" smooth="false" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="startSida" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="680.0" visible="false">
@@ -124,9 +123,9 @@
                   </Text>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="homePage" minWidth="-Infinity" prefHeight="615.0" prefWidth="809.0">
+            <AnchorPane fx:id="homePage" minHeight="-Infinity" minWidth="-Infinity" prefHeight="615.0" prefWidth="809.0" visible="false">
                <children>
-                  <ImageView fitHeight="681.0" fitWidth="1074.0" layoutX="-114.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="681.0" fitWidth="1074.0" layoutX="-114.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@images/coins-and-plants.png" />
                      </image>
