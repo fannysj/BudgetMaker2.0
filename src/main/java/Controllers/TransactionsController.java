@@ -236,6 +236,7 @@ public class TransactionsController implements Initializable, Observer {
     @Override
     public void update(Observable observable) {
         overviewView.updateCategoryItems();
+
     }
 
 

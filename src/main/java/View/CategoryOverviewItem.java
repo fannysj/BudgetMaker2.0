@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -30,6 +31,9 @@ public class CategoryOverviewItem extends AnchorPane {
 
     @FXML
     private Button OVbutton;
+
+    @FXML
+    public ProgressBar progressBar;
 
 
 
@@ -84,6 +88,9 @@ public class CategoryOverviewItem extends AnchorPane {
         currentAmount.setText(String.valueOf(category.getSpentAmount()));
     }
 
-
+    public void updateProgressBar(){
+        double valueProgressBar = Double.parseDouble((currentAmount.getText())) / Double.parseDouble(goalAmount.getText());;
+        progressBar.setProgress(valueProgressBar);
+    }
 
 }
