@@ -11,31 +11,15 @@ import com.example.budgetmaker2_0.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
-import javafx.util.converter.LocalDateStringConverter;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.time.LocalDate.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 public class TransactionsController implements Initializable, Observer {
 
@@ -141,7 +125,7 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     public void updateBudgetDisplay(){
-        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(),currentBudget.currentAmount());
+        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(),currentBudget.budgetCurrentAmount());
     }
 
     @FXML
@@ -199,7 +183,6 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     public void setBackToOverview() {
         overviewView.setBackToOverview(overviewAnchorPane, addExpenseSplit);
-
     }
 
     @FXML
@@ -230,6 +213,7 @@ public class TransactionsController implements Initializable, Observer {
     public void openTransactionDetailView(Category category){
         TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this,category, title, spent, left);
         categoryOverview.toFront();
+
 
     }
 

@@ -43,7 +43,6 @@ public class Category implements Observable {
         return transactionsList;
     }
 
-
     public int getGoalAmount() {
         return goalAmount;
     }
@@ -56,7 +55,6 @@ public class Category implements Observable {
     // Transaction Methods
     public Transaction newTransaction(int amount, String name, String note, LocalDate date) {
         return new Transaction(amount, name, note, this, date);
-
     }
 
     public void addTransactionToList(Transaction expense){
@@ -64,7 +62,6 @@ public class Category implements Observable {
         notifyObservers();
 
     }
-
 
     public void updateSpentAmount(){
         spentAmount = 0;
