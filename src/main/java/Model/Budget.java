@@ -25,22 +25,15 @@ public class Budget {
     }
 
      public void GsonGoals(){
-         Budget tester = new Budget(budget);
+         Budget tester;
          try{
-             Budget budget = new Budget(getBudget());
-             budget.setBudget(getBudget());
-             tester.writeJSON(budget);
+             tester = new Budget(getBudget());
+             tester.writeJSON(tester);
              Budget budget1 = tester.readJSON();
              System.out.println(budget1);
-         }
-         catch(
-                 FileNotFoundException e) {
-             e.printStackTrace();
-         }
-         catch(
+         } catch(
                  IOException e) {
              e.printStackTrace();
-
          }
      }
 
@@ -52,7 +45,7 @@ public class Budget {
         writer.close();
     }
 
-    private Budget readJSON() throws FileNotFoundException {
+    public Budget readJSON() throws FileNotFoundException {
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
         BufferedReader bufferedReader = new BufferedReader(

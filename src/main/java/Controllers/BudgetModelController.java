@@ -23,6 +23,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -107,7 +108,11 @@ public class BudgetModelController implements Initializable {
 
     public void setCategoryAmount(){
         for(int i = 0; i<categoryListArray.size(); i++){
-            currentBudget.getCategory(i).setGoalAmount(categoryListArray.get(i).getCategoryAmount());
+            try{
+                currentBudget.getCategory(i).setGoalAmount(categoryListArray.get(i).getCategoryAmount());
+            } catch (NumberFormatException e){
+                currentBudget.getCategory(i).setGoalAmount(0);
+            }
         }
     }
 
@@ -118,6 +123,7 @@ public class BudgetModelController implements Initializable {
         budgetingPage.setVisible(true);
 
         updateCategoryList();
+
     }
 
     public void CategoryToFront() {
@@ -126,6 +132,8 @@ public class BudgetModelController implements Initializable {
         categoryOverview.setVisible(false);
         budgetingPage.setVisible(true);
     }
+
+
 
     @FXML
     public void goBackonePage() {
