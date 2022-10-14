@@ -71,7 +71,6 @@ public class TransactionView {
         for(Category c: list){
             choiceBox.getItems().add(c.getName());
         }
-
     }
 
     public void readTransactionView(Transaction transaction, TextField name, TextField amount, TextField note){

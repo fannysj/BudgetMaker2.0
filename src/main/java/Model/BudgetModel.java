@@ -3,34 +3,32 @@ package Model;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
-import java.util.concurrent.CancellationException;
 
 public class BudgetModel {
     private List<Category> categoryList = new ArrayList<>();
 
     private List<Transaction> transactions = new ArrayList<>();
 
+    Budget budget;
     private int StartAmount;
     private int amountSpent = 0;
     private int amountLeft = 0;
 
-    public BudgetModel(){
+    public BudgetModel(Budget budget){
 
         newCategory("Mat",2000);
         newCategory("Shopping", 2000);
         newCategory("Nöje", 1000);
         newCategory("Övrigt",100);
+        this.budget = budget;
+        this.StartAmount = budget.getBudget();
 
     }
+
 
 
     public void setStartAmount(int startAmount){
         this.StartAmount = startAmount;
-    }
-
-    public int getStartAmount(){
-        return StartAmount;
     }
 
     public void newCategory(String name, int goalamount) {
@@ -38,8 +36,13 @@ public class BudgetModel {
         categoryList.add(category);
     }
 
+    // Getters
     public Category getCategory(int i){
         return categoryList.get(i);
+    }
+
+    public int getStartAmount(){
+        return StartAmount;
     }
 
     public List<Category> getCategoryList() {
@@ -50,8 +53,13 @@ public class BudgetModel {
         return transactions;
     }
 
+    public int getAmountLeft(){
+        return (getStartAmount() - budgetCurrentAmount());
+    }
+
+
     //Total mängd av spenderade pengar i varje kategori
-    public int currentAmount(){
+    public int budgetCurrentAmount(){
         amountSpent = 0;
         for (Category c : categoryList){
             amountSpent += c.getSpentAmount();
@@ -67,10 +75,6 @@ public class BudgetModel {
             totalGoalAmount += c.getGoalAmount();
         }
         return totalGoalAmount;
-    }
-
-    public int getAmountLeft(){
-        return (getStartAmount() - currentAmount());
     }
 
     public Transaction addTransaction(int amount, String name, String note, int i, LocalDate date) {

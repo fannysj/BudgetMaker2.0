@@ -3,8 +3,11 @@
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Controllers/BudgetModelController.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/View/CategoryListItem.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Controllers/TransactionsController.java
+/Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Interfaces/Observer.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Model/Transaction.java
+/Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Model/Budget.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Model/Category.java
+/Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Interfaces/Observable.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Model/SortCategory.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Model/BudgetModel.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/module-info.java
@@ -14,8 +17,5 @@
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/View/BudgetListItem.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/View/TransactionView.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/View/TransactionListItem.java
-/Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Model/TransactionHandler.java
-/Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Model/ObserverHandler.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/View/TransactionHistoryItem.java
-/Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/Model/Observer.java
 /Users/fannysjostrom/IdeaProjects/BudgetMaker2.0/src/main/java/com/example/budgetmaker2_0/User.java

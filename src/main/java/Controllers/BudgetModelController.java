@@ -23,6 +23,7 @@ import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -84,6 +85,13 @@ public class BudgetModelController implements Initializable {
     @FXML
     private Circle createNewbudget;
 
+    @FXML
+    private AnchorPane pastBudget;
+
+    @FXML
+    private TextField budgetID;
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -98,7 +106,7 @@ public class BudgetModelController implements Initializable {
 
     @FXML
     public void setNewBudgetModel(){
-        currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()));
+        currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()), Integer.parseInt(budgetID.getText()));
         currentBudget = currentUser.getBudgetModel();
         String str = EnterBudget.getText();
         budgetAmount.setText(str);
@@ -107,7 +115,11 @@ public class BudgetModelController implements Initializable {
 
     public void setCategoryAmount(){
         for(int i = 0; i<categoryListArray.size(); i++){
-            currentBudget.getCategory(i).setGoalAmount(categoryListArray.get(i).getCategoryAmount());
+            try{
+                currentBudget.getCategory(i).setGoalAmount(categoryListArray.get(i).getCategoryAmount());
+            } catch (NumberFormatException e){
+                currentBudget.getCategory(i).setGoalAmount(0);
+            }
         }
     }
 
@@ -118,6 +130,7 @@ public class BudgetModelController implements Initializable {
         budgetingPage.setVisible(true);
 
         updateCategoryList();
+
     }
 
     public void CategoryToFront() {
@@ -126,6 +139,8 @@ public class BudgetModelController implements Initializable {
         categoryOverview.setVisible(false);
         budgetingPage.setVisible(true);
     }
+
+
 
     @FXML
     public void goBackonePage() {
@@ -167,6 +182,21 @@ public class BudgetModelController implements Initializable {
         }
 
 
+    }
+
+    @FXML
+    public void goToPastBudget(){
+        homePage.setVisible(false);
+        pastBudget.toFront();
+        pastBudget.setVisible(true);
+
+    }
+
+    @FXML
+    public void backToHomePage(){
+        pastBudget.setVisible(false);
+        homePage.toFront();
+        homePage.setVisible(true);
     }
 
 
