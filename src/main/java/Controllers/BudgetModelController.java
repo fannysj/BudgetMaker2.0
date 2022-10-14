@@ -19,6 +19,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 
@@ -52,6 +53,9 @@ public class BudgetModelController implements Initializable {
     private AnchorPane startSida;
 
     @FXML
+    private AnchorPane homePage;
+
+    @FXML
     private AnchorPane budgetingPage;
 
     @FXML
@@ -78,12 +82,19 @@ public class BudgetModelController implements Initializable {
     @FXML
     private FlowPane OverviewCategory;
 
+    @FXML
+    private Circle createNewbudget;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
-
+    }
+    @FXML
+    public void createNewbudget() {
+        startSida.toFront();
+        homePage.setVisible(false);
+        startSida.setVisible(true);
     }
 
     @FXML
@@ -108,7 +119,6 @@ public class BudgetModelController implements Initializable {
         budgetingPage.setVisible(true);
 
         updateCategoryList();
-
     }
 
     public void CategoryToFront() {
@@ -117,8 +127,6 @@ public class BudgetModelController implements Initializable {
         categoryOverview.setVisible(false);
         budgetingPage.setVisible(true);
     }
-
-
 
     @FXML
     public void goBackonePage() {
