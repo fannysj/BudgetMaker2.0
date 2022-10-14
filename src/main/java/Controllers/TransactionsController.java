@@ -82,6 +82,9 @@ public class TransactionsController implements Initializable, Observer {
 
     @FXML FlowPane transactionGrid;
 
+    @FXML
+    private FlowPane transactionDetailViewHistory;
+
 
     Category category;
 
@@ -123,6 +126,8 @@ public class TransactionsController implements Initializable, Observer {
 
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
 
+    // Add to category observable list, subscribe, kalla till categories addObserver metod.
+
 
     //Metoder som ska visa transaktioner men fungerar ej :(
 
@@ -159,6 +164,7 @@ public class TransactionsController implements Initializable, Observer {
         updateBudgetDisplay();
         goBacktoOverview();
         addTransactionToHistoryFlowPane();
+        addTransactionsToDetailView();
 
     }
 
@@ -190,6 +196,11 @@ public class TransactionsController implements Initializable, Observer {
     public void addTransactionToHistoryFlowPane(){
         transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getRecentTransactions(), this);
     }
+
+    public void addTransactionsToDetailView(){
+        transactionView.addTransactionToHistoryFlowPane(transactionDetailViewHistory, currentBudget.getTransactionList(), this);
+    }
+
 
 
     //Metoder som tar hand om att byta sida
