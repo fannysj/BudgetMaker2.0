@@ -74,6 +74,9 @@ public class TransactionsController implements Initializable, Observer {
 
     @FXML FlowPane transactionGrid;
 
+    @FXML
+    private FlowPane transactionDetailViewHistory;
+
 
     Category category;
 
@@ -146,6 +149,7 @@ public class TransactionsController implements Initializable, Observer {
         updateBudgetDisplay();
         goBacktoOverview();
         addTransactionToHistoryFlowPane();
+        addTransactionsToDetailView();
 
     }
 
@@ -177,6 +181,11 @@ public class TransactionsController implements Initializable, Observer {
     public void addTransactionToHistoryFlowPane(){
         transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
     }
+
+    public void addTransactionsToDetailView(){
+        transactionView.addTransactionToHistoryFlowPane(transactionDetailViewHistory, currentBudget.getTransactionList(), this);
+    }
+
 
 
     //Metoder som tar hand om att byta sida

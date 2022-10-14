@@ -122,7 +122,7 @@
                         </HBox>
                      </top>
                      <left>
-                        <VBox prefHeight="473.0" prefWidth="218.0" style="-fx-background-color: #689e75;" styleClass="d4d3f5d4d3f5" BorderPane.alignment="CENTER">
+                        <VBox prefHeight="540.0" prefWidth="216.0" style="-fx-background-color: #689e75;" styleClass="d4d3f5d4d3f5" BorderPane.alignment="CENTER">
                            <children>
                               <ImageView fitHeight="27.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -132,35 +132,36 @@
                                     <ColorAdjust brightness="1.0" />
                                  </effect>
                               </ImageView>
-                           </children></VBox>
+                           </children>
+                        </VBox>
                      </left>
-                     <center>
-                        <FlowPane fx:id="transactionGrid" prefHeight="540.0" prefWidth="749.0" BorderPane.alignment="CENTER" />
-                     </center>
+                     <right>
+                        <FlowPane fx:id="transactionDetailViewHistory" prefHeight="540.0" prefWidth="253.0" BorderPane.alignment="CENTER" />
+                     </right>
                   </BorderPane>
                   <ImageView fitHeight="59.0" fitWidth="61.0" layoutX="28.0" layoutY="25.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/images/bag.png" />
                      </image>
                   </ImageView>
-                  <Rectangle arcHeight="60.0" arcWidth="60.0" fill="WHITE" height="144.0" layoutX="363.0" layoutY="27.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="158.0" />
-                  <Rectangle arcHeight="60.0" arcWidth="60.0" fill="WHITE" height="111.0" layoutX="542.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="166.0" />
-                  <Label fx:id="spent" layoutX="414.0" layoutY="57.0" text="100">
+                  <Rectangle arcHeight="60.0" arcWidth="60.0" fill="WHITE" height="94.0" layoutX="269.0" layoutY="27.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="151.0" />
+                  <Rectangle arcHeight="60.0" arcWidth="60.0" fill="WHITE" height="94.0" layoutX="441.0" layoutY="28.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="151.0" />
+                  <Label fx:id="spent" layoutX="313.0" layoutY="57.0" prefHeight="43.0" prefWidth="73.0" text="100">
                      <font>
                         <Font name="Avenir Book" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="562.0" layoutY="39.0" text="Kvar av budget:">
+                  <Label layoutX="455.0" layoutY="39.0" prefHeight="27.0" prefWidth="176.0" text="Kvar av budget:">
                      <font>
                         <Font name="Avenir Book" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="396.0" layoutY="35.0" text="Spenderat:">
+                  <Label layoutX="300.0" layoutY="35.0" prefHeight="27.0" prefWidth="142.0" text="Spenderat:">
                      <font>
                         <Font name="Avenir Book" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="left" alignment="CENTER" layoutX="559.0" layoutY="53.0" prefHeight="52.0" prefWidth="128.0" text="800">
+                  <Label fx:id="left" alignment="CENTER" layoutX="406.0" layoutY="53.0" prefHeight="52.0" prefWidth="221.0" text="800">
                      <font>
                         <Font name="Avenir Book" size="30.0" />
                      </font>
