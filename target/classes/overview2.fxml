@@ -4,7 +4,6 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollBar?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
@@ -226,17 +225,20 @@
                         </AnchorPane>
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="598.0" prefWidth="450.0" style="-fx-background-color: e7ded5;">
                            <children>
-                              <AnchorPane layoutX="-1.0" layoutY="-5.0" prefHeight="615.0" prefWidth="349.0" style="-fx-background-color: #e7ded5;">
-                                 <children>
-                                    <FlowPane fx:id="transactionFlowPane" layoutX="-3.0" layoutY="6.0" prefHeight="545.0" prefWidth="396.0" style="-fx-background-color: e7ded5;" />
-                                 </children>
-                              </AnchorPane>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="638.0" prefWidth="425.0" vmax="2.0">
+                                 <content>
+                                    <AnchorPane prefHeight="638.0" prefWidth="429.0" style="-fx-background-color: #e7ded5;">
+                                       <children>
+                                          <FlowPane fx:id="transactionFlowPane" layoutX="-3.0" layoutY="6.0" prefHeight="634.0" prefWidth="432.0" style="-fx-background-color: e7ded5;" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
                               <Button layoutX="296.0" layoutY="563.0" mnemonicParsing="false" onAction="#updateBudgetDisplay" onMouseClicked="#createNewTransaction" prefHeight="53.0" prefWidth="108.0" text="Spara">
                                  <font>
                                     <Font name="Avenir Next Bold" size="20.0" />
                                  </font>
                               </Button>
-                              <ScrollBar fx:id="scrollbar" layoutX="410.0" layoutY="-3.0" max="1.0" orientation="VERTICAL" prefHeight="642.0" prefWidth="16.0" />
                            </children>
                         </AnchorPane>
                     </items>
