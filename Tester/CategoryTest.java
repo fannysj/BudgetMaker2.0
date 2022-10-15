@@ -4,6 +4,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
@@ -44,11 +45,32 @@ public class CategoryTest {
     }
 
     @Test
-    public void updateSpentAmountBasedOnAddedTransactions(){
+    public void addingTransactionsUpdateSpentAmount(){
         c.addTransactionToList(tran);
         c.updateSpentAmount();
         assertEquals(c.spentAmount,tran.getTransactionAmount());
     }
+
+    @Test
+    public void addingTransactionDecreasesAmountLeft(){
+        c.addTransactionToList(tran);
+        int al = c.AmountLeftToSpend();
+        assertTrue(al == 900);
+    }
+
+    @Test
+    public void deletingTransactionsFromList(){
+        c.addTransactionToList(tran);
+        Transaction t = c.newTransaction(300, "Shopping", "Jacka", d);
+        c.addTransactionToList(t);
+        int before = c.transactionsList.size();
+        c.deleteTransactionFromList();
+        int after = c.transactionsList.size();
+        assertNotEquals(before, after);
+
+    }
+
+//Sort metoderna ska testat också
 
 }
 

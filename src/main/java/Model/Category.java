@@ -102,7 +102,6 @@ public class Category implements Observable {
 
     public void deleteTransactionFromList(){
         transactionsList.remove(transactionsList.size()-1);
-        System.out.println(transactionsList.get(0).getName());
     }
 
 
