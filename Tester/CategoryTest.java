@@ -40,7 +40,8 @@ public class CategoryTest {
     public void CreateTransactionAndAddItToList() {
         Transaction t = c.newTransaction(300, "Shopping", "Jacka", d);
         c.addTransactionToList(t);
-        assertTrue(c.transactionsList.size() == 1);
+        List cl = c.getTransactionsList();
+        assertTrue(cl.size() == 1);
 
     }
 
@@ -63,11 +64,19 @@ public class CategoryTest {
         c.addTransactionToList(tran);
         Transaction t = c.newTransaction(300, "Shopping", "Jacka", d);
         c.addTransactionToList(t);
-        int before = c.transactionsList.size();
+        List tl = c.getTransactionsList();
+        int before = tl.size();
         c.deleteTransactionFromList();
-        int after = c.transactionsList.size();
+        int after = tl.size();
         assertNotEquals(before, after);
 
+    }
+
+    @Test
+    public void testingGetSpentAmount(){
+        c.addTransactionToList(tran);
+        int sa = c.getSpentAmount();
+        assertTrue(sa == 100);
     }
 
 //Sort metoderna ska testat också
