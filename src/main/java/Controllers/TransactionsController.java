@@ -10,6 +10,7 @@ import View.*;
 import com.example.budgetmaker2_0.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -197,6 +198,10 @@ public class TransactionsController implements Initializable, Observer {
 
     }
 
+    @FXML
+    public void removeTransactionFromFlowPane(TransactionListItem T){
+        transactionFlowPane.getChildren().remove(T);
+    }
 
 //    public void updateTransactionList(List<Transaction> transactions) {
 //        transactionView.updateTransactionList(transactionGrid,transactionFlowPane,transactions,this);

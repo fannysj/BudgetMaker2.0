@@ -110,5 +110,6 @@ public class TransactionListItem extends AnchorPane {
     @FXML
     protected void onClick(Event event){
         parentController.openDetailTransaction(transaction);
+        parentController.removeTransactionFromFlowPane(this);
     }
 }

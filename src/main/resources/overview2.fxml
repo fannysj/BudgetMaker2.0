@@ -241,7 +241,6 @@
                         <Font name="Avenir Next Bold" size="13.0" />
                      </font>
                   </Text>
-                  <Circle fx:id="homeCircle" fill="#5a7c5b" layoutX="47.0" layoutY="54.0" onMouseClicked="#switchToHomePage" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="addExpenseAnchorPane" prefHeight="641.0" prefWidth="909.0">
