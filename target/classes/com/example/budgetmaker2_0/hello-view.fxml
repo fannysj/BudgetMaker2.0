@@ -87,9 +87,9 @@
                   <Button fx:id="goBack" layoutX="27.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" prefHeight="48.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-border-color: ffff;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Tillbaka" textFill="#0000000a" />
                   <Line endX="100.0" layoutX="275.0" layoutY="126.0" startX="-219.5" stroke="#ffffffb2" />
                   <Circle fill="#40543f" layoutX="526.0" layoutY="562.0" radius="33.0" smooth="false" stroke="BLACK" strokeType="INSIDE" />
-                  <Text fx:id="budgetErrorMessage" fill="#820e0ed9" layoutX="575.0" layoutY="237.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Håll dig till budgeten!" visible="false" wrappingWidth="253.33333333333337">
+                  <Text fx:id="budgetErrorMessage" fill="#b13e3ed9" layoutX="581.0" layoutY="195.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Håll dig till budgeten!" visible="false" wrappingWidth="320.5">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="21.0" />
                      </font>
                   </Text>
                </children>
