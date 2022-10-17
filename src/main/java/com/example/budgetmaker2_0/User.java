@@ -37,10 +37,9 @@ public class User {
         Budget budget = new Budget(value, id);
         BudgetModel model = new BudgetModel(budget);
         //Skicka med json-objektet till budgetmodel
-        readJSON();
         ModelList.add(model);
         BudgetList.add(budget);
-        SerializeBudgets();
+
 
     }
 
@@ -80,9 +79,6 @@ public class User {
         writer.close();
 
     }
-
-
-
 
     private void writeJSON() throws IOException {
 

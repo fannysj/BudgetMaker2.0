@@ -112,9 +112,11 @@ public class BudgetModelController implements Initializable {
             throw new RuntimeException(e);
         }
 
+
     }
 
     public void setCategoryAmount(){
+        System.out.println(categoryListArray.size());
         for(int i = 0; i<categoryListArray.size(); i++){
             try{
                 currentBudget.getCategory(i).setGoalAmount(categoryListArray.get(i).getCategoryAmount());
