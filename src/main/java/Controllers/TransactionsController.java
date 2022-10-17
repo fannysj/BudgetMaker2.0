@@ -209,7 +209,7 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     public void addTransactionsToDetailView(){
-        transactionView.addTransactionToHistoryFlowPane(transactionDetailViewHistory, currentBudget.getTransactionList(), this);
+        transactionView.addTransactionToCategoryFlowPane(transactionGrid, currentBudget.getCategoryList().get(0).getTransactionsList(), this);
     }
 
 

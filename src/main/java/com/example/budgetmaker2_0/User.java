@@ -5,10 +5,11 @@ import Model.BudgetModel;
 import Model.Category;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
 
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,19 +26,22 @@ public class User {
         return instance;
     }
 
+    private List<BudgetModel> ModelList = new ArrayList<>();
 
     private List<Budget> BudgetList = new ArrayList<>();
 
-    private List<BudgetModel> ModelList = new ArrayList<>();
 
-    public void createNewBudget(int value, int id)  {
-        Budget budget = new Budget(value, id) ;
+
+    public void createNewBudget(int value, int id) throws IOException {
+
+        Budget budget = new Budget(value, id);
+        BudgetModel model = new BudgetModel(budget);
         //Skicka med json-objektet till budgetmodel
-        BudgetModel budgetModel = new BudgetModel(budget);
+        readJSON();
+        ModelList.add(model);
         BudgetList.add(budget);
-        ModelList.add(budgetModel);
-        saveToGson();
-        budget.GsonGoals();
+        SerializeBudgets();
+
     }
 
     public Budget getCurrentBudget(){
@@ -66,29 +70,44 @@ public class User {
         return getBudgetModel().getCategoryList();
     }
 
-    public void saveToGson(){
+    public void SerializeBudgets() throws IOException {
+        Gson gson = new Gson();
+        Type type = new TypeToken<List<Budget>>(){}.getType();
+        File file = new File("budget.json");
+        String json = gson.toJson(BudgetList,type);
+        FileWriter writer = new FileWriter(file);
+        writer.write(json);
+        writer.close();
 
-        try
-        {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
-            Writer writer = Files.newBufferedWriter(Paths.get("student.json"));
-
-            gson.toJson(BudgetList,writer);
-
-            writer.close();
-
-        } catch (Exception e){
-            e.printStackTrace();
-        }
     }
 
-    public Budget readFromGson() throws FileNotFoundException {
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        BufferedReader reader = new BufferedReader(new FileReader("student.json"));
-        Budget budget = gson.fromJson(reader, Budget.class);
-        return budget;
+
+
+
+    private void writeJSON() throws IOException {
+
     }
+
+    private void readJSON() throws IOException {
+        Gson gson = new Gson();
+        BufferedReader bufferedReader = new BufferedReader(
+                new FileReader("budget.json"));
+
+        Type type = new TypeToken<List<Budget>>(){}.getType();
+
+        String json = bufferedReader.readLine();
+
+        List<Budget> budgetlist = gson.fromJson(json, type);
+
+
+        //Budget budget = gson.fromJson(bufferedReader, Budget[].class);
+        System.out.println("\n \n\n\n\n " + bufferedReader.readLine() + "\n\n\n\n\n");
+
+        System.out.println("\n \n\n\n\n " + budgetlist.size()+ "");
+
+    }
+
+
 
 
 }

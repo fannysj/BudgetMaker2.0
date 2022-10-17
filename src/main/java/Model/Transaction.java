@@ -5,15 +5,25 @@ import Interfaces.Observer;
 
 import java.time.LocalDate;
 
+/**
+ * This class instantiate a new transaction instances
+ */
 
-public class Transaction implements Observable {
+public class Transaction {
     private int transactionAmount;
     private String name;
     private String notes;
     private Category category;
     private LocalDate date;
 
-
+    /**
+     * Constructor of Transaction.
+     * @param amount amount of the transaction
+     * @param name  name of transaction
+     * @param notes note of the transaction
+     * @param category  category which the transaction falls under
+     * @param date  date of the transaction
+     */
 
 
     public Transaction(int amount, String name, String notes, Category category, LocalDate date){
@@ -25,6 +35,11 @@ public class Transaction implements Observable {
     }
 
     //Getters
+
+    /**
+     *
+     * @return
+     */
     public int getTransactionAmount(){
         return transactionAmount;
     }
@@ -50,19 +65,6 @@ public class Transaction implements Observable {
         return date;
     }
 
-    public void printTransaction(){
-        System.out.println(name + " " + transactionAmount + " kr " + notes + " " + date);
-    }
 
-
-    @Override
-    public void subscribe(Observer observer) {
-
-    }
-
-    @Override
-    public void notifyObservers() {
-
-    }
 }
 

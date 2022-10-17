@@ -116,7 +116,7 @@ public class BudgetModelController implements Initializable {
     @FXML
     public void setNewBudgetModel(){
         try {
-            currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()), Integer.parseInt(budgetID.getText()));
+            currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()),Integer.parseInt(budgetID.getText()));
             currentBudget = currentUser.getBudgetModel();
             String str = EnterBudget.getText();
             budgetAmount.setText(str);
@@ -124,6 +124,8 @@ public class BudgetModelController implements Initializable {
         }
         catch (NumberFormatException e){
             errorMessage.setVisible(true);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
 
     }
