@@ -93,6 +93,9 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     private FlowPane transactionDetailViewHistory;
 
+    @FXML
+    private ScrollBar addTransactionScrollbar;
+
 
     Category category;
 

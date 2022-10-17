@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BudgetModel {
-    private List<Category> categoryList = new ArrayList<>();
+    public List<Category> categoryList = new ArrayList<>();
 
-    private List<Transaction> transactions = new ArrayList<>();
+    public List<Transaction> transactions = new ArrayList<>();
 
     Budget budget;
     private int StartAmount;
@@ -64,7 +64,6 @@ public class BudgetModel {
         for (Category c : categoryList){
             amountSpent += c.getSpentAmount();
         }
-        System.out.println(amountSpent);
         return amountSpent;
     }
 

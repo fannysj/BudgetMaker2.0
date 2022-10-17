@@ -9,7 +9,7 @@ public class Category implements Observable {
     private String name;
     private int goalAmount;
     public int spentAmount;
-    public List<Transaction> transactionsList = new ArrayList<>();
+    private List<Transaction> transactionsList = new ArrayList<>();
     public List<Observer> observerList = new ArrayList<>();
 
     public Category(String name, int goalAmount) {
@@ -68,6 +68,7 @@ public class Category implements Observable {
         for (Transaction t : transactionsList){
             spentAmount += t.getTransactionAmount();
         }
+
     }
 
     public int AmountLeftToSpend(){
@@ -102,7 +103,6 @@ public class Category implements Observable {
 
     public void deleteTransactionFromList(){
         transactionsList.remove(transactionsList.size()-1);
-        System.out.println(transactionsList.get(0).getName());
     }
 
 

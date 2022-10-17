@@ -20,6 +20,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.converter.IntegerStringConverter;
 
@@ -91,6 +92,14 @@ public class BudgetModelController implements Initializable {
     @FXML
     private TextField budgetID;
 
+    @FXML
+    private Text errorMessage;
+
+    @FXML
+    private Text budgetErrorMessage;
+
+
+
 
 
     @Override
@@ -106,10 +115,16 @@ public class BudgetModelController implements Initializable {
 
     @FXML
     public void setNewBudgetModel(){
-        currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()), Integer.parseInt(budgetID.getText()));
-        currentBudget = currentUser.getBudgetModel();
-        String str = EnterBudget.getText();
-        budgetAmount.setText(str);
+        try {
+            currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()), Integer.parseInt(budgetID.getText()));
+            currentBudget = currentUser.getBudgetModel();
+            String str = EnterBudget.getText();
+            budgetAmount.setText(str);
+            changeToBudgetingSide();
+        }
+        catch (NumberFormatException e){
+            errorMessage.setVisible(true);
+        }
 
     }
 
@@ -159,14 +174,22 @@ public class BudgetModelController implements Initializable {
         }
     }
 
+
     @FXML
     public void switchToScene2(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         setCategoryAmount();
-        Parent root = FXMLLoader.load(getClass().getResource("/overview2.fxml"));
-        Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+
+        if (currentBudget.TotalGoalAmountOfCategories() == currentBudget.getStartAmount()) {
+            Parent root = FXMLLoader.load(getClass().getResource("/overview2.fxml"));
+            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        } else {
+            budgetErrorMessage.setVisible(true);
+            }
+
 
     }
 
