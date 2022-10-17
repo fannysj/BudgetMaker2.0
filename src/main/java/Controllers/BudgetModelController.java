@@ -1,14 +1,10 @@
 package Controllers;
 
 
-import Interfaces.Observer;
-import Interfaces.Observable;
 import Model.BudgetModel;
 import Model.Category;
 import View.CategoryListItem;
 import View.CategoryOverviewItem;
-import View.OverviewView;
-import com.example.budgetmaker2_0.HelloApplication;
 import com.example.budgetmaker2_0.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,14 +18,11 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.converter.IntegerStringConverter;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 
@@ -63,19 +56,10 @@ public class BudgetModelController implements Initializable {
     private Label budgetAmount;
 
     @FXML
-    private Label currentAmount;
-
-    @FXML
     private Button goBack;
 
     @FXML
     private FlowPane CategoryDivideFlowpane;
-
-    @FXML
-    private AnchorPane categoryOverview;
-
-    @FXML
-    private Button closeCategorydetailOverview;
 
     @FXML
     private Button klarKnapp;
@@ -107,7 +91,7 @@ public class BudgetModelController implements Initializable {
 
     }
     @FXML
-    public void createNewbudget() {
+    public void createNewbudgetbutton() {
         startSida.toFront();
         homePage.setVisible(false);
         startSida.setVisible(true);
@@ -146,18 +130,9 @@ public class BudgetModelController implements Initializable {
         startSida.setVisible(false);
         budgetingPage.setVisible(true);
 
-        updateCategoryList();
+
 
     }
-
-    public void CategoryToFront() {
-
-        budgetingPage.toFront();
-        categoryOverview.setVisible(false);
-        budgetingPage.setVisible(true);
-    }
-
-
 
     @FXML
     public void goBackonePage() {
@@ -166,6 +141,7 @@ public class BudgetModelController implements Initializable {
         budgetingPage.setVisible(false);
     }
 
+    @FXML
     void updateCategoryList() {
         CategoryDivideFlowpane.getChildren().clear();
         for (Category category : currentBudget.getCategoryList()) {
@@ -174,6 +150,7 @@ public class BudgetModelController implements Initializable {
             CategoryDivideFlowpane.getChildren().add(newCategoryList);
 
         }
+
     }
 
 
@@ -191,11 +168,7 @@ public class BudgetModelController implements Initializable {
         } else {
             budgetErrorMessage.setVisible(true);
             }
-
-
     }
-
-
 
     private void updateOverviewCategoryList(){
         OverviewCategory.getChildren().clear();
@@ -205,8 +178,6 @@ public class BudgetModelController implements Initializable {
             OverviewCategory.getChildren().add(newCategoryOverviewItem);
 
         }
-
-
     }
 
     @FXML
