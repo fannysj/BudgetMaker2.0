@@ -86,7 +86,6 @@
                   </AnchorPane>
                   <Button fx:id="goBack" layoutX="27.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#goBackonePage" prefHeight="48.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-border-color: ffff;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Tillbaka" textFill="#0000000a" />
                   <Line endX="100.0" layoutX="275.0" layoutY="126.0" startX="-219.5" stroke="#ffffffb2" />
-                  <Circle fill="#40543f" layoutX="526.0" layoutY="562.0" radius="33.0" smooth="false" stroke="BLACK" strokeType="INSIDE" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="startSida" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="680.0">
@@ -169,14 +168,14 @@
                         <DropShadow />
                      </effect>
                   </Circle>
-                  <Text layoutX="266.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                  <Text layoutX="250.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se tidigare budgetar" textAlignment="CENTER" wrappingWidth="78.92575073242188">
                      <font>
-                        <Font name="Avenir Next Bold" size="17.0" />
+                        <Font name="Avenir Book" size="16.0" />
                      </font>
                   </Text>
-                  <Text layoutX="454.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skapa ny budget">
+                  <Text layoutX="466.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skapa ny budget" textAlignment="CENTER" wrappingWidth="75.45204162597656">
                      <font>
-                        <Font name="Avenir Next Bold" size="12.0" />
+                        <Font name="Avenir Book" size="16.0" />
                      </font>
                   </Text>
                </children>
