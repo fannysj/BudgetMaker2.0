@@ -24,9 +24,9 @@ public class TransactionView {
         TransactionListItem transactionListItem = new TransactionListItem(t, controller);
         transactionListArray.add(transactionListItem);
         pane.getChildren().add(transactionListItem);
-
-
     }
+
+
 
     public void clearInput(TextField name, DatePicker date, TextField amount, ChoiceBox cate, TextField note){
         name.clear();
