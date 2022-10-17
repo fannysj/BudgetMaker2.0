@@ -20,11 +20,11 @@ public class BudgetModel {
         newCategory("Shopping", 2000);
         newCategory("Nöje", 1000);
         newCategory("Övrigt",100);
+
         this.budget = budget;
         this.StartAmount = budget.getBudget();
 
     }
-
 
 
     public void setStartAmount(int startAmount){

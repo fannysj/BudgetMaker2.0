@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
    <effect>
       <ColorAdjust brightness="0.19" />
    </effect>
@@ -52,6 +52,8 @@
                         <ColorAdjust brightness="-0.63" contrast="-0.19" />
                      </effect>
                   </ImageView>
+
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1f1787" height="538.0" layoutX="25.0" layoutY="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="543.0" />
                   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1d211987" height="144.0" layoutX="575.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="212.0" />
                   <ImageView fitHeight="125.0" fitWidth="267.0" layoutX="559.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -90,6 +92,43 @@
                   <Text fx:id="budgetErrorMessage" fill="#b13e3ed9" layoutX="581.0" layoutY="195.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Håll dig till budgeten!" visible="false" wrappingWidth="320.5">
                      <font>
                         <Font size="21.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="homePage" minWidth="-Infinity" prefHeight="615.0" prefWidth="809.0">
+               <children>
+                  <ImageView fitHeight="681.0" fitWidth="1074.0" layoutX="-114.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/coins-and-plants.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-0.64" />
+                     </effect>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="270.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välkommen!">
+                     <font>
+                        <Font name="Avenir Next Bold" size="44.0" />
+                     </font>
+                  </Text>
+                  <Circle fill="#fdfdff" layoutX="288.0" layoutY="303.0" onMouseClicked="#goToPastBudget" opacity="0.95" radius="65.0" stroke="WHITE" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Circle>
+                  <Circle fx:id="createNewbudget" fill="WHITE" layoutX="503.0" layoutY="303.0" onMouseClicked="#createNewbudget" onMouseReleased="#createNewbudget" opacity="0.95" radius="65.0" stroke="WHITE" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Circle>
+                  <Text layoutX="266.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                     <font>
+                        <Font name="Avenir Next Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="454.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skapa ny budget">
+                     <font>
+                        <Font name="Avenir Next Bold" size="12.0" />
                      </font>
                   </Text>
                </children>
@@ -141,6 +180,8 @@
                         <Font name="Avenir Next Bold" size="24.0" />
                      </font>
                   </Text>
+                  <TextField fx:id="budgetID" layoutX="314.0" layoutY="341.0" promptText="ex. Semester" styleClass="text" stylesheets="@BudgetMaker.css" />
+                  <Text fill="WHITE" layoutX="160.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ge din budget ett namn:">
                   <TextField fx:id="budgetID" layoutX="290.0" layoutY="239.0" />
                   <Text fx:id="errorMessage" fill="#800d0d" layoutX="283.0" layoutY="345.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Du måste använda siffror!" visible="false" wrappingWidth="212.0">
                      <font>
@@ -160,28 +201,10 @@
                      </effect>
                   </ImageView>
                   <Text fill="WHITE" layoutX="270.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välkommen!">
+                  <TextField fx:id="budgetID" layoutX="314.0" layoutY="341.0" promptText="ex. Semester" styleClass="text" stylesheets="@BudgetMaker.css" />
+                  <Text fill="WHITE" layoutX="160.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ge din budget ett namn:">
                      <font>
-                        <Font name="Avenir Next Bold" size="44.0" />
-                     </font>
-                  </Text>
-                  <Circle fill="#fdfdff" layoutX="288.0" layoutY="303.0" onMouseClicked="#goToPastBudget" opacity="0.95" radius="65.0" stroke="WHITE" strokeType="INSIDE">
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </Circle>
-                  <Circle fx:id="createNewbudget" fill="WHITE" layoutX="503.0" layoutY="303.0" onMouseClicked="#createNewbudget" onMouseReleased="#createNewbudget" opacity="0.95" radius="65.0" stroke="WHITE" strokeType="INSIDE">
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </Circle>
-                  <Text layoutX="266.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0">
-                     <font>
-                        <Font name="Avenir Next Bold" size="17.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="454.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skapa ny budget">
-                     <font>
-                        <Font name="Avenir Next Bold" size="12.0" />
+                        <Font name="Avenir Book" size="13.0" />
                      </font>
                   </Text>
                </children>

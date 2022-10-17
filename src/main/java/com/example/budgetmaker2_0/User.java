@@ -36,8 +36,8 @@ public class User {
         BudgetModel budgetModel = new BudgetModel(budget);
         BudgetList.add(budget);
         ModelList.add(budgetModel);
-        saveToGson();
         budget.GsonGoals();
+
     }
 
     public Budget getCurrentBudget(){

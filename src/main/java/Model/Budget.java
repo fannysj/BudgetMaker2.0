@@ -13,52 +13,73 @@ import java.util.*;
 
 public class Budget {
 
-
+    @Override
+    public String toString() {
+        return "Budget{" +
+                "budget=" + budget +
+                ", id=" + id +
+                '}';
+    }
 
     private int budget;
+
     private int id;
-    Map<Integer, Integer> budgets = new HashMap<>();
-
-
 
     public Budget(int budget, int id) {
         this.budget = budget;
         this.id = id;
-        budgets.put(budget,id);
 
-    }
-    public int getId(){
-        return id;
     }
     public int getBudget () {
         return budget;
     }
 
-    public void setBudget ( int budget){
+    public void setBudget (int budget){
         this.budget = budget;
     }
-    public String toString () {
-        return "Budget [ Din budget: " + budget + "kr ]";
+    public int getId() {
+        return id;
     }
 
-     public void GsonGoals(){
-         Budget tester = new Budget(budget, id);
-         File input = new File("budget.json");
-         try{
-             JsonElement fileElement = JsonParser.parseReader(new FileReader(input));
-             JsonObject fileobject = fileElement.getAsJsonObject();
+    public void setId(int id) {
+        this.id = id;
+    }
 
-             String thisbudget = fileobject.get("budget").getAsString();
-             System.out.println("newbudget:" + thisbudget);
+    public void GsonGoals() {
+        Budget tester = new Budget(budget, id);
+        File input = new File("student.json");
+        try {
+            JsonElement fileElement = JsonParser.parseReader(new FileReader(input));
+            JsonObject fileobject = fileElement.getAsJsonObject();
 
-             Budget budget = new Budget(getBudget(), id);
-             budget.setBudget(getBudget());
-             tester.writeJSON(budget);
-             Budget budget1 = tester.readJSON();
-             System.out.println(budget1);
+            Integer thisbudget = fileobject.get("budget").getAsInt();
+            Integer thisid = fileobject.get("id").getAsInt();
+            System.out.println("newbudget:" + thisbudget + thisid);
 
-         }
-         catch(
+            JsonArray jsonArrayofObjects = fileobject.get("budget").getAsJsonArray();
+            List<Budget> budgets = new ArrayList<>();
+            for (JsonElement budgetElement : jsonArrayofObjects) {
+                JsonObject budgetJsonObject = budgetElement.getAsJsonObject();
+
+                int budget2 = budgetJsonObject.get("budget").getAsInt();
+                int id = budgetJsonObject.get("id").getAsInt();
+
+                Budget budget = new Budget(budget2, id);
+                budgets.add(budget);
+            }
+            System.out.println("mina budgetar: " + budgets);
+
+            Budget budget = new Budget(getBudget(), getId());
+            budget.setBudget(getBudget());
+            tester.writeJSON(budget);
+            Budget budget1 = tester.readJSON();
+            System.out.println(budget1);
+
+        }
+
+
+
+        catch(
                  FileNotFoundException e) {
              e.printStackTrace();
          }
@@ -68,8 +89,6 @@ public class Budget {
 
     }
     }
-
-
 
     private void writeJSON(Budget budget) throws IOException {
         GsonBuilder builder = new GsonBuilder();
@@ -88,5 +107,6 @@ public class Budget {
         Budget budget = gson.fromJson(bufferedReader, Budget.class);
         System.out.println(budget);
         return budget;
+
     }
 }
