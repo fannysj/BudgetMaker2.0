@@ -161,7 +161,7 @@
                         </HBox>
                      </top>
                      <left>
-                        <VBox prefHeight="473.0" prefWidth="218.0" style="-fx-background-color: #ededed;" BorderPane.alignment="CENTER" />
+                        <VBox prefHeight="473.0" prefWidth="218.0" style="-fx-background-color: #d4d4d4;" BorderPane.alignment="CENTER" />
                      </left>
                      <center>
                         <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
