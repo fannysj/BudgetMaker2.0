@@ -151,7 +151,7 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     public void updateBudgetDisplay(){
-        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(),currentBudget.getAmountSpent());
+        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(),currentBudget.budgetCurrentAmount());
     }
 
     @FXML
@@ -172,7 +172,7 @@ public class TransactionsController implements Initializable, Observer {
         updateBudgetDisplay();
         goBacktoOverview();
         addTransactionToHistoryFlowPane();
-        addTransactionsToDetailView();
+        //addTransactionsToDetailView();
 
     }
 
@@ -195,19 +195,17 @@ public class TransactionsController implements Initializable, Observer {
     }
 
 
-
-
 //    public void updateTransactionList(List<Transaction> transactions) {
 //        transactionView.updateTransactionList(transactionGrid,transactionFlowPane,transactions,this);
 //    }
 
     public void addTransactionToHistoryFlowPane(){
-        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getRecentTransactions(), this);
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
     }
 
-    public void addTransactionsToDetailView(){
-        transactionView.addTransactionToHistoryFlowPane(transactionDetailViewHistory, currentBudget.getTransactionList(), this);
-    }
+   // public void addTransactionsToDetailView(){
+   //     transactionView.addTransactionToHistoryFlowPane(transactionDetailViewHistory, currentBudget.getTransactionList(), this);
+   // }
 
 
 

@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="transListItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="432.0" style="-fx-background-color: f4f0ec f4f0ec f4f0ec f4f0ec;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="transListItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="425.0" style="-fx-background-color: f4f0ec f4f0ec f4f0ec f4f0ec;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="listItemTransactionName" layoutX="25.0" layoutY="42.0" text="Namn" />
       <Label fx:id="listItemTransactionDate" layoutX="102.0" layoutY="42.0" text="Datum" />
       <Label fx:id="listItemTransactionNote" layoutX="189.0" layoutY="42.0" text="Note" />
       <Label fx:id="listItemTransactionAmount" layoutX="277.0" layoutY="42.0" text="Belopp" />
-      <Button fx:id="deleteTransaction" layoutX="361.0" layoutY="63.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Ta bort">
+      <Button fx:id="deleteTransaction" layoutX="349.0" layoutY="63.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="61.0" text="Ta bort">
          <font>
             <Font name="Avenir Next Bold" size="10.0" />
          </font>
