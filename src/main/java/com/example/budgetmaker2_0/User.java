@@ -40,8 +40,9 @@ public class User {
 
     }
 
+
     public Budget getCurrentBudget(){
-        return this.budget;
+        return BudgetList.get(0);
     }
 
     public void nextCurrentBudget(){

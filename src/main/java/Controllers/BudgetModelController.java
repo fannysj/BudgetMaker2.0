@@ -3,8 +3,11 @@ package Controllers;
 
 import Interfaces.Observer;
 import Interfaces.Observable;
+import Model.Budget;
 import Model.BudgetModel;
 import Model.Category;
+import Model.Transaction;
+import View.BudgetView;
 import View.CategoryListItem;
 import View.CategoryOverviewItem;
 import View.OverviewView;
@@ -43,6 +46,11 @@ public class BudgetModelController implements Initializable {
     BudgetModel currentBudget;
 
     TransactionsController controller;
+
+    BudgetView budgetView = new BudgetView();
+
+    @FXML
+    private ListView<Budget> BudgetListView = new ListView<>() ;
 
     @FXML
     private TextField EnterBudget;
@@ -98,14 +106,17 @@ public class BudgetModelController implements Initializable {
     @FXML
     private Text budgetErrorMessage;
 
-
+    @FXML
+    private FlowPane budgetFlowPane;
 
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        currentUser.createNewBudget(100, 1);
 
     }
+
     @FXML
     public void createNewbudget() {
         startSida.toFront();
@@ -143,8 +154,6 @@ public class BudgetModelController implements Initializable {
         budgetingPage.toFront();
         startSida.setVisible(false);
         budgetingPage.setVisible(true);
-
-        updateCategoryList();
 
     }
 
@@ -212,6 +221,8 @@ public class BudgetModelController implements Initializable {
         homePage.setVisible(false);
         pastBudget.toFront();
         pastBudget.setVisible(true);
+        budgetView.addBudgetToFlowPane(budgetFlowPane, currentUser.getCurrentBudget(), this);
+
 
     }
 
@@ -221,6 +232,8 @@ public class BudgetModelController implements Initializable {
         homePage.toFront();
         homePage.setVisible(true);
     }
+
+
 
 
 }
