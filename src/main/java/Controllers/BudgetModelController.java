@@ -91,7 +91,7 @@ public class BudgetModelController implements Initializable {
 
     }
     @FXML
-    public void createNewbudgetbutton() {
+    public void createNewbudget() {
         startSida.toFront();
         homePage.setVisible(false);
         startSida.setVisible(true);
@@ -129,6 +129,7 @@ public class BudgetModelController implements Initializable {
         budgetingPage.toFront();
         startSida.setVisible(false);
         budgetingPage.setVisible(true);
+        updateCategoryList();
 
 
 
