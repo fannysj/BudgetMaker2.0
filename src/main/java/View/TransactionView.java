@@ -66,6 +66,15 @@ public class TransactionView {
         }
     }
 
+    public void addTransactionToCategoryFlowPane (FlowPane pane, List<Transaction> list, TransactionsController controller){
+        pane.getChildren().clear();
+        Collections.reverse(list);
+        for (Transaction t : list){
+            TransactionListItem transactionListItem = new TransactionListItem(t, controller);
+            pane.getChildren().add(transactionListItem);
+        }
+    }
+
     public void populateCategoryChoiceBox(ChoiceBox choiceBox, List<Category> list) {
         choiceBox.getItems().clear();
         for(Category c: list){

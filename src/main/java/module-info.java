@@ -4,8 +4,6 @@ module com.example.budgetmaker2_0 {
     requires javafx.fxml;
     requires javafx.controls;
     requires com.google.gson;
-    requires java.base;
-
 
     opens com.example.budgetmaker2_0 to javafx.fxml, com.google.gson;
     exports com.example.budgetmaker2_0;
