@@ -22,7 +22,6 @@ public class Budget {
     }
 
     private int budget;
-
     private int id;
 
     public Budget(int budget, int id) {
@@ -49,26 +48,24 @@ public class Budget {
         Budget tester = new Budget(budget, id);
         File input = new File("student.json");
         try {
-            JsonElement fileElement = JsonParser.parseReader(new FileReader(input));
-            JsonObject fileobject = fileElement.getAsJsonObject();
+//            JsonElement fileElement = JsonParser.parseReader(new FileReader(input));
+//            JsonObject fileobject = fileElement.getAsJsonObject();
+//
+//            Integer thisbudget = fileobject.get("budget").getAsInt();
+//            Integer thisid = fileobject.get("id").getAsInt();
+//            System.out.println("newbudget:" + thisbudget + thisid);
 
-            Integer thisbudget = fileobject.get("budget").getAsInt();
-            Integer thisid = fileobject.get("id").getAsInt();
-            System.out.println("newbudget:" + thisbudget + thisid);
-
-            JsonArray jsonArrayofObjects = fileobject.get("budget").getAsJsonArray();
-            List<Budget> budgets = new ArrayList<>();
-            for (JsonElement budgetElement : jsonArrayofObjects) {
-                JsonObject budgetJsonObject = budgetElement.getAsJsonObject();
-
-                int budget2 = budgetJsonObject.get("budget").getAsInt();
-                int id = budgetJsonObject.get("id").getAsInt();
-
-                Budget budget = new Budget(budget2, id);
-                budgets.add(budget);
-            }
-            System.out.println("mina budgetar: " + budgets);
-
+//            JsonArray jsonArrayofObjects = fileobject.get("budget").getAsJsonArray();
+//            List<Budget> budgets = new ArrayList<>();
+//            for (JsonElement budgetElement : jsonArrayofObjects) {
+//                JsonObject budgetJsonObject = budgetElement.getAsJsonObject();
+//
+//                int budget2 = budgetJsonObject.get("budget").getAsInt();
+//                int id = budgetJsonObject.get("id").getAsInt();
+//
+//                Budget budget = new Budget(budget2, id);
+//                budgets.add(budget);
+//            }
             Budget budget = new Budget(getBudget(), getId());
             budget.setBudget(getBudget());
             tester.writeJSON(budget);
