@@ -14,6 +14,10 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * This class has methods that handle displaying and dynamically changing our transactionlistitem FXML
+ */
+
 public class TransactionListItem extends AnchorPane {
 
     @FXML

@@ -10,6 +10,10 @@ import javafx.scene.layout.FlowPane;
 
 import java.util.ArrayList;
 
+/**
+ * This class has methods that handle displaying and dynamically changing our BudgetView
+ */
+
 public class BudgetView {
 
     private ArrayList<BudgetListItem> budgetListArray = new ArrayList<>();

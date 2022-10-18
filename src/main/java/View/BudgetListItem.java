@@ -11,6 +11,10 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
+/**
+ * This class has methods that handle displaying and dynamically changing our budgetlistitem FXML
+ */
+
 public class BudgetListItem extends AnchorPane {
 
     @FXML

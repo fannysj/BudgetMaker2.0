@@ -155,7 +155,7 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     public void updateBudgetDisplay(){
-        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(), currentBudget.getBudgetCurrentAmount());
+        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(), currentBudget.getCurrentAmount());
     }
 
     @FXML
@@ -163,11 +163,6 @@ public class TransactionsController implements Initializable, Observer {
         overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
     }
 
-    @FXML
-    public void goBacktoOverview() {
-        transactionView.clearTransactionPane(transactionFlowPane);
-        setBackToOverview();
-    }
 
     /**
      * Adding the new transaction to all views that are involved
@@ -265,12 +260,6 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     @FXML
-    public void search(int categoryindex){
-        SortCategory sortCategory = new SortCategory();
-        sortCategory.search(currentBudget.getBudgetModel().getCategory(categoryindex), searchbar);
-    }
-
-    @FXML
     private void deleteTransaction(){
         category.deleteTransactionFromList();
     }
@@ -289,11 +278,6 @@ public class TransactionsController implements Initializable, Observer {
         categoryOverview.toBack();
     }
 
-    @FXML
-    public void switchToHomePage(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        overviewView.switchToHomePage(mouseEvent);
-    }
-
     /**
      * Search and sort
      */
@@ -303,10 +287,6 @@ public class TransactionsController implements Initializable, Observer {
         sortCategory.search(currentBudget.getCategory(categoryindex), searchbar);
     }
 
-    @FXML
-    private void deleteTransaction(){
-        category.deleteTransactionFromList();
-    }
 
 
     @Override

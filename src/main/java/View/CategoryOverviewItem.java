@@ -17,6 +17,10 @@ import java.io.IOException;
 import java.util.Observable;
 import java.util.Observer;
 
+/**
+ * This class has methods that handle displaying and dynamically changing our cateOVList FXML
+ */
+
 public class CategoryOverviewItem extends AnchorPane {
 
 
