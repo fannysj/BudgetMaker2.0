@@ -100,8 +100,8 @@ public class BudgetModelController implements Initializable {
     @FXML
     public void setNewBudgetModel(){
         try {
-            currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()),Integer.parseInt(budgetID.getText()));
-            currentBudget = currentUser.getBudgetModel();
+            currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()),budgetID.getText());
+            currentBudget = currentUser.getCurrentBudget();
             String str = EnterBudget.getText();
             budgetAmount.setText(str);
             changeToBudgetingSide();

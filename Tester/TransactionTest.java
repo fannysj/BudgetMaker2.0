@@ -7,8 +7,8 @@ import Model.Transaction;
 import java.time.LocalDate;
 
 public class TransactionTest {
-
-    BudgetModel b = new BudgetModel(new Budget(0, 1000));
+    Budget budget = new Budget(1000,"name",0);
+    BudgetModel b = new BudgetModel(budget.getBudget());
     Category c = new Category("Livsmedel", 700);
     LocalDate d = LocalDate.now();
     Transaction t = new Transaction(50, "Godis", "Snacks", c, d);

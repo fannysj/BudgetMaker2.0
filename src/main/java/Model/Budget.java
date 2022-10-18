@@ -14,20 +14,30 @@ public class Budget {
 
 
     private int budget;
-    private int id;
+    private String name;
+
+    private final int id;
+
+    BudgetModel model;
 
 
-
-
-    public Budget(int budget, int id) {
+    public Budget(int budget, String name, int id) {
         this.budget = budget;
+        this.name = name;
         this.id = id;
-
-
-
+        createBudgetModel();
     }
+
+    private void createBudgetModel(){
+        this.model = new BudgetModel(this.budget);
+    }
+
+    public BudgetModel getBudgetModel(){
+        return this.model;
+    }
+
     public int getId(){
-        return id;
+        return this.id;
     }
 
     public int getBudget () {
@@ -38,7 +48,7 @@ public class Budget {
     }
     @Override
     public String toString () {
-        return "Budget [ Din budget: " + id + "kr ]";
+        return "Budget [ Din budget: " + budget + "kr ]";
     }
 
 

@@ -2,10 +2,7 @@ package Controllers;
 
 import Interfaces.Observable;
 import Interfaces.Observer;
-import Model.BudgetModel;
-import Model.Category;
-import Model.SortCategory;
-import Model.Transaction;
+import Model.*;
 import View.*;
 import com.example.budgetmaker2_0.User;
 import javafx.collections.FXCollections;
@@ -136,6 +133,8 @@ public class TransactionsController implements Initializable, Observer {
     private Circle homeCircle;
 
 
+
+
     //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
 
     // Add to category observable list, subscribe, kalla till categories addObserver metod.
@@ -145,7 +144,7 @@ public class TransactionsController implements Initializable, Observer {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        currentBudget = currentUser.getBudgetModel();
+        currentBudget = currentUser.getCurrentBudget();
         updateBudgetDisplay();
         updateCategoryListItem();
         for(Category c : currentBudget.getCategoryList()){
@@ -176,7 +175,6 @@ public class TransactionsController implements Initializable, Observer {
         updateBudgetDisplay();
         goBacktoOverview();
         addTransactionToHistoryFlowPane();
-        addTransactionsToDetailView();
 
     }
 
@@ -251,6 +249,7 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     public void openTransactionDetailView(Category category){
         TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this, category, title, spent, left);
+        addTransactionsToDetailView();
         categoryOverview.toFront();
 
     }

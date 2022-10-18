@@ -70,7 +70,7 @@ public class TransactionView {
         pane.getChildren().clear();
         Collections.reverse(list);
         for (Transaction t : list){
-            TransactionListItem transactionListItem = new TransactionListItem(t, controller);
+            CategoryTransactionItem transactionListItem = new CategoryTransactionItem(t.getName(),t.getDate(),String.valueOf(t.getTransactionAmount()),t.getNotes(), controller);
             pane.getChildren().add(transactionListItem);
         }
     }
