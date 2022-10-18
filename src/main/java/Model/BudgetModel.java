@@ -4,25 +4,33 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class represent the structure of the budget. It consists of categories and transactions and
+ * handles calculations regarding the budgets current amount.
+ */
+
 public class BudgetModel {
     public List<Category> categoryList = new ArrayList<>();
 
     public List<Transaction> transactions = new ArrayList<>();
 
-    Budget budget;
     private int StartAmount;
     private int amountSpent = 0;
     private int amountLeft = 0;
 
-    public BudgetModel(Budget budget){
+    /**
+     * Constructor of BudgetModel
+     * Four set categories
+     * @param startAmount the start amount of the budget
+     */
+    public BudgetModel(int startAmount){
 
         newCategory("Mat",2000);
         newCategory("Shopping", 2000);
         newCategory("Nöje", 1000);
         newCategory("Övrigt",100);
 
-        this.budget = budget;
-        this.StartAmount = budget.getBudget();
+        this.StartAmount = startAmount;
 
     }
 
@@ -36,7 +44,11 @@ public class BudgetModel {
         categoryList.add(category);
     }
 
-    // Getters
+    /**
+     * Getters
+     * @param i what category we want
+     * @return the parameters of the class BudgetModel
+     */
     public Category getCategory(int i){
         return categoryList.get(i);
     }
@@ -58,7 +70,11 @@ public class BudgetModel {
     }
 
 
-    //Total mängd av spenderade pengar i varje kategori
+    /**
+     * Calculates the amount spent in the categories
+     * @return the spent amount in all categories put together
+     */
+
     public int budgetCurrentAmount(){
         amountSpent = 0;
         for (Category c : categoryList){
@@ -67,7 +83,10 @@ public class BudgetModel {
         return amountSpent;
     }
 
-    //Total mängd av utgiftsmål för alla kategorier
+    /**
+     * Calculates the goal amount (budget cap) in categories
+     * @return the goal amount in all categories put together
+     */
     public int TotalGoalAmountOfCategories(){
         int totalGoalAmount = 0;
         for (Category c : categoryList){
@@ -89,10 +108,14 @@ public class BudgetModel {
         }
     }
 
+    /**
+     * Adds temporary transactions to a transaction list that their specific category holds
+     */
     public void addTemporaryTransactionsToCategoryTransactionList(){
         for(Transaction t : transactions){
             t.getCategory().addTransactionToList(t);
         }
+        transactions.clear();
 
     }
 

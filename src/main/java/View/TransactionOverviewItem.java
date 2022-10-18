@@ -5,6 +5,10 @@ import Model.Category;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
+/**
+ * This class has methods that handle displaying and dynamically changing our transaction overview
+ */
+
 public class TransactionOverviewItem {
 
 

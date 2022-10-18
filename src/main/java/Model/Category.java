@@ -9,9 +9,15 @@ public class Category implements Observable {
     private String name;
     private int goalAmount;
     public int spentAmount;
+
     private List<Transaction> transactionsList = new ArrayList<>();
     public List<Observer> observerList = new ArrayList<>();
 
+    /**
+     * Constructor of Category
+     * @param name name of the category
+     * @param goalAmount goal amount of the category
+     */
     public Category(String name, int goalAmount) {
         this.name = String.valueOf(name);
         this.goalAmount = goalAmount;
@@ -52,17 +58,25 @@ public class Category implements Observable {
         return spentAmount;
     }
 
-    // Transaction Methods
+
     public Transaction newTransaction(int amount, String name, String note, LocalDate date) {
         return new Transaction(amount, name, note, this, date);
     }
 
+    /**
+     * Adds a new transaction to the list of transactions
+     * @param expense The transaction to be added
+     */
     public void addTransactionToList(Transaction expense){
         transactionsList.add(expense);
         notifyObservers();
 
     }
 
+    /**
+     * Update method for current spent amount
+     * For all transactions in list
+     */
     public void updateSpentAmount(){
         spentAmount = 0;
         for (Transaction t : transactionsList){
@@ -70,6 +84,7 @@ public class Category implements Observable {
         }
 
     }
+
 
     public int AmountLeftToSpend(){
         updateSpentAmount();

@@ -1,8 +1,13 @@
 package Controllers;
 
 
+import Interfaces.Observer;
+import Interfaces.Observable;
+import Model.Budget;
 import Model.BudgetModel;
 import Model.Category;
+import Model.Transaction;
+import View.BudgetView;
 import View.CategoryListItem;
 import View.CategoryOverviewItem;
 import com.example.budgetmaker2_0.User;
@@ -25,6 +30,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * The BudgetModelController class represent a Controller in the Model-View-Controller pattern.
+ * Listen to the view and updates the model.
+ */
 
 public class BudgetModelController implements Initializable {
 
@@ -33,9 +42,17 @@ public class BudgetModelController implements Initializable {
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
     User currentUser = User.getInstance();
-    BudgetModel currentBudget;
+    Budget currentBudget;
 
     TransactionsController controller;
+
+    BudgetView budgetView = new BudgetView();
+
+    @FXML
+    private ListView<Budget> BudgetListView = new ListView<>();
+
+    @FXML
+    private AnchorPane categoryOverview;
 
     @FXML
     private TextField EnterBudget;
@@ -82,14 +99,15 @@ public class BudgetModelController implements Initializable {
     @FXML
     private Text budgetErrorMessage;
 
-
-
+    @FXML
+    private FlowPane budgetFlowPane;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
     @FXML
     public void createNewbudget() {
         startSida.toFront();
@@ -97,16 +115,18 @@ public class BudgetModelController implements Initializable {
         startSida.setVisible(true);
     }
 
+    /**
+     * Method for creating a new BudgetModel for the User with a budget and an id.
+     */
     @FXML
-    public void setNewBudgetModel(){
+    public void setNewBudgetModel() {
         try {
-            currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()),Integer.parseInt(budgetID.getText()));
-            currentBudget = currentUser.getBudgetModel();
+            currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()),budgetID.getText());
+            currentBudget = currentUser.getBudget();
             String str = EnterBudget.getText();
             budgetAmount.setText(str);
             changeToBudgetingSide();
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             errorMessage.setVisible(true);
         } catch (IOException e) {
             throw new RuntimeException(e);
@@ -115,12 +135,15 @@ public class BudgetModelController implements Initializable {
 
     }
 
-    public void setCategoryAmount(){
+    /**
+     * Set amount for every category in list
+     */
+    public void setCategoryAmount() {
         System.out.println(categoryListArray.size());
-        for(int i = 0; i<categoryListArray.size(); i++){
-            try{
+        for (int i = 0; i < categoryListArray.size(); i++) {
+            try {
                 currentBudget.getCategory(i).setGoalAmount(categoryListArray.get(i).getCategoryAmount());
-            } catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 currentBudget.getCategory(i).setGoalAmount(0);
             }
         }
@@ -132,73 +155,78 @@ public class BudgetModelController implements Initializable {
         startSida.setVisible(false);
         budgetingPage.setVisible(true);
         updateCategoryList();
-
-
-
     }
-
-    @FXML
-    public void goBackonePage() {
-        startSida.toFront();
-        startSida.setVisible(true);
-        budgetingPage.setVisible(false);
-    }
-
-    @FXML
-    void updateCategoryList() {
-        CategoryDivideFlowpane.getChildren().clear();
-        for (Category category : currentBudget.getCategoryList()) {
-            CategoryListItem newCategoryList = new CategoryListItem(category, this);
-            categoryListArray.add(newCategoryList);
-            CategoryDivideFlowpane.getChildren().add(newCategoryList);
-
+        public void CategoryToFront() {
+            budgetingPage.toFront();
+            categoryOverview.setVisible(false);
+            budgetingPage.setVisible(true);
         }
 
-    }
+
+        @FXML
+        public void goBackonePage () {
+            startSida.toFront();
+            startSida.setVisible(true);
+            budgetingPage.setVisible(false);
+        }
 
 
     @FXML
-    public void switchToScene2(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        setCategoryAmount();
+        void updateCategoryList () {
+            CategoryDivideFlowpane.getChildren().clear();
+            for (Category category : currentBudget.getCategoryList()) {
+                CategoryListItem newCategoryList = new CategoryListItem(category, this);
+                categoryListArray.add(newCategoryList);
+                CategoryDivideFlowpane.getChildren().add(newCategoryList);
 
-        if (currentBudget.TotalGoalAmountOfCategories() == currentBudget.getStartAmount()) {
-            Parent root = FXMLLoader.load(getClass().getResource("/overview2.fxml"));
-            Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-
-        } else {
-            budgetErrorMessage.setVisible(true);
             }
-    }
-
-    private void updateOverviewCategoryList(){
-        OverviewCategory.getChildren().clear();
-        for(Category c : currentBudget.getCategoryList()){
-            CategoryOverviewItem newCategoryOverviewItem = new CategoryOverviewItem(c, controller);
-            CategoryOverviewItemArray.add(newCategoryOverviewItem);
-            OverviewCategory.getChildren().add(newCategoryOverviewItem);
 
         }
-    }
-
-    @FXML
-    public void goToPastBudget(){
-        homePage.setVisible(false);
-        pastBudget.toFront();
-        pastBudget.setVisible(true);
-
-    }
-
-    @FXML
-    public void backToHomePage(){
-        pastBudget.setVisible(false);
-        homePage.toFront();
-        homePage.setVisible(true);
-    }
 
 
+        @FXML
+        public void switchToScene2 (javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+            setCategoryAmount();
+
+            if (currentBudget.getTotalGoalAmountOfCategories() == currentBudget.getStartAmount()) {
+                Parent root = FXMLLoader.load(getClass().getResource("/overview2.fxml"));
+                Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+
+            } else {
+                budgetErrorMessage.setVisible(true);
+            }
+        }
+
+        private void updateOverviewCategoryList () {
+            OverviewCategory.getChildren().clear();
+            for (Category c : currentBudget.getCategoryList()) {
+                CategoryOverviewItem newCategoryOverviewItem = new CategoryOverviewItem(c, controller);
+                CategoryOverviewItemArray.add(newCategoryOverviewItem);
+                OverviewCategory.getChildren().add(newCategoryOverviewItem);
+
+            }
+        }
+
+        @FXML
+        public void goToPastBudget() {
+            homePage.setVisible(false);
+            pastBudget.toFront();
+            pastBudget.setVisible(true);
+            budgetView.addBudgetToFlowPane(budgetFlowPane, currentUser.getBudget(), this);
+
+
+        }
+
+        @FXML
+        public void backToHomePage () {
+            pastBudget.setVisible(false);
+            homePage.toFront();
+            homePage.setVisible(true);
+        }
 }
+
 
 

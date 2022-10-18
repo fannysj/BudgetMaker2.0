@@ -16,6 +16,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Flow;
 
+/**
+ * This class has methods that handle displaying and dynamically changing our transaction view
+ */
+
 public class TransactionView {
 
     private ArrayList<TransactionListItem> transactionListArray = new ArrayList<>();
@@ -70,7 +74,7 @@ public class TransactionView {
         pane.getChildren().clear();
         Collections.reverse(list);
         for (Transaction t : list){
-            TransactionListItem transactionListItem = new TransactionListItem(t, controller);
+            CategoryTransactionItem transactionListItem = new CategoryTransactionItem(t.getName(),t.getDate(),String.valueOf(t.getTransactionAmount()),t.getNotes(), controller);
             pane.getChildren().add(transactionListItem);
         }
     }
