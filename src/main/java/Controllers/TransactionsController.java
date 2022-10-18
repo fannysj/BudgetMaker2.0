@@ -20,16 +20,11 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import javafx.util.converter.LocalDateStringConverter;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
 import java.net.URL;
-import java.time.LocalDate.*;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -199,6 +194,7 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     public void removeTransactionFromFlowPane(TransactionListItem T){
         transactionFlowPane.getChildren().remove(T);
+        transactionHistoryFlowPane.getChildren().remove(T);
     }
 
 //    public void updateTransactionList(List<Transaction> transactions) {
