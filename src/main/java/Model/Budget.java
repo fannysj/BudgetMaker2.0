@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -14,31 +15,77 @@ public class Budget {
 
 
     private int budget;
-    private int id;
+    private String name;
+
+    private final int id;
+
+    BudgetModel model;
 
 
-
-
-    public Budget(int budget, int id) {
+    public Budget(int budget, String name, int id) {
         this.budget = budget;
+        this.name = name;
         this.id = id;
-
-
-
+        createBudgetModel();
     }
+
+    private void createBudgetModel(){
+        this.model = new BudgetModel(this.budget);
+    }
+
+    public Budget getBudget () {
+        return this;
+    }
+
+    public Category getCategory(int i) {
+        return this.model.getCategory(i);
+    }
+
+    public int getTotalGoalAmountOfCategories(){
+        return this.model.TotalGoalAmountOfCategories();
+    }
+
+    public int getStartAmount(){
+        return this.model.getStartAmount();
+    }
+    public BudgetModel getBudgetModel(){
+        return this.model;
+    }
+
+    public int getBudgetAmount(){
+        return this.budget;
+    }
+
+    public int getAmountLeft (){
+        return this.model.getAmountLeft();
+    }
+
+    public int getBudgetCurrentAmount (){
+        return this.model.budgetCurrentAmount();
+    }
+
+    public void addTransactionsToCategoryTransactionList (){
+        this.model.addTemporaryTransactionsToCategoryTransactionList();
+    }
+
+    public void createNewTransaction(int amount, String name, String note, LocalDate date, int i){
+        this.model.createNewTransaction(amount, name, note, i, date);
+    }
+
     public int getId(){
-        return id;
+        return this.id;
     }
 
-    public int getBudget () {
-        return budget;
+    public List<Category> getCategoryList(){
+        return this.model.getCategoryList();
     }
+
     public void setBudget (int budget){
         this.budget = budget;
     }
     @Override
     public String toString () {
-        return "Budget [ Din budget: " + id + "kr ]";
+        return "Budget [ Din budget: " + budget + "kr ]";
     }
 
 

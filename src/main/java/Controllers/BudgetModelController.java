@@ -42,7 +42,7 @@ public class BudgetModelController implements Initializable {
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
     User currentUser = User.getInstance();
-    BudgetModel currentBudget;
+    Budget currentBudget;
 
     TransactionsController controller;
 
@@ -105,11 +105,6 @@ public class BudgetModelController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            currentUser.createNewBudget(100, 1);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
     }
 
@@ -126,8 +121,8 @@ public class BudgetModelController implements Initializable {
     @FXML
     public void setNewBudgetModel() {
         try {
-            currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()), Integer.parseInt(budgetID.getText()));
-            currentBudget = currentUser.getBudgetModel();
+            currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()),budgetID.getText());
+            currentBudget = currentUser.getBudget();
             String str = EnterBudget.getText();
             budgetAmount.setText(str);
             changeToBudgetingSide();
@@ -161,10 +156,7 @@ public class BudgetModelController implements Initializable {
         budgetingPage.setVisible(true);
         updateCategoryList();
     }
-
-
         public void CategoryToFront() {
-
             budgetingPage.toFront();
             categoryOverview.setVisible(false);
             budgetingPage.setVisible(true);
@@ -196,7 +188,7 @@ public class BudgetModelController implements Initializable {
         public void switchToScene2 (javafx.scene.input.MouseEvent mouseEvent) throws IOException {
             setCategoryAmount();
 
-            if (currentBudget.TotalGoalAmountOfCategories() == currentBudget.getStartAmount()) {
+            if (currentBudget.getTotalGoalAmountOfCategories() == currentBudget.getStartAmount()) {
                 Parent root = FXMLLoader.load(getClass().getResource("/overview2.fxml"));
                 Stage stage = (Stage) ((Node) mouseEvent.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);
@@ -223,7 +215,7 @@ public class BudgetModelController implements Initializable {
             homePage.setVisible(false);
             pastBudget.toFront();
             pastBudget.setVisible(true);
-            budgetView.addBudgetToFlowPane(budgetFlowPane, currentUser.getCurrentBudget(), this);
+            budgetView.addBudgetToFlowPane(budgetFlowPane, currentUser.getBudget(), this);
 
 
         }

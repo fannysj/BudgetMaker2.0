@@ -2,10 +2,7 @@ package Controllers;
 
 import Interfaces.Observable;
 import Interfaces.Observer;
-import Model.BudgetModel;
-import Model.Category;
-import Model.SortCategory;
-import Model.Transaction;
+import Model.*;
 import View.*;
 import com.example.budgetmaker2_0.User;
 import javafx.collections.FXCollections;
@@ -41,9 +38,14 @@ import java.util.regex.PatternSyntaxException;
 
 public class TransactionsController implements Initializable, Observer {
 
+
+
+
+
+
     User currentUser = User.getInstance();
 
-    BudgetModel currentBudget;
+    Budget currentBudget;
 
     OverviewView overviewView = new OverviewView();
 
@@ -95,6 +97,11 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     private ScrollBar addTransactionScrollbar;
 
+
+    Category category;
+
+
+
     @FXML
     public AnchorPane addExpenseAnchorPane;
 
@@ -129,20 +136,26 @@ public class TransactionsController implements Initializable, Observer {
     private Circle homeCircle;
 
 
+    //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
+
+    // Add to category observable list, subscribe, kalla till categories addObserver metod.
+
+
+    //Metoder som ska visa transaktioner men fungerar ej :(
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        currentBudget = currentUser.getBudgetModel();
+        currentBudget = currentUser.getBudget();
         updateBudgetDisplay();
         updateCategoryListItem();
         for(Category c : currentBudget.getCategoryList()){
             c.subscribe(this);
         }
+
     }
 
-
     public void updateBudgetDisplay(){
-        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(),currentBudget.budgetCurrentAmount());
+        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(), currentBudget.getBudgetCurrentAmount());
     }
 
     @FXML
@@ -150,17 +163,20 @@ public class TransactionsController implements Initializable, Observer {
         overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
     }
 
+    @FXML
+    public void goBacktoOverview(){
+        transactionView.clearTransactionPane(transactionFlowPane);
+        setBackToOverview();
 
     /**
      * Adding the new transaction to all views that are involved
      */
     @FXML
     public void createNewTransaction(){
-        currentBudget.addTemporaryTransactionsToCategoryTransactionList();
+        currentBudget.addTransactionsToCategoryTransactionList();
         updateBudgetDisplay();
         goBacktoOverview();
         addTransactionToHistoryFlowPane();
-        addTransactionsToDetailView();
 
     }
 
@@ -169,7 +185,7 @@ public class TransactionsController implements Initializable, Observer {
      */
     @FXML
     public void populateCategoryChoiceBox() {
-        transactionView.populateCategoryChoiceBox(transactionCategoryChoiceBox, currentUser.getCategoryList());
+        transactionView.populateCategoryChoiceBox(transactionCategoryChoiceBox, currentBudget.getCategoryList());
 
     }
 
@@ -206,7 +222,7 @@ public class TransactionsController implements Initializable, Observer {
      * Adding transaction to overview with the latest transactions
      */
     public void addTransactionToHistoryFlowPane(){
-        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getBudgetModel().getTransactionList(), this);
     }
 
 
@@ -231,24 +247,41 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     public void setBackToOverview() {
         overviewView.setBackToOverview(overviewAnchorPane, addExpenseSplit);
+
     }
 
     @FXML
     public void setAddExpense() {
         transactionView.clearInput(transactionNameTextField,transactionDatePicker,transactionAmountTextField,transactionCategoryChoiceBox,transactionNoteTextField);
         transactionView.setAddExpense(addExpenseAnchorPane, overviewAnchorPane, addExpenseSplit);
+
     }
 
+    //Öppna en specifik transaktion ????
     public void openDetailTransaction(Transaction transaction){
         transactionView.readTransactionView(transaction, transactionNameTextField, transactionAmountTextField, transactionNoteTextField);
         detailPane.toFront();
     }
 
     @FXML
+    public void search(int categoryindex){
+        SortCategory sortCategory = new SortCategory();
+        sortCategory.search(currentBudget.getBudgetModel().getCategory(categoryindex), searchbar);
+    }
+
+    @FXML
+    private void deleteTransaction(){
+        category.deleteTransactionFromList();
+    }
+
+    @FXML
     public void openTransactionDetailView(Category category) {
         TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this, category, title, spent, left);
+        addTransactionsToDetailView();
         categoryOverview.toFront();
+
     }
+
 
     @FXML
     private void closeCategoryDetailView(){
@@ -280,6 +313,17 @@ public class TransactionsController implements Initializable, Observer {
         overviewView.updateCategoryItems();
 
     }
+
+
+    @FXML
+    public void switchToHomePage(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        overviewView.switchToHomePage(mouseEvent);
+    }
+
+
+    // update()
+    // updateProgressBar()
+    //
 
 
 }

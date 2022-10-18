@@ -11,7 +11,9 @@ import static org.junit.Assert.*;
 
 public class BudgetModelTest {
 
-    BudgetModel b = new BudgetModel(new Budget(1000, 0));
+    Budget budget = new Budget(1000,"hej",1);
+
+    BudgetModel b = new BudgetModel(budget.getBudgetAmount());
     Category shopping = new Category("Shopping", 200);
     Category transport = new Category("Transport", 100);
     LocalDate d = LocalDate.now();
@@ -19,7 +21,7 @@ public class BudgetModelTest {
 
     @Test
     public void testingGettersAndSettersForBudget(){
-        BudgetModel copy = new BudgetModel(new Budget(1000, 0));
+        BudgetModel copy = new BudgetModel(budget.getBudgetAmount());
         copy.setStartAmount(500);
         int bsa = b.getStartAmount();
         int csa = copy.getStartAmount();

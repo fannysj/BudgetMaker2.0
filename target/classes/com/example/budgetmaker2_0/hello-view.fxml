@@ -20,7 +20,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
    <effect>
       <ColorAdjust brightness="0.19" />
    </effect>
@@ -156,23 +156,16 @@
                         <DropShadow />
                      </effect>
                   </Circle>
-                  <Text layoutX="266.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                  <Text layoutX="250.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se tidigare budgetar" textAlignment="CENTER" wrappingWidth="78.92575073242188">
                      <font>
-                        <Font name="Avenir Next Bold" size="17.0" />
+                        <Font name="Avenir Book" size="16.0" />
                      </font>
                   </Text>
-                  <Text layoutX="454.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skapa ny budget">
+                  <Text layoutX="466.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skapa ny budget" textAlignment="CENTER" wrappingWidth="75.45204162597656">
                      <font>
-                        <Font name="Avenir Next Bold" size="12.0" />
+                        <Font name="Avenir Book" size="16.0" />
                      </font>
                   </Text>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="pastBudget" prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <ScrollPane hbarPolicy="NEVER" prefHeight="630.0" prefWidth="962.0" />
-                  <FlowPane fx:id="budgetFlowPane" layoutX="14.0" layoutY="96.0" prefHeight="487.0" prefWidth="945.0" />
-                  <Button mnemonicParsing="false" onMouseClicked="#backToHomePage" text="Tillbaka" />
                </children>
             </AnchorPane>
          </children>
