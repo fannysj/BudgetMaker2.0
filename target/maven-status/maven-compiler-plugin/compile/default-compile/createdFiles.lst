@@ -1,6 +1,7 @@
 Model/SortCategory$2.class
 com/example/budgetmaker2_0/GsonTester.class
 View/CategoryTransactionItem.class
+View/BudgetView.class
 View/TransactionHistoryItem.class
 com/example/budgetmaker2_0/LocalDateSerializer.class
 Interfaces/Observable.class

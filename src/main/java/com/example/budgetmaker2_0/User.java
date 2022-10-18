@@ -28,8 +28,6 @@ public class User {
         return instance;
     }
 
-    private List<BudgetModel> ModelList = new ArrayList<>();
-
     private List<Budget> BudgetList = new ArrayList<>();
 
 
@@ -51,16 +49,14 @@ public class User {
         budget = new Budget(value, name, maxId+1);
         //BudgetModel model = new BudgetModel(budget);
         //Skicka med json-objektet till budgetmodel
-        BudgetModel model = budget.getBudgetModel();
 
-        ModelList.add(model);
         BudgetList.add(budget);
         SerializeBudgets();
 
     }
 
-    public BudgetModel getCurrentBudget(){
-        return this.budget.getBudgetModel();
+    public Budget getBudget(){
+        return this.budget;
     }
 
     public void nextCurrentBudget(){
@@ -75,14 +71,6 @@ public class User {
     public void getPreviousBudget(){
         int indexofbudget = BudgetList.indexOf(this.budget);
         this.budget = BudgetList.get(indexofbudget-1);
-    }
-
-    public BudgetModel getBudgetModel(){
-        return ModelList.get(ModelList.size()-1);
-    }
-
-    public List<Category> getCategoryList(){
-        return getBudgetModel().getCategoryList();
     }
 
     public void SerializeBudgets() throws IOException {

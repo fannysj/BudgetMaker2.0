@@ -39,7 +39,7 @@ public class TransactionsController implements Initializable, Observer {
 
     User currentUser = User.getInstance();
 
-    BudgetModel currentBudget;
+    Budget currentBudget;
 
     OverviewView overviewView = new OverviewView();
 
@@ -139,7 +139,7 @@ public class TransactionsController implements Initializable, Observer {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        currentBudget = currentUser.getCurrentBudget();
+        currentBudget = currentUser.getBudget();
         updateBudgetDisplay();
         updateCategoryListItem();
         for(Category c : currentBudget.getCategoryList()){
@@ -149,7 +149,7 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     public void updateBudgetDisplay(){
-        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(),currentBudget.budgetCurrentAmount());
+        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(), currentBudget.getBudgetCurrentAmount());
     }
 
     @FXML
@@ -166,7 +166,7 @@ public class TransactionsController implements Initializable, Observer {
 
     @FXML
     public void createNewTransaction(){
-        currentBudget.addTemporaryTransactionsToCategoryTransactionList();
+        currentBudget.addTransactionsToCategoryTransactionList();
         updateBudgetDisplay();
         goBacktoOverview();
         addTransactionToHistoryFlowPane();
@@ -175,7 +175,7 @@ public class TransactionsController implements Initializable, Observer {
 
     @FXML
     public void populateCategoryChoiceBox() {
-        transactionView.populateCategoryChoiceBox(transactionCategoryChoiceBox, currentUser.getCategoryList());
+        transactionView.populateCategoryChoiceBox(transactionCategoryChoiceBox, currentBudget.getCategoryList());
 
     }
 
@@ -187,7 +187,7 @@ public class TransactionsController implements Initializable, Observer {
         int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
 
 
-        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.createNewTransaction(a,na,no,i,d),this);
+        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.getBudgetModel().createNewTransaction(a,na,no,i,d),this);
 
     }
 
@@ -202,7 +202,7 @@ public class TransactionsController implements Initializable, Observer {
 //    }
 
     public void addTransactionToHistoryFlowPane(){
-        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getBudgetModel().getTransactionList(), this);
     }
 
     public void addTransactionsToDetailView(){
@@ -234,7 +234,7 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     public void search(int categoryindex){
         SortCategory sortCategory = new SortCategory();
-        sortCategory.search(currentBudget.getCategory(categoryindex), searchbar);
+        sortCategory.search(currentBudget.getBudgetModel().getCategory(categoryindex), searchbar);
     }
 
     @FXML
