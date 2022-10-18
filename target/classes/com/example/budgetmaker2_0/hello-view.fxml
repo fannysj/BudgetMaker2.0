@@ -19,7 +19,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
    <effect>
       <ColorAdjust brightness="0.19" />
    </effect>
@@ -88,43 +88,6 @@
                   <Line endX="100.0" layoutX="275.0" layoutY="126.0" startX="-219.5" stroke="#ffffffb2" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="homePage" minWidth="-Infinity" prefHeight="615.0" prefWidth="809.0">
-               <children>
-                  <ImageView fitHeight="681.0" fitWidth="1074.0" layoutX="-114.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/coins-and-plants.png" />
-                     </image>
-                     <effect>
-                        <ColorAdjust brightness="-0.64" />
-                     </effect>
-                  </ImageView>
-                  <Text fill="WHITE" layoutX="270.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välkommen!">
-                     <font>
-                        <Font name="Avenir Next Bold" size="44.0" />
-                     </font>
-                  </Text>
-                  <Circle fill="#fdfdff" layoutX="288.0" layoutY="303.0" onMouseClicked="#goToPastBudget" opacity="0.95" radius="65.0" stroke="WHITE" strokeType="INSIDE">
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </Circle>
-                  <Circle fx:id="createNewbudget" fill="WHITE" layoutX="503.0" layoutY="303.0" onMouseClicked="#createNewbudget" onMouseReleased="#createNewbudget" opacity="0.95" radius="65.0" stroke="WHITE" strokeType="INSIDE">
-                     <effect>
-                        <DropShadow />
-                     </effect>
-                  </Circle>
-                  <Text layoutX="250.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se tidigare budgetar" textAlignment="CENTER" wrappingWidth="78.92575073242188">
-                     <font>
-                        <Font name="Avenir Book" size="16.0" />
-                     </font>
-                  </Text>
-                  <Text layoutX="466.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skapa ny budget" textAlignment="CENTER" wrappingWidth="75.45204162597656">
-                     <font>
-                        <Font name="Avenir Book" size="16.0" />
-                     </font>
-                  </Text>
-               </children>
-            </AnchorPane>
             <AnchorPane fx:id="startSida" minHeight="-Infinity" minWidth="-Infinity" prefHeight="571.0" prefWidth="680.0">
                <children>
                   <ImageView fitHeight="714.0" fitWidth="1104.0" layoutX="-125.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-6.0" AnchorPane.rightAnchor="-65.0">
@@ -176,6 +139,43 @@
                   <Text fill="WHITE" layoutX="160.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ge din budget ett namn:">
                      <font>
                         <Font name="Avenir Book" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="homePage" minWidth="-Infinity" prefHeight="615.0" prefWidth="809.0">
+               <children>
+                  <ImageView fitHeight="681.0" fitWidth="1074.0" layoutX="-114.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/coins-and-plants.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-0.64" />
+                     </effect>
+                  </ImageView>
+                  <Text fill="WHITE" layoutX="270.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Välkommen!">
+                     <font>
+                        <Font name="Avenir Next Bold" size="44.0" />
+                     </font>
+                  </Text>
+                  <Circle fill="#fdfdff" layoutX="288.0" layoutY="303.0" onMouseClicked="#goToPastBudget" opacity="0.95" radius="65.0" stroke="WHITE" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Circle>
+                  <Circle fx:id="createNewbudget" fill="WHITE" layoutX="503.0" layoutY="303.0" onMouseClicked="#createNewbudget" onMouseReleased="#createNewbudget" opacity="0.95" radius="65.0" stroke="WHITE" strokeType="INSIDE">
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Circle>
+                  <Text layoutX="250.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Se tidigare budgetar" textAlignment="CENTER" wrappingWidth="78.92575073242188">
+                     <font>
+                        <Font name="Avenir Book" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="466.0" layoutY="298.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skapa ny budget" textAlignment="CENTER" wrappingWidth="75.45204162597656">
+                     <font>
+                        <Font name="Avenir Book" size="16.0" />
                      </font>
                   </Text>
                </children>
