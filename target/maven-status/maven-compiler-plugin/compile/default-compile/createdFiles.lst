@@ -11,7 +11,6 @@ com/example/budgetmaker2_0/HelloApplication.class
 com/example/budgetmaker2_0/User.class
 Model/Category.class
 Model/SortCategory$1.class
-Model/Budget$1.class
 Model/Transaction.class
 View/TransactionView.class
 Controllers/BudgetModelController.class
