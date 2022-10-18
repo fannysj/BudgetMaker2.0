@@ -35,11 +35,6 @@ public class Transaction {
     }
 
     //Getters
-
-    /**
-     *
-     * @return
-     */
     public int getTransactionAmount(){
         return transactionAmount;
     }

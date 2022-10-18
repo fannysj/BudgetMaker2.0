@@ -33,12 +33,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.regex.PatternSyntaxException;
 
+/**
+ * The TransactionController class represent a Controller in the Model-View-Controller pattern.
+ * Has a responsibility to listen to the view that handle information about transactions.
+ */
+
 public class TransactionsController implements Initializable, Observer {
-
-
-
-
-
 
     User currentUser = User.getInstance();
 
@@ -95,8 +95,6 @@ public class TransactionsController implements Initializable, Observer {
 
     Category category;
 
-
-
     @FXML
     public AnchorPane addExpenseAnchorPane;
 
@@ -131,12 +129,6 @@ public class TransactionsController implements Initializable, Observer {
     private Circle homeCircle;
 
 
-    //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
-
-    // Add to category observable list, subscribe, kalla till categories addObserver metod.
-
-
-    //Metoder som ska visa transaktioner men fungerar ej :(
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

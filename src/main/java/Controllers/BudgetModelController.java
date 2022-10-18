@@ -30,6 +30,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * The BudgetModelController class represent a Controller in the Model-View-Controller pattern.
+ * Listen to the view and updates the model.
+ */
 
 public class BudgetModelController implements Initializable {
 
@@ -116,6 +120,9 @@ public class BudgetModelController implements Initializable {
         startSida.setVisible(true);
     }
 
+    /**
+     * Method for creating a new BudgetModel for the User with a budget and an id.
+     */
     @FXML
     public void setNewBudgetModel() {
         try {
@@ -133,6 +140,9 @@ public class BudgetModelController implements Initializable {
 
     }
 
+    /**
+     * Set amount for every category in list
+     */
     public void setCategoryAmount() {
         System.out.println(categoryListArray.size());
         for (int i = 0; i < categoryListArray.size(); i++) {
@@ -168,7 +178,8 @@ public class BudgetModelController implements Initializable {
             budgetingPage.setVisible(false);
         }
 
-        @FXML
+
+    @FXML
         void updateCategoryList () {
             CategoryDivideFlowpane.getChildren().clear();
             for (Category category : currentBudget.getCategoryList()) {
