@@ -155,7 +155,7 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     public void updateBudgetDisplay(){
-        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(), currentBudget.getBudgetCurrentAmount());
+        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(), currentBudget.getCurrentAmount());
     }
 
     @FXML
@@ -163,22 +163,16 @@ public class TransactionsController implements Initializable, Observer {
         overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
     }
 
-    @FXML
-    public void goBacktoOverview() {
-        transactionView.clearTransactionPane(transactionFlowPane);
-        setBackToOverview();
-    }
-
     /**
      * Adding the new transaction to all views that are involved
      */
     @FXML
-    public void createNewTransaction(){
+    public void createNewTransaction() throws IOException {
+        addTransactionToHistoryFlowPane();
         currentBudget.addTransactionsToCategoryTransactionList();
         updateBudgetDisplay();
         goBacktoOverview();
-        addTransactionToHistoryFlowPane();
-
+        GsonClass.SerializeBudgets();
     }
 
     /**
@@ -201,7 +195,7 @@ public class TransactionsController implements Initializable, Observer {
         int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
 
 
-        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.getBudgetModel().createNewTransaction(a,na,no,i,d),this);
+        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.createNewTransaction(a,na,no,d,i),this);
 
     }
 
@@ -223,7 +217,7 @@ public class TransactionsController implements Initializable, Observer {
      * Adding transaction to overview with the latest transactions
      */
     public void addTransactionToHistoryFlowPane(){
-        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getBudgetModel().getTransactionList(), this);
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
     }
 
 
@@ -265,17 +259,6 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     @FXML
-    public void search(int categoryindex){
-        SortCategory sortCategory = new SortCategory();
-        sortCategory.search(currentBudget.getBudgetModel().getCategory(categoryindex), searchbar);
-    }
-
-    @FXML
-    private void deleteTransaction(){
-        category.deleteTransactionFromList();
-    }
-
-    @FXML
     public void openTransactionDetailView(Category category) {
         TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this, category, title, spent, left);
         addTransactionsToDetailView();
@@ -287,11 +270,6 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     private void closeCategoryDetailView(){
         categoryOverview.toBack();
-    }
-
-    @FXML
-    public void switchToHomePage(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
-        overviewView.switchToHomePage(mouseEvent);
     }
 
     /**

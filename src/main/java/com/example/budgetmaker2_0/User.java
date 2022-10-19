@@ -1,19 +1,13 @@
 package com.example.budgetmaker2_0;
 
 import Model.Budget;
-import Model.BudgetModel;
-import Model.Category;
-import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
-
+import Model.GsonClass;
+import com.google.gson.Gson;
 
 import java.io.*;
-import java.lang.reflect.Type;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+
 
 public class User {
 
@@ -34,7 +28,7 @@ public class User {
 
     public void createNewBudget(int value, String name) throws IOException {
 
-        readJSON();
+        GsonClass.readJSON(BudgetList);
 
         int maxId = 0;
         try{
@@ -47,12 +41,20 @@ public class User {
         }
 
         budget = new Budget(value, name, maxId+1);
-        //BudgetModel model = new BudgetModel(budget);
+
         //Skicka med json-objektet till budgetmodel
 
         BudgetList.add(budget);
-        SerializeBudgets();
+        GsonClass.SerializeBudgets();
 
+    }
+
+    public void saveBudget() throws IOException {
+        GsonClass.SerializeBudgets();
+    }
+
+    public List<Budget> getBudgetList() {
+        return BudgetList;
     }
 
     public Budget getBudget(){
@@ -60,7 +62,7 @@ public class User {
     }
 
     public void nextCurrentBudget(){
-        int indexOfBudget = BudgetList.indexOf(this.budget);
+        int indexOfBudget = budget.getId();
         if (indexOfBudget+1 >= BudgetList.size()){
             indexOfBudget =- 1;
         }
@@ -73,66 +75,4 @@ public class User {
         this.budget = BudgetList.get(indexofbudget-1);
     }
 
-    public void SerializeBudgets() throws IOException {
-        GsonBuilder gsonBuilder = new GsonBuilder();
-
-        gsonBuilder.registerTypeAdapter(LocalDate.class, new LocalDateSerializer());
-
-        Gson gson = gsonBuilder.create();
-
-        Type type = new TypeToken<List<Budget>>(){}.getType();
-        File file = new File("budget.json");
-        String json = gson.toJson(BudgetList,type);
-        FileWriter writer = new FileWriter(file);
-        writer.write(json);
-        writer.close();
-    }
-
-
-
-
-    private void writeJSON() throws IOException {
-
-    }
-
-    private void readJSON() throws IOException {
-
-        GsonBuilder builder = new GsonBuilder();
-
-        builder.registerTypeAdapter(LocalDate.class, new LocalDateDeserializer());
-
-        Gson gson = builder.create();
-
-        BufferedReader bufferedReader = new BufferedReader(
-                new FileReader("budget.json"));
-
-        Type type = new TypeToken<List<Budget>>(){}.getType();
-
-        String json = bufferedReader.readLine();
-
-        System.out.println(json);
-
-        if(json != null) {
-            BudgetList = gson.fromJson(json, type);
-        }
-    }
-}
-
-class LocalDateSerializer implements JsonSerializer< LocalDate > {
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
-
-    @Override
-    public JsonElement serialize(LocalDate localDate, Type srcType, JsonSerializationContext context) {
-        return new JsonPrimitive(formatter.format(localDate));
-    }
-}
-
-class LocalDateDeserializer implements JsonDeserializer < LocalDate > {
-
-    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d-MMM-yyyy");
-    @Override
-    public LocalDate deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
-            throws JsonParseException {
-        return LocalDate.parse(json.getAsJsonPrimitive().getAsString());
-    }
 }

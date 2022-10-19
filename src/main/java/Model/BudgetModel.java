@@ -1,13 +1,18 @@
 package Model;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BudgetModel {
     public List<Category> categoryList = new ArrayList<>();
 
-    public List<Transaction> transactions = new ArrayList<>();
+    private List<Transaction> transactions = new ArrayList<>();
+
+    private Map<String, ArrayList<Transaction>> tempTransactions = new HashMap<>();
 
     private int StartAmount;
     private int amountSpent = 0;
@@ -15,10 +20,10 @@ public class BudgetModel {
 
     public BudgetModel(int startAmount){
 
-        newCategory("Mat",2000);
-        newCategory("Shopping", 2000);
-        newCategory("Nöje", 1000);
-        newCategory("Övrigt",100);
+        newCategory("Mat",0);
+        newCategory("Shopping", 0);
+        newCategory("Nöje", 0);
+        newCategory("Övrigt",0);
 
         this.StartAmount = startAmount;
 
@@ -48,7 +53,12 @@ public class BudgetModel {
     }
 
     public List<Transaction> getTransactionList(){
+        List<Transaction> transactions = new ArrayList<>();
+        for(String name : tempTransactions.keySet()){
+            transactions.addAll(tempTransactions.get(name));
+        }
         return transactions;
+
     }
 
     public int getAmountLeft(){
@@ -76,22 +86,28 @@ public class BudgetModel {
 
     public Transaction createNewTransaction (int amount, String name, String note, int i, LocalDate date) {
         Transaction t = getCategory(i).newTransaction(amount,name,note,date);
-        transactions.add(t);
+        String catName = getCategory(i).getName();
+        tempTransactions.putIfAbsent(catName, new ArrayList<>());
+        System.out.println("\n\n\n\n" + tempTransactions.get(catName) +"\n\n\n\n" );
+        tempTransactions.get(catName).add(t);
         return t;
     }
 
-    private void updateTransactionList() {
-        transactions.clear();
+    public void addTemporaryTransactionsToCategoryTransactionList() {
         for(Category c : categoryList){
-            transactions.addAll(c.getTransactionsList());
+            String name = c.getName();
+            tempTransactions.putIfAbsent(name, new ArrayList<>());
+            ArrayList<Transaction> categoryTransactions = tempTransactions.get(name);
+            for(Transaction t : categoryTransactions){
+                c.addTransactionToList(t);
+            }
         }
-    }
-
-    public void addTemporaryTransactionsToCategoryTransactionList(){
-        for(Transaction t : transactions){
-            t.getCategory().addTransactionToList(t);
+        tempTransactions.clear();
+        try{
+            GsonClass.SerializeBudgets();
+        }catch (IOException e){
+            e.getMessage();
         }
-        transactions.clear();
 
     }
 

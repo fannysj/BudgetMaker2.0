@@ -156,19 +156,19 @@ public class BudgetModelController implements Initializable {
         budgetingPage.setVisible(true);
         updateCategoryList();
     }
-        public void CategoryToFront() {
-            budgetingPage.toFront();
-            categoryOverview.setVisible(false);
-            budgetingPage.setVisible(true);
-        }
+    public void CategoryToFront() {
+        budgetingPage.toFront();
+        categoryOverview.setVisible(false);
+        budgetingPage.setVisible(true);
+    }
 
 
-        @FXML
-        public void goBackonePage () {
-            startSida.toFront();
-            startSida.setVisible(true);
-            budgetingPage.setVisible(false);
-        }
+    @FXML
+    public void goBackonePage () {
+        startSida.toFront();
+        startSida.setVisible(true);
+        budgetingPage.setVisible(false);
+    }
 
 
     @FXML

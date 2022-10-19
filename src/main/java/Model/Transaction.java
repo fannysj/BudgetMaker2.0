@@ -19,7 +19,6 @@ public class Transaction {
     private int transactionAmount;
     private String name;
     private String notes;
-    private Category category;
     private LocalDate date;
 
     /**
@@ -27,16 +26,14 @@ public class Transaction {
      * @param amount amount of the transaction
      * @param name  name of transaction
      * @param notes note of the transaction
-     * @param category  category which the transaction falls under
      * @param date  date of the transaction
      */
 
 
-    public Transaction(int amount, String name, String notes, Category category, LocalDate date){
+    public Transaction(int amount, String name, String notes, LocalDate date){
         this.transactionAmount = amount;
         this.name = name;
         this.notes = notes;
-        this.category = category;
         this.date = date;
     }
 
@@ -51,10 +48,6 @@ public class Transaction {
 
     public String getNotes(){
         return notes;
-    }
-
-    public Category getCategory(){
-        return category;
     }
 
     public LocalDate getDate(){
