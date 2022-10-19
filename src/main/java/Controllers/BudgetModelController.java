@@ -61,13 +61,13 @@ public class BudgetModelController implements Initializable {
     private Button Budgetknapp;
 
     @FXML
-    private AnchorPane startSida;
+    private AnchorPane enterBudgetPage;
 
     @FXML
     private AnchorPane homePage;
 
     @FXML
-    private AnchorPane budgetingPage;
+    private AnchorPane splitBudgetPage;
 
     @FXML
     private Label budgetAmount;
@@ -94,9 +94,6 @@ public class BudgetModelController implements Initializable {
     private TextField budgetID;
 
     @FXML
-    private Text errorMessage;
-
-    @FXML
     private Text budgetErrorMessage;
 
     @FXML
@@ -110,9 +107,9 @@ public class BudgetModelController implements Initializable {
 
     @FXML
     public void createNewbudget() {
-        startSida.toFront();
+        enterBudgetPage.toFront();
         homePage.setVisible(false);
-        startSida.setVisible(true);
+        enterBudgetPage.setVisible(true);
     }
 
     /**
@@ -126,8 +123,6 @@ public class BudgetModelController implements Initializable {
             String str = EnterBudget.getText();
             budgetAmount.setText(str);
             changeToBudgetingSide();
-        } catch (NumberFormatException e) {
-            errorMessage.setVisible(true);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -149,26 +144,6 @@ public class BudgetModelController implements Initializable {
         }
     }
 
-    @FXML
-    public void changeToBudgetingSide() {
-        budgetingPage.toFront();
-        startSida.setVisible(false);
-        budgetingPage.setVisible(true);
-        updateCategoryList();
-    }
-        public void CategoryToFront() {
-            budgetingPage.toFront();
-            categoryOverview.setVisible(false);
-            budgetingPage.setVisible(true);
-        }
-
-
-        @FXML
-        public void goBackonePage () {
-            startSida.toFront();
-            startSida.setVisible(true);
-            budgetingPage.setVisible(false);
-        }
 
 
     @FXML
@@ -180,12 +155,11 @@ public class BudgetModelController implements Initializable {
                 CategoryDivideFlowpane.getChildren().add(newCategoryList);
 
             }
-
         }
 
 
         @FXML
-        public void switchToScene2 (javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+        public void switchToOverview (javafx.scene.input.MouseEvent mouseEvent) throws IOException {
             setCategoryAmount();
 
             if (currentBudget.getTotalGoalAmountOfCategories() == currentBudget.getStartAmount()) {
@@ -200,23 +174,12 @@ public class BudgetModelController implements Initializable {
             }
         }
 
-        private void updateOverviewCategoryList () {
-            OverviewCategory.getChildren().clear();
-            for (Category c : currentBudget.getCategoryList()) {
-                CategoryOverviewItem newCategoryOverviewItem = new CategoryOverviewItem(c, controller);
-                CategoryOverviewItemArray.add(newCategoryOverviewItem);
-                OverviewCategory.getChildren().add(newCategoryOverviewItem);
-
-            }
-        }
-
         @FXML
         public void goToPastBudget() {
             homePage.setVisible(false);
             pastBudget.toFront();
             pastBudget.setVisible(true);
             budgetView.addBudgetToFlowPane(budgetFlowPane, currentUser.getBudget(), this);
-
 
         }
 
@@ -226,6 +189,21 @@ public class BudgetModelController implements Initializable {
             homePage.toFront();
             homePage.setVisible(true);
         }
+
+        @FXML
+        public void backToSplitBudget () {
+        enterBudgetPage.toFront();
+        enterBudgetPage.setVisible(true);
+        splitBudgetPage.setVisible(false);
+    }
+    @FXML
+    public void changeToBudgetingSide() {
+        splitBudgetPage.toFront();
+        enterBudgetPage.setVisible(false);
+        splitBudgetPage.setVisible(true);
+        updateCategoryList();
+    }
+
 }
 
 

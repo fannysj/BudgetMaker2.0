@@ -10,7 +10,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -39,7 +43,8 @@ public class CategoryOverviewItem extends AnchorPane {
     @FXML
     public ProgressBar progressBar;
 
-
+    @FXML
+    private ImageView catOVImage;
 
     private Category category;
     private TransactionsController controller;
@@ -49,6 +54,9 @@ public class CategoryOverviewItem extends AnchorPane {
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/cateOVList.fxml"));
         myLoader.setRoot(this);
         myLoader.setController(this);
+
+
+
 
         this.category = category;
 
@@ -63,7 +71,6 @@ public class CategoryOverviewItem extends AnchorPane {
         CategoryNameOV.setText(category.getName());
         currentAmount.setText(String.valueOf(category.getSpentAmount()));
         goalAmount.setText(String.valueOf(category.getGoalAmount()));
-
     }
 
     public Category getCategory(){
