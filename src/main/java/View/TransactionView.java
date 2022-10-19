@@ -3,10 +3,7 @@ package View;
 import Controllers.TransactionsController;
 import Model.Category;
 import Model.Transaction;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 
@@ -60,13 +57,12 @@ public class TransactionView {
 //        }
 //    }
 
-    public void addTransactionToHistoryFlowPane(FlowPane flow, List<Transaction> list, TransactionsController controller){
-
-        flow.getChildren().clear();
+    public void addTransactionToHistoryFlowPane(AnchorPane pane, List<Transaction> list, TransactionsController controller){
+    pane.getChildren().clear();
         Collections.reverse(list);
         for (Transaction transaction: list){
             TransactionHistoryItem newHistoryList = new TransactionHistoryItem(transaction, controller);
-            flow.getChildren().add(newHistoryList);
+            pane.getChildren().add(newHistoryList);
         }
     }
 

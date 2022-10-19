@@ -1,6 +1,7 @@
 package Model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,10 +20,11 @@ public class Budget {
 
     /**
      * Constructor of budget, we set the parameters through user input
+     *
      * @param budget the start amount of the budget
-     * @param name the name of the budget
-     * @param id the identification of the budget
-     * creates a BudgetModel
+     * @param name   the name of the budget
+     * @param id     the identification of the budget
+     *               creates a BudgetModel
      */
 
     public Budget(int budget, String name, int id) {
@@ -32,25 +34,26 @@ public class Budget {
         createBudgetModel();
     }
 
-    private void createBudgetModel(){
+    private void createBudgetModel() {
         this.model = new BudgetModel(this.budget);
     }
 
 
     /**
      * Getters
+     *
      * @return parameters in budgetmodel
      */
 
-    public Budget getBudget () {
+    public Budget getBudget() {
         return this;
     }
 
-    public int getId(){
+    public int getId() {
         return this.id;
     }
 
-    public List<Category> getCategoryList(){
+    public List<Category> getCategoryList() {
         return this.model.getCategoryList();
     }
 
@@ -58,33 +61,38 @@ public class Budget {
         return this.model.getCategory(i);
     }
 
-    public int getTotalGoalAmountOfCategories(){
+    public int getTotalGoalAmountOfCategories() {
         return this.model.TotalGoalAmountOfCategories();
     }
 
-    public int getStartAmount(){
+    public int getStartAmount() {
         return this.model.getStartAmount();
     }
 
-    public BudgetModel getBudgetModel(){
+    public BudgetModel getBudgetModel() {
         return this.model;
     }
 
-    public int getBudgetAmount(){
+    public int getBudgetAmount() {
         return this.budget;
     }
 
-    public int getAmountLeft (){
+    public int getAmountLeft() {
         return this.model.getAmountLeft();
     }
 
-    public int getCurrentAmount(){
+    public int getCurrentAmount() {
         return this.model.budgetCurrentAmount();
     }
 
-    public void setBudget (int budget){
+    public void setBudget(int budget) {
         this.budget = budget;
     }
+
+//    public List<Transaction> getAllTransactions() {
+//
+//    }
+
 
     /**
      * Adds a transaction to a specific category's transactions list

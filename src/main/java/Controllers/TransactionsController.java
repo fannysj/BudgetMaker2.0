@@ -131,7 +131,10 @@ public class TransactionsController implements Initializable, Observer {
     private ListView<Transaction> transactionListView = new ListView<>() ;
 
     @FXML
-    private Circle homeCircle;
+    private Button homeButton;
+
+    @FXML
+    private AnchorPane scrollAnchorpane;
 
 
 
@@ -168,8 +171,8 @@ public class TransactionsController implements Initializable, Observer {
      */
     @FXML
     public void createNewTransaction(){
-        currentBudget.addTransactionsToCategoryTransactionList();
         addTransactionToHistoryFlowPane();
+        currentBudget.addTransactionsToCategoryTransactionList();
         updateBudgetDisplay();
         goBacktoOverview();
 
@@ -218,7 +221,7 @@ public class TransactionsController implements Initializable, Observer {
      * Adding transaction to overview with the latest transactions
      */
     public void addTransactionToHistoryFlowPane(){
-        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getAllTransaction(), this);
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
     }
 
 

@@ -2,6 +2,7 @@ package com.example.budgetmaker2_0;
 
 import Model.Budget;
 import Model.GsonClass;
+import com.google.gson.Gson;
 
 import java.io.*;
 import java.util.ArrayList;

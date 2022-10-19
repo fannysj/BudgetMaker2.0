@@ -12,7 +12,7 @@ public class TransactionTest {
 
     Category c = new Category("Livsmedel", 700);
     LocalDate d = LocalDate.now();
-    Transaction t = new Transaction(50, "Godis", "Snacks", c, d);
+    Transaction t = new Transaction(50, "Godis", "Snacks", d, c);
 
     @Test
     public void testingGetters(){
