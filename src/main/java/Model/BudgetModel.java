@@ -1,5 +1,6 @@
 package Model;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +11,9 @@ import java.util.List;
  */
 
 public class BudgetModel {
-    private List<Category> categoryList = new ArrayList<>();
+    public List<Category> categoryList = new ArrayList<>();
 
-    private List<Transaction> transactions = new ArrayList<>();
+    public List<Transaction> transactions = new ArrayList<>();
 
     private int StartAmount;
     private int amountSpent = 0;
@@ -25,10 +26,10 @@ public class BudgetModel {
      */
     public BudgetModel(int startAmount){
 
-        newCategory("Mat",2000);
-        newCategory("Shopping", 2000);
-        newCategory("Nöje", 1000);
-        newCategory("Övrigt",100);
+        newCategory("Mat",0);
+        newCategory("Shopping", 0);
+        newCategory("Nöje", 0);
+        newCategory("Övrigt",0);
 
         this.StartAmount = startAmount;
 
@@ -69,6 +70,16 @@ public class BudgetModel {
         return (getStartAmount() - budgetCurrentAmount());
     }
 
+    public List<Transaction> getAllTransactions(){
+        List<Transaction> allTransactions = new ArrayList<>();
+        for(Category c : categoryList){
+            allTransactions.addAll(c.getTransactionsList());
+        }
+        return allTransactions;
+
+
+    }
+
 
     /**
      * Calculates the amount spent in the categories
@@ -101,24 +112,18 @@ public class BudgetModel {
         return t;
     }
 
-//    private void updateTransactionList() {
-//        transactions.clear();
-//        for(Category c : categoryList){
-//            transactions.addAll(c.getTransactionsList());
-//        }
-//    }
 
     /**
      * Adds temporary transactions to a transaction list that their specific category holds
      */
-    public void addTemporaryTransactionsToCategoryTransactionList(){
-        for(Transaction t : transactions){
+    public void addTemporaryTransactionsToCategoryTransactionList() {
+        for (Transaction t : transactions) {
             t.getCategory().addTransactionToList(t);
         }
         transactions.clear();
 
-    }
 
+    }
 
 }
 

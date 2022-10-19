@@ -19,25 +19,25 @@ public class Transaction {
     private int transactionAmount;
     private String name;
     private String notes;
-    private Category category;
     private LocalDate date;
+
+    private Category category;
 
     /**
      * Constructor of Transaction.
      * @param amount amount of the transaction
      * @param name  name of transaction
      * @param notes note of the transaction
-     * @param category  category which the transaction falls under
      * @param date  date of the transaction
      */
 
 
-    public Transaction(int amount, String name, String notes, Category category, LocalDate date){
+    public Transaction(int amount, String name, String notes, LocalDate date, Category c){
         this.transactionAmount = amount;
         this.name = name;
         this.notes = notes;
-        this.category = category;
         this.date = date;
+        this.category = c;
     }
 
     //Getters
@@ -53,10 +53,6 @@ public class Transaction {
         return notes;
     }
 
-    public Category getCategory(){
-        return category;
-    }
-
     public LocalDate getDate(){
         return date;
     }
@@ -64,6 +60,10 @@ public class Transaction {
     public LocalDate setDate(int year, int month, int day){
         date = LocalDate.of(year,month,day);
         return date;
+    }
+
+    public Category getCategory(){
+        return this.category;
     }
 
 

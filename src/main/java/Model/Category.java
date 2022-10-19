@@ -63,7 +63,7 @@ public class Category implements Observable {
 
 
     public Transaction newTransaction(int amount, String name, String note, LocalDate date) {
-        return new Transaction(amount, name, note, this, date);
+        return new Transaction(amount, name, note, date, this);
     }
 
     /**

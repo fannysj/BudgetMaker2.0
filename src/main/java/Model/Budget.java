@@ -100,7 +100,15 @@ public class Budget {
 
     @Override
     public String toString () {
-        return "Budget [ Din budget: " + budget + "kr ]";
+        return "\n Budget { \n" +
+                "Din budget: " + budget + "kr \n" +
+                "BudgetID :" + id + "\n" +
+                "Dina kategorier : " + getCategoryList()+ "\n" +
+                "Dina transaktioner: " + model.getAllTransactions()+ "\n" +
+                "] \n" ;
     }
 
+    public List<Transaction> getTransactionList() {
+        return this.model.getTransactionList();
+    }
 }
