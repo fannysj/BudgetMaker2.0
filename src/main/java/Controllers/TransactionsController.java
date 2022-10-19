@@ -163,16 +163,22 @@ public class TransactionsController implements Initializable, Observer {
         overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
     }
 
+    @FXML
+    public void goBacktoOverview() {
+        transactionView.clearTransactionPane(transactionFlowPane);
+        setBackToOverview();
+    }
+
     /**
      * Adding the new transaction to all views that are involved
      */
     @FXML
-    public void createNewTransaction() throws IOException {
-        addTransactionToHistoryFlowPane();
+    public void createNewTransaction(){
         currentBudget.addTransactionsToCategoryTransactionList();
         updateBudgetDisplay();
         goBacktoOverview();
-        GsonClass.SerializeBudgets();
+        addTransactionToHistoryFlowPane();
+
     }
 
     /**
@@ -195,7 +201,7 @@ public class TransactionsController implements Initializable, Observer {
         int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
 
 
-        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.createNewTransaction(a,na,no,d,i),this);
+        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.getBudgetModel().createNewTransaction(a,na,no,i,d),this);
 
     }
 
@@ -259,6 +265,11 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     @FXML
+    private void deleteTransaction(){
+        category.deleteTransactionFromList();
+    }
+
+    @FXML
     public void openTransactionDetailView(Category category) {
         TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this, category, title, spent, left);
         addTransactionsToDetailView();
@@ -281,10 +292,6 @@ public class TransactionsController implements Initializable, Observer {
         sortCategory.search(currentBudget.getCategory(categoryindex), searchbar);
     }
 
-    @FXML
-    private void deleteTransaction(){
-        category.deleteTransactionFromList();
-    }
 
 
     @Override

@@ -1,23 +1,28 @@
 package Model;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+
+/**
+ * This class represent the structure of the budget. It consists of categories and transactions and
+ * handles calculations regarding the budgets current amount.
+ */
 
 public class BudgetModel {
     public List<Category> categoryList = new ArrayList<>();
 
-    private List<Transaction> transactions = new ArrayList<>();
-
-    private Map<String, ArrayList<Transaction>> tempTransactions = new HashMap<>();
+    public List<Transaction> transactions = new ArrayList<>();
 
     private int StartAmount;
     private int amountSpent = 0;
     private int amountLeft = 0;
 
+    /**
+     * Constructor of BudgetModel
+     * Four set categories
+     * @param startAmount the start amount of the budget
+     */
     public BudgetModel(int startAmount){
 
         newCategory("Mat",0);
@@ -39,7 +44,11 @@ public class BudgetModel {
         categoryList.add(category);
     }
 
-    // Getters
+    /**
+     * Getters
+     * @param i what category we want
+     * @return the parameters of the class BudgetModel
+     */
     public Category getCategory(int i){
         return categoryList.get(i);
     }
@@ -53,12 +62,10 @@ public class BudgetModel {
     }
 
     public List<Transaction> getTransactionList(){
-        List<Transaction> transactions = new ArrayList<>();
         for(String name : tempTransactions.keySet()){
             transactions.addAll(tempTransactions.get(name));
         }
         return transactions;
-
     }
 
     public int getAmountLeft(){
@@ -66,7 +73,11 @@ public class BudgetModel {
     }
 
 
-    //Total mängd av spenderade pengar i varje kategori
+    /**
+     * Calculates the amount spent in the categories
+     * @return the spent amount in all categories put together
+     */
+
     public int budgetCurrentAmount(){
         amountSpent = 0;
         for (Category c : categoryList){
@@ -75,7 +86,10 @@ public class BudgetModel {
         return amountSpent;
     }
 
-    //Total mängd av utgiftsmål för alla kategorier
+    /**
+     * Calculates the goal amount (budget cap) in categories
+     * @return the goal amount in all categories put together
+     */
     public int TotalGoalAmountOfCategories(){
         int totalGoalAmount = 0;
         for (Category c : categoryList){
@@ -86,28 +100,25 @@ public class BudgetModel {
 
     public Transaction createNewTransaction (int amount, String name, String note, int i, LocalDate date) {
         Transaction t = getCategory(i).newTransaction(amount,name,note,date);
-        String catName = getCategory(i).getName();
-        tempTransactions.putIfAbsent(catName, new ArrayList<>());
-        System.out.println("\n\n\n\n" + tempTransactions.get(catName) +"\n\n\n\n" );
-        tempTransactions.get(catName).add(t);
+        transactions.add(t);
         return t;
     }
 
-    public void addTemporaryTransactionsToCategoryTransactionList() {
-        for(Category c : categoryList){
-            String name = c.getName();
-            tempTransactions.putIfAbsent(name, new ArrayList<>());
-            ArrayList<Transaction> categoryTransactions = tempTransactions.get(name);
-            for(Transaction t : categoryTransactions){
-                c.addTransactionToList(t);
-            }
+//    private void updateTransactionList() {
+//        transactions.clear();
+//        for(Category c : categoryList){
+//            transactions.addAll(c.getTransactionsList());
+//        }
+//    }
+
+    /**
+     * Adds temporary transactions to a transaction list that their specific category holds
+     */
+    public void addTemporaryTransactionsToCategoryTransactionList(){
+        for(Transaction t : transactions){
+            t.getCategory().addTransactionToList(t);
         }
-        tempTransactions.clear();
-        try{
-            GsonClass.SerializeBudgets();
-        }catch (IOException e){
-            e.getMessage();
-        }
+        transactions.clear();
 
     }
 

@@ -10,6 +10,10 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
+/**
+ * This class has methods that handle displaying and dynamically changing our transactionhistoryitem FXML
+ */
+
 public class TransactionHistoryItem extends AnchorPane {
 
     @FXML

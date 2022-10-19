@@ -11,7 +11,7 @@ public class Category implements Observable {
     public int spentAmount;
 
     private List<Transaction> transactionsList = new ArrayList<>();
-    public List<Observer> observerList = new ArrayList<>();
+    private List<Observer> observerList = new ArrayList<>();
 
     /**
      * Constructor of Category
@@ -58,6 +58,9 @@ public class Category implements Observable {
         return spentAmount;
     }
 
+    public List getObserverList(){
+        return observerList; }
+
 
     public Transaction newTransaction(int amount, String name, String note, LocalDate date) {
         return new Transaction(amount, name, note, date);
@@ -90,31 +93,31 @@ public class Category implements Observable {
         updateSpentAmount();
         int amountLeft = (int) (getGoalAmount()-getSpentAmount());
         if (amountLeft<0){
-            System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
+            //System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
         }
 
         return amountLeft;
     }
 
 
-    //Sort transaction
-    public void sortByAmount() {
-        Collections.sort(transactionsList, new Comparator<Transaction>() {
-            public int compare(Transaction t1, Transaction t2) {
-                return Double.compare(t1.getTransactionAmount(), t2.getTransactionAmount());
-            }
-        });
+//    //Sort transaction
+//    public void sortByAmount() {
+//        Collections.sort(transactionsList, new Comparator<Transaction>() {
+//            public int compare(Transaction t1, Transaction t2) {
+//                return Double.compare(t1.getTransactionAmount(), t2.getTransactionAmount());
+//            }
+//        });
+//
+//    }
 
-    }
-
-    public void sortByDate(){
-        Collections.sort(transactionsList, new Comparator<Transaction>() {
-            @Override
-            public int compare(Transaction o1, Transaction o2) {
-                return o1.getDate().compareTo(o2.getDate());
-            }
-        });
-    }
+//    public void sortByDate(){
+//        Collections.sort(transactionsList, new Comparator<Transaction>() {
+//            @Override
+//            public int compare(Transaction o1, Transaction o2) {
+//                return o1.getDate().compareTo(o2.getDate());
+//            }
+//        });
+//    }
 
     public void deleteTransactionFromList(){
         transactionsList.remove(transactionsList.size()-1);

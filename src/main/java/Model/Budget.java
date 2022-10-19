@@ -3,6 +3,9 @@ package Model;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * This class is the highest level of abstraction in our program. It is a facade for the BudgetModel.
+ */
 
 public class Budget {
 
@@ -14,6 +17,13 @@ public class Budget {
 
     BudgetModel model;
 
+    /**
+     * Constructor of budget, we set the parameters through user input
+     * @param budget the start amount of the budget
+     * @param name the name of the budget
+     * @param id the identification of the budget
+     * creates a BudgetModel
+     */
 
     public Budget(int budget, String name, int id) {
         this.budget = budget;
@@ -26,8 +36,22 @@ public class Budget {
         this.model = new BudgetModel(this.budget);
     }
 
+
+    /**
+     * Getters
+     * @return parameters in budgetmodel
+     */
+
     public Budget getBudget () {
         return this;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public List<Category> getCategoryList(){
+        return this.model.getCategoryList();
     }
 
     public Category getCategory(int i) {
@@ -41,6 +65,7 @@ public class Budget {
     public int getStartAmount(){
         return this.model.getStartAmount();
     }
+
     public BudgetModel getBudgetModel(){
         return this.model;
     }
@@ -57,6 +82,14 @@ public class Budget {
         return this.model.budgetCurrentAmount();
     }
 
+    public void setBudget (int budget){
+        this.budget = budget;
+    }
+
+    /**
+     * Adds a transaction to a specific category's transactions list
+     */
+
     public void addTransactionsToCategoryTransactionList (){
         this.model.addTemporaryTransactionsToCategoryTransactionList();
     }
@@ -65,17 +98,6 @@ public class Budget {
         return this.model.createNewTransaction(amount, name, note, i, date);
     }
 
-    public int getId(){
-        return this.id;
-    }
-
-    public List<Category> getCategoryList(){
-        return this.model.getCategoryList();
-    }
-
-    public void setBudget (int budget){
-        this.budget = budget;
-    }
     @Override
     public String toString () {
         return "\n Budget { \n" +

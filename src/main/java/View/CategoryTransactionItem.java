@@ -10,6 +10,10 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 import java.time.LocalDate;
 
+/**
+ * This class has methods that handle displaying and dynamically changing our categorytransactionitem FXML
+ */
+
 public class CategoryTransactionItem extends AnchorPane {
     @FXML
     private Label transactionName;

@@ -2,23 +2,33 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="transListItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="425.0" style="-fx-background-color: f4f0ec f4f0ec f4f0ec f4f0ec;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="transListItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="425.0" style="-fx-background-color: f4f0ec f4f0ec f4f0ec f4f0ec;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="listItemTransactionName" layoutX="25.0" layoutY="42.0" text="Namn" />
-      <Label fx:id="listItemTransactionDate" layoutX="102.0" layoutY="42.0" text="Datum" />
-      <Label fx:id="listItemTransactionNote" layoutX="189.0" layoutY="42.0" text="Note" />
-      <Label fx:id="listItemTransactionAmount" layoutX="277.0" layoutY="42.0" text="Belopp" />
-      <Button fx:id="deleteTransaction" layoutX="349.0" layoutY="63.0" mnemonicParsing="false" onAction="#onClick" prefHeight="25.0" prefWidth="61.0" text="Ta bort">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="86.0" layoutX="8.0" layoutY="7.0" stroke="#dadada" strokeType="INSIDE" width="410.0" />
+      <Label fx:id="listItemTransactionName" layoutX="25.0" layoutY="42.0" text="Namn">
+         <font>
+            <Font name="Avenir Book" size="13.0" />
+         </font></Label>
+      <Label fx:id="listItemTransactionDate" layoutX="102.0" layoutY="42.0" text="Datum">
+         <font>
+            <Font name="Avenir Book" size="13.0" />
+         </font></Label>
+      <Label fx:id="listItemTransactionNote" layoutX="192.0" layoutY="42.0" text="Note">
+         <font>
+            <Font name="Avenir Book" size="13.0" />
+         </font></Label>
+      <Label fx:id="listItemTransactionAmount" layoutX="277.0" layoutY="42.0" text="Belopp">
+         <font>
+            <Font name="Avenir Book" size="13.0" />
+         </font></Label>
+      <Button fx:id="deleteTransaction" layoutX="351.0" layoutY="64.0" mnemonicParsing="false" onAction="#onClick" prefHeight="19.0" prefWidth="59.0" text="Ta bort">
          <font>
             <Font name="Avenir Next Bold" size="10.0" />
          </font>
       </Button>
    </children>
-   <effect>
-      <DropShadow />
-   </effect>
 </fx:root>
