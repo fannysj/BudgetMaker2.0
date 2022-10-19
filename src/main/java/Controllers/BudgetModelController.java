@@ -1,16 +1,12 @@
 package Controllers;
 
 
-import Interfaces.Observer;
-import Interfaces.Observable;
 import Model.Budget;
-import Model.BudgetModel;
 import Model.Category;
-import Model.Transaction;
 import View.BudgetView;
 import View.CategoryListItem;
 import View.CategoryOverviewItem;
-import com.example.budgetmaker2_0.User;
+import Model.User;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

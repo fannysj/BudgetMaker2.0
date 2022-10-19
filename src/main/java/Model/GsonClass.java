@@ -1,8 +1,6 @@
 package Model;
 
-import com.example.budgetmaker2_0.User;
 import com.google.gson.*;
-import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
 import java.lang.reflect.Type;
@@ -20,7 +18,7 @@ public class GsonClass {
         User user = User.getInstance();
         List<Budget> budgetList = user.getBudgetList();
 
-        File file = new File("confix.txt");
+        File file = new File("budget.txt");
         String json = (budgetList.toString());
         FileWriter writer = new FileWriter(file, true);
         writer.write(json);
@@ -30,7 +28,7 @@ public class GsonClass {
     public static void readJSON(List<Budget> budgetList) throws IOException {
 
         BufferedReader bufferedReader = new BufferedReader(
-                new FileReader("confix.txt"));
+                new FileReader("budget.txt"));
 
         String json = bufferedReader.readLine();
 
