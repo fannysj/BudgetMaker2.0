@@ -2,7 +2,6 @@ package com.example.budgetmaker2_0;
 
 import Model.Budget;
 import Model.GsonClass;
-import com.google.gson.Gson;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -28,7 +27,7 @@ public class User {
 
     public void createNewBudget(int value, String name) throws IOException {
 
-        GsonClass.readJSON(BudgetList);
+        GsonClass.readFromFile(BudgetList);
 
         int maxId = 0;
         try{
