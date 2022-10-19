@@ -94,6 +94,10 @@ public class Budget {
         this.model.addTemporaryTransactionsToCategoryTransactionList();
     }
 
+    public List<Transaction> getAllTransaction(){
+        return this.model.getAllTransactions();
+    }
+
     public Transaction createNewTransaction(int amount, String name, String note, LocalDate date, int i){
         return this.model.createNewTransaction(amount, name, note, i, date);
     }

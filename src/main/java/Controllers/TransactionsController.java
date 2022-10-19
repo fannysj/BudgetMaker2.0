@@ -168,8 +168,8 @@ public class TransactionsController implements Initializable, Observer {
      */
     @FXML
     public void createNewTransaction(){
-        addTransactionToHistoryFlowPane();
         currentBudget.addTransactionsToCategoryTransactionList();
+        addTransactionToHistoryFlowPane();
         updateBudgetDisplay();
         goBacktoOverview();
 
@@ -218,7 +218,7 @@ public class TransactionsController implements Initializable, Observer {
      * Adding transaction to overview with the latest transactions
      */
     public void addTransactionToHistoryFlowPane(){
-        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getAllTransaction(), this);
     }
 
 
