@@ -16,14 +16,12 @@ Interfaces/Observer.class
 Model/GsonClass.class
 Model/LocalDateDeserializer.class
 Model/LocalDateSerializer.class
-Model/Category$2.class
 View/CategoryOverviewItem.class
 module-info.class
 View/TransactionOverviewItem.class
 Controllers/TransactionsController.class
 View/BudgetListItem.class
 Model/BudgetModel.class
-Model/Category$1.class
 Model/Budget.class
 View/TransactionListItem.class
 Model/SortCategory.class

@@ -45,7 +45,6 @@ public class User {
         //Skicka med json-objektet till budgetmodel
 
         BudgetList.add(budget);
-        GsonClass.SerializeBudgets();
 
     }
 

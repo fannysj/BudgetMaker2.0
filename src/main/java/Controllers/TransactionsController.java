@@ -163,21 +163,16 @@ public class TransactionsController implements Initializable, Observer {
         overviewView.updateCategoryListItem(OverviewCategory, currentBudget.getCategoryList(), this);
     }
 
-    @FXML
-    public void goBacktoOverview() {
-        transactionView.clearTransactionPane(transactionFlowPane);
-        setBackToOverview();
-    }
-
     /**
      * Adding the new transaction to all views that are involved
      */
     @FXML
     public void createNewTransaction(){
+        addTransactionToHistoryFlowPane();
         currentBudget.addTransactionsToCategoryTransactionList();
         updateBudgetDisplay();
         goBacktoOverview();
-        addTransactionToHistoryFlowPane();
+
 
     }
 
@@ -304,6 +299,7 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     public void switchToHomePage(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         overviewView.switchToHomePage(mouseEvent);
+        GsonClass.SerializeBudgets();
     }
 
 

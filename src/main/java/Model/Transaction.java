@@ -21,6 +21,8 @@ public class Transaction {
     private String notes;
     private LocalDate date;
 
+    private Category category;
+
     /**
      * Constructor of Transaction.
      * @param amount amount of the transaction
@@ -30,11 +32,12 @@ public class Transaction {
      */
 
 
-    public Transaction(int amount, String name, String notes, LocalDate date){
+    public Transaction(int amount, String name, String notes, LocalDate date, Category c){
         this.transactionAmount = amount;
         this.name = name;
         this.notes = notes;
         this.date = date;
+        this.category = c;
     }
 
     //Getters
@@ -57,6 +60,10 @@ public class Transaction {
     public LocalDate setDate(int year, int month, int day){
         date = LocalDate.of(year,month,day);
         return date;
+    }
+
+    public Category getCategory(){
+        return this.category;
     }
 
 
