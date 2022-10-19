@@ -2,28 +2,23 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressBar?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="cateOVList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" onMouseEntered="#onHover" onMouseExited="#stopHover" prefHeight="81.0" prefWidth="500.0" style="-fx-border-style: solid; -fx-border-radius: 10; -fx-background-radius: 10; -fx-border-color: ffff;" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="cateOVList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#onClick" onMouseEntered="#onHover" onMouseExited="#stopHover" prefHeight="81.0" prefWidth="489.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="CategoryNameOV" layoutX="65.0" layoutY="14.0" prefHeight="17.0" prefWidth="77.0" text="Hej" textFill="WHITE">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="TRANSPARENT" height="73.0" layoutX="4.0" layoutY="4.0" stroke="WHITE" strokeType="INSIDE" styleClass="curved-corners" width="482.0" />
+      <Label fx:id="CategoryNameOV" layoutX="19.0" layoutY="14.0" prefHeight="23.0" prefWidth="108.0" text="Hej" textFill="WHITE">
+         <font>
+            <Font name="Avenir Book" size="17.0" />
+         </font></Label>
+      <ProgressBar fx:id="progressBar" layoutX="19.0" layoutY="43.0" prefHeight="20.0" prefWidth="355.0" progress="0.0" />
+      <Label fx:id="currentAmount" layoutX="407.0" layoutY="17.0" text="Label" textFill="WHITE">
          <font>
             <Font name="Avenir Book" size="14.0" />
          </font></Label>
-      <ProgressBar fx:id="progressBar" layoutX="50.0" layoutY="48.0" prefHeight="20.0" prefWidth="324.0" progress="0.0" />
-      <ImageView fitHeight="35.0" fitWidth="33.0" layoutX="14.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@com/example/budgetmaker2_0/images/food.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="currentAmount" layoutX="407.0" layoutY="23.0" text="Label" textFill="WHITE">
-         <font>
-            <Font name="Avenir Book" size="14.0" />
-         </font></Label>
-      <Label fx:id="goalAmount" layoutX="407.0" layoutY="49.0" text="Label" textFill="WHITE">
+      <Label fx:id="goalAmount" layoutX="407.0" layoutY="43.0" text="Label" textFill="WHITE">
          <font>
             <Font name="Avenir Book" size="14.0" />
          </font></Label>
