@@ -271,11 +271,11 @@ public class TransactionsController implements Initializable, Observer {
     /**
      * Search and sort
      */
-    @FXML
-    public void search(int categoryindex){
-        SortCategory sortCategory = new SortCategory();
-        sortCategory.search(currentBudget.getCategory(categoryindex), searchbar);
-    }
+//    @FXML
+//    public void search(int categoryindex){
+//        SortCategory sortCategory = new SortCategory();
+//        sortCategory.search(currentBudget.getCategory(categoryindex), searchbar);
+//    }
 
 
 
