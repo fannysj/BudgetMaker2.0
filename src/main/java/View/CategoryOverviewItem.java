@@ -100,7 +100,7 @@ public class CategoryOverviewItem extends AnchorPane {
     }
 
     public void updateProgressBar(){
-        double valueProgressBar = Double.parseDouble((currentAmount.getText())) / Double.parseDouble(goalAmount.getText());;
+        double valueProgressBar = Double.parseDouble(currentAmount.getText()) / Double.parseDouble(goalAmount.getText());;
         progressBar.setProgress(valueProgressBar);
     }
 

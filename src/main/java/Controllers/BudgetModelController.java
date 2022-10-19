@@ -90,7 +90,7 @@ public class BudgetModelController implements Initializable {
     private TextField budgetID;
 
     @FXML
-    private Text budgetErrorMessage;
+    private Text errorMessage;
 
     @FXML
     private FlowPane budgetFlowPane;
@@ -166,7 +166,7 @@ public class BudgetModelController implements Initializable {
                 stage.show();
 
             } else {
-                budgetErrorMessage.setVisible(true);
+                errorMessage.setVisible(true);
             }
         }
 
