@@ -1,0 +1,8 @@
+[
+ Budget { 
+Din budget: 300kr 
+BudgetID :1
+Dina kategorier : [Model.Category@e5b5504, Model.Category@6ea9fca5, Model.Category@42665c02, Model.Category@3f826505]
+Dina transaktioner: []
+] 
+]
