@@ -1,3 +1,6 @@
+import Controllers.TransactionsController;
+import Model.Budget;
+import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
 import org.junit.Test;
@@ -8,7 +11,12 @@ import java.util.List;
 
 import static org.junit.Assert.assertTrue;
 
+/**
+ * Testing for Category class. Everything is tested except the observer-related methods
+ */
+
 public class CategoryTest {
+
 
     Category c = new Category("Kategori", 1000);
     LocalDate d = LocalDate.now();
@@ -78,6 +86,7 @@ public class CategoryTest {
         int sa = c.getSpentAmount();
         assertTrue(sa == 100);
     }
+
 
 //Sort metoderna ska testat också
 

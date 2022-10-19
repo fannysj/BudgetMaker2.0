@@ -22,6 +22,7 @@ public class Budget {
      * @param budget the start amount of the budget
      * @param name the name of the budget
      * @param id the identification of the budget
+     * creates a BudgetModel
      */
 
     public Budget(int budget, String name, int id) {

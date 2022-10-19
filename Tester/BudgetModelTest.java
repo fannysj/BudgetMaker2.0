@@ -2,12 +2,13 @@ import Model.Budget;
 import Model.BudgetModel;
 import Model.Category;
 import org.junit.Test;
-
-
 import java.time.LocalDate;
 import java.util.List;
-
 import static org.junit.Assert.*;
+
+/**
+ * Testing for BudgetModel class. Everything is tested.
+ */
 
 public class BudgetModelTest {
 
@@ -30,33 +31,25 @@ public class BudgetModelTest {
     }
 
     @Test
-    public void testingGettersForLists(){
-        b.newCategory("Mat", 400);
-        b.createNewTransaction(50, "Sushi", "Gott", 2, d);
-        List cl = b.getCategoryList();
-        List tl = b.getTransactionList();
-        assertTrue(cl.size() == 5);
-        assertEquals(tl,b.transactions);
-    }
-
-    @Test
-    public void createCategoryAndAddToList(){
+    public void newCategoriesShouldBeAddedToList(){
         b.newCategory("Alkohol", 2000);
         b.newCategory("Godis", 1000);
-        assertTrue(b.categoryList.size() == 6); //Fyra hårkodade sen innan
+        List cl = b.getCategoryList();
+        assertTrue(cl.size() == 6); //Fyra hårkodade sen innan
 
     }
 
     @Test
-    public void createTransactionAndAddToList(){
+    public void newTransactionsShouldBeAddedToList(){
         b.createNewTransaction(50, "Sushi", "Gott", 2, d);
         b.createNewTransaction(70, "Jacka", "Fin", 3, d);
-        assertTrue(b.transactions.size() == 2);
+        List tl = b.getTransactionList();
+        assertTrue(tl.size() == 2);
 
     }
 
     @Test
-    public void calculatingSpentAmountForBudget(){
+    public void addingTransactionsShouldChangeSpentAmount(){
         b.createNewTransaction(50, "Sushi", "Gott", 2, d);
         b.createNewTransaction(50, "Jacka", "Fin", 3, d);
         b.addTemporaryTransactionsToCategoryTransactionList();
@@ -65,7 +58,7 @@ public class BudgetModelTest {
     }
 
     @Test
-    public void calculatingAmountLeftToSpend(){
+    public void addingTransactionShouldChangeAmountLeftToSpend(){
         b.createNewTransaction(50, "Jacka", "Fin", 3, d);
         b.addTemporaryTransactionsToCategoryTransactionList();
         int al = b.getAmountLeft();
@@ -74,8 +67,9 @@ public class BudgetModelTest {
 
     @Test
     public void gettingTheTotalOfCategoriesGoalAmount(){
-        b.categoryList.add(shopping);
-        b.categoryList.add(transport);
+        List cl = b.getCategoryList();
+        cl.add(shopping);
+        cl.add(transport);
         int tga = b.TotalGoalAmountOfCategories();
         assertTrue(tga == 5400); //goalAmount även från de hårdkodade kategorierna
 

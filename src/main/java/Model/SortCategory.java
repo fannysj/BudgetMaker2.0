@@ -13,7 +13,8 @@ import java.util.regex.PatternSyntaxException;
 
 public class SortCategory {
 
-    public List<Transaction> transactionsList;
+    public List<Transaction> transactionsList = new ArrayList<>();
+
 
     public void search(Category category, TextField searchbar) {
         List<Transaction> matches = new ArrayList<>();

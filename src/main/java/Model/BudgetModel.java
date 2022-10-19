@@ -10,9 +10,9 @@ import java.util.List;
  */
 
 public class BudgetModel {
-    public List<Category> categoryList = new ArrayList<>();
+    private List<Category> categoryList = new ArrayList<>();
 
-    public List<Transaction> transactions = new ArrayList<>();
+    private List<Transaction> transactions = new ArrayList<>();
 
     private int StartAmount;
     private int amountSpent = 0;
@@ -101,12 +101,12 @@ public class BudgetModel {
         return t;
     }
 
-    private void updateTransactionList() {
-        transactions.clear();
-        for(Category c : categoryList){
-            transactions.addAll(c.getTransactionsList());
-        }
-    }
+//    private void updateTransactionList() {
+//        transactions.clear();
+//        for(Category c : categoryList){
+//            transactions.addAll(c.getTransactionsList());
+//        }
+//    }
 
     /**
      * Adds temporary transactions to a transaction list that their specific category holds
