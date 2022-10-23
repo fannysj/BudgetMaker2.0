@@ -5,4 +5,11 @@ BudgetID :1
 Dina kategorier : [Model.Category@e5b5504, Model.Category@6ea9fca5, Model.Category@42665c02, Model.Category@3f826505]
 Dina transaktioner: []
 ] 
+][
+ Budget { 
+Din budget: 100kr 
+BudgetID :1
+Dina kategorier : [Model.Category@3b002532, Model.Category@7bcc29fc, Model.Category@319bcbf7, Model.Category@3f863a79]
+Dina transaktioner: []
+] 
 ]

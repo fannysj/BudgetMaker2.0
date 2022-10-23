@@ -71,7 +71,7 @@ public class BudgetModelTest {
         cl.add(shopping);
         cl.add(transport);
         int tga = b.TotalGoalAmountOfCategories();
-        assertTrue(tga == 5400); //goalAmount även från de hårdkodade kategorierna
+        assertTrue(tga == 300);
 
     }
 
