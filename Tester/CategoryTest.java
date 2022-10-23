@@ -1,6 +1,3 @@
-import Controllers.TransactionsController;
-import Model.Budget;
-import Model.BudgetModel;
 import Model.Category;
 import Model.Transaction;
 import org.junit.Test;
@@ -87,8 +84,6 @@ public class CategoryTest {
         assertTrue(sa == 100);
     }
 
-
-//Sort metoderna ska testat också
 
 }
 

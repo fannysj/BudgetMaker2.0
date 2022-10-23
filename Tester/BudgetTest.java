@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 
 /**
  * Testing the budget class. Since it is mostly a facade for BudgetModel we have not tested all the getters.
+ * We also didn't test the toString method since we see that it works by outprint.
  */
 
 public class BudgetTest {

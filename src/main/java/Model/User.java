@@ -7,24 +7,24 @@ import java.util.List;
 
 public class User {
 
-    private static User instance = new User();
+    public static User instance = new User();
 
-    private Budget budget;
+    public Budget budget;
 
-    private User(){
+    public User(){
     }
 
     public static User getInstance(){
         return instance;
     }
 
-    private List<Budget> BudgetList = new ArrayList<>();
+    public List<Budget> BudgetList = new ArrayList<>();
 
 
 
     public void createNewBudget(int value, String name) throws IOException {
 
-        GsonClass.readJSON(BudgetList);
+        //GsonClass.readJSON(BudgetList);
 
         int maxId = 0;
         try{
@@ -44,9 +44,9 @@ public class User {
 
     }
 
-    public void saveBudget() throws IOException {
-        GsonClass.SerializeBudgets();
-    }
+    //public void saveBudget() throws IOException {
+    //    GsonClass.SerializeBudgets();
+    //}
 
     public List<Budget> getBudgetList() {
         return BudgetList;
