@@ -110,7 +110,6 @@ public class Budget {
     public String toString () {
         return "\n Budget { \n" +
                 "Din budget: " + budget + "kr \n" +
-                "BudgetID :" + id + "\n" +
                 "Dina kategorier : " + getCategoryList()+ "\n" +
                 "Dina transaktioner: " + model.getAllTransactions()+ "\n" +
                 "] \n" ;

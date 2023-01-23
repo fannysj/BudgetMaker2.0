@@ -57,12 +57,11 @@ public class TransactionView {
 //        }
 //    }
 
-    public void addTransactionToHistoryFlowPane(AnchorPane pane, List<Transaction> list, TransactionsController controller){
-    pane.getChildren().clear();
+    public void addTransactionToHistoryFlowPane(FlowPane flow, List<Transaction> list, TransactionsController controller){
         Collections.reverse(list);
         for (Transaction transaction: list){
             TransactionHistoryItem newHistoryList = new TransactionHistoryItem(transaction, controller);
-            pane.getChildren().add(newHistoryList);
+            flow.getChildren().add(newHistoryList);
         }
     }
 

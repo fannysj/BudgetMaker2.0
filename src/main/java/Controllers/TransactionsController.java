@@ -121,7 +121,7 @@ public class TransactionsController implements Initializable, Observer {
     private Button homeButton;
 
     @FXML
-    private AnchorPane scrollAnchorpane;
+    private FlowPane scrollAnchorpane;
 
 
 
@@ -208,7 +208,7 @@ public class TransactionsController implements Initializable, Observer {
      * Adding transaction to overview with the latest transactions
      */
     public void addTransactionToHistoryFlowPane(){
-        transactionView.addTransactionToHistoryFlowPane(scrollAnchorpane, currentBudget.getTransactionList(), this);
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
     }
 
 
@@ -289,7 +289,6 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     public void switchToHomePage(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         overviewView.switchToHomePage(mouseEvent);
-        GsonClass.SerializeBudgets();
     }
 
 
