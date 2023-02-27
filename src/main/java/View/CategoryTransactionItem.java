@@ -1,6 +1,8 @@
 package View;
 
 import Controllers.TransactionsController;
+import Model.Transaction;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,7 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
-import java.time.LocalDate;
 
 /**
  * This class has methods that handle displaying and dynamically changing our categorytransactionitem FXML
@@ -27,9 +28,11 @@ public class CategoryTransactionItem extends AnchorPane {
     @FXML
     private Label transactionNote;
 
+    Transaction transaction;
+
     TransactionsController controller;
 
-    public CategoryTransactionItem(String name, LocalDate date, String amount, String note, TransactionsController controller){
+    public CategoryTransactionItem(Transaction t, TransactionsController controller){
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/categorytransactionitem.fxml"));
         myLoader.setRoot(this);
         myLoader.setController(this);
@@ -41,12 +44,17 @@ public class CategoryTransactionItem extends AnchorPane {
         }
 
         this.controller = controller;
+        this.transaction = t;
 
-        this.transactionName.setText(name);
-        this.transactionDate.setText(String.valueOf(date));
-        this.transactionAmount.setText(String.valueOf(amount));
-        this.transactionNote.setText(note);
+        this.transactionName.setText(t.getName());
+        this.transactionDate.setText(String.valueOf(t.getDate()));
+        this.transactionAmount.setText(String.valueOf(t.getTransactionAmount()));
+        this.transactionNote.setText(t.getNotes());
 
+    }
+
+    private Transaction getTransaction(){
+        return this.transaction;
     }
 
 
@@ -54,4 +62,5 @@ public class CategoryTransactionItem extends AnchorPane {
     public Node getStyleableNode() {
         return super.getStyleableNode();
     }
+
 }

@@ -1,6 +1,6 @@
 package View;
 
-import Controllers.BudgetModelController;
+import Controllers.BudgetController;
 import Model.Category;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,9 +24,9 @@ public class CategoryListItem extends AnchorPane {
     private int amountChanged = 0;
 
     private Category category;
-    private BudgetModelController controller;
+    private BudgetController controller;
 
-    public CategoryListItem(Category category, BudgetModelController controller){
+    public CategoryListItem(Category category, BudgetController controller){
 
         FXMLLoader myLoader = new FXMLLoader(getClass().getResource("/Categoryinput.fxml"));
         myLoader.setRoot(this);

@@ -66,6 +66,10 @@ public class Category implements Observable {
         return new Transaction(amount, name, note, date, this);
     }
 
+    public ExtraAmount newExtra(int amount){
+        return new ExtraAmount(amount, this);
+    }
+
     /**
      * Adds a new transaction to the list of transactions
      * @param expense The transaction to be added
@@ -89,11 +93,16 @@ public class Category implements Observable {
     }
 
 
+
+    public void updateSpentAmountExtraMoney(int extraAmount){
+        spentAmount = spentAmount + extraAmount;
+    }
+
+
     public int AmountLeftToSpend(){
         updateSpentAmount();
         int amountLeft = (int) (getGoalAmount()-getSpentAmount());
         if (amountLeft<0){
-            //System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
         }
 
         return amountLeft;

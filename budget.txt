@@ -5,4 +5,100 @@ BudgetID :1
 Dina kategorier : [Model.Category@e5b5504, Model.Category@6ea9fca5, Model.Category@42665c02, Model.Category@3f826505]
 Dina transaktioner: []
 ] 
+][
+ Budget { 
+Din budget: 234kr 
+Dina kategorier : [Model.Category@658ad1f6, Model.Category@1772054e, Model.Category@e259d37, Model.Category@26eddd97]
+Dina transaktioner: []
+] 
+][
+ Budget { 
+Din budget: 12kr 
+Dina kategorier : [Model.Category@52e94ad1, Model.Category@2951a4b, Model.Category@69c08b17, Model.Category@4ed69092]
+Dina transaktioner: [Model.Transaction@56f1e45b, Model.Transaction@7c9cfb8c, Model.Transaction@11e94f3b, Model.Transaction@6b411f94, Model.Transaction@32cbed9b, Model.Transaction@299020d5, Model.Transaction@725b324b]
+] 
+][
+ Budget { 
+Din budget: 12kr 
+Dina kategorier : [Model.Category@52e94ad1, Model.Category@2951a4b, Model.Category@69c08b17, Model.Category@4ed69092]
+Dina transaktioner: [Model.Transaction@56f1e45b, Model.Transaction@7c9cfb8c, Model.Transaction@11e94f3b, Model.Transaction@6b411f94, Model.Transaction@32cbed9b, Model.Transaction@299020d5, Model.Transaction@725b324b]
+] 
+, 
+ Budget { 
+Din budget: 1kr 
+Dina kategorier : [Model.Category@39c8c408, Model.Category@2505b64e, Model.Category@7f48d3fb, Model.Category@148ea4a4]
+Dina transaktioner: [Model.Transaction@6b99dab9, Model.Transaction@6326a642, Model.Transaction@5ac876d6, Model.Transaction@3b8252af]
+] 
+][
+ Budget { 
+Din budget: 123kr 
+Dina kategorier : [Model.Category@700f1328, Model.Category@401cd89, Model.Category@1febd1ec, Model.Category@53757b11]
+Dina transaktioner: [Model.Transaction@5beba404, Model.Transaction@510c5775]
+] 
+][
+ Budget { 
+Din budget: 13kr 
+Dina kategorier : [Model.Category@5c5c93f9, Model.Category@213262d2, Model.Category@4c5b7d41, Model.Category@2507fd1d]
+Dina transaktioner: [Model.Transaction@458e2925, Model.Transaction@796d21b2, Model.Transaction@3f097a70, Model.Transaction@3d5a5d47, Model.Transaction@56ae93a2, Model.Transaction@47eea69e]
+] 
+][
+ Budget { 
+Din budget: 13kr 
+Dina kategorier : [Model.Category@5c5c93f9, Model.Category@213262d2, Model.Category@4c5b7d41, Model.Category@2507fd1d]
+Dina transaktioner: [Model.Transaction@458e2925, Model.Transaction@796d21b2, Model.Transaction@3f097a70, Model.Transaction@3d5a5d47, Model.Transaction@56ae93a2, Model.Transaction@47eea69e]
+] 
+, 
+ Budget { 
+Din budget: 12kr 
+Dina kategorier : [Model.Category@7d21d8d8, Model.Category@53dda322, Model.Category@6c0b346c, Model.Category@4c42e616]
+Dina transaktioner: [Model.Transaction@5d46ff02, Model.Transaction@194b36c0, Model.Transaction@2a0c1f5f, Model.Transaction@7d321fcd, Model.Transaction@5f3d3ec6, Model.Transaction@30229ab3]
+] 
+][
+ Budget { 
+Din budget: 123kr 
+Dina kategorier : [Model.Category@578e8e47, Model.Category@33012166, Model.Category@728eb7e2, Model.Category@676343b7]
+Dina transaktioner: [Model.Transaction@1e5d867e, Model.Transaction@60a4f05d, Model.Transaction@1b36e504, Model.Transaction@1f133ee]
+] 
+][
+ Budget { 
+Din budget: 123kr 
+Dina kategorier : [Model.Category@6cf328fd, Model.Category@2103c2d3, Model.Category@2542bb3c, Model.Category@3d5c7032]
+Dina transaktioner: [Model.Transaction@771da804, Model.Transaction@1e5d867e, Model.Transaction@60a4f05d, Model.Transaction@1b36e504]
+] 
+][
+ Budget { 
+Din budget: 123kr 
+Dina kategorier : [Model.Category@104280f7, Model.Category@758db16f, Model.Category@6cf328fd, Model.Category@2103c2d3]
+Dina transaktioner: [Model.Transaction@2542bb3c, Model.Transaction@3d5c7032, Model.Transaction@489d03a4, Model.Transaction@77b7453e]
+] 
+][
+ Budget { 
+Din budget: 1000kr 
+Dina kategorier : [Model.Category@6c5fafd2, Model.Category@6026b3ca, Model.Category@29a6209e, Model.Category@5478a633]
+Dina transaktioner: [Model.Transaction@45c8b251, Model.Transaction@1025f1c1]
+] 
+][
+ Budget { 
+Din budget: 1000kr 
+Dina kategorier : [Model.Category@70e0f6f7, Model.Category@2a4632c4, Model.Category@2052de0e, Model.Category@42da220d]
+Dina transaktioner: [Model.Transaction@35fa23ef]
+] 
+][
+ Budget { 
+Din budget: 123kr 
+Dina kategorier : [Model.Category@508ece67, Model.Category@6d29a764, Model.Category@17034723, Model.Category@7235abd1]
+Dina transaktioner: [Model.Transaction@54eebe06]
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@194f23a7, Model.Category@5f310cc4, Model.Category@722f6198, Model.Category@a6ed2ed]
+Dina transaktioner: []
+] 
+][
+ Budget { 
+Din budget: 1000kr 
+Dina kategorier : [Model.Category@64cc3dd3, Model.Category@13293e5f, Model.Category@eb08d5c, Model.Category@518ec775]
+Dina transaktioner: []
+] 
 ]

@@ -46,4 +46,6 @@ public class TransactionHistoryItem extends AnchorPane {
         amountLabel.setText(String.valueOf(transaction.getTransactionAmount()));
     }
 
+
+
 }

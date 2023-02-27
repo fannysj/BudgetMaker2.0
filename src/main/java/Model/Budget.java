@@ -1,7 +1,6 @@
 package Model;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -89,11 +88,6 @@ public class Budget {
         this.budget = budget;
     }
 
-//    public List<Transaction> getAllTransactions() {
-//
-//    }
-
-
     /**
      * Adds a transaction to a specific category's transactions list
      */
@@ -110,17 +104,23 @@ public class Budget {
         return this.model.createNewTransaction(amount, name, note, i, date);
     }
 
+    //HÄR
+    public ExtraAmount createNewExtra(int amount, int i){
+        return this.model.createNewExtra(amount, i);
+    }
+
+
+
     @Override
     public String toString () {
         return "\n Budget { \n" +
                 "Din budget: " + budget + "kr \n" +
-                "BudgetID :" + id + "\n" +
                 "Dina kategorier : " + getCategoryList()+ "\n" +
                 "Dina transaktioner: " + model.getAllTransactions()+ "\n" +
                 "] \n" ;
     }
 
-    public List<Transaction> getTransactionList() {
-        return this.model.getTransactionList();
+    public void deleteTransaction(Transaction t){
+        this.model.deleteTransaction(t);
     }
 }

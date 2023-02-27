@@ -2,31 +2,28 @@ package View;
 
 import Controllers.TransactionsController;
 import Model.Category;
-import Model.Transaction;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 /**
  * This class has methods that handle displaying and dynamically changing our Overview
  */
 
 public class OverviewView extends AnchorPane{
+
+
 
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
@@ -53,6 +50,13 @@ public class OverviewView extends AnchorPane{
         }
     }
 
+    public void populateExtraChoiceBox(ChoiceBox choiceBox, List<Category> list) {
+        choiceBox.getItems().clear();
+        for(Category c: list){
+            choiceBox.getItems().add(c.getName());
+        }
+    }
+
     public void updateBudgetDisplay(Label left, Label spent, int amountleft, int currentamount){
         left.setText("" + amountleft + " kr");
         spent.setText("" + currentamount + " kr");
@@ -73,6 +77,8 @@ public class OverviewView extends AnchorPane{
     }
 
 
-
-
+    public void clearInputExtraAmount(TextField amount, ChoiceBox cate) {
+        amount.clear();
+        cate.getSelectionModel().clearAndSelect(0);
+    }
 }

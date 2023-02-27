@@ -7,11 +7,9 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.Flow;
 
 /**
  * This class has methods that handle displaying and dynamically changing our transaction view
@@ -57,7 +55,7 @@ public class TransactionView {
 //        }
 //    }
 
-    public void addTransactionToHistoryFlowPane(AnchorPane pane, List<Transaction> list, TransactionsController controller){
+    public void addTransactionToHistoryFlowPane(FlowPane pane, List<Transaction> list, TransactionsController controller){
     pane.getChildren().clear();
         Collections.reverse(list);
         for (Transaction transaction: list){
@@ -70,7 +68,7 @@ public class TransactionView {
         pane.getChildren().clear();
         Collections.reverse(list);
         for (Transaction t : list){
-            CategoryTransactionItem transactionListItem = new CategoryTransactionItem(t.getName(),t.getDate(),String.valueOf(t.getTransactionAmount()),t.getNotes(), controller);
+            CategoryTransactionItem transactionListItem = new CategoryTransactionItem(t, controller);
             pane.getChildren().add(transactionListItem);
         }
     }
@@ -81,6 +79,7 @@ public class TransactionView {
             choiceBox.getItems().add(c.getName());
         }
     }
+
 
     public void readTransactionView(Transaction transaction, TextField name, TextField amount, TextField note){
         name.setText(transaction.getName());

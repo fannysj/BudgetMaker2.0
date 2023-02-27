@@ -1,6 +1,5 @@
 package Model;
 
-import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +13,11 @@ public class BudgetModel {
     public List<Category> categoryList = new ArrayList<>();
 
     public List<Transaction> transactions = new ArrayList<>();
+    public List<ExtraAmount> extras = new ArrayList<>();
 
     private int StartAmount;
     private int amountSpent = 0;
-    private int amountLeft = 0;
+
 
     /**
      * Constructor of BudgetModel
@@ -106,10 +106,34 @@ public class BudgetModel {
         return totalGoalAmount;
     }
 
+
     public Transaction createNewTransaction (int amount, String name, String note, int i, LocalDate date) {
         Transaction t = getCategory(i).newTransaction(amount,name,note,date);
         transactions.add(t);
         return t;
+    }
+
+    //HÄR
+    public ExtraAmount createNewExtra(int amount, int i){
+        ExtraAmount e = getCategory(i).newExtra(amount);
+        extras.add(e);
+        return e;
+    }
+
+
+    /**
+     * detele transaction from temporary transactionlist
+     * @param t transaction that going to be deleted
+     */
+
+    public void deleteTransaction(Transaction t){
+        for(Transaction tr : transactions){
+            if (t == tr){
+                transactions.remove(tr);
+            }
+            t.getCategory().notifyObservers();
+        }
+
     }
 
 
