@@ -3,6 +3,7 @@ package Controllers;
 
 import Model.Budget;
 import Model.Category;
+import Model.UserHandler;
 import View.BudgetView;
 import View.CategoryListItem;
 import View.CategoryOverviewItem;
@@ -37,7 +38,6 @@ public class BudgetModelController implements Initializable {
 
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
-    User currentUser = User.getInstance();
     Budget currentBudget;
 
     TransactionsController controller;
@@ -113,15 +113,12 @@ public class BudgetModelController implements Initializable {
      */
     @FXML
     public void setNewBudgetModel() {
-        try {
-            currentUser.createNewBudget(Integer.parseInt(EnterBudget.getText()),budgetID.getText());
-            currentBudget = currentUser.getBudget();
+            UserHandler.getInstance().getCurrentUser().createNewBudget(Integer.parseInt(EnterBudget.getText()),budgetID.getText());
+            currentBudget = UserHandler.getInstance().getCurrentUser().getBudget();
             String str = EnterBudget.getText();
             budgetAmount.setText(str);
             changeToBudgetingSide();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+
 
 
     }
@@ -175,7 +172,7 @@ public class BudgetModelController implements Initializable {
             homePage.setVisible(false);
             pastBudget.toFront();
             pastBudget.setVisible(true);
-            budgetView.addBudgetToFlowPane(budgetFlowPane, currentUser.getBudget(), this);
+            budgetView.addBudgetToFlowPane(budgetFlowPane, UserHandler.getInstance().getCurrentUser().getBudget(), this);
 
         }
 

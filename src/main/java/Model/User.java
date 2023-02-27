@@ -7,22 +7,20 @@ import java.util.List;
 
 public class User {
 
-    public static User instance = new User();
-
     public Budget budget;
 
-    public User(){
-    }
-
-    public static User getInstance(){
-        return instance;
-    }
+    public int id;
 
     public List<Budget> BudgetList = new ArrayList<>();
 
 
 
-    public void createNewBudget(int value, String name) throws IOException {
+    public User(int id, int startValue, String startName){
+        this.id = id;
+        this.createNewBudget(startValue, startName);
+    }
+
+    public void createNewBudget(int value, String name) {
 
         //GsonClass.readJSON(BudgetList);
 

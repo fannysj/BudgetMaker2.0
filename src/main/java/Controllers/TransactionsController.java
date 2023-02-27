@@ -26,12 +26,6 @@ import java.util.ResourceBundle;
 public class TransactionsController implements Initializable, Observer {
 
 
-
-
-
-
-    User currentUser = User.getInstance();
-
     Budget currentBudget;
 
     OverviewView overviewView = new OverviewView();
@@ -135,7 +129,7 @@ public class TransactionsController implements Initializable, Observer {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        currentBudget = currentUser.getBudget();
+        currentBudget = UserHandler.getInstance().getCurrentUser().getBudget();
         updateBudgetDisplay();
         updateCategoryListItem();
         for(Category c : currentBudget.getCategoryList()){
