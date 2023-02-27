@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
@@ -19,13 +20,67 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetModelController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #a8a2f8;" stylesheets="BudgetMaker.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.BudgetController">
    <effect>
       <ColorAdjust brightness="0.19" />
    </effect>
    <children>
-      <StackPane layoutX="-5.0" prefHeight="610.0" prefWidth="802.0">
+      <StackPane layoutX="-5.0" prefHeight="657.0" prefWidth="904.0">
          <children>
+            <AnchorPane fx:id="splitBudgetPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="956.0">
+               <children>
+                  <ImageView fitHeight="687.0" fitWidth="1002.0" layoutX="-75.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/plant-growing-nature.png" />
+                     </image>
+                     <effect>
+                        <ColorAdjust brightness="-0.63" contrast="-0.19" />
+                     </effect>
+                  </ImageView>
+
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1f1787" height="538.0" layoutX="25.0" layoutY="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="543.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1d211987" height="144.0" layoutX="575.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="212.0" />
+                  <ImageView fitHeight="125.0" fitWidth="267.0" layoutX="559.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/kvaravbudget.png" />
+                     </image>
+                  </ImageView>
+                  <Text fill="#ffffffe4" layoutX="595.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kvar av din budget:">
+                     <font>
+                        <Font name="Avenir Book" size="20.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="budgetAmount" alignment="CENTER" layoutX="568.0" layoutY="111.0" prefHeight="87.0" prefWidth="212.0" text="1000" textAlignment="CENTER" textFill="WHITE">
+
+                     <font>
+                        <Font name="Avenir Book" size="41.0" />
+                     </font>
+                  </Label>
+                  <Text fill="#ffffffd9" layoutX="50.0" layoutY="106.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Budgetera ut dina pengar" wrappingWidth="371.8437891749177">
+                     <font>
+                        <Font name="Avenir Book" size="32.0" />
+                     </font>
+                  </Text>
+                  <Button fx:id="klarKnapp" alignment="TOP_LEFT" layoutX="589.0" layoutY="538.0" mnemonicParsing="false" onMouseClicked="#switchToOverview" prefHeight="43.0" prefWidth="107.0" style="-fx-border-radius: fff; -fx-background-color: transparent; -fx-border-color: ffff; -fx-background-radius: 20px;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Klar">
+                     <font>
+                        <Font name="Avenir Book" size="26.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="335.0" layoutY="545.0" mnemonicParsing="false" onMouseClicked="#openFixedcost" prefHeight="39.0" prefWidth="218.0" style="-fx-background-color: transparent; -fx-border-color: ffff;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Lägg till fast utgift" />
+                  <AnchorPane layoutX="25.0" layoutY="135.0" prefHeight="400.0" prefWidth="535.0">
+                     <children>
+                        <FlowPane fx:id="CategoryDivideFlowpane" layoutX="7.0" layoutY="8.0" prefHeight="393.0" prefWidth="528.0" styleClass="rectangle" stylesheets="@BudgetMaker.css" />
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="goBack" layoutX="27.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#backToSplitBudget" prefHeight="48.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-border-color: ffff;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Tillbaka" textFill="#0000000a" />
+                  <Line endX="100.0" layoutX="275.0" layoutY="126.0" startX="-219.5" stroke="#ffffffb2" />
+                  <Text fx:id="errorMessage" fill="#eb4949e3" layoutX="584.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Håll dig till budgeten!" visible="false">
+                     <font>
+                        <Font name="Avenir Book" size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="pastBudget" prefHeight="200.0" prefWidth="200.0">
                <children>
                   <ImageView fitHeight="681.0" fitWidth="1074.0" layoutX="-114.0" pickOnBounds="true" preserveRatio="true">
@@ -70,7 +125,7 @@
                         <Insets />
                      </opaqueInsets>
                   </Button>
-                  <TextField fx:id="EnterBudget" layoutX="262.0" layoutY="283.0" prefHeight="44.0" prefWidth="253.0" promptText="ex. 1000" styleClass="text" stylesheets="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/BudgetMaker.css">
+                  <TextField fx:id="EnterBudget" layoutX="262.0" layoutY="283.0" prefHeight="44.0" prefWidth="253.0" promptText="ex. 1000" styleClass="text" stylesheets="@BudgetMaker.css">
                      <font>
                         <Font name="SukhumvitSet-Thin" size="20.0" />
                      </font>
@@ -95,57 +150,20 @@
                   </Text>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="splitBudgetPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="675.0" prefWidth="956.0">
+            <AnchorPane fx:id="fixedcostPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="950.0">
                <children>
-                  <ImageView fitHeight="687.0" fitWidth="1002.0" layoutX="-75.0" layoutY="-46.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@images/plant-growing-nature.png" />
-                     </image>
-                     <effect>
-                        <ColorAdjust brightness="-0.63" contrast="-0.19" />
-                     </effect>
-                  </ImageView>
-
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1b1f1787" height="538.0" layoutX="25.0" layoutY="60.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.0" styleClass="rectangle" width="543.0" />
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1d211987" height="144.0" layoutX="575.0" layoutY="61.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="212.0" />
-                  <ImageView fitHeight="125.0" fitWidth="267.0" layoutX="559.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../../../BudgetMaker2.0/src/main/resources/com/example/budgetmaker2_0/images/kvaravbudget.png" />
-                     </image>
-                  </ImageView>
-                  <Text fill="#ffffffe4" layoutX="595.0" layoutY="112.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kvar av din budget:">
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="567.0" layoutX="-10.0" layoutY="1.0" stroke="BLACK" strokeType="INSIDE" width="761.0" />
+                  <Text layoutX="64.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lägg till fasta utgifter!">
                      <font>
-                        <Font name="Avenir Book" size="20.0" />
+                        <Font size="28.0" />
                      </font>
                   </Text>
-                  <Label fx:id="budgetAmount" alignment="CENTER" layoutX="568.0" layoutY="111.0" prefHeight="87.0" prefWidth="212.0" text="1000" textAlignment="CENTER" textFill="WHITE">
-
-                     <font>
-                        <Font name="Avenir Book" size="41.0" />
-                     </font>
-                  </Label>
-                  <Text fill="#ffffffd9" layoutX="50.0" layoutY="106.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Budgetera ut dina pengar" wrappingWidth="495.36707408702705">
-                     <font>
-                        <Font name="Avenir Book" size="32.0" />
-                     </font>
-                  </Text>
-                  <Button fx:id="klarKnapp" alignment="TOP_LEFT" layoutX="589.0" layoutY="538.0" mnemonicParsing="false" onMouseClicked="#switchToOverview" prefHeight="43.0" prefWidth="107.0" style="-fx-border-radius: fff; -fx-background-color: transparent; -fx-border-color: ffff; -fx-background-radius: 20px;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Klar">
-                     <font>
-                        <Font name="Avenir Book" size="26.0" />
-                     </font>
-                  </Button>
-                  <AnchorPane layoutX="25.0" layoutY="135.0" prefHeight="400.0" prefWidth="535.0">
-                     <children>
-                        <FlowPane fx:id="CategoryDivideFlowpane" layoutX="7.0" layoutY="8.0" prefHeight="393.0" prefWidth="528.0" styleClass="rectangle" stylesheets="@BudgetMaker.css" />
-                     </children>
-                  </AnchorPane>
-                  <Button fx:id="goBack" layoutX="27.0" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#backToSplitBudget" prefHeight="48.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-border-color: ffff;" styleClass="btn" stylesheets="@BudgetMaker.css" text="Tillbaka" textFill="#0000000a" />
-                  <Line endX="100.0" layoutX="275.0" layoutY="126.0" startX="-219.5" stroke="#ffffffb2" />
-                  <Text fx:id="errorMessage" fill="#eb4949e3" layoutX="584.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Håll dig till budgeten!" visible="false">
-                     <font>
-                        <Font name="Avenir Book" size="20.0" />
-                     </font>
-                  </Text>
+                  <Text layoutX="94.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Summa:" />
+                  <Text layoutX="100.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Namn:" />
+                  <TextField fx:id="fixedCostAmount" layoutX="172.0" layoutY="115.0" />
+                  <TextField fx:id="fixedCostName" layoutX="172.0" layoutY="157.0" />
+                  <Button layoutX="666.0" layoutY="502.0" mnemonicParsing="false" onMouseClicked="#addFixedCost" text="Spara" />
+                  <CheckBox fx:id="checkbox" layoutX="131.0" layoutY="212.0" mnemonicParsing="false" text="Återkommande" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="homePage" minWidth="-Infinity" prefHeight="615.0" prefWidth="809.0">

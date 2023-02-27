@@ -24,7 +24,6 @@ public class TransactionOverviewItem {
 
     public TransactionOverviewItem(TransactionsController controller, Category c, Label title ,Label spent, Label left){
         this.root = controller;
-
         this.category = c;
         this.title = title;
         this.spent = spent;

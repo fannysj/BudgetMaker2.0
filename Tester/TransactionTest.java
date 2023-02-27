@@ -1,4 +1,5 @@
 import Model.Category;
+import Model.FixedCost;
 import Model.Transaction;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -13,6 +14,14 @@ public class TransactionTest {
     Category c = new Category("Livsmedel", 700);
     LocalDate d = LocalDate.now();
     Transaction t = new Transaction(50, "Godis", "Snacks", d, c);
+    FixedCost fixedCost = new FixedCost("Hyra", 23, true);
+
+    @Test
+    public void testingGettersFixed(){
+        assertSame(50, fixedCost.getFixedcostAmount());
+        assertSame("Godis", fixedCost.getFixedcostName());
+    }
+
 
     @Test
     public void testingGetters(){

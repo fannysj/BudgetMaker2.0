@@ -1,19 +1,19 @@
-package com.example.budgetmaker2_0;
+package Model;
 
 import Model.Budget;
-import Model.GsonClass;
-import com.google.gson.Gson;
+import Model.TextClass;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class User {
+public class User{
 
     private static User instance = new User();
 
     private Budget budget;
+    private List<FixedCost> fixedCosts;
 
     private User(){
     }
@@ -28,7 +28,7 @@ public class User {
 
     public void createNewBudget(int value, String name) throws IOException {
 
-        GsonClass.readFromFile(BudgetList);
+        TextClass.readFromFile(BudgetList);
 
         int maxId = 0;
         try{
@@ -37,7 +37,7 @@ public class User {
                     maxId = b.getId();
             }
         }catch (NullPointerException e){
-            System.out.println("FROM CREATE: " +e.getMessage());
+            e.getMessage();
         }
 
         budget = new Budget(value, name, maxId+1);
@@ -48,9 +48,9 @@ public class User {
 
     }
 
-    public void saveBudget() throws IOException {
-        GsonClass.SerializeBudgets();
-    }
+    //public void saveBudget() throws IOException {
+    //    TextClass.SerializeBudgets();
+   // }
 
     public List<Budget> getBudgetList() {
         return BudgetList;

@@ -1,9 +1,7 @@
 package View;
 
-import Controllers.BudgetModelController;
-import Controllers.TransactionsController;
+import Controllers.BudgetController;
 import Model.Budget;
-import Model.Transaction;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -23,11 +21,11 @@ public class BudgetListItem extends AnchorPane {
     @FXML
     private Label listItemBudgetIncome;
 
-    private BudgetModelController parentController;
+    private BudgetController parentController;
     private Budget budget;
 
 
-    public BudgetListItem(Budget budget, BudgetModelController budgetcontroller){
+    public BudgetListItem(Budget budget, BudgetController budgetcontroller){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/budgetlistitem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);

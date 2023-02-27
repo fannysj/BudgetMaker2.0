@@ -18,6 +18,10 @@ public class Budget {
 
     BudgetModel model;
 
+    FixedCost fixedCost;
+    private List<FixedCost> fixedCosts;
+
+
     /**
      * Constructor of budget, we set the parameters through user input
      *
@@ -31,11 +35,24 @@ public class Budget {
         this.budget = budget;
         this.name = name;
         this.id = id;
+        this.fixedCosts = new ArrayList<>();
+
         createBudgetModel();
+    }
+
+
+    public void addFixedCost(FixedCost fixedCost) {
+        this.fixedCosts.add(fixedCost);
+    }
+
+
+    public List<FixedCost> getFixedCosts() {
+        return this.fixedCosts;
     }
 
     private void createBudgetModel() {
         this.model = new BudgetModel(this.budget);
+
     }
 
 
@@ -89,11 +106,6 @@ public class Budget {
         this.budget = budget;
     }
 
-//    public List<Transaction> getAllTransactions() {
-//
-//    }
-
-
     /**
      * Adds a transaction to a specific category's transactions list
      */
@@ -110,17 +122,18 @@ public class Budget {
         return this.model.createNewTransaction(amount, name, note, i, date);
     }
 
+
     @Override
     public String toString () {
         return "\n Budget { \n" +
                 "Din budget: " + budget + "kr \n" +
-                "BudgetID :" + id + "\n" +
                 "Dina kategorier : " + getCategoryList()+ "\n" +
                 "Dina transaktioner: " + model.getAllTransactions()+ "\n" +
+                "Dina återkommande fasta utgifter" +  (FixedCost.reccuringfixedCostList + "kr") +"\n" +
                 "] \n" ;
     }
 
-    public List<Transaction> getTransactionList() {
-        return this.model.getTransactionList();
+    public void deleteTransaction(Transaction t){
+        this.model.deleteTransaction(t);
     }
 }

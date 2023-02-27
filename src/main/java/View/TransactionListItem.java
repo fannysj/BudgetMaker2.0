@@ -1,8 +1,6 @@
 package View;
 
-import Controllers.BudgetModelController;
 import Controllers.TransactionsController;
-import Model.Category;
 import Model.Transaction;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -12,7 +10,6 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 /**
  * This class has methods that handle displaying and dynamically changing our transactionlistitem FXML
@@ -113,7 +110,9 @@ public class TransactionListItem extends AnchorPane {
 
     @FXML
     protected void onClick(Event event){
+        parentController.deleteTransaction(this.getTransaction());
         parentController.openDetailTransaction(transaction);
         parentController.removeTransactionFromFlowPane(this);
+
     }
 }

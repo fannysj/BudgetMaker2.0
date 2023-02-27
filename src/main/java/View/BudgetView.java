@@ -1,11 +1,8 @@
 package View;
 
-import Controllers.BudgetModelController;
+import Controllers.BudgetController;
 import Model.Budget;
-import Model.Transaction;
-import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 
 import java.util.ArrayList;
@@ -19,7 +16,7 @@ public class BudgetView {
     private ArrayList<BudgetListItem> budgetListArray = new ArrayList<>();
 
 
-    public void addBudgetToFlowPane(FlowPane pane, Budget b, BudgetModelController controller) {
+    public void addBudgetToFlowPane(FlowPane pane, Budget b, BudgetController controller) {
         BudgetListItem budgetListItem = new BudgetListItem(b, controller);
         budgetListArray.add(budgetListItem);
         pane.getChildren().add(budgetListItem);

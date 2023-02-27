@@ -29,6 +29,7 @@ public class Transaction {
      * @param name  name of transaction
      * @param notes note of the transaction
      * @param date  date of the transaction
+     * @param c transactions category
      */
 
 

@@ -1,7 +1,9 @@
 package View;
 
 import Controllers.TransactionsController;
+import Model.BudgetModel;
 import Model.Category;
+import Model.FixedCost;
 import Model.Transaction;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +31,9 @@ import java.util.ResourceBundle;
 public class OverviewView extends AnchorPane{
 
 
+
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
+    public FixedCost totalCost;
 
 
 
@@ -53,10 +57,17 @@ public class OverviewView extends AnchorPane{
         }
     }
 
+
     public void updateBudgetDisplay(Label left, Label spent, int amountleft, int currentamount){
-        left.setText("" + amountleft + " kr");
+        int totalCost = FixedCost.getTotalCost();
+        int totalrecurringCost = FixedCost.getTotalrecurringCost();
+        left.setText("" + (amountleft - totalCost) + " kr");
         spent.setText("" + currentamount + " kr");
+
     }
+    //vill att den nya listan med fasta utgifter (skapad i en budget) ska subtraheras samt fasta utgifter som är
+    //återkommande
+
 
     public void setBackToOverview(AnchorPane anchor, SplitPane split) {
         anchor.toFront();
@@ -71,8 +82,5 @@ public class OverviewView extends AnchorPane{
             c.updateProgressBar();
         }
     }
-
-
-
 
 }

@@ -87,37 +87,14 @@ public class Category implements Observable {
         }
 
     }
-
-
     public int AmountLeftToSpend(){
         updateSpentAmount();
         int amountLeft = (int) (getGoalAmount()-getSpentAmount());
         if (amountLeft<0){
-            //System.out.println("Du överstiger ditt mål med " + -amountLeft + " kr");
         }
 
         return amountLeft;
     }
-
-
-//    //Sort transaction
-//    public void sortByAmount() {
-//        Collections.sort(transactionsList, new Comparator<Transaction>() {
-//            public int compare(Transaction t1, Transaction t2) {
-//                return Double.compare(t1.getTransactionAmount(), t2.getTransactionAmount());
-//            }
-//        });
-//
-//    }
-
-//    public void sortByDate(){
-//        Collections.sort(transactionsList, new Comparator<Transaction>() {
-//            @Override
-//            public int compare(Transaction o1, Transaction o2) {
-//                return o1.getDate().compareTo(o2.getDate());
-//            }
-//        });
-//    }
 
     public void deleteTransactionFromList(){
         transactionsList.remove(transactionsList.size()-1);

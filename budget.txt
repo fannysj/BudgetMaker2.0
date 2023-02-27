@@ -5,4 +5,613 @@ BudgetID :1
 Dina kategorier : [Model.Category@e5b5504, Model.Category@6ea9fca5, Model.Category@42665c02, Model.Category@3f826505]
 Dina transaktioner: []
 ] 
+][
+ Budget { 
+Din budget: 234kr 
+Dina kategorier : [Model.Category@658ad1f6, Model.Category@1772054e, Model.Category@e259d37, Model.Category@26eddd97]
+Dina transaktioner: []
+] 
+][
+ Budget { 
+Din budget: 12kr 
+Dina kategorier : [Model.Category@52e94ad1, Model.Category@2951a4b, Model.Category@69c08b17, Model.Category@4ed69092]
+Dina transaktioner: [Model.Transaction@56f1e45b, Model.Transaction@7c9cfb8c, Model.Transaction@11e94f3b, Model.Transaction@6b411f94, Model.Transaction@32cbed9b, Model.Transaction@299020d5, Model.Transaction@725b324b]
+] 
+][
+ Budget { 
+Din budget: 12kr 
+Dina kategorier : [Model.Category@52e94ad1, Model.Category@2951a4b, Model.Category@69c08b17, Model.Category@4ed69092]
+Dina transaktioner: [Model.Transaction@56f1e45b, Model.Transaction@7c9cfb8c, Model.Transaction@11e94f3b, Model.Transaction@6b411f94, Model.Transaction@32cbed9b, Model.Transaction@299020d5, Model.Transaction@725b324b]
+] 
+, 
+ Budget { 
+Din budget: 1kr 
+Dina kategorier : [Model.Category@39c8c408, Model.Category@2505b64e, Model.Category@7f48d3fb, Model.Category@148ea4a4]
+Dina transaktioner: [Model.Transaction@6b99dab9, Model.Transaction@6326a642, Model.Transaction@5ac876d6, Model.Transaction@3b8252af]
+] 
+][
+ Budget { 
+Din budget: 123kr 
+Dina kategorier : [Model.Category@700f1328, Model.Category@401cd89, Model.Category@1febd1ec, Model.Category@53757b11]
+Dina transaktioner: [Model.Transaction@5beba404, Model.Transaction@510c5775]
+] 
+][
+ Budget { 
+Din budget: 13kr 
+Dina kategorier : [Model.Category@5c5c93f9, Model.Category@213262d2, Model.Category@4c5b7d41, Model.Category@2507fd1d]
+Dina transaktioner: [Model.Transaction@458e2925, Model.Transaction@796d21b2, Model.Transaction@3f097a70, Model.Transaction@3d5a5d47, Model.Transaction@56ae93a2, Model.Transaction@47eea69e]
+] 
+][
+ Budget { 
+Din budget: 13kr 
+Dina kategorier : [Model.Category@5c5c93f9, Model.Category@213262d2, Model.Category@4c5b7d41, Model.Category@2507fd1d]
+Dina transaktioner: [Model.Transaction@458e2925, Model.Transaction@796d21b2, Model.Transaction@3f097a70, Model.Transaction@3d5a5d47, Model.Transaction@56ae93a2, Model.Transaction@47eea69e]
+] 
+, 
+ Budget { 
+Din budget: 12kr 
+Dina kategorier : [Model.Category@7d21d8d8, Model.Category@53dda322, Model.Category@6c0b346c, Model.Category@4c42e616]
+Dina transaktioner: [Model.Transaction@5d46ff02, Model.Transaction@194b36c0, Model.Transaction@2a0c1f5f, Model.Transaction@7d321fcd, Model.Transaction@5f3d3ec6, Model.Transaction@30229ab3]
+] 
+][
+ Budget { 
+Din budget: 123kr 
+Dina kategorier : [Model.Category@578e8e47, Model.Category@33012166, Model.Category@728eb7e2, Model.Category@676343b7]
+Dina transaktioner: [Model.Transaction@1e5d867e, Model.Transaction@60a4f05d, Model.Transaction@1b36e504, Model.Transaction@1f133ee]
+] 
+][
+ Budget { 
+Din budget: 123kr 
+Dina kategorier : [Model.Category@6cf328fd, Model.Category@2103c2d3, Model.Category@2542bb3c, Model.Category@3d5c7032]
+Dina transaktioner: [Model.Transaction@771da804, Model.Transaction@1e5d867e, Model.Transaction@60a4f05d, Model.Transaction@1b36e504]
+] 
+][
+ Budget { 
+Din budget: 123kr 
+Dina kategorier : [Model.Category@104280f7, Model.Category@758db16f, Model.Category@6cf328fd, Model.Category@2103c2d3]
+Dina transaktioner: [Model.Transaction@2542bb3c, Model.Transaction@3d5c7032, Model.Transaction@489d03a4, Model.Transaction@77b7453e]
+] 
+][
+ Budget { 
+Din budget: 1000kr 
+Dina kategorier : [Model.Category@6c5fafd2, Model.Category@6026b3ca, Model.Category@29a6209e, Model.Category@5478a633]
+Dina transaktioner: [Model.Transaction@45c8b251, Model.Transaction@1025f1c1]
+] 
+][
+ Budget { 
+Din budget: 1000kr 
+Dina kategorier : [Model.Category@70e0f6f7, Model.Category@2a4632c4, Model.Category@2052de0e, Model.Category@42da220d]
+Dina transaktioner: [Model.Transaction@35fa23ef]
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@21501e88, Model.Category@56ce7c9c, Model.Category@b070c07, Model.Category@1f057194]
+Dina transaktioner: [Model.Transaction@3e0098a2, Model.Transaction@1b8f2962]
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@4de4cbed, Model.Category@3000ce4a, Model.Category@3c980788, Model.Category@34812ebe]
+Dina transaktioner: [Model.Transaction@5fd12060, Model.Transaction@6995c74e]
+Dina fasta utgifter
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@120998db, Model.Category@3763f9d5, Model.Category@39d1c353, Model.Category@6d3b7dfd]
+Dina transaktioner: []
+Dina fasta utgifter
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@5fe01661, Model.Category@3a9cbdab, Model.Category@38884370, Model.Category@2dde8498]
+Dina transaktioner: []
+Dina fasta utgifter
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@55028d3f, Model.Category@152924dd, Model.Category@721d9908, Model.Category@4f5bb325]
+Dina transaktioner: []
+Dina fasta utgifter
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@5d710f0e, Model.Category@72949cf8, Model.Category@161acf2c, Model.Category@5ace0726]
+Dina transaktioner: [Model.Transaction@f127a0e]
+Dina fasta utgifter
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@6e2039dc, Model.Category@7736b2d6, Model.Category@4edfd79b, Model.Category@690fac42]
+Dina transaktioner: []
+Dina fasta utgifter
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@430bc314, Model.Category@6c9c4fb6, Model.Category@59c6c58f, Model.Category@39f78ab8]
+Dina transaktioner: []
+Dina fasta utgifter
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@32882322, Model.Category@46c03100, Model.Category@464415d8, Model.Category@10d4f9cd]
+Dina transaktioner: [Model.Transaction@633659c6]
+Dina fasta utgifter[FixedCost{name='hyra', cost=10}, FixedCost{name='vatten', cost=100}]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@3ac3d232, Model.Category@54ca8473, Model.Category@add5064, Model.Category@7f0b7d34]
+Dina transaktioner: []
+Dina fasta utgifter[Dina fasta utgifter:Hyra':10kr, Dina fasta utgifter:Dagis':100kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@67ed5468, Model.Category@7b1a8620, Model.Category@27617881, Model.Category@1f7be2dc]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=10kr, Fast utgift:hyra=10kr, Fast utgift:kläder=100kr, Fast utgift:kläder=100kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@19380a76, Model.Category@33dcebe0, Model.Category@662e3257, Model.Category@21c615bf]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hej=2kr, Fast utgift:mkläder=20kr, Fast utgift:mkläder=20kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@111e093d, Model.Category@acd8ccc, Model.Category@44dc1391, Model.Category@6c0ef6ff]
+Dina transaktioner: [Model.Transaction@db85da2]
+Dina fasta utgifter[Fast utgift:hyra=99kr, Fast utgift:hyra=99kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@1c3b500, Model.Category@6317e604, Model.Category@e86c49d, Model.Category@67ed5468]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:1=192kr, Fast utgift:1=192kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@19380a76, Model.Category@33dcebe0, Model.Category@662e3257, Model.Category@21c615bf]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=76kr, Fast utgift:hyra=76kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@745aeeb9, Model.Category@45f2aebb, Model.Category@3a25a22e, Model.Category@c44b7b]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=10kr, Fast utgift:hyra=10kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@7f8566d3, Model.Category@2f4b3f21, Model.Category@6f6bd227, Model.Category@2324a0a4]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hej=101kr, Fast utgift:hej=101kr]kr
+] 
+][
+ Budget { 
+Din budget: 90kr 
+Dina kategorier : [Model.Category@357afaf, Model.Category@5035ee07, Model.Category@53afe63, Model.Category@2626a2de]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hy=9kr]kr
+] 
+][
+ Budget { 
+Din budget: 90kr 
+Dina kategorier : [Model.Category@357afaf, Model.Category@5035ee07, Model.Category@53afe63, Model.Category@2626a2de]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hy=9kr]kr
+] 
+, 
+ Budget { 
+Din budget: 90kr 
+Dina kategorier : [Model.Category@257ca0e5, Model.Category@41f60349, Model.Category@543e54bb, Model.Category@a993066]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hy=9kr]kr
+] 
+][
+ Budget { 
+Din budget: 90kr 
+Dina kategorier : [Model.Category@357afaf, Model.Category@5035ee07, Model.Category@53afe63, Model.Category@2626a2de]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hy=9kr]kr
+] 
+, 
+ Budget { 
+Din budget: 90kr 
+Dina kategorier : [Model.Category@257ca0e5, Model.Category@41f60349, Model.Category@543e54bb, Model.Category@a993066]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hy=9kr]kr
+] 
+, 
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@82af6b5, Model.Category@77d1ba01, Model.Category@6dcdf167, Model.Category@6b258ff1]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hy=9kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@285ce0be, Model.Category@2e2a2a34, Model.Category@3aa2e392, Model.Category@784ae8d8]
+Dina transaktioner: []
+Dina fasta utgifter[]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@285ce0be, Model.Category@2e2a2a34, Model.Category@3aa2e392, Model.Category@784ae8d8]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=66kr]kr
+] 
+, 
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@c61cdd1, Model.Category@47fe8559, Model.Category@5f5e22cc, Model.Category@21e0aa5c]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=66kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@8d8c075, Model.Category@74aaa4a0, Model.Category@2302048c, Model.Category@9eb8555]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=9kr]kr
+] 
+][
+ Budget { 
+Din budget: 200kr 
+Dina kategorier : [Model.Category@213ef1e, Model.Category@223f06cc, Model.Category@422d4829, Model.Category@26a441ee]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=9kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@50df0484, Model.Category@4344c485, Model.Category@3016270, Model.Category@24007f83]
+Dina transaktioner: []
+Dina fasta utgifter[]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@50df0484, Model.Category@4344c485, Model.Category@3016270, Model.Category@24007f83]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=80kr]kr
+] 
+, 
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@52e28b1e, Model.Category@e7496a6, Model.Category@7aba2bb9, Model.Category@265c4c64]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=80kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@7b27a4bb, Model.Category@2c7d4cb4, Model.Category@3109ade2, Model.Category@737507e]
+Dina transaktioner: []
+Dina fasta utgifter[]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@7b27a4bb, Model.Category@2c7d4cb4, Model.Category@3109ade2, Model.Category@737507e]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hryk=10kr]kr
+] 
+, 
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@303066b3, Model.Category@285317b2, Model.Category@3382287b, Model.Category@62c67df4]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hryk=10kr]kr
+] 
+][
+ Budget { 
+Din budget: 90kr 
+Dina kategorier : [Model.Category@10f568e5, Model.Category@1f25a1c, Model.Category@4164c8ad, Model.Category@6ba27f3a]
+Dina transaktioner: []
+Dina fasta utgifter[]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@737507e, Model.Category@41732e5f, Model.Category@72dd229, Model.Category@7b370993]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:1=10kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@737507e, Model.Category@41732e5f, Model.Category@72dd229, Model.Category@7b370993]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:1=10kr]kr
+] 
+, 
+ Budget { 
+Din budget: 102kr 
+Dina kategorier : [Model.Category@6b9a3196, Model.Category@7cf5e7d5, Model.Category@56b5f32e, Model.Category@2a0e4cd3]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:1=10kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@6303efaf, Model.Category@41936c57, Model.Category@3af7bad2, Model.Category@21e8d5be]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hej=9kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@6303efaf, Model.Category@41936c57, Model.Category@3af7bad2, Model.Category@21e8d5be]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hej=9kr]kr
+] 
+, 
+ Budget { 
+Din budget: 12kr 
+Dina kategorier : [Model.Category@3e825759, Model.Category@4ee967cc, Model.Category@286d54ba, Model.Category@47d1830f]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hej=9kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@5cff6b38, Model.Category@50df0484, Model.Category@4344c485, Model.Category@3016270]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=10kr]kr
+] 
+][
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@5cff6b38, Model.Category@50df0484, Model.Category@4344c485, Model.Category@3016270]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=10kr, Fast utgift:spel=20kr]kr
+] 
+, 
+ Budget { 
+Din budget: 100kr 
+Dina kategorier : [Model.Category@38322573, Model.Category@3fc93a8c, Model.Category@590135ac, Model.Category@1573d60]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:hyra=10kr, Fast utgift:spel=20kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@64d47223, Model.Category@70008502, Model.Category@1ac2dbd5, Model.Category@ad6a150]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:ejåter=4kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@55c55aac, Model.Category@51bc6c, Model.Category@3622e68c, Model.Category@50b06032]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:återkommande=2kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@55c55aac, Model.Category@51bc6c, Model.Category@3622e68c, Model.Category@50b06032]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:återkommande=2kr, Fast utgift:hyra=4kr]kr
+] 
+, 
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@5e5b6588, Model.Category@2b74c19, Model.Category@42a89fdd, Model.Category@4cc67b5a]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:återkommande=2kr, Fast utgift:hyra=4kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@55c55aac, Model.Category@51bc6c, Model.Category@3622e68c, Model.Category@50b06032]
+Dina transaktioner: []
+Dina fasta utgifter[]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@6788dba5, Model.Category@3593f8d1, Model.Category@26308cef, Model.Category@2c533a10]
+Dina transaktioner: []
+Dina fasta utgifter[]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@50b06032, Model.Category@2fdf40b2, Model.Category@22e02bf9, Model.Category@357afaf]
+Dina transaktioner: []
+Dina fasta utgifter[]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@74765532, Model.Category@4fdd9a07, Model.Category@350af445, Model.Category@7e102b43]
+Dina transaktioner: []
+Dina fasta utgifter[]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@16d9b63d, Model.Category@501b8e70, Model.Category@5a66f3ef, Model.Category@4d71fb03]
+Dina transaktioner: []
+Dina fasta utgifter[Fast utgift:kläder=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@13de7ab1, Model.Category@6d5924aa, Model.Category@5a537512, Model.Category@c0cd4a5]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Fast utgift:åter=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@50b06032, Model.Category@2fdf40b2, Model.Category@22e02bf9, Model.Category@357afaf]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:åter=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@1b2786d2, Model.Category@796de12f, Model.Category@6d89772, Model.Category@77d3f351]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:åter=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@1b2786d2, Model.Category@796de12f, Model.Category@6d89772, Model.Category@77d3f351]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:åter=1kr, Återkommande fast utgift:åter=1kr]kr
+] 
+, 
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@3f6e1fae, Model.Category@2c0f1030, Model.Category@58064800, Model.Category@4038e598]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:åter=1kr, Återkommande fast utgift:åter=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@4fdd9a07, Model.Category@350af445, Model.Category@7e102b43, Model.Category@38093e76]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:hyra=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@4fdd9a07, Model.Category@350af445, Model.Category@7e102b43, Model.Category@38093e76]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:hyra=1kr]kr
+] 
+, 
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@43cdc454, Model.Category@12b53804, Model.Category@47c71f31, Model.Category@51b05f9a]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:hyra=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@4fdd9a07, Model.Category@350af445, Model.Category@7e102b43, Model.Category@38093e76]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:hyra=1kr]kr
+] 
+, 
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@43cdc454, Model.Category@12b53804, Model.Category@47c71f31, Model.Category@51b05f9a]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:hyra=1kr]kr
+] 
+, 
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@571de70a, Model.Category@4048e487, Model.Category@14f6b2a9, Model.Category@20697c96]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:hyra=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@67ed5468, Model.Category@7b1a8620, Model.Category@27617881, Model.Category@1f7be2dc]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:återk=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@77d3f351, Model.Category@5065fa6f, Model.Category@46171dd5, Model.Category@4366162]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:pter=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@2783f2e8, Model.Category@77c0ffbe, Model.Category@7aef8d3f, Model.Category@7902e32c]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:kläder=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@2783f2e8, Model.Category@77c0ffbe, Model.Category@7aef8d3f, Model.Category@7902e32c]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:kläder=1kr, Återkommande fast utgift:kläder=2kr]kr
+] 
+, 
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@245d1945, Model.Category@25ffe448, Model.Category@464757ca, Model.Category@7c5dcadc]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:kläder=1kr, Återkommande fast utgift:kläder=2kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@2783f2e8, Model.Category@77c0ffbe, Model.Category@7aef8d3f, Model.Category@7902e32c]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:kläder=1kr, Återkommande fast utgift:kläder=2kr]kr
+] 
+, 
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@245d1945, Model.Category@25ffe448, Model.Category@464757ca, Model.Category@7c5dcadc]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:kläder=1kr, Återkommande fast utgift:kläder=2kr]kr
+] 
+, 
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@429e933, Model.Category@240dc4e7, Model.Category@1522c025, Model.Category@6619aac]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:kläder=1kr, Återkommande fast utgift:kläder=2kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@53afe63, Model.Category@2626a2de, Model.Category@18b24b62, Model.Category@6788dba5]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:åter=1kr, Återkommande fast utgift:ejåter=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@53afe63, Model.Category@2626a2de, Model.Category@18b24b62, Model.Category@6788dba5]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:åter=1kr, Återkommande fast utgift:ejåter=1kr]kr
+] 
+, 
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@4a22c258, Model.Category@3bbf7c1e, Model.Category@1d827c5e, Model.Category@5e5b6588]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:åter=1kr, Återkommande fast utgift:ejåter=1kr]kr
+] 
+][
+ Budget { 
+Din budget: 10kr 
+Dina kategorier : [Model.Category@6c679bf2, Model.Category@3b0a4cb5, Model.Category@38306264, Model.Category@1b27c584]
+Dina transaktioner: []
+Dina återkommande fasta utgifter[Återkommande fast utgift:hej=10kr, Återkommande fast utgift:återk=10kr]kr
+] 
 ]
