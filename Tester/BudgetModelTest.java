@@ -1,6 +1,7 @@
 import Model.Budget;
 import Model.BudgetModel;
 import Model.Category;
+import Model.Transaction;
 import org.junit.Test;
 import java.time.LocalDate;
 import java.util.List;
@@ -18,6 +19,9 @@ public class BudgetModelTest {
     Category shopping = new Category("Shopping", 200);
     Category transport = new Category("Transport", 100);
     LocalDate d = LocalDate.now();
+    Transaction t1 = new Transaction(50, "Jacka", "Zara", d, shopping);
+    Transaction t2 = new Transaction(100, "Biljett", "Buss", d, transport);
+
 
 
     @Test
@@ -71,11 +75,19 @@ public class BudgetModelTest {
         cl.add(shopping);
         cl.add(transport);
         int tga = b.TotalGoalAmountOfCategories();
-        assertTrue(tga == 5400); //goalAmount även från de hårdkodade kategorierna
+        assertTrue(tga == 300);
 
     }
 
-    //update transactionlist inte testad
+    @Test
+    public void shouldReturnAListWithAllTransactions(){
+        b.categoryList.add(shopping);
+        b.categoryList.add(transport);
+        shopping.addTransactionToList(t1);
+        transport.addTransactionToList(t2);
+        List allTran = b.getAllTransactions();
+        assertEquals(allTran.size(),2);
+    }
 
 }
 

@@ -1,8 +1,14 @@
 [
  Budget { 
-Din budget: 300kr 
+Din budget: 1000kr 
+Dina kategorier : [Model.Category@351e9ac9, Model.Category@3b9d8a3c, Model.Category@4ac94da1, Model.Category@7d276916]
+Dina transaktioner: [Model.Transaction@3c2e6ca9, Model.Transaction@6b35cd7a, Model.Transaction@6b9131f8]
+] 
+][
+ Budget { 
+Din budget: 100kr 
 BudgetID :1
-Dina kategorier : [Model.Category@e5b5504, Model.Category@6ea9fca5, Model.Category@42665c02, Model.Category@3f826505]
+Dina kategorier : [Model.Category@3b002532, Model.Category@7bcc29fc, Model.Category@319bcbf7, Model.Category@3f863a79]
 Dina transaktioner: []
 ] 
 ][
