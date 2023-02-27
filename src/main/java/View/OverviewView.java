@@ -29,6 +29,8 @@ import java.util.ResourceBundle;
 public class OverviewView extends AnchorPane{
 
 
+
+
     private List<CategoryOverviewItem> CategoryOverviewItemArray = new ArrayList<>();
 
 
@@ -39,6 +41,7 @@ public class OverviewView extends AnchorPane{
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+
     }
 
     @FXML
@@ -52,6 +55,7 @@ public class OverviewView extends AnchorPane{
 
         }
     }
+
 
     public void updateBudgetDisplay(Label left, Label spent, int amountleft, int currentamount){
         left.setText("" + amountleft + " kr");

@@ -1,24 +1,26 @@
 package Model;
 
-import Interfaces.Observable;
-import Interfaces.Observer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
-import java.lang.reflect.Type;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
 /**
  * This class instantiate a new transaction instances
  */
 
 public class Transaction {
+    @SerializedName("tAmount")
+    @Expose
     private int transactionAmount;
+    @SerializedName("tName")
+    @Expose
     private String name;
+    @SerializedName("tNotes")
+    @Expose
     private String notes;
+    @SerializedName("tDate")
+    @Expose
     private LocalDate date;
 
     private Category category;
@@ -29,6 +31,7 @@ public class Transaction {
      * @param name  name of transaction
      * @param notes note of the transaction
      * @param date  date of the transaction
+     * @param c transactions category
      */
 
 

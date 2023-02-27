@@ -1,6 +1,8 @@
 package Model;
 
-import java.io.IOException;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,13 +13,14 @@ import java.util.List;
  */
 
 public class BudgetModel {
+    @SerializedName("cList")
+    @Expose
     public List<Category> categoryList = new ArrayList<>();
 
     public List<Transaction> transactions = new ArrayList<>();
 
     private int StartAmount;
-    private int amountSpent = 0;
-    private int amountLeft = 0;
+
 
     /**
      * Constructor of BudgetModel
@@ -62,6 +65,14 @@ public class BudgetModel {
         return categoryList;
     }
 
+    public List<String> getCategoryNames(){
+        List<String> categoryNames = new ArrayList<>();
+        for (Category c : categoryList){
+            categoryNames.add(c.getName());
+        }
+        return categoryNames;
+    }
+
     public List<Transaction> getTransactionList(){
         return transactions;
     }
@@ -76,8 +87,14 @@ public class BudgetModel {
             allTransactions.addAll(c.getTransactionsList());
         }
         return allTransactions;
+    }
 
-
+    public List<String> getAllTransactionStrings(){
+        List<String> transactionStrings = new ArrayList<>();
+        for (Category c: categoryList){
+            transactionStrings.addAll(c.getTransactionStrings());
+        }
+        return transactionStrings;
     }
 
 
@@ -87,7 +104,7 @@ public class BudgetModel {
      */
 
     public int budgetCurrentAmount(){
-        amountSpent = 0;
+        int amountSpent = 0;
         for (Category c : categoryList){
             amountSpent += c.getSpentAmount();
         }
@@ -109,7 +126,23 @@ public class BudgetModel {
     public Transaction createNewTransaction (int amount, String name, String note, int i, LocalDate date) {
         Transaction t = getCategory(i).newTransaction(amount,name,note,date);
         transactions.add(t);
+
         return t;
+    }
+
+    /**
+     * detele transaction from temporary transactionlist
+     * @param t transaction that going to be deleted
+     */
+
+    public void deleteTransaction(Transaction t){
+        for(Transaction tr : transactions){
+            if (t == tr){
+                transactions.remove(tr);
+            }
+            t.getCategory().notifyObservers();
+        }
+
     }
 
 
@@ -117,11 +150,10 @@ public class BudgetModel {
      * Adds temporary transactions to a transaction list that their specific category holds
      */
     public void addTemporaryTransactionsToCategoryTransactionList() {
-        for (Transaction t : transactions) {
-            t.getCategory().addTransactionToList(t);
-        }
-        transactions.clear();
-
+            for (Transaction t : transactions) {
+                t.getCategory().addTransactionToList(t);
+            }
+            transactions.clear();
 
     }
 

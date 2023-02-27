@@ -1,8 +1,546 @@
-[
+
  Budget { 
-Din budget: 300kr 
-BudgetID :1
-Dina kategorier : [Model.Category@e5b5504, Model.Category@6ea9fca5, Model.Category@42665c02, Model.Category@3f826505]
+Din budget: 1kr 
+Du sparade 1kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
 Dina transaktioner: []
-] 
+} 
+
+ Budget { 
+Din budget: 2kr 
+Du sparade 2kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 3kr 
+Du sparade 3kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 1kr 
+Du sparade 1kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 2kr 
+Du sparade 2kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 3kr 
+Du sparade 3kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 223kr 
+Du sparade 223kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 432kr 
+Du sparade 432kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 23kr 
+Du sparade 23kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 234kr 
+Du sparade 142kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Shopping: {Transaction name: 231, Amount: 23, Date: 2023-02-15, Note: hej}, Nöje: {Transaction name: 231, Amount: 23, Date: 2023-02-15, Note: hej}, Nöje: {Transaction name: 231, Amount: 23, Date: 2023-02-15, Note: hej}, Nöje: {Transaction name: 231, Amount: 23, Date: 2023-02-15, Note: hej}]
+} 
+
+ Budget { 
+Din budget: 23kr 
+Du gick över budgeten med -27kr  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Nöje: {Transaction name: go, Amount: 10, Date: 2023-02-23, Note: 1111}, Nöje: {Transaction name: go, Amount: 10, Date: 2023-02-23, Note: 1111}, Nöje: {Transaction name: go, Amount: 10, Date: 2023-02-23, Note: 1111}, Nöje: {Transaction name: go, Amount: 10, Date: 2023-02-23, Note: 1111}, Nöje: {Transaction name: go, Amount: 10, Date: 2023-02-23, Note: 1111}]
+} 
+
+ Budget { 
+Din budget: 234kr 
+Du sparade 234kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 543kr 
+Du sparade 543kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 43kr 
+Du sparade 43kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 43kr 
+Du sparade 43kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 23kr 
+Du sparade 23kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 23kr 
+Du sparade 23kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 123kr 
+Du sparade 123kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 34kr 
+Du sparade 34kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 23kr 
+Du sparade 23kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 22kr 
+Du sparade 22kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 123kr 
+Du sparade 123kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 234kr 
+Du sparade 234kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 123kr 
+Du sparade 123kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 1kr 
+Du sparade 1kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 1kr 
+Du sparade 1kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 11kr 
+Du sparade 11kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 1234kr 
+Du sparade 1234kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 123kr 
+Du sparade 101kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Shopping: {Transaction name: s, Amount: 22, Date: 2023-02-08, Note: f}]
+} 
+
+ Budget { 
+Din budget: 123kr 
+Du sparade 121kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Shopping: {Transaction name: 2, Amount: 2, Date: 2023-02-02, Note: 2}]
+} 
+
+ Budget { 
+Din budget: 1kr 
+Du gick över budgeten med -11kr  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Nöje: {Transaction name: gr, Amount: 12, Date: 2023-02-16, Note: 23}]
+} 
+
+ Budget { 
+Din budget: 123kr 
+Du gick över budgeten med -198kr  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Shopping: {Transaction name: 31, Amount: 321, Date: 2023-03-02, Note: 312}]
+} 
+
+ Budget { 
+Din budget: 13kr 
+Du sparade 13kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 11kr 
+Du gick över budgeten med -11kr  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Nöje: {Transaction name: dd, Amount: 22, Date: 2023-02-16, Note: 33}]
+} 
+
+ Budget { 
+Din budget: 123kr 
+Du gick över budgeten med -198kr  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Övrigt: {Transaction name: 22, Amount: 321, Date: 2023-02-16, Note: 321}]
+} 
+
+ Budget { 
+Din budget: 32kr 
+Du gick över budgeten med -289kr  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Shopping: {Transaction name: 32, Amount: 321, Date: 2023-02-23, Note: 132}]
+} 
+
+ Budget { 
+Din budget: 100kr 
+Du sparade 90kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Nöje: {Transaction name: majs, Amount: 10, Date: 2023-02-22, Note: ica}]
+} 
+
+ Budget { 
+Din budget: 200kr 
+Du sparade 100kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Shopping: {Transaction name: majs, Amount: 100, Date: 2023-02-02, Note: hej}]
+} 
+
+ Budget { 
+Din budget: 100kr 
+Du sparade 78kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Shopping: {Transaction name: hej, Amount: 22, Date: 2023-02-06, Note: hej}]
+} 
+
+ Budget { 
+Din budget: 100kr 
+Du sparade 100kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget { 
+Din budget: 11kr 
+Du gick över budgeten med -9kr  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Nöje: {Transaction name: ss, Amount: 20, Date: 2023-02-15, Note: dasn}]
+} 
+
+ Budget { 
+Din budget: 2kr 
+Du sparade 2kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: []
+} 
+
+ Budget  
+Din budget: 202kr 
+Du sparade 179kr!  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Nöje
+ : Transaction namn: mamas,
+ Belopp: 23,
+ Anteckning: nfjdsk
 ]
+ 
+
+ Budget  
+Din budget: 100kr 
+Du gick över budgeten med -145kr  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Shopping: 
+ Transaction namn: majs,
+ Belopp: 22,
+ Anteckning: jk
+, Övrigt: 
+ Transaction namn: majs231,
+ Belopp: 223,
+ Anteckning: fds
+]
+ 
+
+ Budget  
+Din budget: 100kr 
+Du gick över budgeten med -122kr  
+Dina kategorier : [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner: [Nöje: 
+ Transaction namn: mat,
+ Belopp: 20,
+ Anteckning: hej
+, Nöje: 
+ Transaction namn: kola,
+ Belopp: 202,
+ Anteckning: mat
+]
+ 
+
+Budget  
+Din budget:     234567kr 
+Du sparade 234567kr!  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    []
+ 
+
+Budget  
+Din budget:     15kr 
+Du gick över budgeten med -262kr  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: as,
+Belopp: 13 kr,
+Anteckning: dsa, 
+Mat:
+Transaction namn: dse,
+Belopp: 132 kr,
+Anteckning: dsadsaf, 
+Övrigt:
+Transaction namn: ds,
+Belopp: 132 kr,
+Anteckning: dsadsa]
+ 
+
+Budget  
+Din budget:     99kr 
+Du gick över budgeten med -30kr  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Shopping:
+Transaction namn: mad,
+Belopp: 129 kr,
+Anteckning: hjdsa]
+ 
+
+Budget  
+Din budget:     100kr 
+Du sparade 40kr!  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: kalas,
+Belopp: 50 kr,
+Anteckning: chips, 
+Shopping:
+Transaction namn: hm,
+Belopp: 10 kr,
+Anteckning: sockar]
+ 
+
+Budget  
+Din budget:     3000kr 
+Du sparade 2500kr!  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: ica,
+Belopp: 300 kr,
+Anteckning: bröd, smör, frukt, 
+Shopping:
+Transaction namn: hm,
+Belopp: 200 kr,
+Anteckning: tröja]
+ 
+
+Budget  
+Din budget:     1000kr 
+Du gick över budgeten med 20kr  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: mathem,
+Belopp: 700 kr,
+Anteckning: matvaror, 
+Mat:
+Transaction namn: hemköp,
+Belopp: 20 kr,
+Anteckning: fika, 
+Mat:
+Transaction namn: brogyllen,
+Belopp: 300 kr,
+Anteckning: semlor]
+ 
+
+Budget  
+Din budget:     3000kr 
+Du sparade 2500kr!  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: ica,
+Belopp: 300 kr,
+Anteckning: bröd, smör, frukt, 
+Shopping:
+Transaction namn: hm,
+Belopp: 200 kr,
+Anteckning: tröja]
+ 
+
+Budget  
+Din budget:     3000kr 
+Du sparade 2500kr!  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: ica,
+Belopp: 300 kr,
+Anteckning: bröd, smör, frukt, 
+Shopping:
+Transaction namn: hm,
+Belopp: 200 kr,
+Anteckning: tröja]
+ 
+
+Budget  
+Din budget:     3000kr 
+Du sparade 2500kr!  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: ica,
+Belopp: 300 kr,
+Anteckning: bröd, smör, frukt, 
+Shopping:
+Transaction namn: hm,
+Belopp: 200 kr,
+Anteckning: tröja]
+ 
+
+Budget  
+Din budget:     100kr 
+Du sparade 60kr!  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: ics,
+Belopp: 20 kr,
+Anteckning: godis, 
+Shopping:
+Transaction namn: kjellocomapny,
+Belopp: 20 kr,
+Anteckning: sladd]
+ 
+
+Budget  
+Din budget:     200kr 
+Du gick över budgeten med 120kr  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: mathem,
+Belopp: 200 kr,
+Anteckning: matvaror, 
+Mat:
+Transaction namn: hemköp,
+Belopp: 20 kr,
+Anteckning: fika, 
+Shopping:
+Transaction namn: hm,
+Belopp: 100 kr,
+Anteckning: sockar]
+ 
+
+Budget  
+Din budget:     200kr 
+Du sparade 80kr!  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: willys,
+Belopp: 100 kr,
+Anteckning: kakor
+ -----------------------------------------------, 
+Shopping:
+Transaction namn: hm,
+Belopp: 20 kr,
+Anteckning: ring
+ -----------------------------------------------]
+ 
+
+Budget  
+Din budget:     100kr 
+Du sparade 100kr!  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    []
+ 
+
+Budget  
+Din budget:     1000kr 
+Du sparade 250kr!  
+Dina kategorier :  [Mat, Shopping, Nöje, Övrigt]
+Dina transaktioner:    [
+Mat:
+Transaction namn: mathem,
+Belopp: 400 kr,
+Anteckning: matvaror
+ -----------------------------------------------, 
+Shopping:
+Transaction namn: hm,
+Belopp: 200 kr,
+Anteckning: tröja
+ -----------------------------------------------, 
+Nöje:
+Transaction namn: Tickermaster,
+Belopp: 150 kr,
+Anteckning: konsert
+ -----------------------------------------------]
+ 

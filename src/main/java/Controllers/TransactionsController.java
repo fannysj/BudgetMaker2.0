@@ -4,31 +4,18 @@ import Interfaces.Observable;
 import Interfaces.Observer;
 import Model.*;
 import View.*;
-import com.example.budgetmaker2_0.User;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.Event;
+import Model.User;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.shape.Circle;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.regex.PatternSyntaxException;
 
 /**
  * The TransactionController class represent a Controller in the Model-View-Controller pattern.
@@ -61,9 +48,6 @@ public class TransactionsController implements Initializable, Observer {
     private SplitPane addExpenseSplit;
 
     @FXML
-    private Button addTransactionButton;
-
-    @FXML
     private FlowPane transactionHistoryFlowPane;
 
     @FXML
@@ -84,20 +68,7 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     private FlowPane transactionFlowPane;
 
-    @FXML
-    private TextField searchbar;
-
     @FXML FlowPane transactionGrid;
-
-    @FXML
-    private FlowPane transactionDetailViewHistory;
-
-    @FXML
-    private ScrollBar addTransactionScrollbar;
-
-
-    Category category;
-
 
 
     @FXML
@@ -111,9 +82,6 @@ public class TransactionsController implements Initializable, Observer {
 
     @FXML
     private Label spentOfBudgetDisplay;
-
-    @FXML
-    private Button closeCategoryDetailView;
 
     @FXML
     private AnchorPane categoryOverview;
@@ -130,21 +98,7 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     private ListView<Transaction> transactionListView = new ListView<>() ;
 
-    @FXML
-    private Button homeButton;
 
-    @FXML
-    private AnchorPane scrollAnchorpane;
-
-
-
-
-    //Hårdkodat dessa för vet inte hur jag ska få in dem från användar-inputs
-
-    // Add to category observable list, subscribe, kalla till categories addObserver metod.
-
-
-    //Metoder som ska visa transaktioner men fungerar ej :(
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -157,9 +111,7 @@ public class TransactionsController implements Initializable, Observer {
 
     }
 
-    public void updateBudgetDisplay(){
-        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(), currentBudget.getCurrentAmount());
-    }
+
 
     @FXML
     public void updateCategoryListItem(){
@@ -171,12 +123,16 @@ public class TransactionsController implements Initializable, Observer {
      */
     @FXML
     public void createNewTransaction(){
-        addTransactionToHistoryFlowPane();
         currentBudget.addTransactionsToCategoryTransactionList();
+        addTransactionToHistoryFlowPane();
         updateBudgetDisplay();
         goBacktoOverview();
 
 
+    }
+
+    public void updateBudgetDisplay(){
+        overviewView.updateBudgetDisplay(leftOfBudgetDisplay,spentOfBudgetDisplay, currentBudget.getAmountLeft(), currentBudget.getCurrentAmount());
     }
 
     /**
@@ -199,7 +155,7 @@ public class TransactionsController implements Initializable, Observer {
         int i = transactionCategoryChoiceBox.getSelectionModel().getSelectedIndex();
 
 
-        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.getBudgetModel().createNewTransaction(a,na,no,i,d),this);
+        transactionView.addTransactionToFlowPane(transactionFlowPane, currentBudget.createNewTransaction(a,na,no,d,i),this);
 
     }
 
@@ -213,25 +169,20 @@ public class TransactionsController implements Initializable, Observer {
         transactionHistoryFlowPane.getChildren().remove(T);
     }
 
-//    public void updateTransactionList(List<Transaction> transactions) {
-//        transactionView.updateTransactionList(transactionGrid,transactionFlowPane,transactions,this);
-//    }
-
     /**
      * Adding transaction to overview with the latest transactions
      */
     public void addTransactionToHistoryFlowPane(){
-        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getTransactionList(), this);
+        transactionView.addTransactionToHistoryFlowPane(transactionHistoryFlowPane, currentBudget.getAllTransaction(), this);
     }
 
 
     /**
      * Adding transaction to the view for belonging category
      */
-    public void addTransactionsToDetailView(){
-        transactionView.addTransactionToCategoryFlowPane(transactionGrid, currentBudget.getCategoryList().get(0).getTransactionsList(), this);
+    public void addTransactionsToDetailView(Category c){
+        transactionView.addTransactionToCategoryFlowPane(transactionGrid, c.getTransactionsList(), this);
     }
-
 
     /**
      * Following methods are responsible to load different views
@@ -263,15 +214,15 @@ public class TransactionsController implements Initializable, Observer {
     }
 
     @FXML
-    private void deleteTransaction(){
-        category.deleteTransactionFromList();
+    public void deleteTransaction(Transaction t){
+        currentBudget.deleteTransaction(t);
     }
 
     @FXML
     public void openTransactionDetailView(Category category) {
         TransactionOverviewItem transactionOverviewItem = new TransactionOverviewItem(this, category, title, spent, left);
-        addTransactionsToDetailView();
-        categoryOverview.toFront();
+        transactionOverviewItem.openView(categoryOverview);
+        addTransactionsToDetailView(category);
 
     }
 
@@ -280,17 +231,6 @@ public class TransactionsController implements Initializable, Observer {
     private void closeCategoryDetailView(){
         categoryOverview.toBack();
     }
-
-    /**
-     * Search and sort
-     */
-    @FXML
-    public void search(int categoryindex){
-        SortCategory sortCategory = new SortCategory();
-        sortCategory.search(currentBudget.getCategory(categoryindex), searchbar);
-    }
-
-
 
     @Override
     public void update(Observable observable) {
@@ -302,13 +242,10 @@ public class TransactionsController implements Initializable, Observer {
     @FXML
     public void switchToHomePage(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
         overviewView.switchToHomePage(mouseEvent);
-        GsonClass.SerializeBudgets();
+        TextClass.SerializeBudgets(currentBudget);
+        currentUser.addBudgetToPastBudgetList(currentBudget);
+
     }
-
-
-    // update()
-    // updateProgressBar()
-    //
 
 
 }

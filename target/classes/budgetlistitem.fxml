@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root type="javafx.scene.layout.AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="BudgetListItem" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="600.0" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="listItemBudgetId" layoutX="61.0" layoutY="32.0" text="Id" />
-      <Label fx:id="listItemBudgetIncome" layoutX="174.0" layoutY="32.0" text="Inkomst" />
+      <Button mnemonicParsing="false" onMouseClicked="#showDetailedView" prefHeight="80.0" prefWidth="600.0" />
+      <Label fx:id="listItemBudgetIncome" layoutX="117.0" layoutY="32.0" text="Inkomst" />
+      <Label fx:id="listItemBudgetId" layoutX="27.0" layoutY="32.0" text="Id" />
+      <Label fx:id="Saved" layoutX="383.0" layoutY="32.0" text="SavedLost" />
+      <Label fx:id="Spent" layoutX="272.0" layoutY="32.0" text="Spenderat" />
+      <Label layoutX="396.0" layoutY="58.0" text="Klicka för att visa mer" />
    </children>
 </fx:root>

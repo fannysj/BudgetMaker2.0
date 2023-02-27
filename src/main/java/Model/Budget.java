@@ -1,5 +1,8 @@
 package Model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,14 +11,19 @@ import java.util.List;
  * This class is the highest level of abstraction in our program. It is a facade for the BudgetModel.
  */
 
-public class Budget {
+public class Budget{
 
-
+    @SerializedName("bAmount")
+    @Expose
     private int budget;
+    @SerializedName("bName")
+    @Expose
     private String name;
-
+    @SerializedName("bId")
+    @Expose
     private final int id;
-
+    @SerializedName("bModel")
+    @Expose
     BudgetModel model;
 
     /**
@@ -57,6 +65,10 @@ public class Budget {
         return this.model.getCategoryList();
     }
 
+    public List<String> getCategoryNameList() {
+        return this.model.getCategoryNames();
+    }
+
     public Category getCategory(int i) {
         return this.model.getCategory(i);
     }
@@ -89,11 +101,6 @@ public class Budget {
         this.budget = budget;
     }
 
-//    public List<Transaction> getAllTransactions() {
-//
-//    }
-
-
     /**
      * Adds a transaction to a specific category's transactions list
      */
@@ -106,21 +113,36 @@ public class Budget {
         return this.model.getAllTransactions();
     }
 
+
     public Transaction createNewTransaction(int amount, String name, String note, LocalDate date, int i){
         return this.model.createNewTransaction(amount, name, note, i, date);
     }
 
-    @Override
-    public String toString () {
-        return "\n Budget { \n" +
-                "Din budget: " + budget + "kr \n" +
-                "BudgetID :" + id + "\n" +
-                "Dina kategorier : " + getCategoryList()+ "\n" +
-                "Dina transaktioner: " + model.getAllTransactions()+ "\n" +
-                "] \n" ;
+    public String SavedOrLost(){
+        int diff = getBudgetAmount()-getCurrentAmount();
+        if (diff<0){
+            return "Du gick över budgeten med " +  Math.abs(diff) + "kr ";
+        }
+        else {
+            return "Du sparade " + diff + "kr! ";
+        }
     }
 
-    public List<Transaction> getTransactionList() {
-        return this.model.getTransactionList();
+    @Override
+    public String toString () {
+        return "\nBudget  \n" +
+                "Din budget:     " + budget + "kr \n" +
+                "" + SavedOrLost() + " \n" +
+                "Dina kategorier :  " + getCategoryNameList()+ "\n" +
+                "Dina transaktioner:    " + model.getAllTransactionStrings()+ "\n" +
+                " \n" ;
+    }
+
+    public void deleteTransaction(Transaction t){
+        this.model.deleteTransaction(t);
+    }
+
+    public String getName() {
+        return name;
     }
 }
